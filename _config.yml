@@ -19,7 +19,7 @@
 text_skin: ocean # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
 highlight_theme: tomorrow-night-eighties # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url     : https://gaba-tope.github.io # the base hostname & protocol for your site e.g. https://www.someone.com
-baseurl : /about # does not include hostname
+baseurl : /archive # does not include hostname
 title   : Yujin Choi
 description: > # this means to ignore newlines until "Language & timezone"
   Your Site Description
@@ -62,8 +62,8 @@ repository_tree: main
 ## => Paths
 ##############################
 paths:
-  root    : /archive.html # title link url, "/" (default)
-  home    : /archive.html # home layout url, "/" (default)
+  root    :  # title link url, "/" (default)
+  home    :  # home layout url, "/" (default)
   archive : # "/archive.html" (default)
   rss     : # "/feed.xml" (default)
 
