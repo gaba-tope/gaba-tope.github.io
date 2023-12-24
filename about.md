@@ -30,7 +30,8 @@ key: page-about
 ## Yujin Choi 
 Undergraduate student majoring in Bio-convergence at Underwood Internatinal College, Yonsei University.
 <br>
-## Currently,
+
+### Currently,
 I'm in the midst of a two-year hiatus from my school life, fulfilling my commitment to mandatory national service. 
 
 ### Field of Interests
