@@ -50,3 +50,11 @@ header:
       tr      : &TR       Hakkında
       # @end locale config
     url: /about.html
+
+main:
+  -title: "Home"
+   url: https://gaba-tope.github.io
+  -title: "About"
+   url: /about/
+  -title: "Archive"
+   url: /archive/
