@@ -35,7 +35,7 @@ Undergraduate student majoring in Bio-convergence at Underwood Internatinal Coll
 I'm in the midst of a two-year hiatus from my school life, fulfilling my commitment to mandatory national service. 
 
 ### Field of Interests
-- Now on a quest to uncover what truly captivates and enthralls me. 
+- Now on a quest to uncover what truly captivates me. 
 - Among the diverse fields, I found myself fascinated to neurobiology. Learning how nervous system works at a molecular and cellular level is highly intriguing.
 - I am keen to comprehend the mathematical principles underlying statistical estimation and hypothesis testing.
 
