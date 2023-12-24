@@ -19,22 +19,16 @@
 }
 
 .extensions--video {
-  padding-top: percentage(calc(315 / 560)); //  percentage(315 / 560);
+  padding-top: percentage(0.525); //  percentage(315 / 560);
 }
 
 .extensions--slide {
-  padding-top: percentage(calc(487 / 599)); //percentage(487 / 599);
+  padding-top: percentage(0.8130217); //percentage(487 / 599);
 }
-
-@function divide($num1, $num2) {
-  @return math.div($num1, $num2);
-}
-
-$value-pt: divide(315, 560);
 
 .extensions--demo {
   min-height: 340px;
-  padding-top: percentage($value-pt); // percentage(315 / 560);
+  padding-top: percentage(0.525); // percentage(315 / 560);
 }
 
 .extensions--audio {
