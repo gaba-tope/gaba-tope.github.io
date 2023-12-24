@@ -20,7 +20,8 @@ text_skin: ocean # "default" (default), "dark", "forest", "ocean", "chocolate", 
 highlight_theme: tomorrow-night-eighties # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url     : https://gaba-tope.github.io # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl :  # does not include hostname
-title   : Yujin Choi
+title   : 
+subtitle : Yujin Choi
 description: > # this means to ignore newlines until "Language & timezone"
   Your Site Description
 
