@@ -6,8 +6,8 @@ layout: home
 ---
 
 
-# Yujin Choi 
-Undergraduate student majoring in Bio-convergence at Underwood International College, Yonsei University.
+# Tope 
+Undergraduate student majoring in Bio-convergence.
 <br>
 
 ### Currently,
