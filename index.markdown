@@ -19,6 +19,20 @@ I'm in the midst of a two-year hiatus from my school life, fulfilling my commitm
 - I am keen to comprehend the mathematical principles underlying statistical inference.
 
 
+### Courses taken (credits)
+- Neurobiology (3)
+- Neurodegenerative Disorders (3)
+
+- Organic Chemistry (3 * 2 semester)
+- Biochemistry (3 * 2 semester)
+- Molecular Biology (3)
+- Cell Biology (3 * 2 semester)
+- Histology (3)
+- Physiology (3)
+- Molecular Structure Determination Using Spectroscopic Methods (3)
+- Nano-Bio Analytical Methods (3)
+
+
 ### Stats
 <p>
     <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=gaba-tope&layout=compact&bg_color=30,1565C0,b92b27&title_color=fff&text_color=fff&exclude_repo=gaba-tope.github.io&hide=html,css,javascript">
