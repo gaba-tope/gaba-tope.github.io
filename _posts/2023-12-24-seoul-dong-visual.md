@@ -8,10 +8,10 @@ tags: Visualization
 아래에서는 핵심 코드를 살펴봅시다.
 
 <p align="center">
-  <img src="/files/img/seoul_plot.png" width="70%">
+  <img src="/files/img/seoul_plot.png" width="80%">
 </p>
 
-### Dataset
+# Dataset
 1. 서울시 행정동별 평균 소득 및 소비 데이터셋 (이하 '서울시 데이터셋')
     - "서울 열린데이터 광장"에서 제공하는 [서울시 상권분석서비스(소득소비-서울시)](https://data.seoul.go.kr/dataList/OA-22168/S/1/datasetView.do)의 .csv 파일을 다운로드하여 사용함. 
     - 최신수정일자 2023.11.13일자의 데이터
@@ -25,6 +25,7 @@ raw_seoul <- read.csv("./Seoul_income_expendit_dong.csv",fileEncoding = "euc-kr"
     - "TL_SCCO_GEMD.shp"이 서울시 행정동의 구역의 도형 shape file임. .dbf 파일과 .shx 파일과 동일 directory에 있어야 함을 유의.
     - "TL_SCCO_SIG.shp"이 서울시 구의 구역의 도형 shape file임. 마찬가지로 .dbf 파일과 .shx 파일과 동일 directory에 있어야 함.
     - shp, dbf, shx, prj 파일과 CRS, EPSG에 관해서는 한국R사용자회가 작성한 [지리정보 - R (공간통계를 위한 데이터 사이언스)](https://statkclee.github.io/spatial/geo-spatial-r.html)를 참고하자.
+
 ```r
 # Seoul Dong polygon Data
 map_seoul <- st_read("./Shapes/TL_SCCO_GEMD.shp", options = "ENCODING=euc-kr") # Data last updated in 2022-11
@@ -33,9 +34,9 @@ map_seoul<- sf::st_set_crs(map_seoul, 5179) # EPSG가 NA인 상태. EPSG를 5179
 # Seoul Gu polygon Data
 map_seoul_gu <- st_read("./Shapes/TL_SCCO_SIG.shp", options = "ENCODING=euc-kr")# Map at 2022-11
 map_seoul_gu <- sf::st_set_crs(map_seoul_gu, 5179) # EPSG가 NA인 상태. EPSG를 5179로 맞춰준다. 
-``
+```
 
-### Data Wrangling
+# Data Wrangling
 1. 필요한 데이터 선택 후 간단히 다듬기
 - Column name을 영어로 변환합니다. R에서 한글을 사용하다보면 가끔 오류가 생길 때가 있어서요.<br>
 ```r
@@ -89,7 +90,7 @@ combined_data <- left_join(map_seoul, seoul_20231_updated, by = "EMD_CD") # The 
 combined_data |> filter(is.na(dong_code)) # To check if any row is missing
 ```
 
-### Plot with {ggplot2}
+# Plot with {ggplot2}
 1. 시각화에는 {ggplot2}, {ggrepel}, {ggsflabel}, {ggtext}, {showtext} 패키지를 사용하였습니다. ggplot 스크립트를 한 줄씩 살펴봅시다.
 먼저 ggplot() 객체를 만들고, + 기호로 다른 요소들을 덧붙여 줍니다.<br>
 ```r
