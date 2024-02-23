@@ -6,7 +6,7 @@ tags: Visualization
 서울시의 행정동별 평균 소득 및 소비 데이터셋을 우연히 발견하여, 시각화해보면 좋겠다 싶어 만들어보았어요.
 [Visualizations/Seoul_2023_Dong_income_expenditure](https://github.com/gaba-tope/Visualizations/tree/04bd7c6c96bb4fa6898e6f70c50e9f1b664517d8/Seoul_2023_Dong_income_expenditure)에 사용한 R script가 있으니 확인해 보아도 좋겠습니다.
 
-<iframe src="_includes/interactive_page/map_leaflet.html" height="600px" width="100%" style="border:none;"></iframe>
+<iframe src="/files/interactive_page/map_leaflet.html" height="600px" width="100%" style="border:none;"></iframe>
 
 ### Dataset
 1. 서울시 행정동별 평균 소득 및 소비 데이터셋
