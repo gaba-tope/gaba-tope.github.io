@@ -1,5 +1,5 @@
 ---
-title: 서울시 행정동별 평균 소득 및 소비 시각화
+title: 서울시 행정동별 평균 소득 시각화
 tags: Visualization
 ---
 
@@ -8,8 +8,10 @@ tags: Visualization
 아래에서는 핵심 코드를 살펴봅시다.
 
 <p align="center">
-  <img src="/files/img/seoul_plot.png" width="80%">
+  <img src="/files/img/seoul_plot.png" width="90%">
 </p>
+
+Geospatial data의 시각화에 대한 기본적인 내용은 [Claus O. Wilke의 Fundamentals of Data Visualization](https://clauswilke.com/dataviz/geospatial-data.html)에서 살펴보기를 추천해요.
 
 # Dataset
 1. 서울시 행정동별 평균 소득 및 소비 데이터셋 (이하 '서울시 데이터셋')
@@ -91,7 +93,7 @@ combined_data |> filter(is.na(dong_code)) # To check if any row is missing
 ```
 
 # Plot with {ggplot2}
-1. 시각화에는 {ggplot2}, {ggrepel}, {ggsflabel}, {ggtext}, {showtext} 패키지를 사용하였습니다. ggplot 스크립트를 한 줄씩 살펴봅시다.
+1. 시각화에는 `{ggplot2}`, `{ggrepel}`, `{ggsflabel}`, `{ggtext}`, `{showtext}` 패키지를 사용하였습니다. ggplot 스크립트를 한 줄씩 살펴봅시다.
 먼저 ggplot() 객체를 만들고, + 기호로 다른 요소들을 덧붙여 줍니다.<br>
 ```r
 seoul_plot <-   ggplot() +
