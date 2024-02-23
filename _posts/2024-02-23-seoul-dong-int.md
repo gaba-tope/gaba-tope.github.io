@@ -5,18 +5,17 @@ tags: Visualization
 
 
 이전에 만들어본 [서울시 행정동별 평균 소득 plot]({% post_url 2023-12-24-seoul-dong-visual %})을 사용자가 이리저리 살펴볼 수 있게 만들어 보았어요.
+
+<iframe src="/files/interactive_page/map_leaflet.html" height="600px" width="100%" style="border:none;"></iframe>
+
 [Visualizations/Seoul_2023_Dong_income_expenditure](https://github.com/gaba-tope/Visualizations/tree/04bd7c6c96bb4fa6898e6f70c50e9f1b664517d8/Seoul_2023_Dong_income_expenditure)에 사용한 R script가 있으니 확인해 보아도 좋겠습니다.
 
 Leaflet을 처음 사용하여 interactive choropleth map을 만드는 경우, [An R Interface to Leaflet Maps](https://rstudio.github.io/leaflet/index.html)를 참고하면 도움이 될 수 있습니다.
 
 
-아래에서는 핵심 코드를 살펴봅시다.
+아래에서는 핵심 코드를 살펴봅시다. 이전에 사용하고 다듬은 데이터셋과 객체들을 그대로 사용합니다.
 
-<iframe src="/files/interactive_page/map_leaflet.html" height="600px" width="100%" style="border:none;"></iframe>
-
-이전에 다룬 데이터를 그대로 사용합니다.
-
-### Data Wrangling
+# Data Wrangling
 1. [이전 포스트]({% post_url 2023-12-24-seoul-dong-visual %})에서 combined_data와 map_seoul_gu의 EPSG를 5179로 맞추었다. 하지만 leaflet 패키지로 사용할 shape file 등은 좌표계 (CRS; Coordinate Reference System)이 [WGS84 (= EPSG:4326)이어야](https://rstudio.github.io/leaflet/articles/projections.html) 하므로, `sf::st_transform()`을 이용하여 변환하자.<br>
 ```r
 combined_data_l <- st_transform(combined_data, 4326)
@@ -30,11 +29,11 @@ pal <- colorNumeric(palette = "Purples", domain = combined_data_l$mean_income)
 
 3. 구 이름을 쓸 위치값을 객체에 저장합니다. 구 이름을 어디에 쓰면 좋을까요? 아마 각 구의 가운데 위치 정도에 쓰는 게 좋을 것 같습니다. [`sf::st_centroid()`](https://r-spatial.github.io/sf/reference/geos_unary.html)는 각 polygon geometry의 무게중심 (centroid) 좌표를 sf 객체로 리턴합니다. <br>
 ```r
-cent_seoul_gu<- st_centroid(map_seoul_gu_l) 
+cent_seoul_gu <- st_centroid(map_seoul_gu_l) 
 ```
 
-### Plotting with {leaflet}
-1. leaflet 객체를 생성합니다. leaflet은 base pipe operator (|>)를 통해 요소를 덧붙일 수 있어요. `addTiles()`를 통해 base map, 그러니까 가장 배경에 깔리는 기본 지도를 추가할 수 있습니다.<br>
+# Plotting with {leaflet}
+1. leaflet 객체를 생성합니다. Pipe operator (|>)를 통해 leaflet 객체에 요소를 덧붙일 수 있어요. `addTiles()`를 통해 base map, 그러니까 배경에 깔리는 기본 지도를 추가합니다.<br>
 ```r
 library(leaflet)
 l <- leaflet() |> addTiles() |> 
@@ -79,7 +78,7 @@ addPolygons(data = combined_data_l,
 - `fillColor = ~pal(mean_income)` 파라미터값은 무슨 뜻일까요?
 `pal()`함수에 `mean_income`을 넣으면 데이터 수에 맞는 팔레트가 생성됩니다. 그 팔레트를 사용하겠다는 의미에요.
 - 한편 `highlightOptions`는 마우스 커서를 특정 polygon 또는 subpolygon에 갖다 대었을 때 (hover) 어떤 변화를 일으킬지 지정하는 파라미터입니다.
-- `label`은 마우스 커서를 특정 polygon에 갖다 대었을 떄 (hover) 나오는 툴팁 (tooltip)에 표시할 내용을 지정하는 파라미터입니다. 사전에 만든 `labels` 객체는 다음과 같이 html 형식의 문자열을 포함하는 list입니다.<br>
+- `label`은 마우스 커서를 특정 polygon에 갖다 대었을 때 (hover) 나오는 툴팁 (tooltip)에 표시할 내용을 지정하는 파라미터입니다. 사전에 만든 `labels` 객체는 다음과 같이 html 형식의 문자열을 포함하는 list입니다.<br>
 ```r
 labels <- sprintf(
   "<strong>%s</strong><br/>평균 %s원",
@@ -100,7 +99,7 @@ htmlwidgets::saveWidget(l, file = "map_leaflet.html")
 ```
 
 ### Leaflet이나 plotly 같은 html widget을 jekyll blog post에 삽입하기!
-이 페이지도 github pages를 jekyll을 통해 만들었습니다. 위에서 본 interactive plot을 이 포스트에 어떻게 넣었을까요? 바로 iframe 요소를 사용하면 leaflet이나 plotly로 만든 html 파일을 jekyll post에 넣을 수 있습니다. 아래의 코드를 원하는 곳에 넣으면 됩니다.
+Github pages를 jekyll의 도움을 받아 만든 것이 제 사이트입니다. 이곳의 모든 포스트는 jekyll을 이용했다고 볼 수 있죠. 제가 만든 interactive plot을 이 포스트에 어떻게 넣을 수 있을까요?<br> 바로 iframe 요소를 사용하면 leaflet이나 plotly로 만든 html 파일을 jekyll post에 넣을 수 있어요! 아래의 코드를 원하는 곳에 넣으면 됩니다.
  [Rob Williams의 포스트](https://jayrobwilliams.com/posts/2020/09/jekyll-html)에도 이에 관한 설명이 잘 되어 있으니 참고해볼만 하겠습니다.
 ```md
 <iframe src="/files/interactive_page/map_leaflet.html" height="600px" width="100%" style="border:none;"></iframe>
