@@ -10,24 +10,24 @@ tags: Visualization
 
 [Visualizations/Seoul_2023_Dong_income_expenditure](https://github.com/gaba-tope/Visualizations/tree/04bd7c6c96bb4fa6898e6f70c50e9f1b664517d8/Seoul_2023_Dong_income_expenditure)에 사용한 R script가 있으니 확인해 보아도 좋겠습니다.
 
-Leaflet을 처음 사용하여 interactive choropleth map을 만드는 경우, [An R Interface to Leaflet Maps](https://rstudio.github.io/leaflet/index.html)를 참고하면 도움이 될 수 있습니다.
+Leaflet을 처음 사용하여 interactive choropleth map을 만드는 경우라면 [An R Interface to Leaflet Maps](https://rstudio.github.io/leaflet/index.html)를 읽어보길 추천해요.
 
 
 아래에서는 핵심 코드를 살펴봅시다. 이전에 사용하고 다듬은 데이터셋과 객체들을 그대로 사용합니다.
 
 # Data Wrangling
-1. [이전 포스트]({% post_url 2023-12-24-seoul-dong-visual %})에서 combined_data와 map_seoul_gu의 EPSG를 5179로 맞추었다. 하지만 leaflet 패키지로 사용할 shape file 등은 좌표계 (CRS; Coordinate Reference System)이 [WGS84 (= EPSG:4326)이어야](https://rstudio.github.io/leaflet/articles/projections.html) 하므로, `sf::st_transform()`을 이용하여 변환하자.<br>
+1. [이전 포스트]({% post_url 2023-12-24-seoul-dong-visual %})에서 combined_data와 map_seoul_gu의 EPSG를 5179로 맞추었죠. 하지만 leaflet 패키지로 사용할 shape file 등은 좌표계 (CRS; Coordinate Reference System)가 [WGS84 (= EPSG:4326)이어야](https://rstudio.github.io/leaflet/articles/projections.html) 하므로, `sf::st_transform()`을 이용하여 변환합니다.<br>
 ```r
 combined_data_l <- st_transform(combined_data, 4326)
 map_seoul_gu_l <- st_transform(map_seoul_gu, 4326)
 ```
 
-2. 색칠에 사용할 팔레트를 만들자. `leaflet::colorNumeric`은 주어진 팔레트와 데이터를 짝짓는 함수를 리턴합니다. 
+2. 색칠에 사용할 팔레트를 만들어야겠죠? `leaflet::colorNumeric`은 주어진 팔레트와 데이터를 짝짓는 함수를 리턴합니다. 
 ```r
 pal <- colorNumeric(palette = "Purples", domain = combined_data_l$mean_income)
 ```
 
-3. 구 이름을 쓸 위치값을 객체에 저장합니다. 구 이름을 어디에 쓰면 좋을까요? 아마 각 구의 가운데 위치 정도에 쓰는 게 좋을 것 같습니다. [`sf::st_centroid()`](https://r-spatial.github.io/sf/reference/geos_unary.html)는 각 polygon geometry의 무게중심 (centroid) 좌표를 sf 객체로 리턴합니다. <br>
+3. 구 이름을 쓸 위치값을 객체에 저장합니다. 구 이름을 어디에 쓰면 좋을까요? 아마 각 구의 가운데 위치 부근에 쓰면 좋겠죠. [`sf::st_centroid()`](https://r-spatial.github.io/sf/reference/geos_unary.html)는 각 polygon geometry의 무게중심 (centroid) 좌표를 sf 객체로 리턴합니다. <br>
 ```r
 cent_seoul_gu <- st_centroid(map_seoul_gu_l) 
 ```
@@ -98,10 +98,9 @@ labels <- sprintf(
 htmlwidgets::saveWidget(l, file = "map_leaflet.html") 
 ```
 
-### Leaflet이나 plotly 같은 html widget을 jekyll blog post에 삽입하기!
-Github pages를 jekyll의 도움을 받아 만든 것이 제 사이트입니다. 이곳의 모든 포스트는 jekyll을 이용했다고 볼 수 있죠. 제가 만든 interactive plot을 이 포스트에 어떻게 넣을 수 있을까요?<br> 바로 iframe 요소를 사용하면 leaflet이나 plotly로 만든 html 파일을 jekyll post에 넣을 수 있어요! 아래의 코드를 원하는 곳에 넣으면 됩니다.
- [Rob Williams의 포스트](https://jayrobwilliams.com/posts/2020/09/jekyll-html)에도 이에 관한 설명이 잘 되어 있으니 참고해볼만 하겠습니다.
+# Leaflet을 jekyll blog post에 삽입하기
+Github pages를 jekyll의 도움을 받아 만든 것이 제 사이트입니다. 이곳의 모든 포스트는 jekyll을 이용했다고 볼 수 있죠. 제가 만든 interactive plot을 이 포스트에 어떻게 넣을 수 있을까요?<br> 바로 iframe 요소를 사용하면 leaflet이나 plotly 등으로 만든 html 파일을 jekyll post에 넣을 수 있습니다.<br>
 ```md
 <iframe src="/files/interactive_page/map_leaflet.html" height="600px" width="100%" style="border:none;"></iframe>
 ```
-
+ [Rob Williams의 포스트](https://jayrobwilliams.com/posts/2020/09/jekyll-html)에도 이에 관한 설명이 잘 되어 있으니 참고해볼만 하겠습니다.
