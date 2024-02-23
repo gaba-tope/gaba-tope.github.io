@@ -99,7 +99,7 @@ htmlwidgets::saveWidget(l, file = "map_leaflet.html")
 ```
 
 # Leaflet을 jekyll post에 삽입하기
-Github pages를 jekyll의 도움을 받아 만든 것이 제 사이트입니다. 이곳의 모든 포스트는 jekyll을 이용했다고 볼 수 있죠. 제가 만든 interactive plot을 이 포스트에 어떻게 넣을 수 있을까요?<br> 바로 iframe 요소를 사용하면 leaflet이나 plotly 등으로 만든 html 파일을 jekyll post에 넣을 수 있습니다.<br>
+이 웹사이트는 jekyll을 이용하여 만든 github pages입니다. 제가 만든 interactive plot를 게시글에 어떻게 넣을 수 있을까요?<br> 바로 iframe 요소를 사용하면 leaflet이나 plotly 등으로 만든 html 파일을 jekyll post에 넣을 수 있습니다.<br>
 ```md
 <iframe src="/files/interactive_page/map_leaflet.html" height="600px" width="100%" style="border:none;"></iframe>
 ```
