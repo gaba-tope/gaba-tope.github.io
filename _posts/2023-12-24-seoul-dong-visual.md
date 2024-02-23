@@ -4,13 +4,10 @@ tags: Visualization
 ---
 
 서울시의 행정동별 평균 소득 및 소비 데이터셋을 우연히 발견하여, 시각화해보면 좋겠다 싶어 만들어보았어요.
-[Visualization/Seoul_2023_Dong_income_expenditure](https://github.com/gaba-tope/Visualization/tree/1f9327faee7ed927b0cef57bbee878552f5afba3/Seoul_2023_Dong_income_expenditure)에 사용한 R script가 있으니 확인해 보아도 좋겠습니다.
+[Visualizations/Seoul_2023_Dong_income_expenditure](https://github.com/gaba-tope/Visualizations/tree/04bd7c6c96bb4fa6898e6f70c50e9f1b664517d8/Seoul_2023_Dong_income_expenditure)에 사용한 R script가 있으니 확인해 보아도 좋겠습니다.
 
-  <iframe id="Seoul_dong"
-      width="140%"
-      height = "600"
-      src="https://rawcdn.githack.com/gaba-tope/Visualization/1f9327faee7ed927b0cef57bbee878552f5afba3/Seoul_2023_Dong_income_expenditure/girafe_map_int.html">
-  </iframe>
+{% include interactive_page/map_leaflet.html %}
+
 
 
 ### Dataset
@@ -50,5 +47,5 @@ seoul_20231_updated[nrow(seoul_20231_updated), 17] <- "1174052600"
 
 ### Plotting
 1. {ggplot2}의 geom_sf object을 사용하여 지도를 그림. 
-2. Interactive plot은 {ggiraph}의 geom_sf_interactive() object을 {ggplot2}와 사용하여 그림.
+2. [Interactive plot](https://gaba-tope.github.io/2023/12/24/seoul-dong-visual.html)은 {leaflet} 패키지를 사용하여 그림.
 
