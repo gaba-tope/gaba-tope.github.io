@@ -8,7 +8,7 @@ tags: Visualization
 
 <iframe src="/files/interactive_page/map_leaflet.html" height="600px" width="100%" style="border:none;"></iframe>
 
-[Visualizations/Seoul_2023_Dong_income_expenditure](https://github.com/gaba-tope/Visualizations/tree/04bd7c6c96bb4fa6898e6f70c50e9f1b664517d8/Seoul_2023_Dong_income_expenditure)에 사용한 R script가 있으니 확인해 보아도 좋겠습니다.
+[Visualizations/Seoul_2023_Dong_income_expenditure](https://github.com/gaba-tope/Visualizations/blob/04bd7c6c96bb4fa6898e6f70c50e9f1b664517d8/Seoul_2023_Dong_income_expenditure/Seoul_Dong_income_exp.R)에 사용한 R script가 있으니 확인해 보아도 좋겠습니다.
 
 Leaflet을 처음 사용하여 interactive choropleth map을 만드는 경우라면 [An R Interface to Leaflet Maps](https://rstudio.github.io/leaflet/index.html)를 읽어보길 추천해요.
 
