@@ -66,6 +66,7 @@ paths:
   root    :  / # title link url, "/" (default)
   home    : /index.html # home layout url, "/" (default)
   archive : /archive.html # "/archive.html" (default)
+  blog    : /blog.html
   rss     : # "/feed.xml" (default)
 
 
