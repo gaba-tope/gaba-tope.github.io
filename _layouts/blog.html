@@ -26,9 +26,9 @@ titles:
   # @end locale config
 ---
 
-<div class="layout--archive js-all">
+<div class="layout--blog js-all">
   {%- include tags.html -%}
-  <div class="js-result layout--archive__result d-none">
+  <div class="js-result layout--blog__result d-none">
     {%- include blog-list.html articles=site.blog type='brief' show_info=true reverse=true group_by='year' -%}
   </div>
 </div>
