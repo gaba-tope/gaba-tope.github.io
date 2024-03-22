@@ -24,9 +24,6 @@ header:
       tr      : &TR       Arşivdekiler
       # @end locale config
     url: /archive.html
-  - titles:
-      en      : &EN       Blog
-      ko      : &KO       Blog
-    url: /blog.html
+
 
   
