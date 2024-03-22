@@ -23,7 +23,7 @@ baseurl :  # does not include hostname
 title   : CHOI, Tope
 subtitle : 
 description: > # this means to ignore newlines until "Language & timezone"
-  Your Site Description
+  Tope's personal blog
 
 
 ## => Language and Timezone

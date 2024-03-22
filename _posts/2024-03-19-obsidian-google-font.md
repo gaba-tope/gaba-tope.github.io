@@ -1,6 +1,6 @@
 ---
 title: Obsidian에서 지정한 부분만 특정 폰트 사용하기 - Google Font
-tags: [obsidian, markdown]
+tags: [obsidian]
 ---
 ## 상황
 Obsidian같은 markdown 파일에서 지정한 부분만 특정한 폰트를 사용하기를 원할 수 있다.
