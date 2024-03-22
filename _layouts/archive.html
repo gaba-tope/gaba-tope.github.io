@@ -40,7 +40,7 @@ titles:
 <!--Test block-->
 <a name="posts"></a>
 <archieve>
-  <name>Posts</name>
+  <name>## Posts</name>
   {%- assign posts = site.posts | where:"categories","post" -%}
   {%- assign groupedByYear = posts | group_by_exp:"post","post.date | date:'%Y' " -%}
   <!-- total posts: {{ posts.size }} -->
