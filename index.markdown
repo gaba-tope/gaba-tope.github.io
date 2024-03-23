@@ -1,5 +1,8 @@
 ---
 layout: articles 
+article_header:
+  type: overlay
+  theme: dark
 title: Tope
 articles:
   data_source: site.posts
