@@ -7,7 +7,8 @@ layout: home
 
 
 # Tope 
-Undergraduate student majoring in Bio-convergence.
+Undergraduate student majoring in Bio-convergence. 
+You may call me Tope in the online community.
 <br>
 
 ### Currently,
