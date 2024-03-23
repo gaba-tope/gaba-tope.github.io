@@ -26,7 +26,7 @@ header:
     url: /archive.html
   - titles: 
       en      : &EN       About
-    url: /about
+    url: /about/
 
 
   
