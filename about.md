@@ -26,7 +26,7 @@ titles:
 key: page-about
 permalink: /about/
 ---
-# Tope
+## Tope
 
 Undergraduate student majoring in Bio-convergence. 
 You may call me Tope in the online community.

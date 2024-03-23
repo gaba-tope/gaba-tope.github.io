@@ -11,7 +11,7 @@ background_color: "#EEF5FC"
 show_title: true
 title: CHOI, Tope
 ---
-
+<style>
 .overlay {
   min-height: auto !important;
   height: 18rem !important;
@@ -19,3 +19,4 @@ title: CHOI, Tope
 h1 {
   margin-top: 2rem;
 }
+</style>
