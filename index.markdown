@@ -4,6 +4,8 @@
 
 layout: home
 mode: immersive
+articles:
+    excerpt_type: html
 article_header:
     type: overlay
     theme: dark
