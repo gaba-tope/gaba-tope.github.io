@@ -27,9 +27,7 @@ header:
   - titles: 
       en      : &EN       About
     url: /about/
-  - titles:
-      en      : &EN       Blog
-    url: /blog.html
+
 
 
   
