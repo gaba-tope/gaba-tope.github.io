@@ -4,18 +4,14 @@
 
 layout: home
 mode: immersive
-articles:
-    excerpt_type: html
+article_header:
+    type: overlay
+    theme: dark
+background_color: "#EEF5FC"
+show_title: true
+title: CHOI, Tope
 ---
-<style>
-.overlay {
-  min-height: auto !important;
-  height: 18rem !important;
-}
-h1 {
-  margin-top: 2rem;
-}
-</style>
+>
 <!------
 article_header:
     type: overlay
