@@ -1,6 +1,5 @@
 ---
 layout: home
-mode: immersive
 article_header:
   type: overlay
   theme: dark
