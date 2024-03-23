@@ -1,10 +1,10 @@
 ---
-layout: home
-mode: immersive
-article_header:
-  type: overlay
-  theme: dark
-background_color: "#EEF5FC"
-show_title: true
-title: CHOI, Tope
+layout: articles 
+title: Tope
+articles:
+  data_source: site.posts
+  show_cover: false
+  show_excerpt: true
+  show_readmore: true
+  show_info: true
 ---
