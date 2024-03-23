@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: page
 titles:
   # @start locale config
   en      : &EN       About
@@ -24,11 +24,12 @@ titles:
   fr-LU   : *FR
   # @end locale config
 key: page-about
+permalink: /about/
 ---
 
-
-## Yujin Choi 
-Undergraduate student majoring in Bio-convergence at Underwood Internatinal College, Yonsei University.
+# Tope 
+Undergraduate student majoring in Bio-convergence. 
+You may call me Tope in the online community.
 <br>
 
 ### Currently,
@@ -37,11 +38,24 @@ I'm in the midst of a two-year hiatus from my school life, fulfilling my commitm
 ### Field of Interests
 - Now on a quest to uncover what truly captivates me. 
 - Among the diverse fields, I found myself fascinated to neurobiology. Learning how nervous system works at a molecular and cellular level is highly intriguing.
-- I am keen to comprehend the mathematical principles underlying statistical estimation and hypothesis testing.
+- I am keen to comprehend the mathematical principles underlying statistical inference.
 
 
-# Stats
+### Courses taken (credits)
+- Neurobiology (3)
+- Neurodegenerative Disorders (3)
+
+- Organic Chemistry (3 * 2 semester)
+- Biochemistry (3 * 2 semester)
+- Molecular Biology (3)
+- Cell Biology (3 * 2 semester)
+- Histology (3)
+- Physiology (3)
+- Molecular Structure Determination Using Spectroscopic Methods (3)
+- Nano-Bio Analytical Methods (3)
+
+
+### Stats
 <p>
-    <img src="https://github-readme-stats.vercel.app/api?username=gaba-tope&show_icons=true&layout=compact&bg_color=30,12c2e9,f64f59&title_color=fff&text_color=fff&exclude_repo=gaba-tope.github.io">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=gaba-tope&layout=compact&bg_color=30,1565C0,b92b27&title_color=fff&text_color=fff&exclude_repo=gaba-tope.github.io">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=gaba-tope&layout=compact&bg_color=30,1565C0,b92b27&title_color=fff&text_color=fff&exclude_repo=gaba-tope.github.io&hide=html,css,javascript">
 </p>
