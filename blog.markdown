@@ -31,5 +31,3 @@ titles:
   show_readmore: true
   show_info: true
 ---
-
-{{ content }}
