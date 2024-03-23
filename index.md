@@ -2,6 +2,6 @@
 layout: home
 articles:
    excerpt_type: html
-#permalink: /index/
+permalink: /index/
 background_color: "#EEF5FC"
 ---
