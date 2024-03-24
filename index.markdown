@@ -7,7 +7,7 @@ article_header:
 background_color: "#a5d2ff"
 title: Tope
 articles:
-  data_source: site.posts
+  data_source: paginator.posts
   show_cover: true
   show_excerpt: true
   show_readmore: true
