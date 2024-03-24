@@ -1,12 +1,12 @@
 ---
-layout: articles 
+layout: home
 mode: immersive
-background_color: "#a5d2ff"
+article_header:
+    type: overlay
+    theme: dark
+background_color: "#EEF5FC"
+background_color: "#EEF5FC"
+show_title: true
 title: Tope
-articles:
-  data_source: site.posts
-  show_cover: true
-  show_excerpt: true
-  show_readmore: true
-  show_info: true
 ---
+{{contents}}
