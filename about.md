@@ -43,7 +43,6 @@ I'm in the midst of a two-year hiatus from my school life, fulfilling my commitm
 ### Courses taken (credits)
 - Neurobiology (3)
 - Neurodegenerative Disorders (3)
-
 - Organic Chemistry (3 * 2 semester)
 - Biochemistry (3 * 2 semester)
 - Molecular Biology (3)
@@ -54,7 +53,7 @@ I'm in the midst of a two-year hiatus from my school life, fulfilling my commitm
 - Nano-Bio Analytical Methods (3)
 
 
-### Stats
+### Github Stats
 <p>
     <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=gaba-tope&layout=compact&bg_color=30,1565C0,b92b27&title_color=fff&text_color=fff&exclude_repo=gaba-tope.github.io&hide=html,css,javascript">
 </p>
