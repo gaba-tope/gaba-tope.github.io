@@ -205,21 +205,8 @@ exclude:
 
 defaults:
   - scope:
-      path: "_posts/works"
-      type: works
-    values:
-      layout: article
-      sharing: true
-      license: true
-      aside:
-        toc: true
-      show_edit_on_github: false
-      show_subscribe: true
-      pageview: true
-
-  - scope:
-      path: "_posts/blog"
-      type: blog
+      path: ""
+      type: posts
     values:
       layout: article
       sharing: true
