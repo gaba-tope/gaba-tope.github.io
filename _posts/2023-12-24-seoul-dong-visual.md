@@ -1,7 +1,7 @@
 ---
 title: 서울시 행정동별 평균 소득 시각화
 tags: Visualization
-categories: post
+categories: work
 cover: /files/cover/2023-12-24-seoul-dong-visual-cover.png
 ---
 

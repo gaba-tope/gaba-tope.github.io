@@ -1,6 +1,7 @@
 ---
 title: Obsidian에서 지정한 부분만 특정 폰트 사용하기 - Google Font
 tags: [obsidian]
+categories: work
 cover: /files/cover/obsidian_logo.png
 ---
 ## 상황
