@@ -217,14 +217,6 @@ defaults:
       show_subscribe: true
       pageview: true
 
- # _pages                      : test
-  - scope:
-      path: "_pages"
-      type: pages
-    values:
-      layout: single
-      author_profile: true
-      
 ## => Plugins
 ##############################
 plugins:
