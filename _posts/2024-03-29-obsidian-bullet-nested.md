@@ -14,11 +14,11 @@ When an unordered list is used within the ordered list, the bullet styles are no
 
 - What we expect:
 <p align="left">
-  <img src="/files/img/expect-sol1" width="40%">
+  <img src="/files/img/expect-sol1.png" width="40%">
 </p>
 - What is actually shown:
 <p align="left">
-  <img src="/files/img/actual-sol1" width="40%">
+  <img src="/files/img/actual-sol1.png" width="40%">
 </p>
 
 ```css
