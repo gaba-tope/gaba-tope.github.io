@@ -10,17 +10,16 @@ I could find the working solution in the [Obsidian forum post](https://forum.obs
 For those unfamiliar with applying style with CSS, [CSS Styling Lists](https://www.w3schools.com/css/css_list.asp) tutorial on W3Schools is a helpful resource for beginners.
 
 ### Downside
-- When an unordered list is used within the ordered list, the bullet styles are not shown as expected.
-- i.e. What we expect: 
-1. (First level Ordered list)
-    - (First level Unordered list)
-	    - (Second level Unordered list)
-2. (First level Ordered list)
-- Instead what is shown in reality:
-	1. (First level Ordered list)
-	    - (Second level Unordered list)
-		    - (Third level Unordered list)
-	2. (First level Ordered list)
+When an unordered list is used within the ordered list, the bullet styles are not shown as expected.
+
+- What we expect:
+<p align="left">
+  <img src="/files/img/expect-sol1" width="40%">
+</p>
+- What is actually shown:
+<p align="left">
+  <img src="/files/img/actual-sol1" width="40%">
+</p>
 
 ```css
 /* LEVEL 1 */
@@ -189,8 +188,8 @@ Slight modification to the [ZenMoto's solution](https://forum.obsidian.md/t/prob
 
 ```
 Using the script for level 1 ~ level 3, I now have the desired result:
-<p align="center">
-  <img src="/files/img/nested_unordered_list.png" width="60%">
+<p align="left">
+  <img src="/files/img/nested_unordered_list.png" width="40%">
 </p>
 
 ### Downside
