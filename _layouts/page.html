@@ -151,6 +151,7 @@ layout: base
                     {%- if page.excerpt -%}
                       <p class="overlay__excerpt">{{ page.excerpt | strip_html | strip_newlines | strip | truncate: _article_header_excerpt_truncate }}</p>
                     {%- endif -%}
+                    <p class="overlay__subtitle"></p>
                     {%- if page.article_header.actions -%}
                       <ul class="menu">
                         {%- for _action in page.article_header.actions -%}
