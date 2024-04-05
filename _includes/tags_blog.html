@@ -1,5 +1,5 @@
 {%- assign blog_posts = site.posts | where:"categories","blog" -%}
-{%- assign blog_tags = blog_posts | map: 'tags' | uniq -%}
+{%- assign blog_tags = blog_posts | map: 'tags' | flatten | uniq -%}
 
 {%- assign _tag_max_size = 1 -%}
 {%- assign _tag_min_size = 1 -%}
@@ -26,16 +26,11 @@
         Show All<div class="tag-button__count">{{ blog_posts | size }}</div>
       </button>
     </li>
-    {%- for _tag in blog_tags -%}
+    {%- for tag in blog_tags -%}
       {%- assign tag_posts = blog_posts | where_exp:"item", "item.tags contains tag" -%}
       <li><button type="button" class="button button--pill tag-button" data-encode="{{ tag | strip | url_encode }}">
         <span>{{ tag | strip }}</span><div class="tag-button__count">{{ tag_posts | size }}</div>
       </button>
-      </li>
-      {%- endif -%}
-      <li><button type="button" class="button button--pill tag-button tag-button-{{ _c_index }}" data-encode="{{ _tag[0] | strip | url_encode }}">
-          <span>{{ _tag[0] | strip }}</span><div class="tag-button__count">{{ _tag[1].size }}</div>
-        </button>
       </li>
     {%- endfor -%}
   </ul>
