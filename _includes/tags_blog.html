@@ -32,6 +32,11 @@
         <span>{{ tag | strip }}</span><div class="tag-button__count">{{ tag_posts | size }}</div>
       </button>
       </li>
+      {%- endif -%}
+      <li><button type="button" class="button button--pill tag-button tag-button-{{ _c_index }}" data-encode="{{ _tag[0] | strip | url_encode }}">
+          <span>{{ _tag[0] | strip }}</span><div class="tag-button__count">{{ _tag[1].size }}</div>
+        </button>
+      </li>
     {%- endfor -%}
   </ul>
 </div>
