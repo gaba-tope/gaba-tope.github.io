@@ -30,8 +30,8 @@ titles:
   {%- include tags_blog.html -%}
   <div class="js-result layout--archive__result d-none">
    <!-- {%- include article-list.html articles=site.posts type='brief' show_info=true reverse=true group_by='year' -%} -->
-   {% assign archive_posts = site.posts | where:"categories","blog" %}
-  {%- include article-list.html articles=archive_posts type='brief' show_info=true reverse=true group_by='year' -%}
+   {% assign blog_posts = site.posts | where:"categories","blog" %}
+  {%- include article-list.html articles=blog_posts type='brief' show_info=true reverse=true group_by='year' -%}
   </div>
 </div>
 
