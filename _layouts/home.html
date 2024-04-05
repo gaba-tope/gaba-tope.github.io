@@ -27,8 +27,7 @@ titles:
 show_title: true
 background_color: "#59acff"
 articles:
-{% assign archive_posts = site.posts | where:"categories","work" %}
-  data_source: archive_posts
+  data_source: site.posts
   article_type: BlogPosting
   show_cover: true
   show_excerpt: true
