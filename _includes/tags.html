@@ -1,3 +1,7 @@
+{%- assign work_posts = site.posts | where:"categories","work" -%}
+{%- assign work_tags = work_posts | map: 'tags' | flatten | uniq -%}
+
+
 {%- assign _tag_max_size = 1 -%}
 {%- assign _tag_min_size = 1 -%}
 {%- assign _tag_cur_size = 1 -%}
@@ -19,35 +23,15 @@
   <ul class="menu">
     <li>
       <button type="button" class="button button--secondary button--pill tag-button tag-button--all" data-encode="">
-        {% assign archive_posts = site.posts | where:"categories","work" %}
         <!---Show All<div class="tag-button__count">{{ site.posts | size }}</div>--->
-        Show All<div class="tag-button__count">{{ archive_posts | size }}</div>
+        Show All<div class="tag-button__count">{{ work_posts | size }}</div>
       </button>
     </li>
-    {%- for _tag in _tags -%}
-      {%- assign _tag_cur_size = _tag[1].size -%}
-      {%- assign _tag_min_1 = _tag_min_size -%}
-      {%- assign _tag_max_1 = _tag_min_1 | plus: _tag_gap_size -%}
-      {%- assign _tag_min_2 = _tag_max_1 -%}
-      {%- assign _tag_max_2 = _tag_min_2 | plus: _tag_gap_size -%}
-      {%- assign _tag_min_3 = _tag_max_2 -%}
-      {%- assign _tag_max_3 = _tag_min_3 | plus: _tag_gap_size -%}
-      {%- assign _tag_min_4 = _tag_max_3 -%}
-      {%- assign _tag_max_4 = _tag_min_4 | plus: _tag_gap_size -%}
-      {%- if _tag_cur_size >= _tag_min_1 and _tag_cur_size < _tag_max_1 -%}
-        {%- assign _c_index = 1 -%}
-      {%- elsif _tag_cur_size >= _tag_min_2 and _tag_cur_size < _tag_max_2 -%}
-        {%- assign _c_index = 2 -%}
-      {%- elsif _tag_cur_size >= _tag_min_3 and _tag_cur_size < _tag_max_3 -%}
-        {%- assign _c_index = 3 -%}
-      {%- elsif _tag_cur_size >= _tag_min_4 and _tag_cur_size < _tag_max_4 -%}
-        {%- assign _c_index = 4 -%}
-      {%- else -%}
-        {%- assign _c_index = 4 -%}
-      {%- endif -%}
-      <li><button type="button" class="button button--pill tag-button tag-button-{{ _c_index }}" data-encode="{{ _tag[0] | strip | url_encode }}">
-          <span>{{ _tag[0] | strip }}</span><div class="tag-button__count">{{ _tag[1].size }}</div>
-        </button>
+    {%- for tag in work_tags -%}
+      {%- assign tag_posts = work_posts | where_exp:"item", "item.tags contains tag" -%}
+      <li><button type="button" class="button button--pill tag-button" data-encode="{{ tag | strip | url_encode }}">
+        <span>{{ tag | strip }}</span><div class="tag-button__count">{{ tag_posts | size }}</div>
+      </button>
       </li>
     {%- endfor -%}
   </ul>
