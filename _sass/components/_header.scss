@@ -106,6 +106,10 @@
 }
 
 .navigation__item {
+  a {
+    font-weight: bold; //Apply bold font weight to the links
+  }
+
   &::after {
     display: block;
     margin-bottom: -4px;
@@ -116,6 +120,7 @@
 .navigation__item--active {
   a {
     @include link-colors($main-color-1, $main-color-1);
+    font-weight: bold; // Maintain bold font weight for active links
   }
   &::after {
     @include split-line(bottom, 4px, $main-color-1);
