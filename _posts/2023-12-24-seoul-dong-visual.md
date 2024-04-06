@@ -6,18 +6,18 @@ cover: /files/cover/2023-12-24-seoul-dong-visual-cover.png
 ---
 
 서울시의 행정동별 평균 소득 및 소비 데이터셋을 우연히 발견하여, 시각화해보면 좋겠다 싶어 만들어보았어요.
-[Visualizations/Seoul_2023_Dong_income_expenditure](https://github.com/gaba-tope/Visualizations/blob/04bd7c6c96bb4fa6898e6f70c50e9f1b664517d8/Seoul_2023_Dong_income_expenditure/Seoul_Dong_income_exp.R)에 사용한 R script가 있으니 확인해 보아도 좋겠습니다.
+[Visualizations/Seoul_2023_Dong_income_expenditure](https://github.com/gaba-tope/Visualizations/blob/04bd7c6c96bb4fa6898e6f70c50e9f1b664517d8/Seoul_2023_Dong_income_expenditure/Seoul_Dong_income_exp.R){:target="_blank"}에 사용한 R script가 있으니 확인해 보아도 좋겠습니다.
 아래에서는 핵심 코드를 살펴봅시다.
 
 <p align="center">
   <img src="/files/img/seoul_plot.png" width="90%">
 </p>
 
-Geospatial data의 시각화에 대한 기본적인 내용은 [Claus O. Wilke의 Fundamentals of Data Visualization](https://clauswilke.com/dataviz/geospatial-data.html)에서 살펴보기를 추천해요.
+Geospatial data의 시각화에 대한 기본적인 내용은 [Claus O. Wilke의 Fundamentals of Data Visualization](https://clauswilke.com/dataviz/geospatial-data.html){:target="_blank"}에서 살펴보기를 추천해요.
 
 # Dataset
 1. 서울시 행정동별 평균 소득 및 소비 데이터셋 (이하 '서울시 데이터셋')
-    - "서울 열린데이터 광장"에서 제공하는 [서울시 상권분석서비스(소득소비-서울시)](https://data.seoul.go.kr/dataList/OA-22168/S/1/datasetView.do)의 .csv 파일을 다운로드하여 사용함. 
+    - "서울 열린데이터 광장"에서 제공하는 [서울시 상권분석서비스(소득소비-서울시)](https://data.seoul.go.kr/dataList/OA-22168/S/1/datasetView.do){:target="_blank"}의 .csv 파일을 다운로드하여 사용함. 
     - 최신수정일자 2023.11.13일자의 데이터
     - License: CC BY
 ```r
@@ -25,10 +25,10 @@ Geospatial data의 시각화에 대한 기본적인 내용은 [Claus O. Wilke의
 raw_seoul <- read.csv("./Seoul_income_expendit_dong.csv",fileEncoding = "euc-kr") 
 ```
 2. 서울시 구역의 도형 데이터셋 (이하 '지도 데이터셋')
-    - ["주소기반산업지원서비스"]("https://business.juso.go.kr/")의 "제공하는 주소" - "구역의 도형" - 2022년 11월 자료 선택하여 수령 ("구역의도형_전체분_서울특별시.zip") 후 사용함.
+    - ["주소기반산업지원서비스"]("https://business.juso.go.kr/"){:target="_blank"}의 "제공하는 주소" - "구역의 도형" - 2022년 11월 자료 선택하여 수령 ("구역의도형_전체분_서울특별시.zip") 후 사용함.
     - "TL_SCCO_GEMD.shp"이 서울시 행정동의 구역의 도형 shape file임. .dbf 파일과 .shx 파일과 동일 directory에 있어야 함을 유의.
     - "TL_SCCO_SIG.shp"이 서울시 구의 구역의 도형 shape file임. 마찬가지로 .dbf 파일과 .shx 파일과 동일 directory에 있어야 함.
-    - shp, dbf, shx, prj 파일과 CRS, EPSG에 관해서는 한국R사용자회가 작성한 [지리정보 - R (공간통계를 위한 데이터 사이언스)](https://statkclee.github.io/spatial/geo-spatial-r.html)를 참고하자.
+    - shp, dbf, shx, prj 파일과 CRS, EPSG에 관해서는 한국R사용자회가 작성한 [지리정보 - R (공간통계를 위한 데이터 사이언스)](https://statkclee.github.io/spatial/geo-spatial-r.html){:target="_blank"}를 참고하자.
 
 ```r
 # Seoul Dong polygon Data
@@ -108,7 +108,7 @@ seoul_plot <-   ggplot() +
 ```r
     geom_sf(data = map_seoul_gu, color = text_col, alpha = 0) +
 ```
-4. 어떤 색을 사용할까요? Colorbrewer에서 제공하는 ["Purples" 팔레트](https://r-graph-gallery.com/38-rcolorbrewers-palettes.html)를 사용합니다. [scale_fill_distiller()](https://ggplot2.tidyverse.org/reference/scale_brewer.html) 함수를 덧붙입시다. Legend의 limit과 break을 설정합니다.
+4. 어떤 색을 사용할까요? Colorbrewer에서 제공하는 ["Purples" 팔레트](https://r-graph-gallery.com/38-rcolorbrewers-palettes.html){:target="_blank"}를 사용합니다. [scale_fill_distiller()](https://ggplot2.tidyverse.org/reference/scale_brewer.html){:target="_blank"} 함수를 덧붙입시다. Legend의 limit과 break을 설정합니다.
 ```r
 scale_fill_distiller(palette = "Purples", direction = 1, labels = scales::label_comma(),
                        limits = c(2000000, 7500000), breaks = seq(2000000, 7500000, 1000000)) +

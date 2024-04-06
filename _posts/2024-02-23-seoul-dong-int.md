@@ -10,15 +10,15 @@ cover: /files/cover/2024-02-23-seoul-dong-int-cover.png
 
 <iframe src="/files/interactive_page/map_leaflet.html" height="600px" width="100%" style="border:none;"></iframe>
 
-[Visualizations/Seoul_2023_Dong_income_expenditure](https://github.com/gaba-tope/Visualizations/blob/04bd7c6c96bb4fa6898e6f70c50e9f1b664517d8/Seoul_2023_Dong_income_expenditure/Seoul_Dong_income_exp.R)에 사용한 R script가 있으니 확인해 보아도 좋겠습니다.
+[Visualizations/Seoul_2023_Dong_income_expenditure](https://github.com/gaba-tope/Visualizations/blob/04bd7c6c96bb4fa6898e6f70c50e9f1b664517d8/Seoul_2023_Dong_income_expenditure/Seoul_Dong_income_exp.R){:target="_blank"}에 사용한 R script가 있으니 확인해 보아도 좋겠습니다.
 
-Leaflet을 처음 사용하여 interactive choropleth map을 만드는 경우라면 [An R Interface to Leaflet Maps](https://rstudio.github.io/leaflet/index.html)를 읽어보길 추천해요.
+Leaflet을 처음 사용하여 interactive choropleth map을 만드는 경우라면 [An R Interface to Leaflet Maps](https://rstudio.github.io/leaflet/index.html){:target="_blank"}를 읽어보길 추천해요.
 
 
 아래에서는 핵심 코드를 살펴봅시다. 이전에 사용하고 다듬은 데이터셋과 객체들을 그대로 사용합니다.
 
 # Data Wrangling
-1. [이전 포스트]({% post_url 2023-12-24-seoul-dong-visual %})에서 combined_data와 map_seoul_gu의 EPSG를 5179로 맞추었죠. 하지만 leaflet 패키지로 사용할 shape file 등은 좌표계 (CRS; Coordinate Reference System)가 [WGS84 (= EPSG:4326)이어야](https://rstudio.github.io/leaflet/articles/projections.html) 하므로, `sf::st_transform()`을 이용하여 변환합니다.<br>
+1. [이전 포스트]({% post_url 2023-12-24-seoul-dong-visual %})에서 combined_data와 map_seoul_gu의 EPSG를 5179로 맞추었죠. 하지만 leaflet 패키지로 사용할 shape file 등은 좌표계 (CRS; Coordinate Reference System)가 [WGS84 (= EPSG:4326)이어야](https://rstudio.github.io/leaflet/articles/projections.html){:target="_blank"} 하므로, `sf::st_transform()`을 이용하여 변환합니다.<br>
 ```r
 combined_data_l <- st_transform(combined_data, 4326)
 map_seoul_gu_l <- st_transform(map_seoul_gu, 4326)
@@ -29,7 +29,7 @@ map_seoul_gu_l <- st_transform(map_seoul_gu, 4326)
 pal <- colorNumeric(palette = "Purples", domain = combined_data_l$mean_income)
 ```
 
-3. 구 이름을 쓸 위치값을 객체에 저장합니다. 구 이름을 어디에 쓰면 좋을까요? 아마 각 구의 가운데 위치 부근에 쓰면 좋겠죠. [`sf::st_centroid()`](https://r-spatial.github.io/sf/reference/geos_unary.html)는 각 polygon geometry의 무게중심 (centroid) 좌표를 sf 객체로 리턴합니다. <br>
+3. 구 이름을 쓸 위치값을 객체에 저장합니다. 구 이름을 어디에 쓰면 좋을까요? 아마 각 구의 가운데 위치 부근에 쓰면 좋겠죠. [`sf::st_centroid()`](https://r-spatial.github.io/sf/reference/geos_unary.html){:target="_blank"}는 각 polygon geometry의 무게중심 (centroid) 좌표를 sf 객체로 리턴합니다. <br>
 ```r
 cent_seoul_gu <- st_centroid(map_seoul_gu_l) 
 ```
@@ -105,4 +105,4 @@ htmlwidgets::saveWidget(l, file = "map_leaflet.html")
 ```md
 <iframe src="/files/interactive_page/map_leaflet.html" height="600px" width="100%" style="border:none;"></iframe>
 ```
- [Rob Williams의 포스트](https://jayrobwilliams.com/posts/2020/09/jekyll-html)에도 이에 관한 설명이 잘 되어 있으니 참고해볼만 하겠습니다.
+ [Rob Williams의 포스트](https://jayrobwilliams.com/posts/2020/09/jekyll-html){:target="_blank"}에도 이에 관한 설명이 잘 되어 있으니 참고해볼만 하겠습니다.

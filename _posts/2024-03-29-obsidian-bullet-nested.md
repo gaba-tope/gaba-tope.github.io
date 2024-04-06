@@ -8,7 +8,7 @@ cover: /files/cover/2024-03-29-obsidian-bullet-nested.png
 Obsidian does not have different bullet shapes for different levels of nested lists. To customize bullet styles, one has to modify the CSS (Cascading Style Sheets) code.
 
 ## Solution 1 - ZenMoto's
-I could find the working solution in the [Obsidian forum post](https://forum.obsidian.md/t/problems-encountered-when-modifying-unordered-lists-styles-with-css/53824/2) answered by [ZenMoto](https://forum.obsidian.md/u/ZenMoto).
+I could find the working solution in the [Obsidian forum post](https://forum.obsidian.md/t/problems-encountered-when-modifying-unordered-lists-styles-with-css/53824/2){:target="_blank"} answered by [ZenMoto](https://forum.obsidian.md/u/ZenMoto){:target="_blank"}.
 
 For those unfamiliar with applying style with CSS, [CSS Styling Lists](https://www.w3schools.com/css/css_list.asp) tutorial on W3Schools is a helpful resource for beginners.
 
@@ -111,7 +111,7 @@ When an unordered list is used within the ordered list, the bullet styles are no
 ## Solution 2 - Downside fixed
 To resolve this issue, I slightly modified the ZenMoto's script. The rule to **apply the style to the source-view mode is deprecated, but the issue can be solved in the preview-mode**. The reason why the solution cannot be applied to the source-view mode is that I do not know much about the `.markdown-source-view.mod-cm6` script, and thus couldn't come up with a solution to have designated bullet styles even under ordered lists.
 
-Slight modification to the [ZenMoto's solution](https://forum.obsidian.md/t/problems-encountered-when-modifying-unordered-lists-styles-with-css/53824/2) by me:
+Slight modification to the [ZenMoto's solution](https://forum.obsidian.md/t/problems-encountered-when-modifying-unordered-lists-styles-with-css/53824/2){:target="_blank"} by me:
 
 {% include codeHeader.html %}
 ```css
