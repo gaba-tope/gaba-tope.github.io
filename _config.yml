@@ -217,6 +217,7 @@ defaults:
       show_edit_on_github: false
       show_subscribe: true
       pageview: true
+      comment: true
 ## => Plugins
 ##############################
 plugins:
