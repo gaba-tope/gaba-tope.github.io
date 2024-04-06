@@ -7,7 +7,7 @@ categories: blog
 
 ## 개인주의적 사회관
 자유주의적 관점에서 주체적인 인간으로 살아가는 것은 곧 스스로 결정하고 표현하며 행위하는 인간으로서 살아가는 것이다. 
-- 자유주의[^1] 세계관에서 개인은 *사회 이전에*  존재하며, 각 개인은 다른 개인들과 독립되고 분리되어 존재한다[^2]. 독립적이고 동등한 개인들은 스스로 선택하고 의견을 표명하며 행위할 자유를 가지고, 사회 규범을 선택하여 살아갈 자유를 지닌다. 이러한 자유주의의 핵심 가치는 사람에 대한 존중에서 시작한다. 상대방을 한 인간으로서 존중하기 때문에 상대가 지니는 다양한 생각과 가치관을 존중하고 그가 행하는 바를 존중하는 것이다.  이는 곧 상대에게 위해를 주지 않는 한, 개인이 지니는 자유를 침해해서는 안된다는 자유주의의 핵심 주장으로 이어진다. 
+- 자유주의[^1] 세계관에서 개인은 *사회 이전에*  존재하며, 각 개인은 다른 개인들과 독립되고 분리되어 존재한다[^2]. 독립적이고 동등한 개인들은 스스로 선택하고 의견을 표명하며 행위할 자유를 가지고, 사회 규범을 선택하여 살아갈 자유를 지닌다. 이러한 자유주의의 핵심 가치는 사람에 대한 존중에서 시작한다. 상대방을 한 인간으로서 존중하기 때문에 상대가 지니는 다양한 생각과 가치관을 존중하고 그가 행하는 바를 존중하는 것이다 (Nussbaum, 2015, p.113).  이는 곧 상대에게 위해를 주지 않는 한, 개인이 지니는 자유를 침해해서는 안된다는 자유주의의 핵심 주장으로 이어진다. 
 - 한편 정신 능력에 근거하는 인격 개념에 따르면[^3], 인간은 "자유롭게 스스로 결정하며, 스스로를 발현하는 소질을" 가지므로 존엄하다. (이석배, 2019).  다시 말해 자기 결정 능력과 자기 표현 능력이 보장될 때 인간의 존엄이 보장된다는 것이다. 
 - 앞에서 제시한 두 입장을 정리해보자. **주체적인 인간으로서 삶을 살아간다는 것은 스스로 결정⋅표현하고 행동하며 살아간다는 것**이다. 인간이라면 자기 표현과 자기 결정의 소질을 가지고 있으므로, 상대방을 인간으로서 존중한다면 그가 지닌 소질을 발현할 자유를 존중해야 한다. 아마 대다수의 사람은 인간을 인간으로서 간주하고 존중하는 것이 옳다고 생각할 것이다.
 
@@ -35,6 +35,7 @@ categories: blog
 - Epstein, B. (2024). Social Ontology. In E. N. Zalta & U. Nodelman (Eds.), *The Stanford Encyclopedia of Philosophy* (Spring 2024 ed.): Metaphysics Research Lab, Stanford University. URL: <https://plato.stanford.edu/entries/social-ontology/>
 - Kuchem, M. D. (2020). Young, Gilbert, and Social Groups. *Social Theory and Practice*, 46(4), 737-763. Retrieved from http://www.jstor.org/stable/45302464
 - Machan, T. (2000). Liberalism and Atomistic Individualism. Journal of Value Inquiry, 34(2-3), 227-247. Retrieved from <https://www.proquest.com/scholarly-journals/liberalism-atomistic-individualism/docview/203901387/se-2>
+- Nussbaum, M. C. (2015). *혐오와 수치심. [Hiding from Humanity: Disgust, Shame, and the Law]*. (조계원, Trans.): 민음사.
 - Young, I. M. (2017). *차이의 정치와 정의 (Justice and the Politics of Difference)* (김도균 & 조국, Trans.): 모티브북.
 - 이석배, & 김필수. (2012). 의료영역에서 인간의 존엄, 생명, 생명권의 관계. [Verhaltnisse zwischen Menschenwurde, Lebenschutz und Lebensrecht in der Medizin]. *한국의료법학회지*, 20(2), 247-265. URL: <https://kiss.kstudy.com/ExternalLink/Ar?key=3720655>
 - 최바름. (2023). *권리중심 공공일자리 사업에서 최중증발달장애인의 노동자되기: 권리, 인간됨, 노동*. (석사). 연세대학교 대학원. URL: <https://dcollection.yonsei.ac.kr/public_resource/pdf/000000550919_20240406173249.pdf> 
