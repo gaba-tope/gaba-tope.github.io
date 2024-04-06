@@ -39,7 +39,7 @@ categories: blog
 ## Reference
 - Courtland, S. D., Gaus, G., & Schmidtz, D. (2022). Liberalism. In E. N. Zalta (Ed.), *The Stanford Encyclopedia of Philosophy* (Spring 2022 ed.): Metaphysics Research Lab, Stanford University. URL: <https://plato.stanford.edu/entries/liberalism/>
 - Epstein, B. (2024). Social Ontology. In E. N. Zalta & U. Nodelman (Eds.), *The Stanford Encyclopedia of Philosophy* (Spring 2024 ed.): Metaphysics Research Lab, Stanford University. URL: <https://plato.stanford.edu/entries/social-ontology/>
-- Kuchem, M. D. (2020). Young, Gilbert, and Social Groups. *Social Theory and Practice*, 46(4), 737-763. Retrieved from http://www.jstor.org/stable/45302464
+- Kuchem, M. D. (2020). Young, Gilbert, and Social Groups. *Social Theory and Practice*, 46(4), 737-763. Retrieved from <http://www.jstor.org/stable/45302464>
 - Machan, T. (2000). Liberalism and Atomistic Individualism. Journal of Value Inquiry, 34(2-3), 227-247. Retrieved from <https://www.proquest.com/scholarly-journals/liberalism-atomistic-individualism/docview/203901387/se-2>
 - Nussbaum, M. C. (2015). *혐오와 수치심. [Hiding from Humanity: Disgust, Shame, and the Law]*. (조계원, Trans.): 민음사.
 - Young, I. M. (2017). *차이의 정치와 정의. [Justice and the Politics of Difference].* (김도균 & 조국, Trans.): 모티브북.
