@@ -8,5 +8,6 @@ article_header:
     background_image: false
 show_title: true
 title: Tope's Cytoplasm
+excerpt: Where I Explore, Create, and Reflect
 ---
 {{contents}}
