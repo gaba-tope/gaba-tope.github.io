@@ -41,6 +41,7 @@
   height: map-get($layout, header-height);
   margin-right: map-get($spacers, 3);
   white-space: nowrap;
+  font-weight: bold; // Apply bold font weight
   @include media-breakpoint-down(md) {
     height: auto;
     margin-right: 0;
