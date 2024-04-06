@@ -38,3 +38,5 @@ Obsidian같은 markdown 파일에서 지정한 부분만 특정한 폰트를 사
 소련의 대(<span class="noto-sans-kr">對</span>)한 정책
 ```
 실제로 한자가 제대로 표시되는 것을 알 수 있다.
+
+CSS에 관한 기본적인 개념과 규칙에 생소하다면 [CSS MDN WebDocs](https://developer.mozilla.org/ko/docs/Web/CSS)을 참고하는 것도 좋을 것 같다.
