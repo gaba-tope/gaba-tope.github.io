@@ -1,5 +1,5 @@
 ---
-title: '독립적인 나'라는 허상
+title: title?
 tags: [philosophy]
 categories: blog
 ---
