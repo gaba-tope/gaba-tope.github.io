@@ -40,17 +40,21 @@ I'm in the midst of a two-year hiatus from my school life, fulfilling my commitm
 - I am keen to comprehend the mathematical principles underlying statistical inference.
 
 
-### Courses taken (credits)
+### Relevant Courses taken (credits) 
+In alphabetical order:
+
+- Biochemistry (3 * 2 semester)
+- Cell Biology (3 * 2 semester)
+- Epigenetics and Human Disease (3)
+- Histology (3)
+- Molecular Biology (3)
+- Molecular Structure Determination Using Spectroscopic Methods (3)
+- Nano-Bio Analytical Methods (3)
 - Neurobiology (3)
 - Neurodegenerative Disorders (3)
 - Organic Chemistry (3 * 2 semester)
-- Biochemistry (3 * 2 semester)
-- Molecular Biology (3)
-- Cell Biology (3 * 2 semester)
-- Histology (3)
 - Physiology (3)
-- Molecular Structure Determination Using Spectroscopic Methods (3)
-- Nano-Bio Analytical Methods (3)
+
 
 
 ### Github Stats
