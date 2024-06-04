@@ -40,7 +40,7 @@ I'm in the midst of a two-year hiatus from my school life, fulfilling my commitm
 - I am keen to comprehend the mathematical principles underlying statistical inference.
 
 
-### Relevant Courses taken (credits) 
+### Relevant Coursework (credits) 
 In alphabetical order:
 
 - Biochemistry (3 * 2 semester)
