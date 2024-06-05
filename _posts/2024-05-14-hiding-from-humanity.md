@@ -2,14 +2,27 @@
 title: 마사 누스바움의 「혐오와 수치심」
 tags: [philosophy, book]
 categories: blog
+cover: /files/cover/2024-05-14-hiding-from-humanity.jpg
 ---
+<style>
+img{
+    float: left;
+    margin: 0.8em;
+}
+    </style>
+
+<p align="left">
+  			<img src="/files/cover/2024-05-14-hiding-from-humanity.jpg" width="20%">
+</p>
 
 누스바움은 2004년 펴낸 「혐오와 수치심」(Hiding from Humanity: Disgust, Shame, and the Law)에서 혐오와 수치심이 공적으로 고려되지 말아야 할 감정이라고 주장한다. 저자는 혐오와 수치심의 심리적 기원과 인지적 내용에 대한 문헌 고찰을 바탕으로 두 감정이 개인, 특히 힘 없는 집단의 성원을 예속시키고 낙인찍는다고 설명한다. 
 
 심리학, 문학, 사회학 등의 문헌을 바탕으로 두 혐오와 수치심의 기원을 분석하는 점이 흥미로웠고, 특히 그러한 감정이 어떻게 시민을 배제하고 비인간화시키는지, 또한 이것이 누스바움이 생각하는 자유주의와 어떻게 상충하는지에 관한 밀도있는 설명은 상당히 설득력있었다. 한편으로 누스바움이 지지하는 인간관과 정치관을 더 알아보고 싶고, 특히 아마르티아 센과 함께 펴낸 역량 접근법에 관해 자세히 알아보고 싶어졌다. 누스바움의 견해에 대한 지지, 비판, 후속 연구가 여럿 있을 법한데, 이에 관해서도 지속적으로 공부하고 싶다.    
 
 
+
 ## 1장 감정과 법
+
 ### 요약
 감정은 내가 상황을 믿고 평가하는 바에 관한 복잡한 사고를 수반한다. 이러한 감정은 종종 법을 만들고 적용할 때 고려되는데, 어떤 감정이 이성적인 사람이 겪을 수 있는 타당한 감정인지, 그 감정이 법에 고려되는 것이 적절한지 평가될 필요가 있다. 법에 감정이 고려되는 것은 자유주의와도 양립가능한데, 정치적 자유주의에서 여러 의견을 존중하기 위해 필요한 공통되는 가치들이 보호되어야 하기 때문이다.
 ### 문장
@@ -71,4 +84,7 @@ categories: blog
 > ... 인간 삶에 내재된 깊은 어려움 — 이러한 어려움 때문에 공적인 감정으로 혐오와 수치심에 의존하게 된다. — 을 고찰함으로써 우리는 적어도 자유주의 사회가 소중히 여기고 나아가 발전시켜야 하는 일정한 역량의 윤곽을 볼 수 있게 되었다. 지배하기보다는 상호 의존하는 관계를 즐길 수 있는 능력, 자신과 다른 사람의 불완전성과 동물성, 유한성을 인정할 수 있는 능력이 그것이다. (p. 623)
 
 # Reference
-Nussbaum, M. C. (2015). 혐오와 수치심. [Hiding from Humanity: Disgust, Shame, and the Law]. (조계원, Trans.). 민음사. 
+- Nussbaum, M. C. (2015). 혐오와 수치심. [Hiding from Humanity: Disgust, Shame, and the Law]. (조계원, Trans.). 민음사. 
+
+- 혐오와 수치심 표지 사진, 알라딘. [https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=54798938&start=slayer](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=54798938&start=slayer){:target="_blank"}
+
