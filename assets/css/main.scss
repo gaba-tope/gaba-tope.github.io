@@ -3,6 +3,9 @@
 ---
 @use 'sass:math'; // Added after "There is no module with the namespace "math"." error occured.
 
+@import "custom/customImport.scss";
+@import "custom/customOverride.scss";
+
 @import
 
     "skins/{{ site.text_skin | default: site.data.variables.default.text_skin }}",

@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Nanum+Gothic+Coding&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 
 $base: (
   // font-family:            (-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif),
   font-family:            (-apple-system, BlinkMacSystemFont, "IBM Plex Sans KR", "Nanum Gothic", Arial, sans-serif),
-  font-family-code:       ("IBM Plex Mono", "Nanum Gothic Coding", monospace,
+  font-family-code:       ("Fira Code", "Nanum Gothic Coding", monospace,
                           ),
 
   font-size-root:         16px,
