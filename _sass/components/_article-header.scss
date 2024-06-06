@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+KR:wght@100..900&family=Do+Hyeon&family=East+Sea+Dokdo&display=swap');
 
 .article__header {
   margin-top: map-get($spacers, 5);
@@ -33,11 +33,11 @@
   }
   .overlay__excerpt {
     ///font-size: map-get($base, font-size-h3-xl);
-    font-size: map-get($base, font-size-h3-lg);
-    font-family: "Lato", sans-serif;
+    font-size: map-get($base, font-size-h3-xl);
+    font-family: "East Sea Dokdo", sans-serif;
     @include media-breakpoint-down(lg) {
       ///font-size: map-get($base, font-size-h3-lg);
-      font-size: map-get($base, font-size-h3-sm);
+      font-size: map-get($base, font-size-h3-lg);
     }
     @include media-breakpoint-down(md) {
       font-size: map-get($base, font-size-h3-sm);
@@ -56,6 +56,8 @@
       }
       
   .article__header {
+    font-family: "East Sea Dokdo", sans-serif;
+    font-size: map-get($base, font-size-h3-xl);
     margin-top: 0;
   }
 }
