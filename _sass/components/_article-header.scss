@@ -46,6 +46,7 @@
   }
   .overlay__subtitle {
     font-size: map-get($base, font-size-h3-xl);
+    font-family: "East Sea Dokdo", sans-serif;
     @include media-breakpoint-down(lg) {
       font-size: map-get($base, font-size-h3-lg);
     }
