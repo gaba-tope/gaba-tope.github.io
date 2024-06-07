@@ -177,7 +177,7 @@ input {
 ::-webkit-scrollbar {
   width: 15px; // 세로 스크롤의 너비
   height: 5px; // 가로 스크롤의 너비
-  background-color: rgba(241, 248, 255); // 스크롤의 기본 배경색상
+  background-color: #F1F8FF; // 스크롤의 기본 배경색상
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 5px; // 스크롤바 곡률
@@ -185,5 +185,5 @@ input {
 }
 
 ::-webkit-scrollbar-track:horizontal {
-  background-color: rgba(241, 248, 255); // 가로 스크롤바 색상 #F1F8FF
+  background-color: #F1F8FF; // 가로 스크롤바 색상 #F1F8FF
 }
