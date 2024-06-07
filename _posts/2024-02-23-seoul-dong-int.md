@@ -6,7 +6,8 @@ cover: /files/cover/2024-02-23-seoul-dong-int-cover.png
 ---
 
 
-이전에 만들어본 [서울시 행정동별 평균 소득 plot]({% post_url 2023-12-24-seoul-dong-visual %})을 사용자가 이리저리 살펴볼 수 있게 만들어 보았어요. <!--more-->
+이전에 만들어본 [서울시 행정동별 평균 소득 plot]({% post_url 2023-12-24-seoul-dong-visual %})을 사용자가 이리저리 살펴볼 수 있게 만들어 보았어요. 
+<!--more-->
 
 <iframe src="/files/interactive_page/map_leaflet.html" height="600px" width="100%" style="border:none;"></iframe>
 

@@ -5,7 +5,8 @@ categories: work
 cover: /files/cover/obsidian_logo.png
 ---
 ## 상황
-Obsidian같은 markdown 파일에서 지정한 부분만 특정한 폰트를 사용하기를 원할 수 있다. 이는 HTML 파일에서 CSS를 사용하여 폰트를 설정하는 일반적인 방법을 사용하면 해결할 수 있다. <!--more-->
+Obsidian같은 markdown 파일에서 지정한 부분만 특정한 폰트를 사용하기를 원할 수 있다. 이는 HTML 파일에서 CSS를 사용하여 폰트를 설정하는 일반적인 방법을 사용하면 해결할 수 있다. 
+<!--more-->
 - 예컨대 한자를 읽을 수 있도록 보여주는 폰트를 사용하고자 할 때, Google Font의 "Noto Sans KR" 폰트를 사용하고 싶을 수 있다. 
 - Noto Sans KR 폰트는 "https://fonts.google.com/noto/specimen/Noto+Sans+KR"에서 확인할 수 있다.
 
