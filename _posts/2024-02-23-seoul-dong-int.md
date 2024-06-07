@@ -6,7 +6,7 @@ cover: /files/cover/2024-02-23-seoul-dong-int-cover.png
 ---
 
 
-이전에 만들어본 [서울시 행정동별 평균 소득 plot]({% post_url 2023-12-24-seoul-dong-visual %})을 사용자가 이리저리 살펴볼 수 있게 만들어 보았어요.
+이전에 만들어본 [서울시 행정동별 평균 소득 plot]({% post_url 2023-12-24-seoul-dong-visual %})을 사용자가 이리저리 살펴볼 수 있게 만들어 보았어요. <!--more-->
 
 <iframe src="/files/interactive_page/map_leaflet.html" height="600px" width="100%" style="border:none;"></iframe>
 
@@ -15,7 +15,7 @@ cover: /files/cover/2024-02-23-seoul-dong-int-cover.png
 Leaflet을 처음 사용하여 interactive choropleth map을 만드는 경우라면 [An R Interface to Leaflet Maps](https://rstudio.github.io/leaflet/index.html){:target="_blank"}를 읽어보길 추천해요.
 
 
-아래에서는 핵심 코드를 살펴봅시다. 이전에 사용하고 다듬은 데이터셋과 객체들을 그대로 사용합니다.
+아래에서는 핵심 코드를 살펴보겠습니다. 이전에 사용하고 다듬은 데이터셋과 객체들을 그대로 사용합니다.
 
 # Data Wrangling
 1. [이전 포스트]({% post_url 2023-12-24-seoul-dong-visual %})에서 combined_data와 map_seoul_gu의 EPSG를 5179로 맞추었죠. 하지만 leaflet 패키지로 사용할 shape file 등은 좌표계 (CRS; Coordinate Reference System)가 [WGS84 (= EPSG:4326)이어야](https://rstudio.github.io/leaflet/articles/projections.html){:target="_blank"} 하므로, `sf::st_transform()`을 이용하여 변환합니다.<br>

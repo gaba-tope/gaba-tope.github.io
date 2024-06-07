@@ -180,7 +180,7 @@ input {
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 5px; // 스크롤바 곡률
-  background-color: #ff006a; // 스크롤바 색상
+  background-color: rgba(255, 0 ,106, 0.7); // 스크롤바 색상 #ff006a
 }
 
 ::-webkit-scrollbar-track:horizontal {
