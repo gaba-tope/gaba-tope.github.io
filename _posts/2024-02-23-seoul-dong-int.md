@@ -3,6 +3,8 @@ title: 서울시 행정동별 평균 소득 시각화 - Interactive plot with {l
 tags: Visualization
 categories: work
 cover: /files/cover/2024-02-23-seoul-dong-int-cover.png
+lang: en
+lang-ref: seoul-dong-int
 ---
 
 

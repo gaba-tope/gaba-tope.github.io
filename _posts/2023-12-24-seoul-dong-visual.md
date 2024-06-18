@@ -3,6 +3,8 @@ title: 서울시 행정동별 평균 소득 시각화
 tags: Visualization
 categories: work
 cover: /files/cover/2023-12-24-seoul-dong-visual-cover.png
+lang: en
+lang-ref: seoul-dong-vis
 ---
 
 서울시의 행정동별 평균 소득 및 소비 데이터셋을 우연히 발견하여, 시각화해보면 좋겠다 싶어 만들어보았어요. 

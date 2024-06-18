@@ -3,6 +3,8 @@ title: Obsidian에서 지정한 부분만 특정 폰트 사용하기 - Google Fo
 tags: [obsidian]
 categories: work
 cover: /files/cover/obsidian_logo.png
+lang: ko
+lang-ref: obs-font
 ---
 ## 상황
 Obsidian같은 markdown 파일에서 지정한 부분만 특정한 폰트를 사용하기를 원할 수 있다. 이는 HTML 파일에서 CSS를 사용하여 폰트를 설정하는 일반적인 방법을 사용하면 해결할 수 있다. 

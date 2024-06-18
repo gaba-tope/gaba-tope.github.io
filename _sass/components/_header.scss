@@ -127,3 +127,47 @@
     @include split-line(bottom, 4px, $main-color-1);
   }
 }
+
+///header.html의 polyglot 언어 선택 버튼
+.nav-lang {
+  a {
+    @media all and (min-width:1200px){
+      position: relative;
+      left: 1em;
+      top: 1.2em;
+      
+    } 
+    @media all and (min-width:992px) and (max-width:1199px) {
+      position: relative;
+      left: 1em;
+      top: 1.2em;
+      
+    } 
+    @media all and (min-width:768px) and (max-width:991px) {
+      position: relative;
+      left: 1em;
+      top: 1.2em;
+    
+    }
+    @media all and (min-width:576px) and (max-width:767px) {
+      position: relative;
+      left: 1em;
+      top: 1.2em;
+  
+    }
+    @media all and (min-width:500px) and (max-width:575px) {
+      position: relative;
+      left: 1em;
+      top: 1.2em;
+  
+    }
+    @media all and (max-width:499px) {
+      position: relative;
+      left: 0em;
+      top: -1em;
+  
+    }
+}
+ 
+}
+

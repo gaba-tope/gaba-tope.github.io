@@ -3,6 +3,8 @@ title: 마사 누스바움의 「혐오와 수치심」
 tags: [philosophy, book]
 categories: blog
 cover: /files/cover/2024-05-14-hiding-from-humanity.jpg
+lang: ko
+lang-ref: hiding-from
 ---
 <style>
 img{
