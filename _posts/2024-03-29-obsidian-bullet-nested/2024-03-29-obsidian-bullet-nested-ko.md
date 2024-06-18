@@ -6,23 +6,23 @@ cover: /files/cover/2024-03-29-obsidian-bullet-nested.png
 lang: ko
 permalink: /work/2024/03/29/obsidian-bullet-nested
 ---
-## 들어가는 글
-옵시디언 어쩌구
-Obsidian does not have different bullet shapes for different levels of nested lists. To customize bullet styles, one has to modify the CSS (Cascading Style Sheets) code. Below are ways to resolve the issue. <!--more-->
+## Intro
+옵시디언은 nested list의 각 레벨에 모두 동일한 기호를 사용합니다. CSS (Cascading Style Sheets)를 수정하여 레벨 별로 기호를 달리 쓸 수 있습니다.
+아래에서는 이 방법들을 살펴보겠습니다. <!--more-->
 
 ## Solution 1 - ZenMoto's
-I could find the working solution in the [Obsidian forum post](https://forum.obsidian.md/t/problems-encountered-when-modifying-unordered-lists-styles-with-css/53824/2){:target="_blank"} answered by [ZenMoto](https://forum.obsidian.md/u/ZenMoto){:target="_blank"}.
+[ZenMoto](https://forum.obsidian.md/u/ZenMoto){:target="_blank"}가 [Obsidian forum post](https://forum.obsidian.md/t/problems-encountered-when-modifying-unordered-lists-styles-with-css/53824/2){:target="_blank"}에서 답한 내용이 도움이 되었습니다.
 
-For those unfamiliar with applying style with CSS, [CSS Styling Lists](https://www.w3schools.com/css/css_list.asp) tutorial on W3Schools is a helpful resource for beginners.
+CSS를 잘 알지 못하는 분들에게는 W3Schools의 [CSS Styling Lists](https://www.w3schools.com/css/css_list.asp) 튜토리얼을 추천드립니다.
 
-### Downside
-When an unordered list is used within the ordered list, the bullet styles are not shown as expected.
+### 한계
+Unordered list가 ordered list 내부에 들어있을 때는 우리가 원하지 않는 방식으로 나옵니다.
 
-- What we expect:
+- 우리가 원하는 것:
 <p align="left">
   <img src="/files/img/expect-sol1.png" width="30%">
 </p>
-- What is actually shown:
+- 실제 결과:
 <p align="left">
   <img src="/files/img/actual-sol1.png" width="30%">
 </p>
@@ -111,10 +111,10 @@ When an unordered list is used within the ordered list, the bullet styles are no
 :root { --bullet-new-color: rgb(89,89,223);}
 ```
 
-## Solution 2 - Downside fixed
-To resolve this issue, I slightly modified the ZenMoto's script. The rule to **apply the style to the source-view mode is deprecated, but the issue can be solved in the preview-mode**. The reason why the solution cannot be applied to the source-view mode is that I do not know much about the `.markdown-source-view.mod-cm6` script, and thus couldn't come up with a solution to have designated bullet styles even under ordered lists.
+## Solution 2 - 한계 보완됨
+이를 해결하고자 저는 Zenmoto의 코드를 약간 변형시켰습니다. Source-view mode에서는 스타일이 적용되지 않지만, preview mode에서는 스타일이 적용됩니다. Source-view mode에 관해서는 `.markdown-source-view.mod-cm6`를 수정해야 하는데, 이 부분은 잘 알지 못하여 따로 스타일을 적용하지 못했습니다.
 
-Slight modification to the [ZenMoto's solution](https://forum.obsidian.md/t/problems-encountered-when-modifying-unordered-lists-styles-with-css/53824/2){:target="_blank"} by me:
+[ZenMoto's solution](https://forum.obsidian.md/t/problems-encountered-when-modifying-unordered-lists-styles-with-css/53824/2){:target="_blank"}을 약간 변형한 코드:
 
 {% include codeHeader.html %}
 ```css
@@ -198,13 +198,10 @@ Slight modification to the [ZenMoto's solution](https://forum.obsidian.md/t/prob
 :root { --bullet-new-color: rgb(89,89,223);}
 
 ```
-Using the script for level 1 ~ level 3, I now have the desired result:
+Level 1 ~ level 3에 스타일을 적용하면 다음 결과를 볼 수 있습니다:
 <p align="left">
   <img src="/files/img/nested_unordered_list.png" width="40%">
 </p>
 
-### Downside
-It seems that both of the solutions don't apply to the published document in a PDF file, though partially applied in a HTML file.
-
-
-Feel free to adjust the script with your preference!
+### 한계
+두 방법 모두 PDF로 export된 문서에서는 적용되지 않는 것 같고요, HTML 파일에서는 부분적으로만 적용되는 듯합니다. 
