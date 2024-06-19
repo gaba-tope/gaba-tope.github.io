@@ -7,16 +7,16 @@ lang: ko
 permalink: /work/2024/03/29/obsidian-bullet-nested
 ---
 ## Intro
-옵시디언은 nested list의 각 레벨에 모두 동일한 기호를 사용합니다. CSS (Cascading Style Sheets)를 수정하여 레벨 별로 기호를 달리 쓸 수 있습니다.
+Obsidian은 nested list의 각 레벨에 모두 동일한 기호를 사용합니다. 이때 CSS (Cascading Style Sheets)를 수정하여 레벨 별로 다르게 쓸 수 있습니다.
 아래에서는 이 방법들을 살펴보겠습니다. <!--more-->
 
 ## Solution 1 - ZenMoto's
 [ZenMoto](https://forum.obsidian.md/u/ZenMoto){:target="_blank"}가 [Obsidian forum post](https://forum.obsidian.md/t/problems-encountered-when-modifying-unordered-lists-styles-with-css/53824/2){:target="_blank"}에서 답한 내용이 도움이 되었습니다.
 
-CSS를 잘 알지 못하는 분들에게는 W3Schools의 [CSS Styling Lists](https://www.w3schools.com/css/css_list.asp) 튜토리얼을 추천드립니다.
+CSS에 대한 기초적인 개념은 W3Schools의 [CSS Styling Lists](https://www.w3schools.com/css/css_list.asp) 튜토리얼을 참고하길 추천드립니다.
 
 ### 한계
-Unordered list가 ordered list 내부에 들어있을 때는 우리가 원하지 않는 방식으로 나옵니다.
+Unordered list가 ordered list 내부에 들어있을 경우, 우리가 원하지 않는 방식으로 나옵니다.
 
 - 우리가 원하는 것:
 <p align="left">
