@@ -1,0 +1,1319 @@
+<!DOCTYPE html><html lang="ko">
+  <head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>마사 누스바움의 「혐오와 수치심」 - Tope's Cytoplasm</title>
+
+<meta name="description" content="누스바움은 2004년 펴낸 「혐오와 수치심」(Hiding from Humanity: Disgust, Shame, and the Law)에서 혐오와 수치심이 공적으로 고려되지 말아야 할 감정이라고 주장한다. 저자는 혐오와 수치심의 심리적 기원과 인지적 내용에 대한 문헌 고찰을 바탕으...">
+<link rel="canonical" href="http://localhost:4000/en/blog/2024/05/14/hiding-from-humanity.html"><link rel="alternate" type="application/rss+xml" title="Tope's Cytoplasm" href="/en/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ -->
+
+<!-- test: delete icon
+<link rel="apple-touch-icon" sizes="180x180" href="/en/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/en/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/en/favicon-16x16.png">
+<link rel="manifest" href="/en/site.webmanifest">
+<link rel="mask-icon" href="/en/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+-->
+
+<!-- end favicons snippet -->
+
+<link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.css" ><!-- start custom head snippets -->
+
+<!-- end custom head snippets -->
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<!-- darkmode css -->
+
+<link rel="stylesheet" href="/assets/css/main_dark.css">
+
+
+<!-- ... --><script>(function() {
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
+
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
+
+  window.isOverallScroller = function(node) {
+    return node === document.documentElement || node === document.body || node === window;
+  };
+
+  window.isFormElement = function(node) {
+    var tagName = node.tagName;
+    return tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+  };
+
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i;
+      loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cbs[i]();
+        }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();
+(function() {
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
+
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
+    }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
+
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+})();
+(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
+
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      version: '2.2.6',
+      sources: {
+        font_awesome: 'https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.css',
+        jquery: 'https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js',
+        leancloud_js_sdk: '//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js',
+        chart: 'https://cdn.bootcss.com/Chart.js/2.7.2/Chart.bundle.min.js',
+        gitalk: {
+          js: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.js',
+          css: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.css'
+        },
+        valine: 'https://unpkg.com/valine/dist/Valine.min.js',
+        mathjax: 'https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: 'https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      },
+      paths: {
+        search_js: '/assets/search.js'
+      }
+    };
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script>
+</head>
+  <body>
+    <div class="root" data-is-touch="false">
+      <div class="layout--page js-page-root"><div class="page__main js-page-main page__viewport has-aside cell cell--auto">
+
+      <div class="page__main-inner"><div class="page__header d-print-none"><style>
+  @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+  .header__brand a {
+  font-family: "Lato", sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+}
+</style><header class="header"><div class="main">
+      <div class="header__title">
+        <div class="header__brand"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="297mm"
+   height="297mm"
+   viewBox="0 0 297 297"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1">
+    <g
+       id="g24"
+       style="clip-rule:evenodd;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
+       transform="matrix(1.2828024,0,0,1.280835,21.48438,25.562315)">
+      <g
+         id="g2">
+        <path
+           style="opacity:1"
+           fill="#0a0a0a"
+           d="m 67.5,-0.5 c 5.3333,0 10.6667,0 16,0 1.2279,1.50978 1.2279,3.00978 0,4.5 -5.2503,0.19285 -10.417,0.69285 -15.5,1.5 -0.6667,5.6667 -0.6667,11.3333 0,17 0.5,0.5 1,1 1.5,1.5 17,0.6667 34,0.6667 51,0 1.142,-6.0844 1.309,-12.2511 0.5,-18.5 C 111.577,4.68031 102.077,4.18031 92.5,4 c -1.2279,-1.49022 -1.2279,-2.99022 0,-4.5 9.333,0 18.667,0 28,0 2.167,0.697963 4,2.0313 5.5,4 0.667,6.6667 0.667,13.3333 0,20 -1.639,3.9893 -4.639,5.9893 -9,6 -0.333,4 -0.667,8 -1,12 -1,1.3333 -2,1.3333 -3,0 -0.333,-4 -0.667,-8 -1,-12 -2.041,-0.9231 -4.208,-1.2564 -6.5,-1 -0.427,13.7264 0.073,27.3931 1.5,41 2.667,4 5.333,8 8,12 2.062,-2.0052 3.062,-4.3385 3,-7 -5.252,-7.523 -6.919,-15.8564 -5,-25 1,-1.3333 2,-1.3333 3,0 0.333,4 0.667,8 1,12 0.742,3.1565 2.242,5.8232 4.5,8 2.496,-3.3411 4.829,-6.8411 7,-10.5 3.291,-2.0745 6.457,-1.9078 9.5,0.5 7.667,13.6667 15.333,27.3333 23,41 2.257,8.66 1.757,17.16 -1.5,25.5 1.341,3.184 2.841,6.351 4.5,9.5 3.461,14.578 -1.705,24.744 -15.5,30.5 -36,0.667 -72,0.667 -108,0 -15.5513,-7.665 -19.718,-19.498 -12.5,-35.5 15.0598,-22.063 29.7265,-44.3961 44,-67 0.4999,-11.6619 0.6665,-23.3286 0.5,-35 -3.4705,0.6252 -6.3038,-0.3748 -8.5,-3 -0.6667,-7.3333 -0.6667,-14.6667 0,-22 0.6897,-1.85023 1.8564,-3.183565 3.5,-4 z"
+           id="path2" />
+      </g>
+      <g
+         id="g3">
+        <path
+           style="opacity:1"
+           fill="#f6f6f6"
+           d="m 83.5,-0.5 c 3,0 6,0 9,0 -1.2279,1.50978 -1.2279,3.00978 0,4.5 9.577,0.18031 19.077,0.68031 28.5,1.5 0.809,6.2489 0.642,12.4156 -0.5,18.5 -17,0.6667 -34,0.6667 -51,0 C 69,23.5 68.5,23 68,22.5 67.3333,16.8333 67.3333,11.1667 68,5.5 73.083,4.69285 78.2497,4.19285 83.5,4 c 1.2279,-1.49022 1.2279,-2.99022 0,-4.5 z"
+           id="path3" />
+      </g>
+      <g
+         id="g4">
+        <path
+           style="opacity:1"
+           fill="#0f0f0f"
+           d="m 145.5,2.5 c 14.445,0.72369 18.445,7.557 12,20.5 -13.033,5.7421 -19.533,1.5754 -19.5,-12.5 1.69,-3.52089 4.19,-6.18756 7.5,-8 z"
+           id="path4" />
+      </g>
+      <g
+         id="g5">
+        <path
+           style="opacity:1"
+           fill="#f3f3f3"
+           d="m 146.5,7.5 c 6.664,-0.49985 9.831,2.5002 9.5,9 -0.465,1.4308 -1.299,2.5975 -2.5,3.5 -7.771,2.2191 -11.271,-0.6143 -10.5,-8.5 0.69,-1.85023 1.856,-3.18357 3.5,-4 z"
+           id="path5" />
+      </g>
+      <g
+         id="g6">
+        <path
+           style="opacity:1"
+           fill="#f6f6f6"
+           d="m 66.5,102.5 c 12.5113,-0.329 24.8446,0.005 37,1 -2.008,22.402 7.992,34.735 30,37 4.767,-0.216 9.434,-0.716 14,-1.5 1.774,4.163 1.107,7.83 -2,11 -33.667,0.667 -67.3333,0.667 -101,0 -3.6265,-2.251 -4.7931,-5.418 -3.5,-9.5 3.6667,-5.667 7.3333,-11.333 11,-17 -0.2323,-4.924 -1.899,-5.258 -5,-1 -3.6667,5.667 -7.3333,11.333 -11,17 -1.1285,6.91 1.3715,12.077 7.5,15.5 33.6667,0.667 67.333,0.667 101,0 7.673,-2.842 10.506,-8.342 8.5,-16.5 -2.091,-3.152 -1.258,-5.485 2.5,-7 7.355,9.94 6.355,19.107 -3,27.5 -2.217,1.275 -4.551,2.275 -7,3 -33.667,0.667 -67.3333,0.667 -101,0 -12.4026,-3.953 -17.2359,-12.453 -14.5,-25.5 15.3333,-23.333 30.6667,-46.6667 46,-70 1.42,-12.6056 1.92,-25.2722 1.5,-38 2.2925,-0.2564 4.4592,0.0769 6.5,1 0.6667,12 0.6667,24 0,36 -8.9064,15.4768 -18.5731,30.4768 -29,45 -0.49,1.293 -0.6567,2.627 -0.5,4 1.3734,0.157 2.7068,-0.01 4,-0.5 2.5297,-4.013 5.1964,-7.846 8,-11.5 z"
+           id="path6" />
+      </g>
+      <g
+         id="g7">
+        <path
+           style="opacity:1"
+           fill="#f7f7f7"
+           d="m 89.5,28.5 c 3.6667,0 7.3333,0 11,0 -0.167,12.6711 0,25.3377 0.5,38 3.061,7.1241 6.895,13.7908 11.5,20 -1.92,2.8388 -3.587,5.8388 -5,9 -12.3198,1.1659 -24.6532,1.3326 -37,0.5 5.5,-8.1667 11,-16.3333 16.5,-24.5 1.1134,-14.3536 1.9467,-28.6869 2.5,-43 z"
+           id="path7" />
+      </g>
+      <g
+         id="g8">
+        <path
+           style="opacity:1"
+           fill="#0f0f0f"
+           d="m 158.5,41.5 c 11.375,-1.123 16.542,3.877 15.5,15 -1.803,5.0813 -5.469,7.748 -11,8 -9.086,-1.4853 -12.753,-6.8187 -11,-16 1.694,-2.8576 3.861,-5.191 6.5,-7 z"
+           id="path8" />
+      </g>
+      <g
+         id="g9">
+        <path
+           style="opacity:1"
+           fill="#f8f8f8"
+           d="m 159.5,46.5 c 8.165,-1.3362 11.331,1.9971 9.5,10 -3.315,3.6053 -6.982,3.9386 -11,1 -2.311,-4.1259 -1.811,-7.7925 1.5,-11 z"
+           id="path9" />
+      </g>
+      <g
+         id="g10">
+        <path
+           style="opacity:1"
+           fill="#f9f9f9"
+           d="m 131.5,62.5 c 1.175,-0.219 2.175,0.1143 3,1 7.753,13.1715 15.253,26.5048 22.5,40 2.167,23.167 -8.333,33.667 -31.5,31.5 -15.589,-6.754 -20.756,-18.254 -15.5,-34.5 7.444,-12.5591 14.61,-25.2257 21.5,-38 z"
+           id="path10" />
+      </g>
+      <g
+         id="g11">
+        <path
+           style="opacity:1"
+           fill="#0c0c0c"
+           d="m 131.5,82.5 c 1.322,-0.17 2.489,0.1634 3.5,1 0.333,4 0.667,8 1,12 1.848,-2.5414 4.348,-3.5414 7.5,-3 -1.449,3.9724 -3.949,7.3057 -7.5,10 -0.667,4 -0.667,8 0,12 1.833,-1.833 3.667,-3.667 5.5,-5.5 1.819,-0.783 3.152,-0.283 4,1.5 -2.606,4.109 -5.773,7.776 -9.5,11 -0.251,1.933 -0.751,3.766 -1.5,5.5 -1.284,0.684 -2.451,0.517 -3.5,-0.5 -0.333,-1.667 -0.667,-3.333 -1,-5 -3,-3 -6,-6 -9,-9 -0.49,-1.293 -0.657,-2.627 -0.5,-4 4.003,0.471 7.169,2.471 9.5,6 0.667,-4 0.667,-8 0,-12 -3.551,-2.6943 -6.051,-6.0276 -7.5,-10 3.152,-0.5414 5.652,0.4586 7.5,3 0.228,-4.4171 0.728,-8.7504 1.5,-13 z"
+           id="path11" />
+      </g>
+      <g
+         id="g12">
+        <path
+           style="opacity:1"
+           fill="#bdbdbd"
+           d="m 66.5,102.5 c 12.5062,-1.325 25.1729,-1.325 38,0 -0.124,0.607 -0.457,0.94 -1,1 -12.1554,-0.995 -24.4887,-1.329 -37,-1 z"
+           id="path12" />
+      </g>
+      <g
+         id="g13">
+        <path
+           style="opacity:1"
+           fill="#101010"
+           d="m 85.5,107.5 c 8.8743,-0.629 12.7076,3.371 11.5,12 -3.9135,6.596 -8.9135,7.596 -15,3 -3.9817,-6.265 -2.815,-11.265 3.5,-15 z"
+           id="path13" />
+      </g>
+      <g
+         id="g14">
+        <path
+           style="opacity:1"
+           fill="#f1f1f1"
+           d="m 86.5,112.5 c 5.9877,0.164 7.321,2.664 4,7.5 -6.0966,0.147 -7.4299,-2.353 -4,-7.5 z"
+           id="path14" />
+      </g>
+      <g
+         id="g15">
+        <path
+           style="opacity:1"
+           fill="#111111"
+           d="m 62.5,124.5 c 11.4893,-1.345 16.3226,3.655 14.5,15 -7.5924,8.481 -14.259,7.814 -20,-2 -0.6667,-2 -0.6667,-4 0,-6 1.6665,-2.496 3.4998,-4.829 5.5,-7 z"
+           id="path15" />
+      </g>
+      <g
+         id="g16">
+        <path
+           style="opacity:1"
+           fill="#efefef"
+           d="m 64.5,129.5 c 7.7436,-0.452 10.0769,2.715 7,9.5 -5.3828,2.961 -8.7161,1.461 -10,-4.5 0.5924,-1.923 1.5924,-3.589 3,-5 z"
+           id="path16" />
+      </g>
+    </g>
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:italic;font-variant:normal;font-weight:500;font-stretch:normal;font-size:50.8px;line-height:0.12;font-family:'CMU Concrete';-inkscape-font-specification:'CMU Concrete Medium Italic';opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.779;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     x="83.677856"
+     y="278.21622"
+     id="text1"><tspan
+       id="tspan1"
+       style="stroke-width:1.779;stroke-dasharray:none"
+       x="83.677856"
+       y="278.21622">Tope</tspan></text>
+</svg>
+<a title="Tope's personal blog
+" href="/en/">Tope's Cytoplasm</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
+        <ul><li class="navigation__item"><a href="/en/about/">About</a></li><li class="navigation__item"><a href="/en/archive/">Archive</a></li><li class="navigation__item"><a href="/en/blog/">Blog</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li>
+              <!-- 다크 모드 토글 버튼 -->
+              
+              <input id="toggle_dark_theme" class="mh_toogle" type="checkbox">
+              <label for="toggle_dark_theme" class="material-icons-sharp mh_toggle_btn"></label>
+              
+              <button class="greedy-nav__toggle hidden" type="button">
+                  <span class="visually-hidden"></span>
+                  <div class="navicon"></div>
+              </button></ul>
+      </nav><!-- polyglot 언어 선택-->
+      <ul class="nav-lang">        
+          
+          <!--<li id="lang" style="float: right;">-->
+            <a style="text-align:center;" href=" /blog/2024/05/14/hiding-from-humanity.html ">
+              ko
+            </a>
+          <!--</li>--->
+          
+          <!--<li id="lang" style="float: right;">-->
+            <a style="font-weight: bold;text-align:center;" href=" /en/blog/2024/05/14/hiding-from-humanity.html ">
+              en
+            </a>
+          <!--</li>--->
+          
+      </ul>
+      <!--------------------->
+    </div>
+  </header>
+
+</div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
+
+              <div class="col-aside d-print-none js-col-aside"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div>
+</aside></div>
+
+              <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
+
+<!-- end custom main top snippet -->
+<article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>마사 누스바움의 「혐오와 수치심」</h1></header></div><meta itemprop="headline" content="마사 누스바움의 「혐오와 수치심」"><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/en/archive/?tag=philosophy">philosophy</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/en/archive/?tag=book">book</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2024년 05월 14일</span>
+            </li></ul></div><meta itemprop="author" content="Tope"/><meta itemprop="datePublished" content="2024-05-14T00:00:00+09:00">
+    <meta itemprop="keywords" content="philosophy,book"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+
+<!-- end custom article top snippet -->
+<div class="article__content" itemprop="articleBody"><style>
+img{
+    float: left;
+    margin: 0.8em;
+}
+    </style>
+
+<p align="left">
+  			<img src="/files/cover/2024-05-14-hiding-from-humanity.jpg" width="20%" />
+</p>
+
+<p>누스바움은 2004년 펴낸 「혐오와 수치심」(Hiding from Humanity: Disgust, Shame, and the Law)에서 혐오와 수치심이 공적으로 고려되지 말아야 할 감정이라고 주장한다. 저자는 혐오와 수치심의 심리적 기원과 인지적 내용에 대한 문헌 고찰을 바탕으로 두 감정이 개인, 특히 힘 없는 집단의 성원을 예속시키고 낙인찍는다고 설명한다. 
+<!--more-->
+심리학, 문학, 사회학 등의 문헌을 바탕으로 두 혐오와 수치심의 기원을 분석하는 점이 흥미로웠고, 특히 그러한 감정이 어떻게 시민을 배제하고 비인간화시키는지, 또한 이것이 누스바움이 생각하는 자유주의와 어떻게 상충하는지에 관한 밀도있는 설명은 상당히 설득력있었다. 한편으로 누스바움이 지지하는 인간관과 정치관을 더 알아보고 싶고, 특히 아마르티아 센과 함께 펴낸 역량 접근법에 관해 자세히 알아보고 싶어졌다. 누스바움의 견해에 대한 지지, 비판, 후속 연구가 여럿 있을 법한데, 이에 관해서도 지속적으로 공부하고 싶다.</p>
+
+<h2 id="1장-감정과-법">1장 감정과 법</h2>
+
+<h3 id="요약">요약</h3>
+<p>감정은 내가 상황을 믿고 평가하는 바에 관한 복잡한 사고를 수반한다. 이러한 감정은 종종 법을 만들고 적용할 때 고려되는데, 어떤 감정이 이성적인 사람이 겪을 수 있는 타당한 감정인지, 그 감정이 법에 고려되는 것이 적절한지 평가될 필요가 있다. 법에 감정이 고려되는 것은 자유주의와도 양립가능한데, 정치적 자유주의에서 여러 의견을 존중하기 위해 필요한 공통되는 가치들이 보호되어야 하기 때문이다.</p>
+<h3 id="문장">문장</h3>
+<blockquote>
+  <p>“감정은 지향적 대상에 초점을 두며, 그러한 대상에 대한 평가적 믿음을 수반한다는 것이다.” (p. 67)</p>
+</blockquote>
+
+<blockquote>
+  <p>“그러나 이러한 [혐오와 수치심이라는] 감정은 인지적 내용에 문제를 지니고 있으며, 이런 점에서 사회적으로 작동할 경우 공정한 사회에 위험을 초래할 수 있다.” (p. 136)</p>
+</blockquote>
+
+<h2 id="2장-혐오와-우리의-동물적-육체">2장 혐오와 우리의 동물적 육체</h2>
+<h3 id="요약-1">요약</h3>
+<p>혐오라는 감정은 동물의 취약성 및 유한성에 관련된 오염 물질이나 부패와 관련된 오염 물질을 접촉⋅흡수하면 자신이 동물의 지위로 격하되거나 취약⋅유한해지고 부패되거나 오염될 수 있다는 사고를 바탕으로 한다. 분개와는 달리, 혐오는 자신이 오염될 수 있다는 가설적이고 신비적인 사고에 기반하여 오염물질을 배제하고 떼어내려는 사고로 이어진다. 법에 혐오를 고려해야 한다는 주장도 있지만, 누스바움은 혐오가 ① 실제 위험과 부합하지 않고 ② 비합리적이며 신비한 사고에 기반하며 ③ 그것이 지니는 전염성과 유사성을 바탕으로 특정 집단에 오염성⋅동물성⋅취약성을 투영하여 집단을 배제하기 위해 사용될 수 있다는 점을 들어 혐오가 법에 고려되어서는 안된다고 주장한다.</p>
+<h3 id="문장-1">문장</h3>
+<blockquote>
+  <p>“앵기알과 로진, 그리고 밀러는 모두 혐오를 자극하는 사고는 우리 자신과 인간이 아닌 동물, 또는 우리 자신과 우리가 지닌 동물성 간의 경계를 정돈하려는 관심과 연결되어 있다고 결론짓는다.” (p. 169)</p>
+</blockquote>
+
+<blockquote>
+  <p>” 우리는 인종주의자와 부패한 정치인들이 바람직한 행위를 하도록, 나아가 생각을 고치도록 요구해야 한다. 잘못된 행위를 저질렀으면 처벌을 받아야 한다. 그러나 그들을 토사물이나 배변 같다고 생각하는 게 [현실을 개선하는 데] 얼마나 도움이 되는가? 우리는 분명 그들을 추방시킬 수 없으며, 설령 할 수 있다 하더라도 그래서는 안 된다. 혐오는 우리가 사회적 순수함에 대한 비현실적인 낭만적 환상에 사로잡히게 하며, 인종 관계와 정치인들의 행위를 개선하기 위해 우리가 취할 수 있는 현실적인 수단에 대한 사고에서 멀어지게 한다. 어떠한 집단이 비도덕적이라 하더라도 그들을 오물처럼 취급해서는 아무것도 얻을 수 없다. 또한 … 그러한 취급은 전염과 유사성에 대한 신비적 사고를 통해 특정 집단이나 해를 끼치지 않는 사람들까지 희생시키는 태도로 이어지기 쉽다.” (pp. 199 – 200)</p>
+</blockquote>
+
+<blockquote>
+  <p>“이러한 행위는 오염물이며, 그/녀는 우리 공동체를 타락시킨다. 이러한 오염물을 멀리 두는 편이 더 좋을 것이다.” (중략) 
+ 그러나 단지 “나는 그들을 만나거나 그들의 행위를 마주치지는 않았지만, 자신들의 침대에서 성행위를 나눈 이 남성들은 우리 사회의 오염물이다.” 또는 “우리에게 아무런 해로운 행위를 가하지 않았지만, 우리 도시의 길거리를 돌아다니는 이 유대인들은 해로운 오물이다.”라고 말하는 것이라면, 이러한 경우의 오염에 대한 사고는 지극히 애매하고 불투명하다고 하겠다. (중략)
+ … 우리가 실제로 그 배경에 있는 사실, 즉 “우리가 질색함을 느끼는 동물성과 유한성의 측면에 거리를 두기 위해 우리는 이러한 사람들을 대리 동물로 선택했다.”는 점을 밝혀내고 진술한다면, 일단 드러나게 된 그 이유는 결코 법률적 규제의 아무런 근거도 제공해 주지 못할 것이다. (pp. 228 – 229)</p>
+</blockquote>
+
+<h2 id="3장-혐오와-법">3장 혐오와 법</h2>
+<h3 id="요약-2">요약</h3>
+<p>혐오 (disgust)는 가설적 사고를 바탕으로 개인의 존엄과 자유를 침해하며 특히 취약한 사람들을 예속시키고 주변화 할 수 있다는 점에서 법적 판단 및 공적 행위의 지침이 될 수 없다. 설령 고려되어도 그 범위는 원초적 혐오의 대상에 대해서, 주요 가치가 훼손되거나 실질적 위해가 가해지는 경우로 제한된다. 전통적으로 혐오를 근거로 판단되어 온 포르노와 시체 성애는 부당한 행위로 인해 발생하는 분개 반응을 통해 판단되는 것이 타당하다. 또한, 범죄자와 악한 자를 혐오의 대상으로 삼는 것은 그들이 우리와 같은 도덕적 행위자로서 책임을 지닌다는 사실을 은폐하고 우리 스스로 성찰할 수 없도록 하므로, 혐오 반응보다는 분개 반응 (indignation)을 공적 지침으로 사용하는 것이 타당하다.</p>
+<h3 id="문장-2">문장</h3>
+<blockquote>
+  <p>요컨대, 혐오가 우리가 존중하는 가치를 지지하는 것처럼 보이는 경우라 하더라도, 우리는 이 감정을 보다 면밀히 검토해야 한다는 것이다. 혐오는 오염과 불결함에 초점을 둔 감정이므로 성차별적 내용을 지닌 외설물이 여성에게 위해를 주고 있는지의 문제와 같은 핵심적인 사안과 무관하며, 이 문제를 판단하는 근거가 되기에 부적절하다. (pp. 267 – 268)</p>
+</blockquote>
+
+<blockquote>
+  <p>이때 혐오는 ‘단지 추정상의’ 또는 가설적인 형태를 띤다. 실제로 불쾌감을 느끼고 자주 그러했다면, 이는 동성애 행위가 동의하지 않은 사람에게 어떠한 직접적인 불쾌감을 주었기 때문이 아니라 일어나는 일을 ‘상상해서’ 또는 법이 동성애 행위를 방치하고 있다고 생각해서 발생한다. 이런 이유에서 나는 법적 기준으로 혐오의 사용은 가치가 없으며, 혐오에 호소하기보다는 다른 개념, 특히 손상이나 위해와 같은 개념으로서 그러한 위해의 증거를 조사하는 편이 낫다고 주장할 것이다. (p. 235)</p>
+</blockquote>
+
+<h2 id="4장-얼굴에-새기기-수치심과-낙인">4장 얼굴에 새기기: 수치심과 낙인</h2>
+<h3 id="요약-3">요약</h3>
+<p>수치심 (shame)이라는 감정은 유아기의 나르시시즘적 욕구가 좌절되고 자신이 불완전하고 취약한 존재라는 인식에 기인한다. 완전성과 취약성에 대한 인식의 불균형은 개인이 원초적 수치심을 겪게 하고, 이에 반응하여 자신을 완전하게 하려는 시도는 정신과적 증상의 발현으로 이어질 수 있다. 이러한 원초적 수치심은 건설적 수치심과 구별된다. 건설적 수치심은 인간이 취약하다는 인식을 바탕으로 사람들 간의 상호 의존을 강화하며 바람직한 도덕 규범에 기반하기 때문이다. 그럼에도 수치심은 공적으로 경계해야 하는 감정인데, 집단에 낙인찍는 행위는 자신의 완전성을 확보하려는 유아기적 나르시시즘에 의해 경험하는 수치심에 대한 공격적 반응으로서 낙인 찍힌 집단 성원의 고유성과 개별성을 지우고 그들을 비인간화한다는 점에서 그렇다.</p>
+<h3 id="문장-3">문장</h3>
+<blockquote>
+  <p>유아적 전지전능감, 그리고 (불가피한) 나르시시즘적 좌절과 연관된 원초적 수치심은 우리의 삶 속에 잠복해 있으며, 유아의 분리성과 자율성이 발달된 뒤에도 오직 부분적으로만 극복된다 (pp. 339 – 340)</p>
+</blockquote>
+
+<blockquote>
+  <p>(……) 이러한 환상들이 다른 사람의 도움을 그다지 필요로 하지 않고 자기 힘으로 살아가는 사람이 진짜 남자라는 널리 만연된 미국적 환상과 결합하면서, 고통스러운 사회적 긴장 요소를 낳고 있다. (……) 아무도 소년들에게 자신들의 내적 세계를 탐구하고 표현하라고 말해 주지 않는다. 소년들은 감정 표현에서는 까막눈이다. (……) 킨들론과 톰슨이 특히 문제가 있다고 여기는 소년 문화의 특징 중 하나는 여성적이라고 여겨지는 성격의 모든 측면(감정 특히 욕구, 슬픔, 동정심)을 폄하하는 경향이다. (pp. 367 – 369)</p>
+</blockquote>
+
+<blockquote>
+  <p>수치심은 좋은 이상과 관련해서는 귀중한 도덕적 기능을 할 수 있다. 그러나 수치심의 유아기적 기원을 고려하면 사회가 수치심을 주는 행위에 대해 마음 편히 신뢰하거나 액면 그대로 믿을 수 없다는 점을 알게 된다. 사회가 수치심을 주는 행위는 통제에서 벗어나기 쉬우며, 진정으로 가치 있는 규범 내에서 이를 적절하게 조정하기 어렵다. 도덕주의에 근거해 높은 이상을 외치는 이면에는 … 그러한 규범적 가치와 근본적으로 무관한 훨씬 더 원초적인 형태의 욕구가 자리잡고 있을 가능성이 높다. (pp. 401 – 402)</p>
+</blockquote>
+
+<h2 id="5장-시민들에게-수치심을-주어야-하는가">5장 시민들에게 수치심을 주어야 하는가?</h2>
+<h3 id="요약-4">요약</h3>
+<p>누스바움은 수치심 처벌이 모욕과 불평등에 기반하고 폭력을 오히려 촉진시킬 수 있으며 적절하게 집행될 수 없다는 점에서 공적으로 사용되어선 안된다고 본다. 소위 ‘일탈집단’에 대한 도덕적 공황은 그들이 정상인의 가치를 훼손할 것이라는 가설적 사고에 의한 나르시시즘적 공격성에서 기원하며, 설령 그 대상이 범죄 집단이라 해도 개인의 권리를 침해하기 십상이다. 특히 법을 세울 때 고려될 수 있는 공동체의 ‘단일한 가치 내지 의견’이라는 환상은 권력 없는 구성원을 집단과 공론장에서 배제하여 그들의 가치와 의견을 묵살한다는 점에서 문제가 있다. 따라서 우리 법은 모두에게 평등한 자유와 개인의 권리를 보호하도록 설계되어야 한다.</p>
+
+<h2 id="6장-수치심으로부터-시민을-보호하기">6장 수치심으로부터 시민을 보호하기</h2>
+<h3 id="요약-5">요약</h3>
+<p>누스바움은 사회구성원이 수치심과 낙인을 겪지 않게 하기 위한 법의 역할이 중요하다고 본다. 개인이 수치심과 낙인을 겪지 않고 살아가기 위한 역량이 보호되어야 하며, 낙인에 의거한 법 집행이 허용되어서는 안된다. 구체적으로는 차별금지법을 통해 동성애자 등의 소수자를 낙인에서 보호해야 하며 이러한 행위가 사회에서 용납되지 않음을 선언해야 한다. 이에 더하여, 장애인을 비인간화하는 전통적 개인관⋅시민관에서 벗어나 이들이 시민의 일원으로서 권리를 보장받고 역량을 함양할 수 있도록 법을 정교화해야 한다. 한편 누스바움은 스스로 수치스럽게 여길 수 있는 활동과 상상을 위한 프라이버시가 동의하지 않은 이에게 명백한 위해를 주지 않는 이상 보호되어야 한다는 점도 짚는다.</p>
+<h3 id="문장-4">문장</h3>
+<blockquote>
+  <p>나에게 모금 편지를 쓴 사람은 증오를 표현하고 있기는 하지만 범죄 의도를 보여 주는 증거는 없다. 그래서 이 사람의 발언은 표현의 자유로 보호받을 수 있고, 처벌할 수 없다. 반면, 증오 범죄를 저지른 사람은 자신의 정치적 견해에 더해 증오에 기초한 특정 형태의 범의를 지닌다. 이러한 범의는 본질적으로 행위를 겨냥한 것이고, 이는 소책자에 표현된 보호받는 견해의 범위를 벗어난다. 처벌 대상이 되는 것은 단순히 특정 형태의 견해가 아니라 특정 형태의 범죄 의도를 지닌 행위이다. (…) 분명 이러한 구분은 내리기 쉽지 않고, 그래서도 안 된다. 수많은 나라에서 정치적인 증오 발언을 규제하고 있다.  (…) 그러나 독일의 경우에도 반유대주의 내용을 담고 있는 소책자를 쓰는 것 자체를 범죄로 규정하려는 시도는 없다. 이러한 자료가 유포되지 못하게 막는 것으로 충분하기 때문이다. (pp. 533 – 534)</p>
+</blockquote>
+
+<blockquote>
+  <p>… 우리 모두가 많은 손상을 지니고 있다는 점을 인정하는 데서 시작한다. 그리고 삶은 “정상적인” 필요를 갖는 기간뿐 아니라 평범하지 않고 비대칭적인 의존을 갖는 기간 — 얼마간 오래 지속되는 — 을 포함한다는 점을 인정해야 한다. 이러한 의존 기간 동안 ‘정상인’의 상황은 하나 이상의 측면에서 특이한 장애를 지닌 사람이 처한 상황에 가까워진다. 이것은 우리가 ‘정상인’이 자존감을 지닐 수 있는 사회적 조건을 형성하고자 할 때, 평생 동안 장애를 안고 살아가는 사람들의 자존감을 함께 사고해야 하고, 그들이 지닌 완전한 인간성과 개별성을 인정하고 뒷받침할 수 있는 방법을 고안하기 위해 노력해야 함을 뜻한다. (…) 유능하면서도 도움을 필요로 하는 존재라는 좀 더 복잡한 이미지로 시민을 생각하는 것이다. (p. 562)</p>
+</blockquote>
+
+<h2 id="7장-인간성을-숨기지-않는-자유주의">7장 인간성을 숨기지 않는 자유주의</h2>
+<h3 id="요약-6">요약</h3>
+<p>누스바움은 혐오와 수치심이라는 감정이 힘 없는 집단의 구성원을 예속하고 낙인 찍는데 사용될 수 있으므로 평등한 존엄을 핵심 가치로 하는 자유주의 사회에서 공적으로 고려되어서는 안된다고 본다. 그는 사회적 효용에 근거한 밀의 자유주의가 존엄과 자유를 진리 아래에 두고 상호존중과 평등을 기초로 하지 않는다는 점을 지적하고, 또한 공동체주의적 자유주의와 사회계약론적 자유주의가 모두 상호 존중과 평등을 기초로 하지 않고 낙인과 사회적 위계를 심화시킨다는 점을 지적한다. 그가 보기에는 인간이 유한하며 도움을 필요로 하는 존재라는 사실에 기초하는 자유주의관이 더 적절하며, 이에 따라 개인이 기능을 발휘하기 위한 역량 분배에 초점을 두어야 한다고 주장한다. 이러한 정치관에서 공적으로 고려되어야 할 감정은 혐오와 수치심이 아니라 분개, 두려움과 슬픔, 감사와 사랑, 동정심과 같은 도덕 감정이다.</p>
+
+<h3 id="문장-5">문장</h3>
+<blockquote>
+  <p>나는 이것이 진리에 기초에 자유를 정당화하는 밀의 주장에 대한 가장 중요한 비판이라고 생각한다. 개별 시민을 전체 복리의 수단으로, 실제 한 세대를 다음 세대의 진보를 위한 수단으로 간주하기 때문에 ‘잘못된 방식’의 정당화라는 주장이다. 모든 인간은 존엄성을 지니므로 존중받아야 하며, 정치는 모든 시민이 평등하게 지니는 존엄성을 기초로 해야 한다는 생각에서 출발하게 되면, 밀이 잘못된 길로 가고 있다는 사실을 알게 될 것이다. (p. 588)</p>
+</blockquote>
+
+<blockquote>
+  <p>이 책의 주장과 부합할 수 있는 인간에 대한 정치관을 고찰한다면, 그러한 시각은 인간의 능력뿐 아니라 불완전성과 필요, 그리고 때때로 비대칭적 필요를 함께 강조할 필요가 있다.  (……) 인간에 대한 이러한 정치관에 기초할 경우, 정치가 분배하는 좋은 것(복지)을 단순히 자원이나 물질 — 그 자체로 일정한 좋음이나 가치를 가진 것처럼 — 로 보기보다는 서로 맞물려 있는 인간 역량의 집합으로 생각하는 것이 자연스러울 것이다. (pp. 615-616)</p>
+</blockquote>
+
+<blockquote>
+  <p>… 인간 삶에 내재된 깊은 어려움 — 이러한 어려움 때문에 공적인 감정으로 혐오와 수치심에 의존하게 된다. — 을 고찰함으로써 우리는 적어도 자유주의 사회가 소중히 여기고 나아가 발전시켜야 하는 일정한 역량의 윤곽을 볼 수 있게 되었다. 지배하기보다는 상호 의존하는 관계를 즐길 수 있는 능력, 자신과 다른 사람의 불완전성과 동물성, 유한성을 인정할 수 있는 능력이 그것이다. (p. 623)</p>
+</blockquote>
+
+<h1 id="reference">Reference</h1>
+<ul>
+  <li>
+    <p>Nussbaum, M. C. (2015). 혐오와 수치심. [Hiding from Humanity: Disgust, Shame, and the Law]. (조계원, Trans.). 민음사.</p>
+  </li>
+  <li>
+    <p>혐오와 수치심 표지 사진, 알라딘. <a href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=54798938&amp;start=slayer" target="_blank">https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=54798938&amp;start=slayer</a></p>
+  </li>
+</ul>
+
+</div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2024-05-14T00:00:00+09:00"><!-- start custom article footer snippet -->
+
+<!-- end custom article footer snippet -->
+<div class="article__subscribe"><div class="subscribe"><i class="fas fa-rss"></i> <a type="application/rss+xml" href="/en/feed.xml">구독하기</a></div>
+</div><div class="article__license"><div class="license">
+    <p>이 글의 저작권은 <a itemprop="license" rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">Attribution-NonCommercial 4.0 International</a> 라이센스를 따릅니다.
+      <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">
+        <img alt="Attribution-NonCommercial 4.0 International" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
+      </a>
+    </p>
+  </div></div></footer><script
+  src="https://utteranc.es/client.js"
+  repo="gaba-tope/gaba-tope.github.io"
+  issue-term="title"
+  theme="github-light"
+  crossorigin="anonymous"
+  async
+></script><div class="article__section-navigator clearfix"><div class="previous"><span>이전</span><a href="/en/blog/2024/04/06/individualist.html">개인주의적 사회관에 대한 비판 — 정리해보았다</a></div><div class="next"><span>다음</span><a href="/en/blog/2024/05/22/p-val-1.html">[NHST] 1장. 통계적 가설검정의 개념</a></div></div></div>
+
+</div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    $(function() {
+      var $this ,$scroll;
+      var $articleContent = $('.js-article-content');
+      var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+      var scroll = hasSidebar ? '.js-page-main' : 'html, body';
+      $scroll = $(scroll);
+
+      $articleContent.find('.highlight').each(function() {
+        $this = $(this);
+        $this.attr('data-lang', $this.find('code').attr('data-lang'));
+      });
+      $articleContent.find('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]').each(function() {
+        $this = $(this);
+        $this.append($('<a class="anchor d-print-none" aria-hidden="true"></a>').html('<i class="fas fa-anchor"></i>'));
+      });
+      $articleContent.on('click', '.anchor', function() {
+        $scroll.scrollToAnchor('#' + $(this).parent().attr('id'), 400);
+      });
+    });
+  });
+})();
+</script>
+<script src="/assets/scripts/copyCode.js"></script>
+</div><section class="page__comments d-print-none"></section></article><!-- start custom main bottom snippet -->
+
+<!-- end custom main bottom snippet -->
+</div>
+            </div></div></div><div class="page__footer d-print-none">
+<footer class="footer py-4 js-page-footer">
+  <div class="main"><div itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tope"><meta itemprop="url" content="https://gaba-tope.github.io"><div class="footer__author-links"><div class="author-links">
+  <ul class="menu menu--nowrap menu--inline"><link itemprop="url" href="https://gaba-tope.github.io"><li title="Github에서 팔로우하기">
+        <a class="button button--circle github-button" itemprop="sameAs" href="https://github.com/gaba-tope" target="_blank">
+          <div class="icon"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path class="svgpath" data-index="path_0" fill="#272636" d="M0 525.2c0 223.6 143.3 413.7 343 483.5 26.9 6.8 22.8-12.4 22.8-25.4l0-88.7c-155.3 18.2-161.5-84.6-172-101.7-21.1-36-70.8-45.2-56-62.3 35.4-18.2 71.4 4.6 113.1 66.3 30.2 44.7 89.1 37.2 119 29.7 6.5-26.9 20.5-50.9 39.7-69.6C248.8 728.2 181.7 630 181.7 513.2c0-56.6 18.7-108.7 55.3-150.7-23.3-69.3 2.2-128.5 5.6-137.3 66.5-6 135.5 47.6 140.9 51.8 37.8-10.2 80.9-15.6 129.1-15.6 48.5 0 91.8 5.6 129.8 15.9 12.9-9.8 77-55.8 138.8-50.2 3.3 8.8 28.2 66.7 6.3 135 37.1 42.1 56 94.6 56 151.4 0 117-67.5 215.3-228.8 243.7 26.9 26.6 43.6 63.4 43.6 104.2l0 128.8c0.9 10.3 0 20.5 17.2 20.5C878.1 942.4 1024 750.9 1024 525.3c0-282.9-229.3-512-512-512C229.1 13.2 0 242.3 0 525.2L0 525.2z" />
+</svg>
+</div>
+        </a>
+      </li></ul>
+</div>
+</div>
+    </div><div class="site-info mt-2">
+      <div>© Tope's Cytoplasm 2021,
+        Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
+        title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
+      </div>
+    </div>
+  </div>
+</footer>
+</div></div>
+    </div><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $body = $('body'), $window = $(window);
+    var $pageRoot = $('.js-page-root'), $pageMain = $('.js-page-main');
+    var activeCount = 0;
+    function modal(options) {
+      var $root = this, visible, onChange, hideWhenWindowScroll = false;
+      var scrollTop;
+      function setOptions(options) {
+        var _options = options || {};
+        visible = _options.initialVisible === undefined ? false : show;
+        onChange = _options.onChange;
+        hideWhenWindowScroll = _options.hideWhenWindowScroll;
+      }
+      function init() {
+        setState(visible);
+      }
+      function setState(isShow) {
+        if (isShow === visible) {
+          return;
+        }
+        visible = isShow;
+        if (visible) {
+          activeCount++;
+          scrollTop = $(window).scrollTop() || $pageMain.scrollTop();
+          $root.addClass('modal--show');
+          $pageMain.scrollTop(scrollTop);
+          activeCount === 1 && ($pageRoot.addClass('show-modal'), $body.addClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.on('scroll', hide);
+          $window.on('keyup', handleKeyup);
+        } else {
+          activeCount > 0 && activeCount--;
+          $root.removeClass('modal--show');
+          $window.scrollTop(scrollTop);
+          activeCount === 0 && ($pageRoot.removeClass('show-modal'), $body.removeClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.off('scroll', hide);
+          $window.off('keyup', handleKeyup);
+        }
+        onChange && onChange(visible);
+      }
+      function show() {
+        setState(true);
+      }
+      function hide() {
+        setState(false);
+      }
+      function handleKeyup(e) {
+        // Char Code: 27  ESC
+        if (e.which ===  27) {
+          hide();
+        }
+      }
+      setOptions(options);
+      init();
+      return {
+        show: show,
+        hide: hide,
+        $el: $root
+      };
+    }
+    $.fn.modal = modal;
+  });
+})();
+</script><div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal"><script>
+(function () {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    // search panel
+    var search = (window.search || (window.search = {}));
+    var useDefaultSearchBox = window.useDefaultSearchBox === undefined ?
+      true : window.useDefaultSearchBox ;
+
+    var $searchModal = $('.js-page-search-modal');
+    var $searchToggle = $('.js-search-toggle');
+    var searchModal = $searchModal.modal({ onChange: handleModalChange, hideWhenWindowScroll: true });
+    var modalVisible = false;
+    search.searchModal = searchModal;
+
+    var $searchBox = null;
+    var $searchInput = null;
+    var $searchClear = null;
+
+    function getModalVisible() {
+      return modalVisible;
+    }
+    search.getModalVisible = getModalVisible;
+
+    function handleModalChange(visible) {
+      modalVisible = visible;
+      if (visible) {
+        search.onShow && search.onShow();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].focus();
+      } else {
+        search.onShow && search.onHide();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
+        setTimeout(function() {
+          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+          search.clear && search.clear();
+          window.pageAsideAffix && window.pageAsideAffix.refresh();
+        }, 400);
+      }
+    }
+
+    $searchToggle.on('click', function() {
+      modalVisible ? searchModal.hide() : searchModal.show();
+    });
+    // Char Code: 83  S, 191 /
+    $(window).on('keyup', function(e) {
+      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
+        modalVisible || searchModal.show();
+      }
+    });
+
+    if (useDefaultSearchBox) {
+      $searchBox = $('.js-search-box');
+      $searchInput = $searchBox.children('input');
+      $searchClear = $searchBox.children('.js-icon-clear');
+      search.getSearchInput = function() {
+        return $searchInput.get(0);
+      };
+      search.getVal = function() {
+        return $searchInput.val();
+      };
+      search.setVal = function(val) {
+        $searchInput.val(val);
+      };
+
+      $searchInput.on('focus', function() {
+        $(this).addClass('focus');
+      });
+      $searchInput.on('blur', function() {
+        $(this).removeClass('focus');
+      });
+      $searchInput.on('input', window.throttle(function() {
+        var val = $(this).val();
+        if (val === '' || typeof val !== 'string') {
+          search.clear && search.clear();
+        } else {
+          $searchBox.addClass('not-empty');
+          search.onInputNotEmpty && search.onInputNotEmpty(val);
+        }
+      }, 400));
+      $searchClear.on('click', function() {
+        $searchInput.val(''); $searchBox.removeClass('not-empty');
+        search.clear && search.clear();
+      });
+    }
+  });
+})();
+</script><div class="search search--dark">
+  <div class="main">
+    <div class="search__header">검색</div>
+    <div class="search-bar">
+      <div class="search-box js-search-box">
+        <div class="search-box__icon-search"><i class="fas fa-search"></i></div>
+        <input type="text" />
+        <div class="search-box__icon-clear js-icon-clear">
+          <a><i class="fas fa-times"></i></a>
+        </div>
+      </div>
+      <button class="button button--theme-dark button--pill search__cancel js-search-toggle">
+        취소</button>
+    </div>
+    <div class="search-result js-search-result"></div>
+  </div>
+</div>
+<script>var SOURCES = window.TEXT_VARIABLES.sources;
+var PAHTS = window.TEXT_VARIABLES.paths;
+window.Lazyload.js([SOURCES.jquery, PAHTS.search_js], function() {
+  var search = (window.search || (window.search = {}));
+  var searchData = window.TEXT_SEARCH_DATA || {};
+
+  function memorize(f) {
+    var cache = {};
+    return function () {
+      var key = Array.prototype.join.call(arguments, ',');
+      if (key in cache) return cache[key];
+      else return cache[key] = f.apply(this, arguments);
+    };
+  }
+
+  /// search
+  function searchByQuery(query) {
+    var i, j, key, keys, cur, _title, result = {};
+    keys = Object.keys(searchData);
+    for (i = 0; i < keys.length; i++) {
+      key = keys[i];
+      for (j = 0; j < searchData[key].length; j++) {
+        cur = searchData[key][j], _title = cur.title;
+        if ((result[key] === undefined || result[key] && result[key].length < 4 )
+          && _title.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
+          if (result[key] === undefined) {
+            result[key] = [];
+          }
+          result[key].push(cur);
+        }
+      }
+    }
+    return result;
+  }
+
+  var renderHeader = memorize(function(header) {
+    return $('<p class="search-result__header">' + header + '</p>');
+  });
+
+  var renderItem = function(index, title, url) {
+    return $('<li class="search-result__item" data-index="' + index + '"><a class="button" href="' + url + '">' + title + '</a></li>');
+  };
+
+  function render(data) {
+    if (!data) { return null; }
+    var $root = $('<ul></ul>'), i, j, key, keys, cur, itemIndex = 0;
+    keys = Object.keys(data);
+    for (i = 0; i < keys.length; i++) {
+      key = keys[i];
+      $root.append(renderHeader(key));
+      for (j = 0; j < data[key].length; j++) {
+        cur = data[key][j];
+        $root.append(renderItem(itemIndex++, cur.title, cur.url));
+      }
+    }
+    return $root;
+  }
+
+  // search box
+  var $result = $('.js-search-result'), $resultItems;
+  var lastActiveIndex, activeIndex;
+
+  function clear() {
+    $result.html(null);
+    $resultItems = $('.search-result__item'); activeIndex = 0;
+  }
+  function onInputNotEmpty(val) {
+    $result.html(render(searchByQuery(val)));
+    $resultItems = $('.search-result__item'); activeIndex = 0;
+    $resultItems.eq(0).addClass('active');
+  }
+
+  search.clear = clear;
+  search.onInputNotEmpty = onInputNotEmpty;
+
+  function updateResultItems() {
+    lastActiveIndex >= 0 && $resultItems.eq(lastActiveIndex).removeClass('active');
+    activeIndex >= 0 && $resultItems.eq(activeIndex).addClass('active');
+  }
+
+  function moveActiveIndex(direction) {
+    var itemsCount = $resultItems ? $resultItems.length : 0;
+    if (itemsCount > 1) {
+      lastActiveIndex = activeIndex;
+      if (direction === 'up') {
+        activeIndex = (activeIndex - 1 + itemsCount) % itemsCount;
+      } else if (direction === 'down') {
+        activeIndex = (activeIndex + 1 + itemsCount) % itemsCount;
+      }
+      updateResultItems();
+    }
+  }
+
+  // Char Code: 13  Enter, 37  ⬅, 38  ⬆, 39  ➡, 40  ⬇
+  $(window).on('keyup', function(e) {
+    var modalVisible = search.getModalVisible && search.getModalVisible();
+    if (modalVisible) {
+      if (e.which === 38) {
+        modalVisible && moveActiveIndex('up');
+      } else if (e.which === 40) {
+        modalVisible && moveActiveIndex('down');
+      } else if (e.which === 13) {
+        modalVisible && $resultItems && activeIndex >= 0 && $resultItems.eq(activeIndex).children('a')[0].click();
+      }
+    }
+  });
+
+  $result.on('mouseover', '.search-result__item > a', function() {
+    var itemIndex = $(this).parent().data('index');
+    itemIndex >= 0 && (lastActiveIndex = activeIndex, activeIndex = itemIndex, updateResultItems());
+  });
+});
+</script>
+</div></div>
+
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function scrollToAnchor(anchor, duration, callback) {
+      var $root = this;
+      $root.animate({ scrollTop: $(anchor).position().top }, duration, function() {
+        window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+        callback && callback();
+      });
+    }
+    $.fn.scrollToAnchor = scrollToAnchor;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function affix(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroll,
+        offsetBottom = 0, scrollTarget = window, scroll = window.document, disabled = false, isOverallScroller = true,
+        rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop,
+        hasInit = false, curState;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.offsetBottom && (offsetBottom = _options.offsetBottom);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroll && (scroll = _options.scroll);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $scrollTarget = $(scrollTarget);
+        isOverallScroller = window.isOverallScroller($scrollTarget[0]);
+        $scroll = $(scroll);
+      }
+      function preCalc() {
+        top();
+        rootHeight = $root.outerHeight();
+        rootTop = $root.offset().top + (isOverallScroller ? 0 :  $scrollTarget.scrollTop());
+        rootLeft = $root.offset().left;
+      }
+      function calc(needPreCalc) {
+        needPreCalc && preCalc();
+        scrollBottom = $scroll.outerHeight() - offsetBottom - rootHeight;
+        rootBottomTop = scrollBottom - rootTop;
+      }
+      function top() {
+        if (curState !== 'top') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: 0
+          });
+          curState = 'top';
+        }
+      }
+      function fixed() {
+        if (curState !== 'fixed') {
+          $root.addClass('fixed').css({
+            left: rootLeft + 'px',
+            top: 0
+          });
+          curState = 'fixed';
+        }
+      }
+      function bottom() {
+        if (curState !== 'bottom') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: rootBottomTop + 'px'
+          });
+          curState = 'bottom';
+        }
+      }
+      function setState() {
+        var scrollTop = $scrollTarget.scrollTop();
+        if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
+          fixed();
+        } else if (scrollTop < rootTop) {
+          top();
+        } else {
+          bottom();
+        }
+      }
+      function init() {
+        if(!hasInit) {
+          var interval, timeout;
+          calc(true); setState();
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState();
+          });
+          $window.on('resize', function() {
+            disabled || (calc(true), setState());
+          });
+          hasInit = true;
+        }
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions,
+        refresh: function() {
+          calc(true, { animation: false }); setState();
+        }
+      };
+    }
+    $.fn.affix = affix;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function toc(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
+        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        headingsPos, scrolling = false, hasRendered = false, hasInit = false;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.selectors && (selectors = _options.selectors);
+        _options.container && (container = _options.container);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroller && (scroller = _options.scroller);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $headings = $(container).find(selectors).filter('[id]');
+        $scrollTarget = $(scrollTarget);
+        $scroller = $(scroller);
+      }
+      function calc() {
+        headingsPos = [];
+        $headings.each(function() {
+          headingsPos.push(Math.floor($(this).position().top));
+        });
+      }
+      function setState(element, disabled) {
+        var scrollTop = $scrollTarget.scrollTop(), i;
+        if (disabled || !headingsPos || headingsPos.length < 1) { return; }
+        if (element) {
+          $activeCur = element;
+        } else {
+          for (i = 0; i < headingsPos.length; i++) {
+            if (scrollTop >= headingsPos[i]) {
+              $activeCur = $tocLi.eq(i);
+            } else {
+              $activeCur || ($activeCur = $tocLi.eq(i));
+              break;
+            }
+          }
+        }
+        $activeLast && $activeLast.removeClass('active');
+        ($activeLast = $activeCur).addClass('active');
+      }
+      function render() {
+        if(!hasRendered) {
+          $root.append($tocUl);
+          $headings.each(function() {
+            var $this = $(this);
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+              .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+          });
+          $tocLi = $tocUl.children('li');
+          $tocUl.on('click', 'a', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            scrolling = true;
+            setState($this.parent());
+            $scroller.scrollToAnchor($this.attr('href'), 400, function() {
+              scrolling = false;
+            });
+          });
+        }
+        hasRendered = true;
+      }
+      function init() {
+        var interval, timeout;
+        if(!hasInit) {
+          render(); calc(); setState(null, scrolling);
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState(null, scrolling);
+          });
+          $window.on('resize', window.throttle(function() {
+            if (!disabled) {
+              render(); calc(); setState(null, scrolling);
+            }
+          }, 100));
+        }
+        hasInit = true;
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    $.fn.toc = toc;
+  });
+})();
+/*(function () {
+
+})();*/
+  $(document).ready(function() {
+    $('.footnote-ref').hover(
+      function() {
+        var footnoteId = $(this).text();
+        $('#footnote' + footnoteId).css('display', 'block');
+      },
+      function() {
+        var footnoteId = $(this).text();
+        $('#footnote' + footnoteId).css('display', 'none');
+      }
+    );
+  });
+</script><script>
+  /* toc must before affix, since affix need to konw toc' height. */(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  var TOC_SELECTOR = window.TEXT_VARIABLES.site.toc.selectors;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window);
+    var $articleContent = $('.js-article-content');
+    var $tocRoot = $('.js-toc-root'), $col2 = $('.js-col-aside');
+    var toc;
+    var tocDisabled = false;
+    var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+    var hasToc = $articleContent.find(TOC_SELECTOR).length > 0;
+
+    function disabled() {
+      return $col2.css('display') === 'none' || !hasToc;
+    }
+
+    tocDisabled = disabled();
+
+    toc = $tocRoot.toc({
+      selectors: TOC_SELECTOR,
+      container: $articleContent,
+      scrollTarget: hasSidebar ? '.js-page-main' : null,
+      scroller: hasSidebar ? '.js-page-main' : null,
+      disabled: tocDisabled
+    });
+
+    $window.on('resize', window.throttle(function() {
+      tocDisabled = disabled();
+      toc && toc.setOptions({
+        disabled: tocDisabled
+      });
+    }, 100));
+
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window), $pageFooter = $('.js-page-footer');
+    var $pageAside = $('.js-page-aside');
+    var affix;
+    var tocDisabled = false;
+    var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+
+    affix = $pageAside.affix({
+      offsetBottom: $pageFooter.outerHeight(),
+      scrollTarget: hasSidebar ? '.js-page-main' : null,
+      scroller: hasSidebar ? '.js-page-main' : null,
+      scroll: hasSidebar ? $('.js-page-main').children() : null,
+      disabled: tocDisabled
+    });
+
+    $window.on('resize', window.throttle(function() {
+      affix && affix.setOptions({
+        disabled: tocDisabled
+      });
+    }, 100));
+
+    window.pageAsideAffix = affix;
+  });
+})();
+</script><script type="text/x-mathjax-config">
+	var _config = { tex2jax: {
+		inlineMath: [['$','$'], ['\\(','\\)']]
+	}};MathJax.Hub.Config(_config);
+</script>
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+<script>/* assets/js/custom/dark-theme.js */
+const defaultTheme = [...document.styleSheets].find(style => /(main.css)$/.test(style.href));
+const darkTheme = [...document.styleSheets].find(style => /(main_dark.css)$/.test(style.href));
+
+let setDarkMode = (isDark) => {
+    darkTheme.disabled = isDark !== true;
+    defaultTheme.disabled = isDark === true;
+    localStorage.setItem('theme', isDark ? 'dark' : 'default');
+}
+
+if (darkTheme) {
+    let currentTheme = localStorage.getItem('theme');
+    let isDarkMode = false;
+    if (currentTheme) {
+        isDarkMode = currentTheme === 'dark';
+    } else {
+        isDarkMode = matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    setDarkMode(isDarkMode);
+
+    let toggleThemeBtn = document.getElementById("toggle_dark_theme")
+    if (toggleThemeBtn) {
+        toggleThemeBtn.checked = isDarkMode
+    }
+
+    let changeTheme = (e) => {
+        setDarkMode(e.target.checked);
+    }
+
+    toggleThemeBtn.addEventListener('click', changeTheme)
+}</script>
+    </div>
+    <script>(function () {
+  var $root = document.getElementsByClassName('root')[0];
+  if (window.hasEvent('touchstart')) {
+    $root.dataset.isTouch = true;
+    document.addEventListener('touchstart', function(){}, false);
+  }
+})();
+</script>
+  </body>
+</html>
+

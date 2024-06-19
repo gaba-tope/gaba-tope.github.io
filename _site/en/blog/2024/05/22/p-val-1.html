@@ -1,0 +1,1567 @@
+<!DOCTYPE html><html lang="ko">
+  <head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>[NHST] 1장. 통계적 가설검정의 개념 - Tope's Cytoplasm</title>
+
+<meta name="description" content="머리말널리 사용되는 null hypothesis statistical testing영가설 통계 검정은 학부 1학년 수준 통계학에서 배울 정도로 널리 사용되는 가설 검정법이에요. 이는 Fisher의 test of significance와 Neyman-Pearson의 statistic...">
+<link rel="canonical" href="http://localhost:4000/en/blog/2024/05/22/p-val-1.html"><link rel="alternate" type="application/rss+xml" title="Tope's Cytoplasm" href="/en/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ -->
+
+<!-- test: delete icon
+<link rel="apple-touch-icon" sizes="180x180" href="/en/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/en/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/en/favicon-16x16.png">
+<link rel="manifest" href="/en/site.webmanifest">
+<link rel="mask-icon" href="/en/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+-->
+
+<!-- end favicons snippet -->
+
+<link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.css" ><!-- start custom head snippets -->
+
+<!-- end custom head snippets -->
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<!-- darkmode css -->
+
+<link rel="stylesheet" href="/assets/css/main_dark.css">
+
+
+<!-- ... --><script>(function() {
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
+
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
+
+  window.isOverallScroller = function(node) {
+    return node === document.documentElement || node === document.body || node === window;
+  };
+
+  window.isFormElement = function(node) {
+    var tagName = node.tagName;
+    return tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+  };
+
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i;
+      loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cbs[i]();
+        }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();
+(function() {
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
+
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
+    }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
+
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+})();
+(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
+
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      version: '2.2.6',
+      sources: {
+        font_awesome: 'https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.css',
+        jquery: 'https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js',
+        leancloud_js_sdk: '//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js',
+        chart: 'https://cdn.bootcss.com/Chart.js/2.7.2/Chart.bundle.min.js',
+        gitalk: {
+          js: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.js',
+          css: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.css'
+        },
+        valine: 'https://unpkg.com/valine/dist/Valine.min.js',
+        mathjax: 'https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: 'https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      },
+      paths: {
+        search_js: '/assets/search.js'
+      }
+    };
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script>
+</head>
+  <body>
+    <div class="root" data-is-touch="false">
+      <div class="layout--page js-page-root"><div class="page__main js-page-main page__viewport has-aside cell cell--auto">
+
+      <div class="page__main-inner"><div class="page__header d-print-none"><style>
+  @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+  .header__brand a {
+  font-family: "Lato", sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+}
+</style><header class="header"><div class="main">
+      <div class="header__title">
+        <div class="header__brand"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="297mm"
+   height="297mm"
+   viewBox="0 0 297 297"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1">
+    <g
+       id="g24"
+       style="clip-rule:evenodd;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
+       transform="matrix(1.2828024,0,0,1.280835,21.48438,25.562315)">
+      <g
+         id="g2">
+        <path
+           style="opacity:1"
+           fill="#0a0a0a"
+           d="m 67.5,-0.5 c 5.3333,0 10.6667,0 16,0 1.2279,1.50978 1.2279,3.00978 0,4.5 -5.2503,0.19285 -10.417,0.69285 -15.5,1.5 -0.6667,5.6667 -0.6667,11.3333 0,17 0.5,0.5 1,1 1.5,1.5 17,0.6667 34,0.6667 51,0 1.142,-6.0844 1.309,-12.2511 0.5,-18.5 C 111.577,4.68031 102.077,4.18031 92.5,4 c -1.2279,-1.49022 -1.2279,-2.99022 0,-4.5 9.333,0 18.667,0 28,0 2.167,0.697963 4,2.0313 5.5,4 0.667,6.6667 0.667,13.3333 0,20 -1.639,3.9893 -4.639,5.9893 -9,6 -0.333,4 -0.667,8 -1,12 -1,1.3333 -2,1.3333 -3,0 -0.333,-4 -0.667,-8 -1,-12 -2.041,-0.9231 -4.208,-1.2564 -6.5,-1 -0.427,13.7264 0.073,27.3931 1.5,41 2.667,4 5.333,8 8,12 2.062,-2.0052 3.062,-4.3385 3,-7 -5.252,-7.523 -6.919,-15.8564 -5,-25 1,-1.3333 2,-1.3333 3,0 0.333,4 0.667,8 1,12 0.742,3.1565 2.242,5.8232 4.5,8 2.496,-3.3411 4.829,-6.8411 7,-10.5 3.291,-2.0745 6.457,-1.9078 9.5,0.5 7.667,13.6667 15.333,27.3333 23,41 2.257,8.66 1.757,17.16 -1.5,25.5 1.341,3.184 2.841,6.351 4.5,9.5 3.461,14.578 -1.705,24.744 -15.5,30.5 -36,0.667 -72,0.667 -108,0 -15.5513,-7.665 -19.718,-19.498 -12.5,-35.5 15.0598,-22.063 29.7265,-44.3961 44,-67 0.4999,-11.6619 0.6665,-23.3286 0.5,-35 -3.4705,0.6252 -6.3038,-0.3748 -8.5,-3 -0.6667,-7.3333 -0.6667,-14.6667 0,-22 0.6897,-1.85023 1.8564,-3.183565 3.5,-4 z"
+           id="path2" />
+      </g>
+      <g
+         id="g3">
+        <path
+           style="opacity:1"
+           fill="#f6f6f6"
+           d="m 83.5,-0.5 c 3,0 6,0 9,0 -1.2279,1.50978 -1.2279,3.00978 0,4.5 9.577,0.18031 19.077,0.68031 28.5,1.5 0.809,6.2489 0.642,12.4156 -0.5,18.5 -17,0.6667 -34,0.6667 -51,0 C 69,23.5 68.5,23 68,22.5 67.3333,16.8333 67.3333,11.1667 68,5.5 73.083,4.69285 78.2497,4.19285 83.5,4 c 1.2279,-1.49022 1.2279,-2.99022 0,-4.5 z"
+           id="path3" />
+      </g>
+      <g
+         id="g4">
+        <path
+           style="opacity:1"
+           fill="#0f0f0f"
+           d="m 145.5,2.5 c 14.445,0.72369 18.445,7.557 12,20.5 -13.033,5.7421 -19.533,1.5754 -19.5,-12.5 1.69,-3.52089 4.19,-6.18756 7.5,-8 z"
+           id="path4" />
+      </g>
+      <g
+         id="g5">
+        <path
+           style="opacity:1"
+           fill="#f3f3f3"
+           d="m 146.5,7.5 c 6.664,-0.49985 9.831,2.5002 9.5,9 -0.465,1.4308 -1.299,2.5975 -2.5,3.5 -7.771,2.2191 -11.271,-0.6143 -10.5,-8.5 0.69,-1.85023 1.856,-3.18357 3.5,-4 z"
+           id="path5" />
+      </g>
+      <g
+         id="g6">
+        <path
+           style="opacity:1"
+           fill="#f6f6f6"
+           d="m 66.5,102.5 c 12.5113,-0.329 24.8446,0.005 37,1 -2.008,22.402 7.992,34.735 30,37 4.767,-0.216 9.434,-0.716 14,-1.5 1.774,4.163 1.107,7.83 -2,11 -33.667,0.667 -67.3333,0.667 -101,0 -3.6265,-2.251 -4.7931,-5.418 -3.5,-9.5 3.6667,-5.667 7.3333,-11.333 11,-17 -0.2323,-4.924 -1.899,-5.258 -5,-1 -3.6667,5.667 -7.3333,11.333 -11,17 -1.1285,6.91 1.3715,12.077 7.5,15.5 33.6667,0.667 67.333,0.667 101,0 7.673,-2.842 10.506,-8.342 8.5,-16.5 -2.091,-3.152 -1.258,-5.485 2.5,-7 7.355,9.94 6.355,19.107 -3,27.5 -2.217,1.275 -4.551,2.275 -7,3 -33.667,0.667 -67.3333,0.667 -101,0 -12.4026,-3.953 -17.2359,-12.453 -14.5,-25.5 15.3333,-23.333 30.6667,-46.6667 46,-70 1.42,-12.6056 1.92,-25.2722 1.5,-38 2.2925,-0.2564 4.4592,0.0769 6.5,1 0.6667,12 0.6667,24 0,36 -8.9064,15.4768 -18.5731,30.4768 -29,45 -0.49,1.293 -0.6567,2.627 -0.5,4 1.3734,0.157 2.7068,-0.01 4,-0.5 2.5297,-4.013 5.1964,-7.846 8,-11.5 z"
+           id="path6" />
+      </g>
+      <g
+         id="g7">
+        <path
+           style="opacity:1"
+           fill="#f7f7f7"
+           d="m 89.5,28.5 c 3.6667,0 7.3333,0 11,0 -0.167,12.6711 0,25.3377 0.5,38 3.061,7.1241 6.895,13.7908 11.5,20 -1.92,2.8388 -3.587,5.8388 -5,9 -12.3198,1.1659 -24.6532,1.3326 -37,0.5 5.5,-8.1667 11,-16.3333 16.5,-24.5 1.1134,-14.3536 1.9467,-28.6869 2.5,-43 z"
+           id="path7" />
+      </g>
+      <g
+         id="g8">
+        <path
+           style="opacity:1"
+           fill="#0f0f0f"
+           d="m 158.5,41.5 c 11.375,-1.123 16.542,3.877 15.5,15 -1.803,5.0813 -5.469,7.748 -11,8 -9.086,-1.4853 -12.753,-6.8187 -11,-16 1.694,-2.8576 3.861,-5.191 6.5,-7 z"
+           id="path8" />
+      </g>
+      <g
+         id="g9">
+        <path
+           style="opacity:1"
+           fill="#f8f8f8"
+           d="m 159.5,46.5 c 8.165,-1.3362 11.331,1.9971 9.5,10 -3.315,3.6053 -6.982,3.9386 -11,1 -2.311,-4.1259 -1.811,-7.7925 1.5,-11 z"
+           id="path9" />
+      </g>
+      <g
+         id="g10">
+        <path
+           style="opacity:1"
+           fill="#f9f9f9"
+           d="m 131.5,62.5 c 1.175,-0.219 2.175,0.1143 3,1 7.753,13.1715 15.253,26.5048 22.5,40 2.167,23.167 -8.333,33.667 -31.5,31.5 -15.589,-6.754 -20.756,-18.254 -15.5,-34.5 7.444,-12.5591 14.61,-25.2257 21.5,-38 z"
+           id="path10" />
+      </g>
+      <g
+         id="g11">
+        <path
+           style="opacity:1"
+           fill="#0c0c0c"
+           d="m 131.5,82.5 c 1.322,-0.17 2.489,0.1634 3.5,1 0.333,4 0.667,8 1,12 1.848,-2.5414 4.348,-3.5414 7.5,-3 -1.449,3.9724 -3.949,7.3057 -7.5,10 -0.667,4 -0.667,8 0,12 1.833,-1.833 3.667,-3.667 5.5,-5.5 1.819,-0.783 3.152,-0.283 4,1.5 -2.606,4.109 -5.773,7.776 -9.5,11 -0.251,1.933 -0.751,3.766 -1.5,5.5 -1.284,0.684 -2.451,0.517 -3.5,-0.5 -0.333,-1.667 -0.667,-3.333 -1,-5 -3,-3 -6,-6 -9,-9 -0.49,-1.293 -0.657,-2.627 -0.5,-4 4.003,0.471 7.169,2.471 9.5,6 0.667,-4 0.667,-8 0,-12 -3.551,-2.6943 -6.051,-6.0276 -7.5,-10 3.152,-0.5414 5.652,0.4586 7.5,3 0.228,-4.4171 0.728,-8.7504 1.5,-13 z"
+           id="path11" />
+      </g>
+      <g
+         id="g12">
+        <path
+           style="opacity:1"
+           fill="#bdbdbd"
+           d="m 66.5,102.5 c 12.5062,-1.325 25.1729,-1.325 38,0 -0.124,0.607 -0.457,0.94 -1,1 -12.1554,-0.995 -24.4887,-1.329 -37,-1 z"
+           id="path12" />
+      </g>
+      <g
+         id="g13">
+        <path
+           style="opacity:1"
+           fill="#101010"
+           d="m 85.5,107.5 c 8.8743,-0.629 12.7076,3.371 11.5,12 -3.9135,6.596 -8.9135,7.596 -15,3 -3.9817,-6.265 -2.815,-11.265 3.5,-15 z"
+           id="path13" />
+      </g>
+      <g
+         id="g14">
+        <path
+           style="opacity:1"
+           fill="#f1f1f1"
+           d="m 86.5,112.5 c 5.9877,0.164 7.321,2.664 4,7.5 -6.0966,0.147 -7.4299,-2.353 -4,-7.5 z"
+           id="path14" />
+      </g>
+      <g
+         id="g15">
+        <path
+           style="opacity:1"
+           fill="#111111"
+           d="m 62.5,124.5 c 11.4893,-1.345 16.3226,3.655 14.5,15 -7.5924,8.481 -14.259,7.814 -20,-2 -0.6667,-2 -0.6667,-4 0,-6 1.6665,-2.496 3.4998,-4.829 5.5,-7 z"
+           id="path15" />
+      </g>
+      <g
+         id="g16">
+        <path
+           style="opacity:1"
+           fill="#efefef"
+           d="m 64.5,129.5 c 7.7436,-0.452 10.0769,2.715 7,9.5 -5.3828,2.961 -8.7161,1.461 -10,-4.5 0.5924,-1.923 1.5924,-3.589 3,-5 z"
+           id="path16" />
+      </g>
+    </g>
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:italic;font-variant:normal;font-weight:500;font-stretch:normal;font-size:50.8px;line-height:0.12;font-family:'CMU Concrete';-inkscape-font-specification:'CMU Concrete Medium Italic';opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.779;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     x="83.677856"
+     y="278.21622"
+     id="text1"><tspan
+       id="tspan1"
+       style="stroke-width:1.779;stroke-dasharray:none"
+       x="83.677856"
+       y="278.21622">Tope</tspan></text>
+</svg>
+<a title="Tope's personal blog
+" href="/en/">Tope's Cytoplasm</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
+        <ul><li class="navigation__item"><a href="/en/about/">About</a></li><li class="navigation__item"><a href="/en/archive/">Archive</a></li><li class="navigation__item"><a href="/en/blog/">Blog</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li>
+              <!-- 다크 모드 토글 버튼 -->
+              
+              <input id="toggle_dark_theme" class="mh_toogle" type="checkbox">
+              <label for="toggle_dark_theme" class="material-icons-sharp mh_toggle_btn"></label>
+              
+              <button class="greedy-nav__toggle hidden" type="button">
+                  <span class="visually-hidden"></span>
+                  <div class="navicon"></div>
+              </button></ul>
+      </nav><!-- polyglot 언어 선택-->
+      <ul class="nav-lang">        
+          
+          <!--<li id="lang" style="float: right;">-->
+            <a style="text-align:center;" href=" /blog/2024/05/22/p-val-1.html ">
+              ko
+            </a>
+          <!--</li>--->
+          
+          <!--<li id="lang" style="float: right;">-->
+            <a style="font-weight: bold;text-align:center;" href=" /en/blog/2024/05/22/p-val-1.html ">
+              en
+            </a>
+          <!--</li>--->
+          
+      </ul>
+      <!--------------------->
+    </div>
+  </header>
+
+</div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
+
+              <div class="col-aside d-print-none js-col-aside"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div>
+</aside></div>
+
+              <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
+
+<!-- end custom main top snippet -->
+<article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>[NHST] 1장. 통계적 가설검정의 개념</h1></header></div><meta itemprop="headline" content="[NHST] 1장. 통계적 가설검정의 개념"><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/en/archive/?tag=statistics">statistics</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2024년 05월 22일</span>
+            </li></ul></div><meta itemprop="author" content="Tope"/><meta itemprop="datePublished" content="2024-05-22T00:00:00+09:00">
+    <meta itemprop="keywords" content="statistics"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+
+<!-- end custom article top snippet -->
+<div class="article__content" itemprop="articleBody"><h2 id="머리말">머리말</h2>
+<p>널리 사용되는 null hypothesis statistical testing<sup>영가설 통계 검정</sup>은 학부 1학년 수준 통계학에서 배울 정도로 널리 사용되는 가설 검정법이에요. 이는 Fisher의 test of significance와 Neyman-Pearson의 statistical hypothesis testing의 여러 요소가 뒤섞여 사용되고 있는데, 한번 자세히 알아봅시다.
+<!--more--></p>
+
+<p>일반적으로 NHST는 null hypothesis<sup>영가설</sup> ($H_0$)과 alternative hypothesis<sup>대립가설</sup> ($H_1$)을 세우고, 실험을 통해 얻은 observed test statistics<sup>관측 검정통계량</sup>을 통해 $p$-value를 계산합니다. 계산된 $p$-value를 type I error rate<sup>1종 오류율</sup>인 significance level<sup>유의수준</sup>과 비교하여 $H_0$를 기각하거나 수용합니다.</p>
+
+<p>하지만 NHST를 공부하다 보면, 이해가 되지 않거나 헷갈리기 쉬운 지점들이 있습니다. $p$-value는 type I error를 저지를 확률인가요? 만약 type I error rate이 아니라면 어째서 maximum type I error rate인 $\alpha$와 비교하나요? $p$-value는 영가설<sup>null hypothesis</sup>($H_0$)이 참일 확률인가요? $\alpha$는 $0.05$, $\beta$는 $0.8$로 하는 이유가 있나요? 등등. 이 같은 물음에 답하기 위해서는 NHST가 하늘에서 뚝 떨어진 통계방법론이 아니라는 점에 주목할 필요가 있습니다. NHST는 Ronald Fisher가 제시한 test of significance<sup>유의성 검정</sup>, 그리고 Jerzy Neyman과 Egon Pearson이 제시한 statistical hypthesis testing<sup>통계적 가설검정</sup>의 요소들이 섞여있는 test입니다. 그래서 각각의 test가 무엇이고 어떻게 다른지 알아보는 것이 중요할 것 같습니다. 바로 1장에서 다루는 내용입니다.</p>
+
+<p>한편 NHST에 대한 비판도 상당한 듯한데, 관습적으로 많은 저널과 기관에서 사용하고 있으니 따르지 않을 수 없겠습니다. 이왕 사용한다면 정확하게 아는 게 낫겠죠? 1장부터 4장까지 저의 서술은 주로 Daniël Lakens의 「<a href="https://lakens.github.io/statistical_inferences/">Improving Your Statistical Inferences</a>」를 바탕으로 정리한 것입니다. 특히 1장은 두 test의 개념과 차이 등을 살펴보고자 Aris Spanos의 「Probability Theory and Statistical Inference」를 중심으로 정리하였습니다. 참고한 문헌들도 여럿 있고요.</p>
+
+<p>처음 용어를 제시할 때는 영어 용어와 한국어 용어를 병기하였고, 이후로는 영어 용어를 사용하였음을 양해해주세요.</p>
+
+<ul>
+  <li>제가 통계학 전공자가 아니라는 점을 기억하시고, 이 글에 통계학적으로 잘못된 서술이 있을 수 있다는 점을 유념하여 비판적으로 읽어주길 바라요. 오류를 발견하면 언제든 이야기해주세요.</li>
+  <li>글의 내용을 다른 곳에 인용하실 때에는 이 <strong>글의 출처와 함께 원문의 서지 정보를 필히 밝혀</strong>주세요.  특히 <strong>1-1, 1-2, 1-3절</strong>의 내용을 인용할 때는 <strong>Spanos (2003)의 서지정보를 명시</strong>하도록 하고, 기타 <strong>in-text citation이 명시된 항목</strong>의 경우에도 <strong>해당 서지정보를 함께 밝혀</strong>주길 바랍니다. 연구, 아이디어, 주장 등은 한 사람이 뚝딱 생각하여 만드는 것이 아니라 선행 문헌들 위에서 발전되어 온 것들입니다 (a.k.a. 거인의 어깨). 원 문헌을 저술한 저자를 명시하여 그들이 받아 마땅한 공을 밝히도록 합시다.</li>
+</ul>
+
+<p><strong>Null Statistical Hypothesis Testing</strong> 정리하기 (1/4)</p>
+
+<p><a href="/en/blog/2024/05/22/p-val-1.html">1장. 통계적 가설검정의 개념</a> <strong>←</strong></p>
+
+<p><a href="/en/blog/2024/05/23/p-val-2.html">2장. p-value의 특징</a></p>
+
+<p><a href="/en/blog/2024/05/28/p-val-3.html">3장. p-value를 제대로 보고하기</a></p>
+
+<p><a href="/en/blog/2024/05/29/p-val-4.html">4장. p-value와 error rate에 대한 오해와 물음</a></p>
+
+<h2 id="1-1-fishers-test-of-significance">1-1. Fisher’s Test of Significance</h2>
+<p>Fisher의 test of significance<sup>유의성 검정</sup>은 Neyman-Pearson의 statistical hypothesis testing<sup>통계적 가설검정</sup>보다 먼저 나온 방법입니다. Neyman과 Pearson이 Fisher의 방법을 보완하고자 제시한 것이 statistical hypothesis testing이기 때문이죠. 먼저 Fisher의 방법을 살펴본 이후 Neyman-Pearson의 방법을 알아보겠습니다.</p>
+
+<h3 id="개념과-과정">개념과 과정</h3>
+
+<p>Ronald Fisher가 제시한 test of significance<sup>유의성 검정</sup>는 다음과 같이 진행됩니다<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>.</p>
+
+<ol>
+  <li>
+    <p><strong>Null hypothesis<sup>영가설</sup> $\mathbf{H_0}$를 정합니다</strong>. 이때 $H_0: \theta = \theta_0$의 형태로 나타낼 수 있습니다.</p>
+
+    <ul>
+      <li>$H_0$는 효과가 없다고(null) 가정했을 때의 가설을 말합니다. 그래서 <em>null</em> hypothesis이죠.</li>
+      <li>그렇다고 $H_0$가 반드시 효과가 없다는 가설일 필요는 없습니다. $H_0: \mu_1 - \mu_2 = 0$과 같이 효과가 없는 경우일 수도 있지만, $H_0: \mu_1 - \mu_2 = 6$이나 $r = 0.4$와 같이 특정한 값을 갖는 경우도 $H_0$가 될 수 있습니다. Null hypothesis가 <em>효과없음</em>을 의미하는 가설만을 칭한다고 오해되기 쉬워서, <strong>target hypothesis</strong>와 같이 더 포괄적인 용어를 사용해야 한다고 보는 경우도 있습니다 (Greenland, 2023).</li>
+      <li>보다 중요한 것은 <strong>$\mathbf{H_0}$가 sampling distribution<sup>표본 분포</sup>에 관한 정보를 담고 있어야</strong> 한다는 점입니다. 다시 말해 $H_0$는 test statistic<sup>검정 통계량</sup> $\tau(\mathbf{X})$의 sampling distribution을 특정할 수 있는 조건을 기술합니다. 왜 그래야 할까요? 바로 test of significance의 근간이 되는 원리: $H_0$가 참이라는 전제 하에 정해진 sampling distribution에서 우리가 관찰하여 얻은 test statistic이 어디쯤 위치하는지 알기 위함입니다. 이를 통해 $H_0$가 참일 때 관측된 statistic이 얼마나 드문지 알 수 있는 것이지요.</li>
+    </ul>
+  </li>
+  <li>
+    <p>목적에 맞는 <strong>test statistics를 정합니다</strong>.</p>
+
+    <ul>
+      <li>이때 <em>test statistic</em> $\tau(\mathbf{X})$는 $H_0:\theta = \theta_0$가 맞다는 가정 하에 그 distribution이 알려져 있어야 합니다. 앞서 강조했듯, 우리가 관찰하여 얻은 test statistic이 해당 sampling distribution에서 얼마나 드문지 알기 위함입니다.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>$\textbf{p}$-value를 계산합니다</strong>. 이때 $p$-value는 statistic $\tau(\mathbf{X})$의 관측값인 $\tau(\mathbf{x})$의 tail-area probability로 계산된다.</p>
+
+    <ul>
+      <li>즉 $p\text{-value} = P(\tau(\mathbf{X}) \ge \tau(\mathbf{x})\mid H_0)$ 로서, sampling distribution에서 test statistic의 관측값과 그 이상의 극단적인 값이 관측될 확률을 의미합니다.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>$\mathbf{p}$-value를 해석한다</strong>.</p>
+
+    <ul>
+      <li>$H_0$가 참이라고 가정된 distribution (null model)에서, $p$-value가 작다면 (1) test statistic이 관측된 상황이 매우 드문 event이거나, (2) 가설로 상정된 $H_0$가 타당하지 않은 가설이거나의<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">2</a></sup> 두 경우로 해석될 수 있습니다<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">3</a></sup>.</li>
+      <li>현실적으로 연구자는 (1)보다는 (2)의 해석을 택하여 <strong>$p$-value를 null hypothesis가 믿을만한지에 관한 척도로</strong> 사용할 수 있습니다. $p$-value는 작으면 작을수록 $\tau(\mathbf{x})$가 $H_0$ 하에서 관측될 법하지 않기 때문에, $H_0$를 믿지 않을 이유가 더 커지는 것으로 이해됩니다.</li>
+      <li>Fisher의 방법을 통해 알 수 있는 것은 <strong>$H_0$ 하에서 연구 결과가 나타날 확률</strong>입니다. 그러므로 Fisher의 $p$-value는 $H_0$를 잘못된 것으로 <em>기각</em>하거나 $H_0$에 반대되는 가설을 <em>지지</em>하는 <strong>의사결정에 관한 방법이 아닙니다</strong>.</li>
+      <li>
+        <p>어떤 $p$-value가 작은 값인지 아닌지에 관해서 Fisher는 초기 저작과 후기 저작에서 의견을 달리합니다.</p>
+
+        <ul>
+          <li>초기에 Fisher는 significance level을 관습적으로 5%로 제시하며 유의하지 않은 결과는 무시되어야한다고 봅니다 (Fisher, 1935, p.13, 재인용:Gigerenzer et al., 2004).</li>
+          <li><strong>Fisher는 이후</strong> $p$-value가 얼마나 작아야하는가에 관해서는 <strong>연구마다, 연구자마다 다를 수 있다</strong>고 하며 $p$-value의 값을 <strong>그대로 보고하여</strong> 동료 연구자와 공유해야한다고 봅니다 (Fisher, 1956, p. 42, 재인용: Gigerenzer et al., 2004).</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="목적">목적</h3>
+<p>Fisher’s test of significance를 통해 얻은 $p$-value는 <strong>observed statistic과 그 이상의 극단값이 null model 하에서 나올 확률</strong>로서, 검정하고자 하는 <strong>null hypothesis가 얼마나 믿을만한지에 대한 정립된 척도</strong>를 제공합니다 (Fisher, 1956, p. 44). $p$-value는 작으면 작을수록 $\tau(\mathbf{x})$가 $H_0$ 하에서 관측될 법하지 않기 때문에 $H_0$를 받아들이지 않을 이유가 더 커지는 것으로 이해되는 것이지요.</p>
+
+<h2 id="1-2-neyman-pearsons-statistical-hypothesis-testing">1-2. Neyman-Pearson’s Statistical Hypothesis Testing</h2>
+
+<p>Jerzy Neyman과 Egon Pearson<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>은 $p$-value에 대한 Gosset과 Fisher의 연구를 바탕으로 <strong>statistical hypothesis testing</strong>이라는 방법을 개발합니다. Fisher의 test of significance와는 달리 alternative hypothesis<sup>대립가설</sup>($H_a$; $H_1$)이 설정되고, 연구자는 잠정적으로 $H_0$와 $H_1$ 두 가설 중 하나가 참인 것처럼 받아들이게 됩니다.</p>
+
+<h3 id="개념과-과정-1">개념과 과정</h3>
+
+<p>Neyman–Pearson의 statistical hypothesis testing은 다음과 같이 진행됩니다 (Spanos, 2003, 14.3절).</p>
+
+<ol>
+  <li>
+    <p><strong>Null hypothesis $H_0$와 alternative hypothesis $H_1$를 정합니다</strong>.</p>
+
+    <ul>
+      <li>각각 $H_0: \theta = \theta_0$ 와 $H_1: \theta \ne \theta_0$로 표현됩니다.</li>
+      <li>
+        <p>이때 parameter space<sup>모수 공간</sup> $\Theta$는 mutually exclusive한<sup>상호배타적인</sup> 두 부분집합으로 분할됩니다:</p>
+
+\[\Theta_0 := \{\theta_0\}\text{ and }\Theta_1 := \Theta -\{\theta_0\},\quad \text{where } \Theta_0\cap\Theta_1 = \varnothing, \Theta_0\cup \Theta_1 = \Theta\]
+      </li>
+      <li>
+        <p>더 일반적인 Neyman-Pearson hypothesis의 형태는 다음과 같습니다:</p>
+
+\[H_0: \theta \in \Theta_0 \text{ against }H_1: \theta \in \Theta_1:=\Theta -\Theta_0\]
+      </li>
+      <li>
+        <p>이는 사실상 postulated probability model $\Phi = {f(x;\theta), \theta\in\Theta, x\in \mathbb{R}_X}$을 양분하는 것입니다:</p>
+
+\[\Phi_0 = \{f(x;\theta), \theta\in\Theta_0, x\in \mathbb{R}_X\}, \Phi_1 = \{f(x;\theta), \theta\in\Theta_1, x\in \mathbb{R}_X\}\]
+
+        <p>$H_0$와 $H_1$이 궁극적으로는 parameter에 관한 가설이라기보다 <em>distribution</em>에 관한 가설이라는 점을 알 수 있겠습니다.</p>
+
+\[H_0:f(x)\in \Phi_0\text{ against }H_1:f(x)\in\Phi_1\]
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Rejection region</strong>을 정합니다.</p>
+
+    <ul>
+      <li>Neyman–Pearson test의 주된 목적은 $H_0$를 <strong>수용하거나 기각하기 위한 결정 규칙</strong> (decision rule)을 만드는 것입니다. 이 결정은 test statistic $\tau(\mathbf{X})$를 기준으로 하므로, $\tau(\mathbf{X})$는 sample space $\mathcal{C}$를 두 집합 $C_0$와 $C_1$로 분할하게 됩니다.</li>
+      <li>$C_0:=\lbrace\mathbf{x}:\tau(\mathbf{x}) \le c_\alpha\rbrace$로 표현되어 acceptance region<sup>수용역</sup>이라 불리고, $C_1:=\lbrace\mathbf{x}:\tau(\mathbf{x}) &gt; c_\alpha\rbrace$로 표현되어 rejection region<sup>기각역</sup>이라 불립니다.</li>
+      <li>각각 	$C_0 \cup C_1 = \mathcal{C}$ and $C_0 \cap C_1 = \varnothing$ 을 만족하는 것을 알 수 있겠습니다.</li>
+      <li>
+        <p>$H_0$를 수용할지 기각할지에 관한 결정은 두 region의 측면에서 정해집니다:</p>
+
+\[\text{(i) if } \mathbf{x}\in C_0:\text{accept }H_0,\quad \text{(ii) if } \mathbf{x}\in C_1:\text{reject } H_0\]
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Type I error와 type Ⅱ error</strong></p>
+
+    <ol>
+      <li>두 종류의 error가 있습니다.
+        <ul>
+          <li><strong>type I error</strong><sup>1종 오류</sup>: Null hypothesis가 타당한데<sup>valid</sup> 이를 기각하는 오류</li>
+          <li><strong>type Ⅱ error</strong><sup>2종 오류</sup>: Null hypothesis가 타당하지 않은데<sup>not valid</sup> 이를 수용하는 오류</li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>Probability of type I error</strong></p>
+
+        <p>$\theta_0 = \theta$ 일 때 type I error를 저지를 확률은 다음의 일반적인 형태로 표현될 수 있습니다:</p>
+
+\[P(\mathbf{x} \in C_1; \theta = \theta_0) = \alpha\]
+
+        <ul>
+          <li>$\alpha$는 long-run type I error로서, 연구자가 최대로 허용할 수 있는 type I error probability를 의미합니다<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>.</li>
+          <li>Rejection region이 넓을 수록 $\alpha$는 줄어들지만, 이는 type II error의 확률을 증가시키게 됩니다.</li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>Probability of type Ⅱ error</strong></p>
+
+        <p>$\theta = \theta_1$일 때 type II error를 저지를 확률은 다음의 일반적인 형태로 표현될 수 있습니다:</p>
+
+\[P(\mathbf{x}\in C_0; \theta = \theta_1) = \beta(\theta_1)\]
+
+        <ul>
+          <li>이때 test statistic의 distribution을 알아야 확률을 계산할 수 있는데, $\Theta_1:=\Theta -\Theta_0$  의 값을 특정해야 distribution을 알 수 있겠죠? 그래서 위의 식에서 $\beta(\theta_1)$은 $\beta$가 $\theta_1$에 따라 정해진다는 의미입니다.</li>
+          <li>$\alpha$와는 달리, $\beta$는 rejection region이 넓을 수록 증가합니다.</li>
+          <li>$\alpha$가 커지면 $\beta$가 줄어들고, $\beta$가 커지면 $\alpha$가 줄어다는 사실을 제가 만든 다음 그림으로 이해할 수 있겠습니다.</li>
+        </ul>
+
+        <p align="left">
+  			<img src="/files/img/alpha_beta.svg" width="60%" />
+ </p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p><strong>최적의 test를 정합니다</strong></p>
+
+    <ol>
+      <li>Neyman–Pearson은 $H_0$를 $H_1$보다 더 중요하게 다룹니다. 즉 낮은 $\alpha$를 먼저 정하고, 이후에 $\beta$를 최소화하는 방향으로 test를 선택한다는 것이죠. 가령 연구자는 $\alpha  = 0.01$로 정해두고 이후 $\beta$를 최소화하는 test를 선택하게 됩니다.</li>
+      <li>일반화하면 다음과 같습니다. $|\tau(\mathbf{X})| &gt; c_\alpha$일 때 $H_0$를 기각한다면,  $\tau(\mathbf{X})$는 다음을 만족하도록 선택한다:		
+ \(\begin{align}&amp;\text{(a)}\quad P(|\tau(\mathbf{X})| &gt; c_\alpha; H_0\text{ valid}) = \alpha\\
+     &amp;\text{(b)}\quad P(|\tau(\mathbf{X})| \le c_\alpha; H_1(\theta)\text{ valid}) = \beta (\theta)\text{ for }\theta \in \Theta_1 \text{ is minimized.}
+     \end{align}\)</li>
+      <li>
+        <p>이는 test의 power<sup>검정력</sup>를 고려하는 측면에서 이해될 수도 있습니다.</p>
+
+        <ul>
+          <li>
+            <p><strong>Power of a test</strong><sup>검정력</sup>: 타당하지 않은 $H_0$를 기각할 확률로서, 어떤 값 $\theta_1 \in \Theta_1$에 대해 다음과 같이 쓸 수 있습니다:</p>
+
+\[P(\theta_1) = P(\mathbf{x}\in C_1;H_1\text{ valid})\]
+          </li>
+        </ul>
+
+        <p>($H_1: \theta \ne \theta_0$에 대해 $\theta$가 가질 수 있는 값이 여럿이므로 $\theta_1$의 함수로 표현한 것입니다.)</p>
+
+        <ul>
+          <li>다시 말해, test의 power는 $H_1$이 타당할 때 $H_0$를 기각할 확률, 또는 family $\Phi_1 = {f(x;\theta), \theta \in \Theta_1, x\in \mathbb{R}_X}$에 실제 분포가 속할 확률을 의미합니다.</li>
+          <li>
+            <p>전체 parameter space $\Theta$에서 정의한 <strong>power function</strong>은 다음과 같습니다:</p>
+
+\[P_{n}(\theta) = P(\mathbf{x}\in C_1)\text{ for }\theta \in \Theta\]
+          </li>
+          <li>
+            <p>가설 $H_0: \theta = \theta_0$에 대해 significance level은 power function을 통해 정의될 수 있습니다:
+  \(P_n(\theta_0) = \alpha\)</p>
+          </li>
+          <li>
+            <p>만약 $\theta_0 \in \Theta_0$이고 $\Theta_0$가 한 개 이상의 원소를 가진다면, test의 <strong>size</strong>를 다음과 같이 정의합니다:</p>
+
+\[\text{size of the test} =\alpha = \max_{\theta\in\Theta_0}P_n(\theta)\]
+          </li>
+        </ul>
+
+        <p>그러므로 test의 size $\alpha$는 $\Theta_0$의 임의의 원소 $\theta_0$에 대해 $H_0$를 잘못 기각할 최대 확률을 의미합니다.</p>
+        <ul>
+          <li>가장 적절한 test는 $\alpha$가 정해진 이후, 모든 $\theta \in \Theta_1$에 대해 power를 최대로 하는 test입니다.</li>
+        </ul>
+      </li>
+      <li>
+        <p>Test statistic $\tau(\mathbf{X})$를 선택했다면 $H_0$ 하에서의 distribution을 통해 $\lvert\tau(\mathbf{X})\rvert$가 “0으로부터 유의하게 차이나”도록<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup> 하는 $c_\alpha$를 얻을 수 있습니다. 다음 식을 만족하는 $c_\alpha$를 구하는 것입니다:</p>
+
+\[P(|\tau(\mathbf{X})| &gt; c_\alpha;H_0\text{ valid}) = \alpha\]
+
+        <p>이런 이유로 $\alpha$는 <strong>significance level</strong><sup>유의 수준</sup>이라고도 불립니다.</p>
+      </li>
+      <li>e.g. $\sigma^2$를 모르는 상황에서 $H_0: \mu = \mu_0$와 $H_1: \mu \ne \mu_0$를 test하고자 하는 상황을 가정해봅시다 (Two-sided test).
+        <ul>
+          <li>Test statistic은 $\tau(\mathbf{X}):=\frac{\hat{\mu_n} - \mu_0}{s/\sqrt{n}} \sim St(n-1)$</li>
+          <li>Rejection region은 $C_1 = \lbrace\mathbf{x}: \lvert\tau(\mathbf{x})\rvert &gt; c_\alpha \rbrace$</li>
+          <li>$c_\alpha$는 $\int_{c_\alpha}^\infty \phi(z)dz = \frac{1}{2}\alpha$ where $\phi(z)$ is Student’s $t$ density (pdf).</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p><strong>$H_0$와 $H_1$중 하나를 택합니다</strong></p>
+    <ul>
+      <li>Acceptance region $C_0:=\lbrace\mathbf{x}:\tau(\mathbf{x}) \le c_\alpha\rbrace$ 에 대해 $\mathbf{x} \in C_0$일 때 $H_0$를 수용하고<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>, rejection region $C_1:=\lbrace\mathbf{x}:\tau(\mathbf{x}) &gt; c_\alpha\rbrace$에 대해 $\mathbf{x}\in C_1$일 때 $H_0$를 기각합니다.</li>
+      <li>Neyman–Pearson의 test에서 $p$-value 자체를 사용하지는 않으나, 사실상 test statistic $\tau(\mathbf{x})$가  acceptance region 혹은 rejection region에 포함되는지는 $p$-value와 $\alpha$를 비교하여도 알 수 있습니다. 그러므로  $p &lt; \alpha$일 때 $H_0$를 기각하고, $p \ge \alpha$일 때 $H_0$를 수용합니다. 단, $p$-value를 소위 ‘observed type I error rate’ 등으로 이해하는 것은 잘못되었는데, 이에 관한 내용은 4장에서 다룰 것입니다.</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="목적-1">목적</h3>
+<p>Neyman과 Pearson은 Fisher의 significance test를 다음 두 가지 이유에서 비판합니다 (Spanos, 2003).</p>
+<ul>
+  <li>Fisher는 test statistic을 선택하는 기준을 제공하지 않는다. 각각의 $H_0$에 대해 여러 test statistic을 사용할 수 있는데, Fisher는 어떤 것이 가장 적절한 test statistic인지에 관한 방법을 설명하지 않는다.</li>
+  <li>$p$-value를 $H_0$에 대한 믿음의 척도 (measure of credence)로 사용하는 것은 논리적 근거가 없다.</li>
+</ul>
+
+<p>이에 대한 해결책으로 Neyman과 Pearson은 <strong>hypothesis testing을 경쟁하는 가설 중 하나를 선택하는 것</strong>으로 봅니다<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>.</p>
+
+<h2 id="1-3--neymanpearson과-fisher의-차이">1-3.  Neyman–Pearson과 Fisher의 차이</h2>
+<ol>
+  <li>Test의 <strong>목적</strong>이 다릅니다. 그래서 $\alpha$와 $p$-value는 그 성격이 다르지요. (Spanos, 2003, 14.5.1절)
+    <ul>
+      <li>Neyman–Pearson의 $\alpha$는 <strong>의사결정(decision-making)이라는 행동</strong>의 규칙이 되는 기준값입니다. 이때 $\alpha$는 significance level로서, test statistic이 $\alpha$보다 큰지 작은지에 따라 $H_0$를 수용하거나 기각하는 의사결정을 내리게 됩니다<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup>.</li>
+      <li>반면 Fisher의 $p$-value는 결정을 내리기 위한 기준이 아니라 sample data가 $H_0$를 얼마나 믿을만한 것으로 만드는지 <strong>추정하기(inferential) 위한 척도</strong>일뿐입니다. 그러므로  Fisher는 $p$-value를 통해 그 이상의 주장을 할 수 없다고 봅니다.</li>
+    </ul>
+  </li>
+  <li>Test의 <strong>범위</strong>가 다릅니다 (Spanos, 2003, 14.5.2절).
+    <ul>
+      <li>
+        <p>Neyman–Pearson의 가설은 $H_0: \theta \in \Theta_0 \text{ against }H_1: \theta \in \Theta_1:=\Theta -\Theta_0$ 의 형태를 가지지요? 그래서 parameter space $\Theta$가 $\Theta_0$와 $\Theta_1$으로 분할되며 probability model $\Phi = {f(x;\theta), \theta \in \Theta, x \in \mathbb{R}_X}$는 $\Phi_0 = {f(x;\theta), \theta\in\Theta_0, x\in \mathbb{R}_X}$와 $\Phi_1 = {f(x;\theta), \theta\in\Theta_1, x\in \mathbb{R}_X}$로 분할되는 것입니다. 이제 Neyman–Pearson의 가설은 다음과 같이 이해될 수 있습니다:</p>
+
+\[H_0:f(x)\in \Phi_0\text{ against }H_1:f(x)\in\Phi_1\]
+      </li>
+      <li>
+        <p>반면 Fisher의 가설은 다음과 같이 이해됩니다:</p>
+
+        <p>\(H_0: f(x)\in \Phi_0\text{ against } H_1: f(x)\in [\mathcal{P}-\Phi_0]\)
+  이때 $\mathcal{P}$는 <em>모든</em>  가능한 statistical model의 집합입니다. Fisher는 alternative hypothesis 개념을 거부하긴 했지만, 그의 test에 implicit<sup>암묵적인</sup> alternative hypothesis가 있다는 사실을 부정하기는 어려울 것입니다<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote" rel="footnote">10</a></sup>.</p>
+      </li>
+      <li>
+        <p>Fisher의 implicit alternative hypothesis는 N–P test의 alternative hypothesis보다 범위가 넓습니다.</p>
+        <ul>
+          <li>
+            <p>이는 강점이 될 수 있습니다. 연구자는 ‘참인’ statistical model이 null hypothesis와 (implicit) alternative hypothesis의 합집합 안에 존재한다고 확신할 수 있기 때문입니다:</p>
+
+\[f(x) \in \mathcal{P} = \Phi_0 \cup [\mathcal{P}-\Phi_0]\]
+
+            <p>반면 N–P test에서는 ‘참인’ statistical model이 null과 alternative 어디에도 존재하지 않을 수 있다는 점에서 그런 확신을 할 수 없습니다.</p>
+          </li>
+          <li>
+            <p>이는 약점이 될 수도 있겠습니다.  집합 $[\mathcal{P-\Phi_0}]$는 달리 규정된 바가 없는 모든 가능한 모델의 집합이기 때문에 그만큼 다루기<sup>operationalize</sup> 어려울 수 있습니다. 반면 Neyman–Pearson의 $\Phi_1$은 power function의 측면에서 비교적 다루기<sup>operationalize</sup> 쉬울 수 있습니다<sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote" rel="footnote">11</a></sup>.</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Significance level</strong>을 바라보는 관점이 다릅니다.
+    <ul>
+      <li>Neyman과 Pearson은 임의의 특정한 시행에서 error가 발생했는지 알 수 없으므로 <strong>long-run probability</strong>에 초점을 두어야 한다고 봅니다 (Perezgonzalez. 2015). 여기서 long-run probability란 특정한 statistical experiment를 셀 수 없이 많이 반복하여 계산된 확률, 즉  <strong>relative frequency (상대빈도)</strong> 로서의 확률을 의미합니다 (Spanos, 2003, p. 698).
+        <ul>
+          <li>그러므로 type I error rate ($\alpha$)이 $0.05$라는 말은, statistical experiment를 매우 많이 반복 시행하여 수행한 test 결과의 $5\%$가 type I error라는 의미입니다. 가령 $10,000$번의 동일한 시행으로 sample을 얻었다고 하죠. $\alpha = 0.05$는 각각의 시행에 대한 $10,000$개의 검정 결과 중 $500$번의 검정 결과에서 type I error가 발생할 수 있다는 의미인 것입니다</li>
+          <li>$\alpha$는 사전에 (<em>a priori</em>) 설정되어야 합니다.</li>
+        </ul>
+      </li>
+      <li>이와 달리 Fisher의 접근은 <strong>특정한 가설의 특정 연구 결과를 검정하고자</strong> 하는 것이므로 long-run probability를 중요하게 보지 않습니다.
+        <ul>
+          <li>Fisher는 관습적으로 사용하던 significance level의 사용을 반대하고, 그것을 long-run probability $\alpha$ 로 해석하는 것 또한 비과학적인 (unscientific) 것으로 여겨 반대합니다 (Fisher, 1956, p. 42, 재인용: Gigerenzer et al., 2004). 산업계의 quality-control과는 다르게, 연구자는 동일한 실험을 셀 수 없이 여러번 반복하지 않기 때문입니다.</li>
+          <li>이러한 측면에서 Fisher는 Neyman과 Pearson이 주장하듯 significance level을 long-run type I error rate으로 해석하는 것은 옳지 않다고 봅니다. 대신 그는 연구를 출판할 때 exact level of significance (e.g. $p &lt; 0.05$ (x) $p = 0.02$ (o))를 명시하여 동료 연구자와 공유해야 한다고 주장합니다.</li>
+          <li>Fisher의 $p$-value는 사후에 조정될 수 있습니다. 개별 연구에서 $p$-value를 사후에 (<em>a posteriori</em>) 조정할 때 (e.g. Bonferroni correction) error의 영향이 효과적으로 통제될 수 있기 때문입니다<sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote" rel="footnote">12</a></sup> (Perezgonzalez, 2015).</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Null hypothesis statistical testing (NHST; 영가설 통계검정)에 이르러서는 Fisher의 signifance test와 Neyman–Pearson의 statistical hypothesis testing의 요소들이 서로 뭉쳐서 다루어지게 되는 듯합니다. 각각의 사례마다 해석되는 방식은 약간의 차이가 있는 듯 한데, 적어도 Fisherian test와 같이 통계적 유의성이라는 개념이 사용되고, N–P test와 같이 $H_0$와 $H_1$중 하나를 선택하는 결정을 내린다는 점은 공통적인 것 같습니다.</li>
+</ol>
+
+<p>Fisher의 test와 Neyman–Pearson의 test의 차이에 관해서는 Perezgonzalez (2015)의 리뷰, Berger (2003)의 글, Morimoto (2021)의 글을 보길 바랍니다.</p>
+
+<h2 id="reference">Reference</h2>
+
+<ul>
+  <li>Berger, J. O., &amp; Delampady, M. (1987). Testing Precise Hypotheses. <em>Statistical Science, 2</em>(3), 317-335. <a href="https://doi.org/10.1214/ss/1177013238" target="_blank">https://doi.org/10.1214/ss/1177013238</a></li>
+  <li>Berger, J. O., &amp; Sellke, T. (1987). Testing a Point Null Hypothesis: The Irreconcilability of P Values and Evidence. <em>Journal of the American Statistical Association, 82</em>(397), 112-122. <a href="https://doi.org/10.2307/2289131" target="_blank">https://doi.org/10.2307/2289131</a></li>
+  <li>Berger, J. O. (2003). Could Fisher, Jeffreys, and Neyman Have Agreed on Testing? <em>Statistical Science, 18</em>. <a href="https://doi.org/10.1214/ss/1056397485" target="_blank">https://doi.org/10.1214/ss/1056397485</a></li>
+  <li>Cox, D., &amp; Mayo, D. G. (2010). Objectivity and conditionality in frequentist inference. In D. G. Mayo &amp; A. Spanos (Eds.), <em>Error and Inference: Recent Exchanges on Experimental Reasoning, Reliability, and the Objectivity and Rationality of Science</em>. Cambridge University Press.</li>
+  <li>Fisher, Ronald A. (1935). <em>The design of experiments</em>. Oliver &amp; Boyd</li>
+  <li>Fisher, R. A. (1935b). Statistical Tests. <em>Nature, 136</em>(3438), 474. <a href="https://doi.org/10.1038/136474b0" target="_blank">https://doi.org/10.1038/136474b0</a></li>
+  <li>Fisher, Ronald A. (1956). <em>Statistical methods and scientific inference: Vol. viii</em>. Hafner Publishing Co.</li>
+  <li>Gigerenzer, G., Krauss, S., &amp; Vitouch, O. (2004). The Null Ritual: What You Always Wanted to Know About Significance Testing but Were Afraid to Ask. In<em>The Sage handbook of quantitative methodology for the social sciences</em> (pp. 392-409). SAGE Publications, Inc. <a href="https://doi.org/10.4135/9781412986311.n21" target="_blank">https://doi.org/10.4135/9781412986311.n21</a></li>
+  <li>Greenland, S. (2023). Divergence versus decision <i>P</i>-values: A distinction worth making in theory and keeping in practice: Or, how divergence <i>P</i>-values measure evidence even when decision <i>P</i>-values do not. <em>Scandinavian Journal of Statistics, 50</em>(1), 54-88. <a href="https://doi.org/10.1111/sjos.12625" target="_blank">https://doi.org/10.1111/sjos.12625</a></li>
+  <li>Hubbard, R., &amp; Bayarri, M. J. (2003). P Values are not Error Probabilities (<em>Duke University Working Papers Series</em>, Issue 2003-26).</li>
+  <li>Lakens, D. (2024). <em>Improving Your Statistical Inference</em> (1.4.5 ed.). URL:<a href="https://lakens.github.io/statistical_inferences" target="_blank">https://lakens.github.io/statistical_inferences</a></li>
+  <li>Morimoto, R. (2021). Stop and Think About p-Value Statistics: Fisher, Neyman, and E. Pearson Revisited. <em>Annals of the Japan Association for Philosophy of Science, 30</em>, 43-65. <a href="https://doi.org/10.4288/jafpos.30.0_43" target="_blank">https://doi.org/10.4288/jafpos.30.0_43</a></li>
+  <li>Perezgonzalez, J. D. (2015). Fisher, Neyman-Pearson or NHST? A tutorial for teaching data testing [Review]. <em>Frontiers in Psychology</em>, 6. <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2015.00223" target="_blank">https://www.frontiersin.org/articles/10.3389/fpsyg.2015.00223</a></li>
+  <li>Spanos, A. (2003). <em>Probability Theory and Statistical Inference (Econometric Modeling with Observational Data)</em>: CAMBRIDGE UNIVERSITY PRESS.</li>
+</ul>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Fisher의 test는 Francis Edgeworth의 연구와 Karl Pearson의 연구를 바탕으로 한다고 알려져 있습니다 (Spanos, 2003, 14.2.4절). Fisher 이전의 가설검정에 관한 내용은 추후 공부하여 정리해보고 싶네요. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>“Either an exceptionally rare chance has occurred, or the theory of random distribution is not true” <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>이 논리가 옳지 않다는 주장에 대해서는 Hubbard &amp; Bayarri (2003); Berger &amp; Delampady(1987), 4.6절; Berger &amp; Selke (1987)을 보세요. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>참고로, Egon Pearson은 Karl Pearson의 아들이에요. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5" role="doc-endnote">
+      <p>Neyman과 Pearson은 임의의 특정한 시행에서는 error가 발생했는지 알 수 없으므로 long-run probability, 즉 (long-run) type I error를 중요하게 다루어야 한다고 주장합니다. 여기서 long-run probability란  특정한 statistical experiment를 셀 수 없이 많이 반복하여 계산된 확률을 의미합니다. 즉 “type I error rate ($\alpha$)이 $0.05$이다”라는 말은 statistical experiment를 반복적으로 여러 번 시행하여 수행한 test 결과의 $5\%$는 type I error라는 뜻입니다. 가령 $10,000$번의 동일한 시행으로 얻은 sample 그룹 $10,000$개로 $10,000$번의 test를 수행하였다고 합시다. $\alpha = 0.05$는 각각의 시행에 대한 test의 결과 $10,000$번 중 $500$번의 검정 결과에서 type I error가 발생할 수 있다는 말인 것이죠. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:6" role="doc-endnote">
+      <p>“significantly different from zero” <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:7" role="doc-endnote">
+      <p>Fisher는 ‘$H_0$를 수용<sup>accept</sup>‘한다는 개념이 논리적 오류라고 봅니다 (Fisher, 1935, p. 16; Fisher, 1935b; Morimoto, 2021; Cox &amp; Mayo, 2010). 이는 포퍼 (Popper)의 반증주의<sup>falsificationism</sup>와 비슷한데요, 반증<sup>falsification</sup>은 논리적으로 타당한 후건 부정 (<em>modus tollens</em>; $P \rightarrow Q, \neg Q \therefore \neg P$)이지만, 검증<sup>verification</sup>은 타당하지 않은 추론이라는 것입니다. (Morimoto, 2021). Fisher라면 ‘Type II error는 $H_0$가 실제로 거짓일 때 $H_0$를 <strong>기각하지 못하는 (failure to reject) 오류로 정의된다</strong>‘라는 말에 동의했을 지언정, ‘Type II error는 $H_0$가 실제로 거짓일 때 $H_0$를 <strong>수용하는 (accept) 오류로 정의된다</strong>‘는 말에는 <strong>동의하지 않았을 것</strong>이며, 후자는 Neyman과 Pearson이 받아들일만한 정의였을 것이라고 Morimoto는 설명합니다 (Morimoto, 2021). 가령 ‘모든 백조는 희다’라는 보편 진술<sup>universal statement</sup>은 ‘어떤 백조는 검다’라는 관찰 진술에 의해 반증<sup>falsify</sup>됩니다. 하지만 ‘모든 백조는 희다’라는 보편 진술 자체가 검증<sup>verify</sup>되기는 매우 어려울 것입니다. 모든 백조를 전수조사하는 것은 불가능에 가깝기 때문입니다. 제가 이해하기로는, 마찬가지로 어떤 통계 가설이 반증(falsification)된 이후에서야 우리는 그 가설이 거짓인 것처럼 행동할 수 있습니다. $H_0$가 기각된 이후 우리는 $H_1$이 잠정적으로 참인 것처럼 행동하게 되지만, $H_1$은 분포와 비교하여 기각될 수 없는 종류의 가설이기 때문에 $H_0$를 ‘수용 (accept)’한다는 개념은 타당하지 않은 것입니다. <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:8" role="doc-endnote">
+      <p>제가 이해한 바로는, Fisher의 관점에서 $p$-value를 믿음의 ‘척도’로 본다면 이 척도가 적절한지 아닌지를 판단할 방법이 있어야 하고, $p$-value는 test statistics를 통해 계산되는 변수라는 점에서 test statistic이 적절한지 판단할 방법이 있어야 하지만, Fisher는 이에 관한 주제를 다루지 않습니다. Fisher의 test가 $p$-value를 통해 $H_0$가 얼마나 믿을만한지에 대한 척도를 제공하는 한 이 문제가 해결되어야 합니다. Neyman과 Pearson은 test를 애초에 $H_0$가 믿을만한지에 관한 척도를 알기 위해 사용하지 않고, test statistic이 적절한지 $\alpha$와 $\beta$를 기준으로 결정함으로써 문제를 해결한다는 것 같습니다. <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:9" role="doc-endnote">
+      <p>제가 이해하기로는, N-P test에서 $\tau(\mathbf{x})$와 $c_\alpha$를 비교하는 것, 혹은 간접적으로 $p$와 $\alpha$를 비교하는 것은 data가 $H_0$ 통계 모델에서 나올 가능성이 얼마나 높은지 보려는 것이 아닙니다. 해당 시행에서 얻은 데이터를 바탕으로 $H_0$가 믿을만한지에 대한 척도를 세우려는 것도 아닙니다. 그저 해당 의사결정 규칙을 수없이 많이 사용했을 때 발생할 type I error의 long-run probability를 $\alpha$로 제한하려는 것이 목적인 것입니다. <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:10" role="doc-endnote">
+      <p>Fisher의 test를 따라 p-value가 너무 낮으면 $H_0$를 신뢰하기 어렵게 만드는데, 이는 암묵적으로 다른 가설이 더 신뢰할만 하다는 것을 의미한다는 점에서 그런 것 같습니다. <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:11" role="doc-endnote">
+      <p>사실 Spanos의 ‘다룬다’ (operationalize)라는 서술이 무엇을 의미하는지는 잘 모르겠어요. <a href="#fnref:11" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:12" role="doc-endnote">
+      <p>Fisher가 이런 주장을 직접 하였는지에 관한 자료나 문헌은 찾지 못했음.. 아마도 Fisher test에서의 $p$-value에 대한 일반적인 설명인 듯합니다. <a href="#fnref:12" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+</div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2024-05-22T00:00:00+09:00"><!-- start custom article footer snippet -->
+
+<!-- end custom article footer snippet -->
+<div class="article__subscribe"><div class="subscribe"><i class="fas fa-rss"></i> <a type="application/rss+xml" href="/en/feed.xml">구독하기</a></div>
+</div><div class="article__license"><div class="license">
+    <p>이 글의 저작권은 <a itemprop="license" rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">Attribution-NonCommercial 4.0 International</a> 라이센스를 따릅니다.
+      <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">
+        <img alt="Attribution-NonCommercial 4.0 International" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
+      </a>
+    </p>
+  </div></div></footer><script
+  src="https://utteranc.es/client.js"
+  repo="gaba-tope/gaba-tope.github.io"
+  issue-term="title"
+  theme="github-light"
+  crossorigin="anonymous"
+  async
+></script><div class="article__section-navigator clearfix"><div class="previous"><span>이전</span><a href="/en/blog/2024/05/14/hiding-from-humanity.html">마사 누스바움의 「혐오와 수치심」</a></div><div class="next"><span>다음</span><a href="/en/blog/2024/05/23/p-val-2.html">[NHST] 2장. p-value의 특징</a></div></div></div>
+
+</div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    $(function() {
+      var $this ,$scroll;
+      var $articleContent = $('.js-article-content');
+      var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+      var scroll = hasSidebar ? '.js-page-main' : 'html, body';
+      $scroll = $(scroll);
+
+      $articleContent.find('.highlight').each(function() {
+        $this = $(this);
+        $this.attr('data-lang', $this.find('code').attr('data-lang'));
+      });
+      $articleContent.find('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]').each(function() {
+        $this = $(this);
+        $this.append($('<a class="anchor d-print-none" aria-hidden="true"></a>').html('<i class="fas fa-anchor"></i>'));
+      });
+      $articleContent.on('click', '.anchor', function() {
+        $scroll.scrollToAnchor('#' + $(this).parent().attr('id'), 400);
+      });
+    });
+  });
+})();
+</script>
+<script src="/assets/scripts/copyCode.js"></script>
+</div><section class="page__comments d-print-none"></section></article><!-- start custom main bottom snippet -->
+
+<!-- end custom main bottom snippet -->
+</div>
+            </div></div></div><div class="page__footer d-print-none">
+<footer class="footer py-4 js-page-footer">
+  <div class="main"><div itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tope"><meta itemprop="url" content="https://gaba-tope.github.io"><div class="footer__author-links"><div class="author-links">
+  <ul class="menu menu--nowrap menu--inline"><link itemprop="url" href="https://gaba-tope.github.io"><li title="Github에서 팔로우하기">
+        <a class="button button--circle github-button" itemprop="sameAs" href="https://github.com/gaba-tope" target="_blank">
+          <div class="icon"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path class="svgpath" data-index="path_0" fill="#272636" d="M0 525.2c0 223.6 143.3 413.7 343 483.5 26.9 6.8 22.8-12.4 22.8-25.4l0-88.7c-155.3 18.2-161.5-84.6-172-101.7-21.1-36-70.8-45.2-56-62.3 35.4-18.2 71.4 4.6 113.1 66.3 30.2 44.7 89.1 37.2 119 29.7 6.5-26.9 20.5-50.9 39.7-69.6C248.8 728.2 181.7 630 181.7 513.2c0-56.6 18.7-108.7 55.3-150.7-23.3-69.3 2.2-128.5 5.6-137.3 66.5-6 135.5 47.6 140.9 51.8 37.8-10.2 80.9-15.6 129.1-15.6 48.5 0 91.8 5.6 129.8 15.9 12.9-9.8 77-55.8 138.8-50.2 3.3 8.8 28.2 66.7 6.3 135 37.1 42.1 56 94.6 56 151.4 0 117-67.5 215.3-228.8 243.7 26.9 26.6 43.6 63.4 43.6 104.2l0 128.8c0.9 10.3 0 20.5 17.2 20.5C878.1 942.4 1024 750.9 1024 525.3c0-282.9-229.3-512-512-512C229.1 13.2 0 242.3 0 525.2L0 525.2z" />
+</svg>
+</div>
+        </a>
+      </li></ul>
+</div>
+</div>
+    </div><div class="site-info mt-2">
+      <div>© Tope's Cytoplasm 2021,
+        Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
+        title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
+      </div>
+    </div>
+  </div>
+</footer>
+</div></div>
+    </div><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $body = $('body'), $window = $(window);
+    var $pageRoot = $('.js-page-root'), $pageMain = $('.js-page-main');
+    var activeCount = 0;
+    function modal(options) {
+      var $root = this, visible, onChange, hideWhenWindowScroll = false;
+      var scrollTop;
+      function setOptions(options) {
+        var _options = options || {};
+        visible = _options.initialVisible === undefined ? false : show;
+        onChange = _options.onChange;
+        hideWhenWindowScroll = _options.hideWhenWindowScroll;
+      }
+      function init() {
+        setState(visible);
+      }
+      function setState(isShow) {
+        if (isShow === visible) {
+          return;
+        }
+        visible = isShow;
+        if (visible) {
+          activeCount++;
+          scrollTop = $(window).scrollTop() || $pageMain.scrollTop();
+          $root.addClass('modal--show');
+          $pageMain.scrollTop(scrollTop);
+          activeCount === 1 && ($pageRoot.addClass('show-modal'), $body.addClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.on('scroll', hide);
+          $window.on('keyup', handleKeyup);
+        } else {
+          activeCount > 0 && activeCount--;
+          $root.removeClass('modal--show');
+          $window.scrollTop(scrollTop);
+          activeCount === 0 && ($pageRoot.removeClass('show-modal'), $body.removeClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.off('scroll', hide);
+          $window.off('keyup', handleKeyup);
+        }
+        onChange && onChange(visible);
+      }
+      function show() {
+        setState(true);
+      }
+      function hide() {
+        setState(false);
+      }
+      function handleKeyup(e) {
+        // Char Code: 27  ESC
+        if (e.which ===  27) {
+          hide();
+        }
+      }
+      setOptions(options);
+      init();
+      return {
+        show: show,
+        hide: hide,
+        $el: $root
+      };
+    }
+    $.fn.modal = modal;
+  });
+})();
+</script><div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal"><script>
+(function () {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    // search panel
+    var search = (window.search || (window.search = {}));
+    var useDefaultSearchBox = window.useDefaultSearchBox === undefined ?
+      true : window.useDefaultSearchBox ;
+
+    var $searchModal = $('.js-page-search-modal');
+    var $searchToggle = $('.js-search-toggle');
+    var searchModal = $searchModal.modal({ onChange: handleModalChange, hideWhenWindowScroll: true });
+    var modalVisible = false;
+    search.searchModal = searchModal;
+
+    var $searchBox = null;
+    var $searchInput = null;
+    var $searchClear = null;
+
+    function getModalVisible() {
+      return modalVisible;
+    }
+    search.getModalVisible = getModalVisible;
+
+    function handleModalChange(visible) {
+      modalVisible = visible;
+      if (visible) {
+        search.onShow && search.onShow();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].focus();
+      } else {
+        search.onShow && search.onHide();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
+        setTimeout(function() {
+          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+          search.clear && search.clear();
+          window.pageAsideAffix && window.pageAsideAffix.refresh();
+        }, 400);
+      }
+    }
+
+    $searchToggle.on('click', function() {
+      modalVisible ? searchModal.hide() : searchModal.show();
+    });
+    // Char Code: 83  S, 191 /
+    $(window).on('keyup', function(e) {
+      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
+        modalVisible || searchModal.show();
+      }
+    });
+
+    if (useDefaultSearchBox) {
+      $searchBox = $('.js-search-box');
+      $searchInput = $searchBox.children('input');
+      $searchClear = $searchBox.children('.js-icon-clear');
+      search.getSearchInput = function() {
+        return $searchInput.get(0);
+      };
+      search.getVal = function() {
+        return $searchInput.val();
+      };
+      search.setVal = function(val) {
+        $searchInput.val(val);
+      };
+
+      $searchInput.on('focus', function() {
+        $(this).addClass('focus');
+      });
+      $searchInput.on('blur', function() {
+        $(this).removeClass('focus');
+      });
+      $searchInput.on('input', window.throttle(function() {
+        var val = $(this).val();
+        if (val === '' || typeof val !== 'string') {
+          search.clear && search.clear();
+        } else {
+          $searchBox.addClass('not-empty');
+          search.onInputNotEmpty && search.onInputNotEmpty(val);
+        }
+      }, 400));
+      $searchClear.on('click', function() {
+        $searchInput.val(''); $searchBox.removeClass('not-empty');
+        search.clear && search.clear();
+      });
+    }
+  });
+})();
+</script><div class="search search--dark">
+  <div class="main">
+    <div class="search__header">검색</div>
+    <div class="search-bar">
+      <div class="search-box js-search-box">
+        <div class="search-box__icon-search"><i class="fas fa-search"></i></div>
+        <input type="text" />
+        <div class="search-box__icon-clear js-icon-clear">
+          <a><i class="fas fa-times"></i></a>
+        </div>
+      </div>
+      <button class="button button--theme-dark button--pill search__cancel js-search-toggle">
+        취소</button>
+    </div>
+    <div class="search-result js-search-result"></div>
+  </div>
+</div>
+<script>var SOURCES = window.TEXT_VARIABLES.sources;
+var PAHTS = window.TEXT_VARIABLES.paths;
+window.Lazyload.js([SOURCES.jquery, PAHTS.search_js], function() {
+  var search = (window.search || (window.search = {}));
+  var searchData = window.TEXT_SEARCH_DATA || {};
+
+  function memorize(f) {
+    var cache = {};
+    return function () {
+      var key = Array.prototype.join.call(arguments, ',');
+      if (key in cache) return cache[key];
+      else return cache[key] = f.apply(this, arguments);
+    };
+  }
+
+  /// search
+  function searchByQuery(query) {
+    var i, j, key, keys, cur, _title, result = {};
+    keys = Object.keys(searchData);
+    for (i = 0; i < keys.length; i++) {
+      key = keys[i];
+      for (j = 0; j < searchData[key].length; j++) {
+        cur = searchData[key][j], _title = cur.title;
+        if ((result[key] === undefined || result[key] && result[key].length < 4 )
+          && _title.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
+          if (result[key] === undefined) {
+            result[key] = [];
+          }
+          result[key].push(cur);
+        }
+      }
+    }
+    return result;
+  }
+
+  var renderHeader = memorize(function(header) {
+    return $('<p class="search-result__header">' + header + '</p>');
+  });
+
+  var renderItem = function(index, title, url) {
+    return $('<li class="search-result__item" data-index="' + index + '"><a class="button" href="' + url + '">' + title + '</a></li>');
+  };
+
+  function render(data) {
+    if (!data) { return null; }
+    var $root = $('<ul></ul>'), i, j, key, keys, cur, itemIndex = 0;
+    keys = Object.keys(data);
+    for (i = 0; i < keys.length; i++) {
+      key = keys[i];
+      $root.append(renderHeader(key));
+      for (j = 0; j < data[key].length; j++) {
+        cur = data[key][j];
+        $root.append(renderItem(itemIndex++, cur.title, cur.url));
+      }
+    }
+    return $root;
+  }
+
+  // search box
+  var $result = $('.js-search-result'), $resultItems;
+  var lastActiveIndex, activeIndex;
+
+  function clear() {
+    $result.html(null);
+    $resultItems = $('.search-result__item'); activeIndex = 0;
+  }
+  function onInputNotEmpty(val) {
+    $result.html(render(searchByQuery(val)));
+    $resultItems = $('.search-result__item'); activeIndex = 0;
+    $resultItems.eq(0).addClass('active');
+  }
+
+  search.clear = clear;
+  search.onInputNotEmpty = onInputNotEmpty;
+
+  function updateResultItems() {
+    lastActiveIndex >= 0 && $resultItems.eq(lastActiveIndex).removeClass('active');
+    activeIndex >= 0 && $resultItems.eq(activeIndex).addClass('active');
+  }
+
+  function moveActiveIndex(direction) {
+    var itemsCount = $resultItems ? $resultItems.length : 0;
+    if (itemsCount > 1) {
+      lastActiveIndex = activeIndex;
+      if (direction === 'up') {
+        activeIndex = (activeIndex - 1 + itemsCount) % itemsCount;
+      } else if (direction === 'down') {
+        activeIndex = (activeIndex + 1 + itemsCount) % itemsCount;
+      }
+      updateResultItems();
+    }
+  }
+
+  // Char Code: 13  Enter, 37  ⬅, 38  ⬆, 39  ➡, 40  ⬇
+  $(window).on('keyup', function(e) {
+    var modalVisible = search.getModalVisible && search.getModalVisible();
+    if (modalVisible) {
+      if (e.which === 38) {
+        modalVisible && moveActiveIndex('up');
+      } else if (e.which === 40) {
+        modalVisible && moveActiveIndex('down');
+      } else if (e.which === 13) {
+        modalVisible && $resultItems && activeIndex >= 0 && $resultItems.eq(activeIndex).children('a')[0].click();
+      }
+    }
+  });
+
+  $result.on('mouseover', '.search-result__item > a', function() {
+    var itemIndex = $(this).parent().data('index');
+    itemIndex >= 0 && (lastActiveIndex = activeIndex, activeIndex = itemIndex, updateResultItems());
+  });
+});
+</script>
+</div></div>
+
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function scrollToAnchor(anchor, duration, callback) {
+      var $root = this;
+      $root.animate({ scrollTop: $(anchor).position().top }, duration, function() {
+        window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+        callback && callback();
+      });
+    }
+    $.fn.scrollToAnchor = scrollToAnchor;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function affix(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroll,
+        offsetBottom = 0, scrollTarget = window, scroll = window.document, disabled = false, isOverallScroller = true,
+        rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop,
+        hasInit = false, curState;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.offsetBottom && (offsetBottom = _options.offsetBottom);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroll && (scroll = _options.scroll);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $scrollTarget = $(scrollTarget);
+        isOverallScroller = window.isOverallScroller($scrollTarget[0]);
+        $scroll = $(scroll);
+      }
+      function preCalc() {
+        top();
+        rootHeight = $root.outerHeight();
+        rootTop = $root.offset().top + (isOverallScroller ? 0 :  $scrollTarget.scrollTop());
+        rootLeft = $root.offset().left;
+      }
+      function calc(needPreCalc) {
+        needPreCalc && preCalc();
+        scrollBottom = $scroll.outerHeight() - offsetBottom - rootHeight;
+        rootBottomTop = scrollBottom - rootTop;
+      }
+      function top() {
+        if (curState !== 'top') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: 0
+          });
+          curState = 'top';
+        }
+      }
+      function fixed() {
+        if (curState !== 'fixed') {
+          $root.addClass('fixed').css({
+            left: rootLeft + 'px',
+            top: 0
+          });
+          curState = 'fixed';
+        }
+      }
+      function bottom() {
+        if (curState !== 'bottom') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: rootBottomTop + 'px'
+          });
+          curState = 'bottom';
+        }
+      }
+      function setState() {
+        var scrollTop = $scrollTarget.scrollTop();
+        if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
+          fixed();
+        } else if (scrollTop < rootTop) {
+          top();
+        } else {
+          bottom();
+        }
+      }
+      function init() {
+        if(!hasInit) {
+          var interval, timeout;
+          calc(true); setState();
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState();
+          });
+          $window.on('resize', function() {
+            disabled || (calc(true), setState());
+          });
+          hasInit = true;
+        }
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions,
+        refresh: function() {
+          calc(true, { animation: false }); setState();
+        }
+      };
+    }
+    $.fn.affix = affix;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function toc(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
+        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        headingsPos, scrolling = false, hasRendered = false, hasInit = false;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.selectors && (selectors = _options.selectors);
+        _options.container && (container = _options.container);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroller && (scroller = _options.scroller);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $headings = $(container).find(selectors).filter('[id]');
+        $scrollTarget = $(scrollTarget);
+        $scroller = $(scroller);
+      }
+      function calc() {
+        headingsPos = [];
+        $headings.each(function() {
+          headingsPos.push(Math.floor($(this).position().top));
+        });
+      }
+      function setState(element, disabled) {
+        var scrollTop = $scrollTarget.scrollTop(), i;
+        if (disabled || !headingsPos || headingsPos.length < 1) { return; }
+        if (element) {
+          $activeCur = element;
+        } else {
+          for (i = 0; i < headingsPos.length; i++) {
+            if (scrollTop >= headingsPos[i]) {
+              $activeCur = $tocLi.eq(i);
+            } else {
+              $activeCur || ($activeCur = $tocLi.eq(i));
+              break;
+            }
+          }
+        }
+        $activeLast && $activeLast.removeClass('active');
+        ($activeLast = $activeCur).addClass('active');
+      }
+      function render() {
+        if(!hasRendered) {
+          $root.append($tocUl);
+          $headings.each(function() {
+            var $this = $(this);
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+              .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+          });
+          $tocLi = $tocUl.children('li');
+          $tocUl.on('click', 'a', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            scrolling = true;
+            setState($this.parent());
+            $scroller.scrollToAnchor($this.attr('href'), 400, function() {
+              scrolling = false;
+            });
+          });
+        }
+        hasRendered = true;
+      }
+      function init() {
+        var interval, timeout;
+        if(!hasInit) {
+          render(); calc(); setState(null, scrolling);
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState(null, scrolling);
+          });
+          $window.on('resize', window.throttle(function() {
+            if (!disabled) {
+              render(); calc(); setState(null, scrolling);
+            }
+          }, 100));
+        }
+        hasInit = true;
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    $.fn.toc = toc;
+  });
+})();
+/*(function () {
+
+})();*/
+  $(document).ready(function() {
+    $('.footnote-ref').hover(
+      function() {
+        var footnoteId = $(this).text();
+        $('#footnote' + footnoteId).css('display', 'block');
+      },
+      function() {
+        var footnoteId = $(this).text();
+        $('#footnote' + footnoteId).css('display', 'none');
+      }
+    );
+  });
+</script><script>
+  /* toc must before affix, since affix need to konw toc' height. */(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  var TOC_SELECTOR = window.TEXT_VARIABLES.site.toc.selectors;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window);
+    var $articleContent = $('.js-article-content');
+    var $tocRoot = $('.js-toc-root'), $col2 = $('.js-col-aside');
+    var toc;
+    var tocDisabled = false;
+    var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+    var hasToc = $articleContent.find(TOC_SELECTOR).length > 0;
+
+    function disabled() {
+      return $col2.css('display') === 'none' || !hasToc;
+    }
+
+    tocDisabled = disabled();
+
+    toc = $tocRoot.toc({
+      selectors: TOC_SELECTOR,
+      container: $articleContent,
+      scrollTarget: hasSidebar ? '.js-page-main' : null,
+      scroller: hasSidebar ? '.js-page-main' : null,
+      disabled: tocDisabled
+    });
+
+    $window.on('resize', window.throttle(function() {
+      tocDisabled = disabled();
+      toc && toc.setOptions({
+        disabled: tocDisabled
+      });
+    }, 100));
+
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window), $pageFooter = $('.js-page-footer');
+    var $pageAside = $('.js-page-aside');
+    var affix;
+    var tocDisabled = false;
+    var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+
+    affix = $pageAside.affix({
+      offsetBottom: $pageFooter.outerHeight(),
+      scrollTarget: hasSidebar ? '.js-page-main' : null,
+      scroller: hasSidebar ? '.js-page-main' : null,
+      scroll: hasSidebar ? $('.js-page-main').children() : null,
+      disabled: tocDisabled
+    });
+
+    $window.on('resize', window.throttle(function() {
+      affix && affix.setOptions({
+        disabled: tocDisabled
+      });
+    }, 100));
+
+    window.pageAsideAffix = affix;
+  });
+})();
+</script><script type="text/x-mathjax-config">
+	var _config = { tex2jax: {
+		inlineMath: [['$','$'], ['\\(','\\)']]
+	}};MathJax.Hub.Config(_config);
+</script>
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+<script>/* assets/js/custom/dark-theme.js */
+const defaultTheme = [...document.styleSheets].find(style => /(main.css)$/.test(style.href));
+const darkTheme = [...document.styleSheets].find(style => /(main_dark.css)$/.test(style.href));
+
+let setDarkMode = (isDark) => {
+    darkTheme.disabled = isDark !== true;
+    defaultTheme.disabled = isDark === true;
+    localStorage.setItem('theme', isDark ? 'dark' : 'default');
+}
+
+if (darkTheme) {
+    let currentTheme = localStorage.getItem('theme');
+    let isDarkMode = false;
+    if (currentTheme) {
+        isDarkMode = currentTheme === 'dark';
+    } else {
+        isDarkMode = matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    setDarkMode(isDarkMode);
+
+    let toggleThemeBtn = document.getElementById("toggle_dark_theme")
+    if (toggleThemeBtn) {
+        toggleThemeBtn.checked = isDarkMode
+    }
+
+    let changeTheme = (e) => {
+        setDarkMode(e.target.checked);
+    }
+
+    toggleThemeBtn.addEventListener('click', changeTheme)
+}</script>
+    </div>
+    <script>(function () {
+  var $root = document.getElementsByClassName('root')[0];
+  if (window.hasEvent('touchstart')) {
+    $root.dataset.isTouch = true;
+    document.addEventListener('touchstart', function(){}, false);
+  }
+})();
+</script>
+  </body>
+</html>
+
