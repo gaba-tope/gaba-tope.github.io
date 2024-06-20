@@ -32,7 +32,7 @@ lang: en # the language of your site, default as "en"
 timezone: Asia/Seoul # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for the available values
 # for polyglot plugin
 languages: ["ko", "en"] 
-default_lang: "en"
+default_lang: "ko"
 exclude_from_localization: ["assets", "docs", "files"]
 parallel_localization: false
 
@@ -228,7 +228,6 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jemoji
-  - jekyll-polyglot
+  - jekyll-sitemap
 
-    # - jekyll-sitemap: due to conflict with polyglot.
   

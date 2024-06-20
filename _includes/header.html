@@ -63,12 +63,12 @@
       </nav>
       {%- endif -%}
       <!-- polyglot 언어 선택-->
-      <ul class="nav-lang">        
+      <ul class="nav-lang">            
           {% for lang in site.languages %}
           <!--<li id="lang" style="float: right;">-->
-            <a style="{% if lang == site.active_lang %}font-weight: bold;{% endif %}text-align:center;" href="{% if lang == site.default_lang %} {{site.baseurl}}{{page.url}} {% else %} {{site.baseurl}}/{{ lang }}{{page.url}} {% endif %}">
+           <!-- <a style="{% if lang == site.active_lang %}font-weight: bold;{% endif %}text-align:center;" href="{% if lang == site.default_lang %} {{site.baseurl}}{{page.url}} {% else %} {{site.baseurl}}/{{ lang }}{{page.url}} {% endif %}">
               {{ lang }}
-            </a>
+            </a> -->
           <!--</li>--->
           {% endfor %}
       </ul>

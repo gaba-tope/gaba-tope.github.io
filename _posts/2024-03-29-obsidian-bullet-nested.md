@@ -4,7 +4,7 @@ tags: [obsidian]
 categories: work
 cover: /files/cover/2024-03-29-obsidian-bullet-nested.png
 lang: en
-permalink: /work/2024/03/29/obsidian-bullet-nested
+ref: obs-bullet
 ---
 ## Intro
 Obsidian does not have different bullet shapes for different levels of nested lists. To customize bullet styles, one has to modify the CSS (Cascading Style Sheets) code. Below are ways to resolve the issue. <!--more-->
