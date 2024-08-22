@@ -71,7 +71,7 @@ $H_3$는 모든 $x$에 대해 $x$가 $R$ 속성과 $R$이 아닌 속성 중 적�
 
 전제 1은 참입니다. 왜냐고요? '$A\rightarrow B$'는 A이면서 B가 아닌 경우는 없다는 말인데, 이를 기호로 표현하면 '$\neg(A\wedge \neg B)$'입니다. 중학교 때 배운 드모르간 법칙에 따르면, '$\neg(A\wedge \neg B)$'는 '$\neg A \lor B$'와 동치입니다. 그러므로 '$A\rightarrow B$'는 '$\neg A \lor B$'와 동치입니다.
 
-전제 2도 참입니다. $(A\lor \neg A)$이 항상 참이므로 '$(A\lor \neg A)\rightarrow B$'가 참이기 위해서는 $B$가 참이어야 합니다. '$(A\lor \neg A)\rightarrow B$'의 참거짓 여부가 $B$의 참거짓 여부와 같다는 말이고, 이말은 즉, 둘이 동치라는 것입니다.
+전제 2도 참입니다. $(A\lor \neg A)$이 항상 참이므로 '$(A\lor \neg A)\rightarrow B$'가 참이기 위해서는 $B$가 참이어야 합니다. '$(A\lor \neg A)\rightarrow B$'의 참거짓 여부 ( 이하 진리값<sup>truth value</sup>)가 $B$의 진리값과 같다는 말이고, 이말은 즉, 둘이 동치라는 것입니다.
 
 전제 2에 의해, $H_3: \forall x((Rx\lor\neg Rx)\rightarrow (\neg Rx \lor Bx))$는 $\forall x(\neg Rx \lor Bx)$와 동치입니다. 이어 전제 1에 의해, $\forall x(\neg Rx \lor Bx)$는 $H_1: \forall x(Rx\rightarrow Bx)$와 동치입니다. 그러므로 $H_3$는 $H_1$와 동치라는 것입니다.
 
