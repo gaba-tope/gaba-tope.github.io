@@ -14,6 +14,10 @@ categories: blog
 
 여기서는 [박제철의 『딜레마의 형이상학』](#2rt22d)과 [이영의 외의 『입증』](#1a2b3c)을 주로 참고하여 정리하였습니다.
 
+<p align="left">
+  		<img src="/files/img/Raven Paradox.png" width="60%">
+</p>
+
 ## 헴펠의 역설 - 간단한 설명
 **헴펠의 역설**<sup>Hempel's Paradox</sup> 내지 **까마귀 역설**<sup>Raven Paradox</sup>을 간단히 설명하자면 다음과 같습니다.
 
