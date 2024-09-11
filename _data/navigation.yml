@@ -10,6 +10,9 @@ header:
   - titles:
       en      : &EN       Blog
     url: /blog/
+  - titles:
+      en      : Gallery
+    url: /gallery/
 
 
 
