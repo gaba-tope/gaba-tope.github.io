@@ -21,7 +21,7 @@ Leaflet을 처음 사용하여 interactive choropleth map을 만드는 경우라
 아래에서는 핵심 코드를 살펴보겠습니다. 이전에 사용하고 다듬은 데이터셋과 객체들을 그대로 사용합니다.
 
 # Data Wrangling
-1. [이전 포스트]({% post_url 2023-12-24-seoul-dong-visual %})에서 combined_data와 map_seoul_gu의 EPSG를 5179로 맞추었죠. 하지만 leaflet 패키지로 사용할 shape file 등은 좌표계 (CRS; Coordinate Reference System)가 [WGS84 (= EPSG:4326)이어야](https://rstudio.github.io/leaflet/articles/projections.html){:target="_blank"} 하므로, `sf::st_transform()`을 이용하여 변환합니다.<br>
+1. [이전 포스트]({% post_url 2023-12-24-seoul-dong-visual %})에서 combined_data와 map_seoul_gu의 EPSG를 5179로 맞추었죠. 하지만 leaflet 패키지로 사용할 shape file 등은 좌표계 (CRS; Coordinate Reference System)가 [WGS84 (= EPSG:4326)이어야](https://rstudio.github.io/leaflet/articles/projections.html){:target="_blank"} 하므로 `sf::st_transform()`을 이용하여 변환합니다.<br>
 ```r
 combined_data_l <- st_transform(combined_data, 4326)
 map_seoul_gu_l <- st_transform(map_seoul_gu, 4326)
