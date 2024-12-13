@@ -14,14 +14,13 @@ You may call me Tope in the online community.
 <br>
 
 ### Currently,
-I'm in the midst of a two-year hiatus from my school life, fulfilling my commitment to mandatory national service. 
+I'm in the midst of a two-year hiatus from my school life. I will be studying next semester in the U.S. as an exchange student. 
 
 ### Field of Interests
 
 - Now on a **quest to uncover what truly captivates me**. 
-- Among the diverse fields, I found myself fascinated to **neurobiology**. Learning how nervous system works at a molecular and cellular level is highly intriguing.
+- Among the diverse fields, I found myself fascinated to **neurobiology**. Learning how nervous system works at a molecular and cellular level is highly intriguing. 
 - I am keen to comprehend the mathematical principles underlying **statistical inference**. 
-- In my spare time, I study and think how the **concept of human rights** can be defined and philosophically justified. 
 - **Data visualization** is one of my hobbies. Some of the works can be found in [my Gallery page](https://gaba-tope.github.io/gallery){:target='_blank'} and [my Github Repositories](https://www.github.com/gaba-tope/){:target='_blank'}. 
 
 ### Relevant Coursework (credits) 
