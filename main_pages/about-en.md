@@ -13,9 +13,6 @@ Undergraduate student majoring in Bio-convergence.
 You may call me Tope in the online community.
 <br>
 
-### Currently,
-I'm in the midst of a two-year hiatus from my school life. I will be studying next semester in the U.S. as an exchange student. 
-
 ### Field of Interests
 
 - Now on a **quest to uncover what truly captivates me**. 
