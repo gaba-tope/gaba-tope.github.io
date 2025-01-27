@@ -10,7 +10,7 @@ lang: en
 ---
 
 Undergraduate student majoring in Bio-convergence. 
-You may call me Tope in the online community.
+You may call me Tope (/toʊp/) in the online community.
 <br>
 
 ### Field of Interests
