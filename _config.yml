@@ -223,6 +223,7 @@ defaults:
       show_subscribe: true
       pageview: true
       comment: true
+      applause_button: true # https://applause-button.com/
 ## => Plugins
 ##############################
 plugins:

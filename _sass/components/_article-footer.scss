@@ -15,3 +15,15 @@
     height: map-get($base, font-size) * 1.6;
   }
 }
+
+// applause-button
+applause-button {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  color: #0366D6;
+
+  .count-container {
+    color: inherit;
+  }
+}
