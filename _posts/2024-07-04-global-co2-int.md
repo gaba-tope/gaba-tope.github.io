@@ -3,6 +3,7 @@ title: Global CO2 Emission Plot - Interactive plot with {plotly}
 tags: [Visualization, tidytuesday]
 categories: work
 cover: /files/cover/2024-07-04-global-co2-int.png
+id: 2024-07-04-global-co2-int
 ---
 <style>
 .container {

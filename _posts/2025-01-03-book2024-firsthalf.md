@@ -3,6 +3,7 @@ title: 2024년 읽은 책 결산 (상반기)
 tags: [book]
 categories: blog
 cover: /files/cover/2025-01-02-book2024.jpg
+id: 2025-01-03-book2024-firsthalf
 ---
 
 <style>

@@ -3,6 +3,7 @@ title: 제인 오스틴의 『오만과 편견』
 tags: [book]
 categories: blog
 cover: /files/cover/2023-03-20-Pride-and-Prejudice.jpeg
+id: 2023-03-20-Pride-and-Prejudice
 ---
 제인 오스틴 지음, 서민아 역, 박희정 그림, 위즈덤하우스 (2018)
 <style>

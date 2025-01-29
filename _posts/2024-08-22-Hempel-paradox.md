@@ -3,6 +3,7 @@ title: "헴펠의 역설 (Hempel's Paradox)"
 tags: [philosophy]
 cover: /files/cover/2024-08-22-Hempel-paradox.png
 categories: blog
+id: 2024-08-22-Hempel-paradox
 ---
 
 ## 머리말
