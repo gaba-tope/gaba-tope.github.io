@@ -1,6 +1,10 @@
-<button id="like-button">Like</button>
+<div id="post-data" data-post-id="{{ page.id }}"></div>
 
-<span id="like-count">0</span>
+<div class="placement">
+    <button id="like-button" class="btn-love">
+    </button>
+    <span id="like-count">0</span>
+</div>
 
 
 <!--scss file (likeButton.scss was included in customOverride.scss, which again is imported to main.scss)-->
@@ -8,5 +12,5 @@
  
 <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore-compat.js"></script>
-<script src="{{% include scripts/customJS/fireBase.js %}}"></script>  <!--/scripts/customJS/fireBase.js-->
-<!-- <script src="{{% include scripts/customJS/likeButton.js %}}"></script> -->  <!--/scripts/customJS/likeButton.js-->
+<script src="/assets/scripts/fireBase.js"></script>  <!--/scripts/customJS/fireBase.js-->
+<!--<script src="/assets/scripts/likeButton.js"></script>-->

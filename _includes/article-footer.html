@@ -38,16 +38,16 @@
     {%- include article/footer/author-profile.html author=_author -%}
   {%- endif -%}
 
+   <!---like Button-->
+  {% if page.applause_button %}
+    <div class="like_button"> {% include likeButton.html %} </div>
+  {% endif %}
+
   {%- if _show_subscribe -%}
     <div class="article__subscribe">{%- include article/footer/subscribe.html -%}</div>
   {%- endif -%}
 
-  <!---Test like Button-->
-{% if page.applause_button %}
-  {% include likeButton.html %}
-{% endif %}
-
-  <!--applause_button-->
+  <!--applause_button--
   {% if page.applause_button %}
     <applause-button class="mb6"
       color={{ site.accent_color | default:'rgb(83,165,255)' }}
@@ -55,9 +55,8 @@
     </applause-button>
 
   {% else %}
-  
   {% endif %}
-  <!--------->
+ ------>
 
   {%- if _license != false -%}
     {%- assign _data_license = site.data.licenses-%}
@@ -71,11 +70,11 @@
   {%- endif -%}
 </footer>
 
-<!---applause button css and js-->
+<!---applause button css and js
 {% if page.applause_button %}
-  <link rel="stylesheet" href="/assets/css/applause-button.css"> <!--https://unpkg.com/applause-button/dist/applause-button.css-->
+  <link rel="stylesheet" href="/assets/css/applause-button.css"> 
   <script src="https://unpkg.com/applause-button/dist/applause-button.js"></script>
-{% endif %}
+{% endif %}-->
 
 
 <!----Commenting-->
@@ -98,7 +97,7 @@ data-category="Announcements"
 data-category-id="DIC_kwDOK9Axac4Cma84"
 data-mapping="pathname"
 data-strict="0"
-data-reactions-enabled="1"
+data-reactions-enabled="0"
 data-emit-metadata="0"
 data-input-position="bottom"
 data-theme="preferred_color_scheme"

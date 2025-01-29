@@ -1,9 +1,11 @@
-.heart {
-  width: 100px;
-  height: 100px;
-  background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat;
+.btn-love {
+  width: 80px;
+  height: 80px;
+  //background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat;
+  background: url("/assets/images/liked_button.png") no-repeat;
   background-position: 0 0;
-  cursor: pointer;
+  //cursor: pointer;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 16H7v-2h10v2zm-4.59-4.03l-1.4-1.4L10 14.17l-1.59-1.59L7 14l3 3 7-7-1.41-1.41z' fill='#4A92E2'/></svg>") 12 12, pointer;
   transition: background-position 1s steps(28);
   transition-duration: 0s;
   
@@ -18,8 +20,38 @@ body {
 }
 
 .placement {
-  position: fixed;
-  top: 50%;
+  display: flex; /* Enable Flexbox */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content (if needed) */
+  /* ... other styles ... */
+}
+
+// Change cursor shape and show tooltip if you Liked already.
+.btn-love.is-active { /* Style for the liked state */
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 16H7v-2h10v2zm-4.59-4.03l-1.4-1.4L10 14.17l-1.59-1.59L7 14l3 3 7-7-1.41-1.41z' fill='#4A92E2'/></svg>") 12 12, no-drop; /* Custom cursor */
+  position: relative; /* For tooltip positioning */
+}
+
+.btn-love.is-active::before { /* Tooltip styles */
+  content: "Thank you for your Like!! :)";
+  position: absolute;
+  top: -30px; /* Adjust position as needed */
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
+  background-color: rgba(83, 165, 255, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap; /* Prevent tooltip from wrapping */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition */
+  pointer-events: none; /* Prevent tooltip from blocking clicks */
+}
+
+.btn-love.is-active:hover::before { /* Show tooltip on hover */
+  opacity: 1;
+}
+
+.btn-love.is-active:active::before { /* Keep tooltip shown on click */
+  opacity: 1;
 }
