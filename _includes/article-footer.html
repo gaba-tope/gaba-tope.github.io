@@ -42,6 +42,11 @@
     <div class="article__subscribe">{%- include article/footer/subscribe.html -%}</div>
   {%- endif -%}
 
+  <!---Test like Button-->
+{% if page.applause_button %}
+  {% include likeButton.html %}
+{% endif %}
+
   <!--applause_button-->
   {% if page.applause_button %}
     <applause-button class="mb6"
@@ -71,6 +76,7 @@
   <link rel="stylesheet" href="/assets/css/applause-button.css"> <!--https://unpkg.com/applause-button/dist/applause-button.css-->
   <script src="https://unpkg.com/applause-button/dist/applause-button.js"></script>
 {% endif %}
+
 
 <!----Commenting-->
 {%- if page.comment -%}
