@@ -2,8 +2,20 @@
 title: 개인주의적 사회관에 대한 비판 — 정리해보았다
 tags: [philosophy]
 categories: blog
+cover: /files/cover/2024-04-06-individualist.jpg
 id: 2024-04-06-individualist
 ---
+<style>
+img{
+    float: left;
+    margin: 0.8em;
+}
+    </style>
+
+<p align="left">
+  			<img src="/files/img/Young_pol_diff.jpg" width="15%">
+</p>
+
 모 비공개 글에서 아이디어를 얻어 전통적 자유주의 관점에서 전제되는 개인주의적 사회관이 어떻게 비판되는지에 대해 알아보고 정리해보고자 한다. 이 주제는 이미 수많은 학자들이 자세히 다루었는데, 그중 특히 정치철학자 [아이리스 영 (Iris Marion Young)](https://en.wikipedia.org/wiki/Iris_Marion_Young){:target="_blank"}의 저서「차이의 정치와 정의」에 드러난 그녀의 견해를 주로 참고하였다. <!--more-->
 
 개인주의적 사회관과 자유주의, 그리고 사회존재론에 관해서는 아직 알아가는 중이라 잘못 이해하였을 수 있다는 점을 밝혀두고 싶다. 학술논문 쓰는 것도 아니고 관련된 내용을 모두 익히고 글을 쓴다면 수십 년 후에야 가능할 것 같단 말이지. 그래서 먼저 쓰고 나서 고쳐나가도록 하겠다.
