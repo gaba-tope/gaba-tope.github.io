@@ -35,7 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
     })
     .then((newLikeCount) => {
       likeCountElement.textContent = newLikeCount; // Update the display
-      likeButton.disabled = true; // Disable the button (one click per IP - see below)
+      likeButton.disabled = true; // Disable the button 
       // Store that the user has liked the post (e.g. in local storage)
       localStorage.setItem(`liked-${postId}`, 'true');
 
@@ -55,7 +55,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const postData = document.getElementById('post-data');
     const postId = postData.dataset.postId; // Get from data attribute
     //const postId = '{{ page.id }}'; // Example using a Jekyll front matter variable
-    console.group("Initial postId (on the page load:", postId); // For debug.
+    console.group("Initial postId on the page load:", postId); // For debug.
     
     // Get the like count element
     const likeCountElement = document.getElementById('like-count');
