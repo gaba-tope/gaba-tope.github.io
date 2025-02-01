@@ -4,6 +4,7 @@ tags: [book]
 categories: blog
 cover: /files/cover/2025-01-02-book2024.jpg
 id: 2025-01-03-book2024-firsthalf
+modify_date: 2025-01-31
 ---
 
 <style>

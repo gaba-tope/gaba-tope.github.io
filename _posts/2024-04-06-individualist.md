@@ -4,6 +4,7 @@ tags: [philosophy]
 categories: blog
 cover: /files/cover/2024-04-06-individualist.jpg
 id: 2024-04-06-individualist
+modify_date: 2025-01-31
 ---
 <style>
 img{
