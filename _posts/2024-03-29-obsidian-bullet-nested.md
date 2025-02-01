@@ -25,8 +25,12 @@ When an unordered list is used within the ordered list, the bullet styles are no
   <img src="/files/img/actual-sol1.png" width="30%">
 </p>
 
+<details>
+<summary> Click to see the full script of ZenMoto </summary>
 {% include codeHeader.html %}
-```css
+
+{% highlight css %}
+
 /*========ZenMoto's Script=========*/
 
 /* LEVEL 1 */
@@ -107,15 +111,20 @@ When an unordered list is used within the ordered list, the bullet styles are no
 
 /* bullet color */
 :root { --bullet-new-color: rgb(89,89,223);}
-```
+{% endhighlight %}
+</details>
+
 
 ## Solution 2 - Downside fixed
 To resolve this issue, I slightly modified the ZenMoto's script. The rule to **apply the style to the source-view mode is deprecated, but the issue can be solved in the preview-mode**. The reason why the solution cannot be applied to the source-view mode is that I do not know much about the `.markdown-source-view.mod-cm6` script, and thus couldn't come up with a solution to have designated bullet styles even under ordered lists.
 
 Slight modification to the [ZenMoto's solution](https://forum.obsidian.md/t/problems-encountered-when-modifying-unordered-lists-styles-with-css/53824/2){:target="_blank"} by me:
 
+<details>
+<summary> Click to see the full script of my modified version. </summary>
 {% include codeHeader.html %}
-```css
+
+{% highlight css %}
 /* LEVEL 1 */
 .markdown-reading-view ul > li > .list-bullet:after,
 .markdown-reading-view ol > ul > li > .list-bullet:after {
@@ -194,8 +203,9 @@ Slight modification to the [ZenMoto's solution](https://forum.obsidian.md/t/prob
 
 /* bullet color */
 :root { --bullet-new-color: rgb(89,89,223);}
+{% endhighlight %}
+</details>
 
-```
 Using the script for level 1 ~ level 3, I now have the desired result:
 <p align="left">
   <img src="/files/img/nested_unordered_list.png" width="40%">
