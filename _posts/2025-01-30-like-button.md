@@ -119,6 +119,7 @@ In the YAML header of each post, you need to specify **unique** post id for the 
 ## 3. Front-end Setting
 
 ### 3-1. Create **HTML for the Like Button**. 
+First, the very HTML for the like button is created and saved as `_includes/likeButton.html`. This file will be incorporated into your site in [section 3-4](#3-4-incorporate-the-html-into-your-site).
 
 <details>
 <summary> Click to see the full HTML script </summary>
@@ -144,6 +145,7 @@ In the YAML header of each post, you need to specify **unique** post id for the 
 - CSS can be fetched within this HTML script. Since I have earlier projects that utilize custom CSS in their way, I just followed that way. The SCSS file named `_sass/custom/likeButton.scss` was imported in `_sass/custom/customOverride.scss` via `@import "./likeButton.scss";`, and then `_sass/custom/customOverride.scss` was imported to `assets/css/main.scss`via `@import "custom/customOverride.scss";`.
 
 ### 3-2. Create **SCSS for the Like Button**.
+I created and saved SCSS for the like button, as `_sass/custom/likeButton.scss`
 The SCSS I used is from [Matt Henley's "Like" button (codepen)](https://codepen.io/mattbhenley/pen/gQbWgd){:target='_blank'}
 
 <details>
@@ -227,11 +229,17 @@ First, initiate a Firebase project in your Jekyll root folder via `firebase init
 <summary> Click to see the full JS script</summary>
 
 {% highlight javascript %}
+// Make sure you DEPLOY function after changing this script.
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const fs = require('fs');
 const path = require('path');
-const cors = require('cors')({ origin: 'http://localhost:4000' }); // Replace with your Jekyll site's origin
+const cors = require('cors')({
+  origin: [   
+    'http://localhost:4000', // Replace with your Jekyll site's origin.
+    'https://gaba-tope.github.io'
+  ],
+}); 
 
 admin.initializeApp();
 
@@ -259,6 +267,7 @@ Next, create `assets/scripts/fireBase.js` as follows.
 
 {% highlight javascript %}
 // Initialize Firebase (add your config)
+console.log("fireBase.js loaded"); // for debug
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js"; 
 
@@ -269,7 +278,48 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
     firebase.initializeApp(config);
     const db = firebase.firestore();
     console.log("Firebase initialized, Firestore instance:", db); // for debugging
+    
+    // Get the post ID (replace with your Jekyll logic)
+    const postData = document.getElementById('post-data');
 
+    if (!postData) { // For debugging
+      console.error("postData element not found!");
+      return; // Stop execution if the element doesn't exist
+    }
+
+    const postId = postData.dataset.postId; // Get from data attribute
+    //const postId = '{{ page.id }}'; // Example using a Jekyll front matter variable
+    console.log("Post ID:", postId); // For debug.
+        
+    // Get the like count element
+    const likeCountElement = document.getElementById('like-count');
+    // Get the like button element
+    const likeButton = document.getElementById('like-button');
+    // For Debug: check if the two elements are found.
+    if (!likeCountElement) {
+      console.error("likeCountElement not found!");
+    } else {
+      console.log("likeCountElement found.")
+    }
+    if (!likeButton) {
+      console.error("likeButton not found!");
+    } else {
+      console.log("likeButton found.")
+    }
+  
+    const postRef = db.collection('posts').doc(postId);
+
+    // Get initial like count (important!)
+    postRef.get().then((doc) => {
+      if (doc.exists) {
+      likeCountElement.textContent = doc.data().likeCount;
+      } else {
+      likeCountElement.textContent = 0; // Set to 0 if no likes yet
+      }
+      console.log("Initial likeCount retrieved from doc.data"); // For debug
+    }).catch((error) => {
+        console.error("Error getting initial like count: ", error);
+    });
     // Function to update the like count in the database
     function updateLikeCount(postId) {
       const db = firebase.firestore();
@@ -302,71 +352,35 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
         // Handle errors (e.g., display a message to the user)
       });
     }
-    // Get the post ID (replace with your Jekyll logic)
-    const postData = document.getElementById('post-data');
-
-    if (!postData) { // For debugging
-      console.error("postData element not found!");
-      return; // Stop execution if the element doesn't exist
-    }
-
-    const postId = postData.dataset.postId; // Get from data attribute
-    //const postId = '{{ page.id }}'; // Example using a Jekyll front matter variable
-    console.log("Post ID:", postId); // For debug.
-    
     // Function to check if the user has already liked the post
     function checkIfLiked(postId) {
       const hasLiked = localStorage.getItem(`liked-${postId}`);
       return hasLiked === 'true';
     }
-    
-    
-    // Get the like count element
-    const likeCountElement = document.getElementById('like-count');
-
-    // Get the like button element
-    const likeButton = document.getElementById('like-button');
 
     if (checkIfLiked(postId)) {
-        likeButton.classList.add('is-active'); // Add 'is-active'class if already liked, s.t. button filled with red.
-        likeButton.disabled = true; // Disable if already liked
-    } 
+      console.log("checkIfLiked is TRUE");
+      likeButton.classList.add('is-active'); // Add 'is-active'class if already liked, s.t. button filled with red.
+      likeButton.disabled = true; // Disable if already liked
+      console.log("is-active class added to likeButton.");
+    }
 
-    // Get initial like count (important!)
-      //const db = firebase.firestore(); (Already declared.)
-    const postRef = db.collection('posts').doc(postId);
-    postRef.get().then((doc) => {
-        if (doc.exists) {
-        likeCountElement.textContent = doc.data().likeCount;
-        } else {
-        likeCountElement.textContent = 0; // Set to 0 if no likes yet
-        }
-    }).catch((error) => {
-        console.error("Error getting initial like count: ", error);
-    });
-    
-    // On page load:
-    window.addEventListener("DOMContentLoaded", () => {
-      console.log("DOM content loaded"); // for debugging
-      
-      // Add the like button click listener
-      likeButton.addEventListener('click', () => {
-        if (!likeButton.classList.contains('is-active')) {
-          likeButton.classList.add('is-active'); // Add 'is-active' class immediately
-          updateLikeCount(postId);
-          console.log("Button clicked"); // For Debug
-          console.log("Post ID being Used", postId); // For Debug: verify postID is correct.
+    // Add the like button click listener
+    likeButton.addEventListener('click', () => {
+      console.log("Button clicked"); // For Debug
+
+      if (!likeButton.classList.contains('is-active')) {
+        likeButton.classList.add('is-active'); // Add 'is-active' class immediately
+        updateLikeCount(postId);
+        console.log("Post ID being Used", postId); // For Debug: verify postID is correct.
       } 
-      // If you want to implement the unlike function, you must uncomment it and handle the unlike logic in your Firebase database
-      // else {
-      // likeButton.classList.remove('is-active'); // Remove 'is-active' class
-      // }
-            
-            
-            
-        });
-
+    // If you want to implement the unlike function, you must uncomment it and handle the unlike logic in your Firebase database
+    // else {
+    // likeButton.classList.remove('is-active'); // Remove 'is-active' class
+    // }
+          
     });
+        
     // ... rest of your Firebase code
   })
   .catch(error => {
@@ -391,7 +405,26 @@ This is the **core functionality** of Like button action. Below is the brief exp
     - If the post was already 'liked', then `is-active` class is added to the button and the button is disabled.
 - Add the `likeButton.addEventListener`. If `is-active` isn't added to the button at the moment when the button is clicked, add the `is-active` class to the button and call `updateLikeCount` function.
 
+### 3-4. Incorporate the HTML into your site.
+
+Now is the time to incorporate `likeButton.html` to your site. I embedded the HTML to `_includes/article-footer.html` like the following script. A file to embed `likeButton.html` depends on your directory and theme. You don't need to include the `if page.applause_button`, as it's byproduct of another feature.
+
+<details>
+<summary> Click to see the full HTML script </summary>
+
+{% highlight html%}
+{% raw %}
+ <!---like Button-->
+  {% if page.applause_button %}
+    <div class="like_button"> {% include likeButton.html %} </div>
+  {% endif %}
+{% endraw %}
+{% endhighlight%}
+</details>
+
 # Conclusion
-I really need to learn essential JavaScript and CSS knowledge to run my small blog… It was quite challenging, but I'm proud to have successfully made a beautiful heart-shaped like button as you can see below. Hope this inspires you to experiment with CSS and JS to create elements for your own blog. 
+I really need to learn essential JavaScript and CSS knowledge to run my small blog… It was quite challenging, but I'm proud to have successfully made a beautiful heart-shaped like button as you can see below. I also learned that debugging with `console.log();` is quite useful in javascript.
+
+Hope this post inspires you to experiment with CSS and JS to create elements for your own blog. 
 
 More secure ways should be implemented such as using Firebase cloud function. As far as I know, using Firebase Cloud Functions allows you to implement server-side functions to restrict client's access to data, enhancing the security of your blog. 
