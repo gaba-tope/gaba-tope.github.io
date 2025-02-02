@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const cors = require('cors')({
   origin: [
-    'https://localhost:4000',
+    'http://localhost:4000',
     'https://gaba-tope.github.io'
   ],
 }); 
