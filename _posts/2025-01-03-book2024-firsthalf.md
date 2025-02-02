@@ -15,7 +15,11 @@ img{
     </style>
 
 <p align="left">
-  			<img src="/files/img/2024readings.jpg" width="50%">
+  	<figure>
+        <a href="/files/img/2024readings.jpg" data-lightbox="vis">
+  			<img src="/files/img/2024readings.jpg" width="35%">
+        </a>
+    </figure>
 </p>
 
 2024년 상반기에 읽은 책들 좀 이야기하는 글! 25년에는 그냥 상반기 끝나고 하나 하반기 끝나고 하나해야겠음… 한꺼번에 하려니 힘들다… <!--more-->
@@ -86,7 +90,9 @@ img{
 
 <p align="right">
         <figure>
-  			<img src="/files/img/soonjeong_cheolhak.webp" width="15%">
+        <a href="/files/img/soonjeong_cheolhak.webp" data-lightbox="vis">
+  			<img src="/files/img/soonjeong_cheolhak.webp" width="20%">
+        </a>
         </figure>
 </p>
 - [진태원, 『스피노자 윤리학 수업』](https://www.yes24.com/Product/Goods/107635743){:target='_blank'}: [전기가오리](https://philo-electro-ray.org/){:target='_blank'} 공부 모임에서 사용한 책인데, 스피노자의 스 자도 몰랐던 나도 중요한 내용들 짚으며 공부할 수 있어서 좋았다. 특히 잘못 읽기 쉬운 지점을 짚어주어 도움 되었다. <!--핵심만 짚어보자 (틀릴 수 있음). 스피노자의 존재론에서 독립적으로 존재하는 존재자, 즉 실체는 자연 = 세계 = 신 (인격신 아님)이다. 그래서 실체는 자기원인적이고 무한히 많은 속성을 지닌다. 반면 인간, 동물, 사물 등은 (자연 = 세계 = 신)의 변용, 그러니까 (자연 = 세계 = 신)이 변화한 모습으로서 실체에 의존적으로 존재한다. 이렇게 실체의 변용인 개별자를 양태라고 부른다. 스피노자는 심신평행론자로, 그는 '코나투스'라는 것이 나란히 몸과 마음으로 표현된다고 본다. '코나투스'란 자기 유지/보존에 대한 욕구, 본능, 역량을 의미한다. 생물이든 무생물이든 모든 유한한 사물은 그 존재를 보존하려는 코나투스를 가진다는 것이다. --> 흥미로웠던 것은, 그의 논증이 정의, 공리, 정리, 보조정리 등 수학책에서나 볼 법한 증명의 형식을 띠고 있다는 점이다. 물론 수학도 철학에서 나왔다지만…어쨌든! 이건 약간 다른 얘긴데, 전구 작가의 연재 만화 [『순정철학논고』](https://www.emanbae.com/series/6010){:target='_blank'} 아직 [포스타입에 무료로 풀린 1화~19화](https://www.postype.com/@moreeasyphilosophy/series/1277981?page=2&sortType=publishedAt%2Cdesc){:target='_blank'}만 읽어 봤는데 넘 웃기고 재밌어요 진짜 꼭 읽어보세요!!! 스피노자 증명 형식으로 발표하는 거 읽으면서 실시간으로 터졌음 ㅋㅋㅋㅋ 

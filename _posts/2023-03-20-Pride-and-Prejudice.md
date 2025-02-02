@@ -14,7 +14,11 @@ img{
     </style>
 
 <p align="left">
+    <figure>
+        <a href="/files/cover/2023-03-20-Pride-and-Prejudice.jpeg" data-lightbox="vis">
   			<img src="/files/cover/2023-03-20-Pride-and-Prejudice.jpeg" width="20%">
+        </a>
+    </figure>
 </p>
 
 책 자체는 워낙 유명해서 들어본 적이 있었고, 수년 전에도 친구가 열심히 추천해준 책이라서 꼭 읽어볼 생각이었다! 하지만 로맨스 장르를 읽어본 적이 거의 없어서 그런지 재미있지도 않았고 그러다 보니 느릿느릿 읽게 되었다. 도서관에서 책을 세 번 빌려서 읽어보았는데 매번 1/3 이상 읽기 전에 반납일이 돌아와서 실패하기를 반복. <!--more--> 콜린 퍼스 주연의 BBC 드라마 〈오만과 편견〉 (1995)도 2부까지만 보다가 이어나가질 못했다.

@@ -13,7 +13,11 @@ img{
     </style>
 
 <p align="left">
+    <figure>
+        <a href="/files/cover/2024-05-14-hiding-from-humanity.jpg" data-lightbox="vis">
   			<img src="/files/cover/2024-05-14-hiding-from-humanity.jpg" width="20%">
+        </a>
+    </figure>
 </p>
 
 [마사 누스바움](https://en.wikipedia.org/wiki/Martha_Nussbaum){:target='_blank'}은 2004년 펴낸 『혐오와 수치심』(Hiding from Humanity: Disgust, Shame, and the Law)에서 혐오와 수치심이 공적으로 고려되지 말아야 할 감정이라고 주장한다. 저자는 혐오와 수치심의 심리적 기원과 인지적 내용에 대한 문헌 고찰을 바탕으로 두 감정이 개인, 특히 힘 없는 집단의 성원을 예속시키고 낙인찍는다고 설명한다. 
