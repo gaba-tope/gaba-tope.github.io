@@ -79,7 +79,25 @@ Since the document is only created when the client-side script fails to find dat
     </div>
 </div>
 - Register app by setting the App nickname. No need to check the box 'Also set up Firebase Hosting for this app.'
-- After registering the app, you see the web app's Firebase configuration. Copy the script and store it somewhere just for a moment. These config will be used in [step 3-3](#3-3-create-javascript-for-the-like-button).
+- After registering the app, you see the web app's Firebase configuration. Copy the script and store it as JSON file in `your jekyll root folder/functions/firebase-config.json`.
+
+<details>
+<summary> Click to see the json script. </summary>
+
+{% highlight json %}
+{
+  "apiKey": "your apiKey",
+  "authDomain": "your authDomain",
+  "projectId": "your projectId",
+  "storageBucket": "your storageBucket",
+  "messagingSenderId": "your messagingSenderId",
+  "appId": "your appId",
+  "measurementId": "your measurementId"
+}
+{% endhighlight %}
+</details>
+
+ This config json will be used in [step 3-3](#3-3-create-javascript-for-the-like-button).
 <figure>
     <a href="/files/img/app_config.png" data-lightbox="vis">
     <img src = "/files/img/app_config.png"
@@ -199,127 +217,179 @@ body {
 
 ### 3-3. Create **javascript for the Like Button**.
 The button click javascript here is inspired from [Matt Henley's "Like" button (codepen)](https://codepen.io/mattbhenley/pen/gQbWgd){:target='_blank'}.
+We will use Firebase function for fetching Firebase configuration information. This is to ensure that Firebase config is not directly exposed to your javascript file. Key concept here is to retrieve the json file of your Firebase config for Firebase initiation, using Firebase function.
 
+**(Prerequisite)** <br>1. Node.js should be installed in your computer. <br> 2. Firebase CLI should be installed. You may use `npm install -g firebase-tools`. <br> 3. In your jekyll root folder, log-in to Firebase via `firebase login`. If successful, you can use `firebase projects:list` to see your projects.
+{:.info}
+
+First, initiate Firebase function in your Jekyll root folder via `firebase init` in your command-line. Select 'function' for your app as instructed, and then choose the existing Firebase project you created earlier. After this, you'll have `functions` folder in the Jekyll root folder with `index.js` included. This `index.js` will have the following script.
+<details>
+<summary> Click to see the full JS script</summary>
+
+{% highlight javascript %}
+const functions = require('firebase-functions');
+const admin = require('firebase-admin');
+const fs = require('fs');
+const path = require('path');
+const cors = require('cors')({ origin: 'http://localhost:4000' }); // Replace with your Jekyll site's origin
+
+admin.initializeApp();
+
+exports.getFirebaseConfig = functions.https.onRequest((req, res) => {
+  const configFilePath = path.join(__dirname, 'firebase-config.json'); 
+  try {
+    cors(req, res, () => {
+        const configData = fs.readFileSync(configFilePath, 'utf8');
+        res.json(JSON.parse(configData));
+      });
+    //const configData = fs.readFileSync(configFilePath, 'utf8');
+    //res.json(JSON.parse(configData)); 
+  } catch (error) {
+    console.error('Error reading config file:', error);
+    res.status(500).send('Error reading configuration');
+  }
+});
+{% endhighlight %}
+</details>
+Then, deploy this function in your command-line via `firebase deploy --only functions`. If you see errors, run the function in emulator first via `firebase emulators:start --only functions` and open your function URL. 
+
+Next, create `assets/scripts/fireBase.js` as follows.
 <details>
 <summary> Click to see the full JS script </summary>
 
 {% highlight javascript %}
 // Initialize Firebase (add your config)
-const firebaseConfig = {
-  apiKey: "your apiKey",
-  authDomain: "your authDomain",
-  projectId: "your projectId",
-  storageBucket: "your storageBucket",
-  messagingSenderId: "your messagingSenderId",
-  appId: "your appId",
-  measurementId: "your measurementId"
-};
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js"; 
 
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfig') 
+  .then(response => response.json()) 
+  .then(config => {
+    console.log("Firebase config fetched:"); //for debugging
+    firebase.initializeApp(config);
+    const db = firebase.firestore();
+    console.log("Firebase initialized, Firestore instance:", db); // for debugging
 
-// On page load:
-window.addEventListener('DOMContentLoaded', () => {
+    // Function to update the like count in the database
+    function updateLikeCount(postId) {
+      const db = firebase.firestore();
+      const postRef = db.collection('posts').doc(postId);
+      console.log("postRef defined.");
+
+      // Transaction to prevent race conditions (important!)
+      db.runTransaction(async (transaction) => {
+        const doc = await transaction.get(postRef);
+
+        if (!doc.exists) {
+          // If the document doesn't exist, create it with a likeCount of 1
+          await transaction.set(postRef, { likeCount: 1 });
+          return 1; // Return the new like count
+        } else {
+          const newLikeCount = doc.data().likeCount + 1;
+          await transaction.update(postRef, { likeCount: newLikeCount });
+          return newLikeCount; // Return the updated like count
+        }
+      })
+      .then((newLikeCount) => {
+        likeCountElement.textContent = newLikeCount; // Update the display
+        likeButton.disabled = true; // Disable the button 
+        // Store that the user has liked the post (e.g. in local storage)
+        localStorage.setItem(`liked-${postId}`, 'true');
+
+      })
+      .catch((error) => {
+        console.error("Error updating like count: ", error);
+        // Handle errors (e.g., display a message to the user)
+      });
+    }
+    // Get the post ID (replace with your Jekyll logic)
+    const postData = document.getElementById('post-data');
+
+    if (!postData) { // For debugging
+      console.error("postData element not found!");
+      return; // Stop execution if the element doesn't exist
+    }
+
+    const postId = postData.dataset.postId; // Get from data attribute
+    //const postId = '{{ page.id }}'; // Example using a Jekyll front matter variable
+    console.log("Post ID:", postId); // For debug.
     
-  // Function to update the like count in the database
-  function updateLikeCount(postId) {
+    // Function to check if the user has already liked the post
+    function checkIfLiked(postId) {
+      const hasLiked = localStorage.getItem(`liked-${postId}`);
+      return hasLiked === 'true';
+    }
+    
+    
+    // Get the like count element
+    const likeCountElement = document.getElementById('like-count');
+
+    // Get the like button element
+    const likeButton = document.getElementById('like-button');
+
+    if (checkIfLiked(postId)) {
+        likeButton.classList.add('is-active'); // Add 'is-active'class if already liked, s.t. button filled with red.
+        likeButton.disabled = true; // Disable if already liked
+    } 
+
+    // Get initial like count (important!)
+      //const db = firebase.firestore(); (Already declared.)
     const postRef = db.collection('posts').doc(postId);
-
-    // Transaction to prevent race conditions (important!)
-    db.runTransaction(async (transaction) => {
-      const doc = await transaction.get(postRef);
-
-      if (!doc.exists) {
-        // If the document doesn't exist, create it with a likeCount of 1
-        await transaction.set(postRef, { likeCount: 1 });
-        return 1; // Return the new like count
-      } else {
-        const newLikeCount = doc.data().likeCount + 1;
-        await transaction.update(postRef, { likeCount: newLikeCount });
-        return newLikeCount; // Return the updated like count
-      }
-    })
-    .then((newLikeCount) => {
-      likeCountElement.textContent = newLikeCount; // Update the display
-      likeButton.disabled = true; // Disable the button 
-      // Store that the user has liked the post (e.g. in local storage)
-      localStorage.setItem(`liked-${postId}`, 'true');
-
-    })
-    .catch((error) => {
-      console.error("Error updating like count: ", error);
-      // Handle errors (e.g., display a message to the user)
+    postRef.get().then((doc) => {
+        if (doc.exists) {
+        likeCountElement.textContent = doc.data().likeCount;
+        } else {
+        likeCountElement.textContent = 0; // Set to 0 if no likes yet
+        }
+    }).catch((error) => {
+        console.error("Error getting initial like count: ", error);
     });
-  }
+    
+    // On page load:
+    window.addEventListener("DOMContentLoaded", () => {
+      console.log("DOM content loaded"); // for debugging
+      
+      // Add the like button click listener
+      likeButton.addEventListener('click', () => {
+        if (!likeButton.classList.contains('is-active')) {
+          likeButton.classList.add('is-active'); // Add 'is-active' class immediately
+          updateLikeCount(postId);
+          console.log("Button clicked"); // For Debug
+          console.log("Post ID being Used", postId); // For Debug: verify postID is correct.
+      } 
+      // If you want to implement the unlike function, you must uncomment it and handle the unlike logic in your Firebase database
+      // else {
+      // likeButton.classList.remove('is-active'); // Remove 'is-active' class
+      // }
+            
+            
+            
+        });
 
-  // Function to check if the user has already liked the post
-  function checkIfLiked(postId) {
-    const hasLiked = localStorage.getItem(`liked-${postId}`);
-    return hasLiked === 'true';
-  }
-  // Get the post ID (replace with your Jekyll logic)
-  const postData = document.getElementById('post-data');
-  const postId = postData.dataset.postId; // Get from data attribute
-  //const postId = '{{ page.id }}'; // Example using a Jekyll front matter variable
-  console.group("Initial postId on the page load:", postId); // For debug.
-  
-  // Get the like count element
-  const likeCountElement = document.getElementById('like-count');
-
-  // Get the like button element
-  const likeButton = document.getElementById('like-button');
-
-  if (checkIfLiked(postId)) {
-      likeButton.classList.add('is-active'); // Add 'is-active'class if already liked, s.t. button filled with red.
-      likeButton.disabled = true; // Disable if already liked
-  } 
-
-  // Get initial like count (important!)
-  const postRef = db.collection('posts').doc(postId);
-  postRef.get().then((doc) => {
-      if (doc.exists) {
-      likeCountElement.textContent = doc.data().likeCount;
-      } else {
-      likeCountElement.textContent = 0; // Set to 0 if no likes yet
-      }
-  }).catch((error) => {
-      console.error("Error getting initial like count: ", error);
+    });
+    // ... rest of your Firebase code
+  })
+  .catch(error => {
+    console.error('Error fetching Firebase config:', error);
   });
-
-  // Add the like button click listener
-  likeButton.addEventListener('click', () => {
-    if (!likeButton.classList.contains('is-active')) {
-      likeButton.classList.add('is-active'); // Add 'is-active' class immediately
-      updateLikeCount(postId);
-      console.log("Button clicked"); // For Debug
-      console.log("Post ID being Used", postId); // For Debug: verify postID is correct.
-  } 
-  // If you want to implement the unlike function, you must uncomment it and handle the unlike logic in your Firebase database
-  // else {
-  // likeButton.classList.remove('is-active'); // Remove 'is-active' class
-  // }
-          
-    });
-
-});
 {% endhighlight %}
 </details>
 
 This is the **core functionality** of Like button action. Below is the brief explanation of the code.
 
-1. Your firebase config will be assigned to `firebaseConfig`.
-2. Initialize your app.
-3. I made sure that every later process is conducted after the DOM Content is loaded to prevent potential error.
-5. function `updateLikeCount` update like count of the post specified by post ID.
+- `fetch('your function URL')` will fetch the Firebase function.
+- Then Firebase config will be assigned to `config`, as in `firebase.initializeApp(config);`.
+- Define `db` as your Firestore database.
+- Function `updateLikeCount` update the like count of the post specified by post ID.
     - Firestore transaction was used to ensure that the like count is updated reliably, even if multiple users try to 'like' the post simultaneously. Transactions prevent race conditions where data could be corrupted by concurrent updates.
     - If there is NO existing document of that post ID (`if (!doc.exists) {... }`), it creates the document of the post ID with a likeCount of 1. 
     - If there is existing document (`else {... }`), it will add 1 to the existing likeCount. 
     - Update the display after creating document of one likeCount or adding one likeCount to existing likeCount value.
     - `return newLikeCount;`: The transcation return the updated likeCount.
     - Disable the button and save this record to client's local storage to prevent multiple 'like'ing.
-6. function `checkIfLiked(postId)` checks if the client already 'liked' the post by referring to a local storage.
+- function `checkIfLiked(postId)` checks if the client already 'liked' the post by referring to a local storage.
     - If the post was already 'liked', then `is-active` class is added to the button and the button is disabled.
-7. Add the `likeButton.addEventListener`. If `is-active` isn't added to the button at the moment when the button is clicked, add the `is-active` class to the button and call `updateLikeCount` function.
+- Add the `likeButton.addEventListener`. If `is-active` isn't added to the button at the moment when the button is clicked, add the `is-active` class to the button and call `updateLikeCount` function.
 
 # Conclusion
 I really need to learn essential JavaScript and CSS knowledge to run my small blog… It was quite challenging, but I'm proud to have successfully made a beautiful heart-shaped like button as you can see below. Hope this inspires you to experiment with CSS and JS to create elements for your own blog. 
