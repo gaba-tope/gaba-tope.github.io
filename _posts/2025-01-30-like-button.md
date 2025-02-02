@@ -126,6 +126,7 @@ In the YAML header of each post, you need to specify **unique** post id for the 
 - CSS can be fetched within this HTML script. Since I have earlier projects that utilize custom CSS in their way, I just followed that way. The SCSS file named `_sass/custom/likeButton.scss` was imported in `_sass/custom/customOverride.scss` via `@import "./likeButton.scss";`, and then `_sass/custom/customOverride.scss` was imported to `assets/css/main.scss`via `@import "custom/customOverride.scss";`.
 
 ### 3-2. Create **SCSS for the Like Button**.
+The SCSS I used is from [Matt Henley's "Like" button (codepen)](https://codepen.io/mattbhenley/pen/gQbWgd){:target='_blank'}
 
 <details>
 <summary> Click to see the full SCSS script </summary>
@@ -197,6 +198,7 @@ body {
 - `is-active` class button will have its special cursor, 'prohibit' shape that prevent further clicking. It also shows tooltip saying "Thank you for your Like!! :)". You can customize these details.
 
 ### 3-3. Create **javascript for the Like Button**.
+The button click javascript here is inspired from [Matt Henley's "Like" button (codepen)](https://codepen.io/mattbhenley/pen/gQbWgd){:target='_blank'}.
 
 <details>
 <summary> Click to see the full JS script </summary>
