@@ -217,12 +217,12 @@ body {
 
 ### 3-3. Create **javascript for the Like Button**.
 The button click javascript here is inspired from [Matt Henley's "Like" button (codepen)](https://codepen.io/mattbhenley/pen/gQbWgd){:target='_blank'}.
-We will use Firebase function for fetching Firebase configuration information. This is to ensure that Firebase config is not directly exposed to your javascript file. Key concept here is to retrieve the json file of your Firebase config for Firebase initiation, using Firebase function.
+We will use Firebase function for fetching Firebase configuration information. This is to ensure that Firebase config is not directly exposed to your javascript file. Key concept here is to retrieve the FSON file of your Firebase config for Firebase initiation, using Firebase function. The following prerequisites are detailed in [Firebase CLI documentation](https://firebase.google.com/docs/cli){:target='_blank'}.
 
-**(Prerequisite)** <br>1. Node.js should be installed in your computer. <br> 2. Firebase CLI should be installed. You may use `npm install -g firebase-tools`. <br> 3. In your jekyll root folder, log-in to Firebase via `firebase login`. If successful, you can use `firebase projects:list` to see your projects.
+**(Prerequisite)** <br>1. Node.js should be installed in your computer. <br> 2. Firebase CLI should be installed. You may use `npm install -g firebase-tools`. <br> 3. In your jekyll root folder, log-in to Firebase via `firebase login`. If successful, you can use `firebase projects:list` to see your projects. 
 {:.info}
 
-First, initiate Firebase function in your Jekyll root folder via `firebase init` in your command-line. Select 'function' for your app as instructed, and then choose the existing Firebase project you created earlier. After this, you'll have `functions` folder in the Jekyll root folder with `index.js` included. This `index.js` will have the following script.
+First, initiate a Firebase project in your Jekyll root folder via `firebase init` in your command-line. Select 'function' for your app as instructed, and then choose the existing Firebase project you created earlier. After this, you'll have `functions` folder in the Jekyll root folder with `index.js` included. This `index.js` will have the following script.
 <details>
 <summary> Click to see the full JS script</summary>
 
