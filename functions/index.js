@@ -2,14 +2,14 @@ const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const fs = require('fs');
 const path = require('path');
-const cors = require('cors')({
-  origin: [
-    'https://localhost:4000',
-    'https://gaba-tope.github.io'
-  ],
-});
+//const cors = require('cors')({
+//  origin: [
+//    'https://localhost:4000',
+//    'https://gaba-tope.github.io'
+//  ],
+//});
 
-//const cors = require('cors')({ origin: 'http://localhost:4000' }); // Replace with your Jekyll site's origin
+const cors = require('cors')({ origin: 'https://gaba-tope.github.io' }); // Replace with your Jekyll site's origin
 
 admin.initializeApp();
 
