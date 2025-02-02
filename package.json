@@ -57,5 +57,9 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "dependencies": {
+    "firebase": "^11.2.0",
+    "js-yaml": "^4.1.0"
   }
 }

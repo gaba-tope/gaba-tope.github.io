@@ -1,23 +1,21 @@
 // Initialize Firebase (add your config)
-const firebaseConfig = {
-  apiKey: "AIzaSyB1VP4EcgeFbJkVMktFXa65NKT0svM_Zio",
-  authDomain: "like-button-88f77.firebaseapp.com",
-  projectId: "like-button-88f77",
-  storageBucket: "like-button-88f77.firebasestorage.app",
-  messagingSenderId: "317140125376",
-  appId: "1:317140125376:web:52fde4ab2612b368740f25",
-  measurementId: "G-WKJ3N84JF9"
-};
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js"; 
 
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfig') 
+  .then(response => response.json()) 
+  .then(config => {
+    firebase.initializeApp(config);
+    const db = firebase.firestore();
 
-// On page load:
+    // On page load:
 window.addEventListener('DOMContentLoaded', () => {
     
   // Function to update the like count in the database
   function updateLikeCount(postId) {
+    const db = firebase.firestore();
     const postRef = db.collection('posts').doc(postId);
+    console.log("postRef defined.");
 
     // Transaction to prevent race conditions (important!)
     db.runTransaction(async (transaction) => {
@@ -69,6 +67,7 @@ window.addEventListener('DOMContentLoaded', () => {
   } 
 
   // Get initial like count (important!)
+  const db = firebase.firestore();
   const postRef = db.collection('posts').doc(postId);
   postRef.get().then((doc) => {
       if (doc.exists) {
@@ -98,3 +97,23 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+    // ... rest of your Firebase code
+  })
+  .catch(error => {
+    console.error('Error fetching Firebase config:', error);
+  });
+
+  //const firebaseConfig = {
+  //  apiKey: "AIzaSyB1VP4EcgeFbJkVMktFXa65NKT0svM_Zio",
+  //  authDomain: "like-button-88f77.firebaseapp.com",
+  //  projectId: "like-button-88f77",
+  //  storageBucket: "like-button-88f77.firebasestorage.app",
+  //  messagingSenderId: "317140125376",
+  //  appId: "1:317140125376:web:52fde4ab2612b368740f25",
+  //  measurementId: "G-WKJ3N84JF9"
+  //};
+
+  //firebase.initializeApp(firebaseConfig);
+  
+
+
