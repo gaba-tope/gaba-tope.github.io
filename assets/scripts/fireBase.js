@@ -1,4 +1,5 @@
 // Initialize Firebase (add your config)
+console.log("fireBase.js loaded"); // for debug
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js"; 
 
@@ -9,7 +10,48 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
     firebase.initializeApp(config);
     const db = firebase.firestore();
     console.log("Firebase initialized, Firestore instance:", db); // for debugging
+    
+    // Get the post ID (replace with your Jekyll logic)
+    const postData = document.getElementById('post-data');
 
+    if (!postData) { // For debugging
+      console.error("postData element not found!");
+      return; // Stop execution if the element doesn't exist
+    }
+
+    const postId = postData.dataset.postId; // Get from data attribute
+    //const postId = '{{ page.id }}'; // Example using a Jekyll front matter variable
+    console.log("Post ID:", postId); // For debug.
+        
+    // Get the like count element
+    const likeCountElement = document.getElementById('like-count');
+    // Get the like button element
+    const likeButton = document.getElementById('like-button');
+    // For Debug: check if the two elements are found.
+    if (!likeCountElement) {
+      console.error("likeCountElement not found!");
+    } else {
+      console.log("likeCountElement found.")
+    }
+    if (!likeButton) {
+      console.error("likeButton not found!");
+    } else {
+      console.log("likeButton found.")
+    }
+  
+    const postRef = db.collection('posts').doc(postId);
+
+    // Get initial like count (important!)
+    postRef.get().then((doc) => {
+      if (doc.exists) {
+      likeCountElement.textContent = doc.data().likeCount;
+      } else {
+      likeCountElement.textContent = 0; // Set to 0 if no likes yet
+      }
+      console.log("Initial likeCount retrieved from doc.data"); // For debug
+    }).catch((error) => {
+        console.error("Error getting initial like count: ", error);
+    });
     // Function to update the like count in the database
     function updateLikeCount(postId) {
       const db = firebase.firestore();
@@ -42,71 +84,35 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
         // Handle errors (e.g., display a message to the user)
       });
     }
-    // Get the post ID (replace with your Jekyll logic)
-    const postData = document.getElementById('post-data');
-
-    if (!postData) { // For debugging
-      console.error("postData element not found!");
-      return; // Stop execution if the element doesn't exist
-    }
-
-    const postId = postData.dataset.postId; // Get from data attribute
-    //const postId = '{{ page.id }}'; // Example using a Jekyll front matter variable
-    console.log("Post ID:", postId); // For debug.
-    
     // Function to check if the user has already liked the post
     function checkIfLiked(postId) {
       const hasLiked = localStorage.getItem(`liked-${postId}`);
       return hasLiked === 'true';
     }
-    
-    
-    // Get the like count element
-    const likeCountElement = document.getElementById('like-count');
-
-    // Get the like button element
-    const likeButton = document.getElementById('like-button');
 
     if (checkIfLiked(postId)) {
-        likeButton.classList.add('is-active'); // Add 'is-active'class if already liked, s.t. button filled with red.
-        likeButton.disabled = true; // Disable if already liked
-    } 
+      console.log("checkIfLiked is TRUE");
+      likeButton.classList.add('is-active'); // Add 'is-active'class if already liked, s.t. button filled with red.
+      likeButton.disabled = true; // Disable if already liked
+      console.log("is-active class added to likeButton.");
+    }
 
-    // Get initial like count (important!)
-      //const db = firebase.firestore(); (Already declared.)
-    const postRef = db.collection('posts').doc(postId);
-    postRef.get().then((doc) => {
-        if (doc.exists) {
-        likeCountElement.textContent = doc.data().likeCount;
-        } else {
-        likeCountElement.textContent = 0; // Set to 0 if no likes yet
-        }
-    }).catch((error) => {
-        console.error("Error getting initial like count: ", error);
-    });
-    
-    // On page load:
-    window.addEventListener("DOMContentLoaded", () => {
-      console.log("DOM content loaded"); // for debugging
-      
-      // Add the like button click listener
-      likeButton.addEventListener('click', () => {
-        if (!likeButton.classList.contains('is-active')) {
-          likeButton.classList.add('is-active'); // Add 'is-active' class immediately
-          updateLikeCount(postId);
-          console.log("Button clicked"); // For Debug
-          console.log("Post ID being Used", postId); // For Debug: verify postID is correct.
+    // Add the like button click listener
+    likeButton.addEventListener('click', () => {
+      console.log("Button clicked"); // For Debug
+
+      if (!likeButton.classList.contains('is-active')) {
+        likeButton.classList.add('is-active'); // Add 'is-active' class immediately
+        updateLikeCount(postId);
+        console.log("Post ID being Used", postId); // For Debug: verify postID is correct.
       } 
-      // If you want to implement the unlike function, you must uncomment it and handle the unlike logic in your Firebase database
-      // else {
-      // likeButton.classList.remove('is-active'); // Remove 'is-active' class
-      // }
-            
-            
-            
-        });
-
+    // If you want to implement the unlike function, you must uncomment it and handle the unlike logic in your Firebase database
+    // else {
+    // likeButton.classList.remove('is-active'); // Remove 'is-active' class
+    // }
+          
     });
+        
     // ... rest of your Firebase code
   })
   .catch(error => {
