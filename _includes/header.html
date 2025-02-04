@@ -1,7 +1,14 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-  .header__brand a {
-  font-family: "Lato", sans-serif;
+  @font-face {
+    font-family: 'Gyeonggi_Title_Medium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-3@1.0/Title_Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+  .header__brand a {      /* Previously: font-family: "Lato, sans; font-size: 1.5em; font-weight: bold; */
+  font-family: "Gyeonggi_Title_Medium", "Lato", sans;
   font-size: 1.5em;
   font-weight: bold;
   text-decoration: none;
