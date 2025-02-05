@@ -25,6 +25,7 @@
   <header class="header" {%- if include.background -%} style="background: {{ include.background }};" {%- endif -%}>
 {%- endif -%}
     <div class="main">
+      
       <div class="header__title">
         <div class="header__brand">
           {%- include svg/logo.svg -%}
@@ -55,8 +56,9 @@
           {%- endfor -%}
           {%- if site.search.provider -%}
             <li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li>
-              <!-- 다크 모드 토글 버튼 -->
-              {% if site.dark_theme_toggle == true %}
+            
+            <!-- 다크 모드 토글 버튼 -->
+            {% if site.dark_theme_toggle == true %}
               <input id="toggle_dark_theme" class="mh_toogle" type="checkbox">
               <label for="toggle_dark_theme" class="material-icons-sharp mh_toggle_btn"></label>
               {% endif %}
@@ -69,17 +71,8 @@
         </ul>
       </nav>
       {%- endif -%}
-      <!-- polyglot 언어 선택-->
-      <ul class="nav-lang">            
-          {% for lang in site.languages %}
-          <!--<li id="lang" style="float: right;">-->
-           <!-- <a style="{% if lang == site.active_lang %}font-weight: bold;{% endif %}text-align:center;" href="{% if lang == site.default_lang %} {{site.baseurl}}{{page.url}} {% else %} {{site.baseurl}}/{{ lang }}{{page.url}} {% endif %}">
-              {{ lang }}
-            </a> -->
-          <!--</li>--->
-          {% endfor %}
-      </ul>
-      <!--------------------->
+      
+      
     </div>
   </header>
 
