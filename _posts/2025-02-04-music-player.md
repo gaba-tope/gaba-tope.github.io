@@ -10,6 +10,9 @@ An embeddable music player in a Jekyll blog was created using HTML, CSS and Java
 <!--more-->
 This work is **largely based on the music player script of** [**estInLOV3's homepage**](https://lov3ndpeace.naru.pub/){:target='_blank'}, which is placed at the right-side fixed navigation menu.
 
+**Copyright infringement is a serious offense**<br>Only use music that you have the legal right to use. **Unauthorized use of copyrighted music may result in legal action**. Please ensure you have the necessary rights or licenses for any music used with this player.  Consider using royalty-free music or obtaining permission from the copyright holder.
+{:.error}
+
 # Modifications I made
 
 1. **Hiding the YouTube Video**
@@ -23,6 +26,7 @@ This work is **largely based on the music player script of** [**estInLOV3's home
 5. **Separately saved video array**.
     - A list of video to be played is saved separately in `video_array.js`, which is then imported to main JS file `musicplayer.js`
 6. **Customizing the styles**
+
 
 # Implementation
 
