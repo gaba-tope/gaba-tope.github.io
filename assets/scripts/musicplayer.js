@@ -227,14 +227,12 @@ nextSongButton.addEventListener('click', loadRandomVideo);
     // Update title immediately when page loads
     const storedVideo = PlayerState.currentVideo;
     
-    // Update thumbnail
-    updateThumbnail(storedVideo.id);
-
     window.onYouTubeIframeAPIReady = function() {
         const storedVideo = PlayerState.currentVideo;
         if (storedVideo) {
             loadVideoWithState(storedVideo.id, PlayerState.currentTime);
             updateSongTitle(storedVideo.title);
+            updateThumbnail(storedVideo.id);
         } else {
             loadRandomVideo();
         }
