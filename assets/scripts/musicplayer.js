@@ -168,8 +168,16 @@ function updateThumbnail(videoId) {
 }
 
 function loadRandomVideo() {
-    const randomIndex = Math.floor(Math.random() * videos.length);
-    const selectedVideo = videos[randomIndex];
+    let newIndex;
+    let previousVideo = PlayerState.currentVideo;
+
+     // Ensure the new video is different from the current one
+     do {
+        newIndex = Math.floor(Math.random() * videos.length);
+    } while (videos[newIndex].id === (previousVideo ? previousVideo.id : null));
+
+    // const randomIndex = Math.floor(Math.random() * videos.length);
+    const selectedVideo = videos[newIndex];
     PlayerState.currentVideo = selectedVideo;
     
     const songNameElement = document.querySelector('.song-name');
@@ -218,18 +226,15 @@ nextSongButton.addEventListener('click', loadRandomVideo);
 (function() {
     // Update title immediately when page loads
     const storedVideo = PlayerState.currentVideo;
-    if (storedVideo) {
-        updateSongTitle(storedVideo.title);
-    }
-
+    
     // Update thumbnail
-    //document.getElementById('thumbnail').src = `https://img.youtube.com/vi/${storedVideo.id}/hqdefault.jpg`;
     updateThumbnail(storedVideo.id);
 
     window.onYouTubeIframeAPIReady = function() {
         const storedVideo = PlayerState.currentVideo;
         if (storedVideo) {
             loadVideoWithState(storedVideo.id, PlayerState.currentTime);
+            updateSongTitle(storedVideo.title);
         } else {
             loadRandomVideo();
         }
