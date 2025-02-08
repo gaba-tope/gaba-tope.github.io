@@ -1,31 +1,31 @@
 // Import video array data
 import { videos } from "./video_array.js";
 
-// Store player state in localStorage
+// Store player state in sessionStorage
 const PlayerState = {
     get currentVideo() {
-        return JSON.parse(localStorage.getItem('currentVideo')) || null;
+        return JSON.parse(sessionStorage.getItem('currentVideo')) || null;
     },
     set currentVideo(video) {
-        localStorage.setItem('currentVideo', JSON.stringify(video));
+        sessionStorage.setItem('currentVideo', JSON.stringify(video));
     },
     get isPlaying() {
-        return JSON.parse(localStorage.getItem('isPlaying')) || false;
+        return JSON.parse(sessionStorage.getItem('isPlaying')) || false;
     },
     set isPlaying(state) {
-        localStorage.setItem('isPlaying', state);
+        sessionStorage.setItem('isPlaying', state);
     },
     get isMuted() {
-        return JSON.parse(localStorage.getItem('isMuted')) || false;
+        return JSON.parse(sessionStorage.getItem('isMuted')) || false;
     },
     set isMuted(state) {
-        localStorage.setItem('isMuted', state);
+        sessionStorage.setItem('isMuted', state);
     },
     get currentTime() {
-        return parseFloat(localStorage.getItem('currentTime')) || 0;
+        return parseFloat(sessionStorage.getItem('currentTime')) || 0;
     },
     set currentTime(time) {
-        localStorage.setItem('currentTime', time);
+        sessionStorage.setItem('currentTime', time);
     }
 };
 
