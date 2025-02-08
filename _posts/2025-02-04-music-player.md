@@ -10,7 +10,7 @@ An embeddable music player in a Jekyll blog was created using HTML, CSS and Java
 <!--more-->
 This work is **largely based on the music player script of** [**estInLOV3's homepage**](https://lov3ndpeace.naru.pub/){:target='_blank'}, which is placed at the right-side fixed navigation menu.
 
-**Copyright infringement is a serious offense**<br>Only use music that you have the legal right to use. **Unauthorized use of copyrighted music may result in legal action**. Please ensure you have the necessary rights or licenses for any music used with this player.  Consider using royalty-free music or obtaining permission from the copyright holder.
+**[Copyright infringement is a serious offense!]**<br><br> **Unauthorized use of copyrighted music may result in legal action**. Please ensure you have the necessary rights or licenses for any music used with this player. Consider using royalty-free music or obtaining permission from the copyright holder.
 {:.error}
 
 # Modifications I made
@@ -270,6 +270,183 @@ Some styles are modified from the original source to make it fit into my blog. B
 - Images for each class was retrieved using `background: url('../images/imageName.png');`, where is the directory you'll put your icon for the music player.
 - Song name was animated using `animation: scroll 20s linear infinite;` which is accompanied by `@keyframes scroll` block. Also, the `z-index: 1;` was set, so that it moves under the thumbnail.
 
+-----(Update 2025-02-08)-----
+
+- CSS without thumbnail but YouTube video was created as the following script. Please diable `thumbnail` class elements in HTML too if you are to show the YouTube video instead of its thumbnail image.
+
+<details>
+<summary>Click to see full CSS script for YouTube Video</summary>
+
+{% highlight css %}
+/*.music-player{
+  position: sticky;
+  bottom: 0;
+  right: 50%;
+  }*/
+
+.soundplayer {
+    /*width: 84%;*/
+    width: 277px; /*109px*/
+    height: 50px; /*25%;*/
+    background: #F1F8FF;
+    /*background: url('./images/v8_365.png');*/
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.8;
+    position: sticky;
+    top: 10px;
+    border-style: solid;
+    border-color: #3282F6;
+    border-radius: 10px;
+    margin: auto;
+    overflow: hidden;
+  }
+  /* .thumbnail {
+    width: 85.4px; /* Adjust size as needed */
+  /*  height: 48px;
+    border-radius: 10px; /* Optional: Rounded corners */
+  /*  object-fit: cover; /* Keeps aspect ratio without distortion */
+  /*  position: absolute;
+    left: 0px; /* Adjust positioning */
+  /*  top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    } */
+  .youtube {
+    width: 85.4px; /* 85.4px*/
+    height: 48px; /*48px*/
+    background: rgba(179, 179, 179, 1);
+    opacity: 100;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+    z-index: 5;
+    overflow: hidden;
+  }
+  iframe {
+    width: 85.4px; /* 85.4px*/
+    height: 48px; /*48px*/
+    z-index: 2;
+  }
+  .next-song {
+    width: 20px;
+    height: 20px;
+    background: url('../images/next-song-icon.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 17px;
+    left: calc(50% + 90px);
+    overflow: hidden;
+    z-index: 10; /* Ensure controls are above hidden video*/
+  }
+  .next-song:hover {
+    cursor: pointer;
+  }
+  .go-stop {
+    width: 20px;
+    height: 20px;
+    background: url('../images/go-stop-icon.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 17px;
+    left: calc(50% + 30px);
+    overflow: hidden;
+    z-index: 10; /* Ensure controls are above hidden video*/
+  }
+  .go-stop:hover {
+    cursor: pointer;
+  }
+  .go-stop.stopped {
+    background: url('../images/go-stop-icon-true.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  .mute {
+    width: 20px;
+    height: 20px;
+    background: url('../images/mute-icon.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 17px;
+    left: calc(50% - 25px);
+    overflow: hidden;
+    z-index: 10; /* Ensure controls are above hidden video*/
+  }
+  .mute.muted {
+    background: url('../images/mute-icon-true.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  .mute:hover {
+    cursor: pointer;
+  }
+
+  /* Parent container to clip overflow */
+  /* .song-container {
+    width: calc(100% - 110px);
+    position: absolute;
+    top: 5px;
+    left: 45px;
+    overflow: hidden; 
+    white-space: nowrap;
+    }*/
+  .song-name {
+    width: fit-content;/*calc(100% - 100px);*/
+    /*width: 109px;*/
+    color: rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 0px;
+    right: 0%;
+    left: 100%; /* so that it won't overlap with thumbnail img.*/
+    font-size: 12px;
+    opacity: 1;
+    text-align: center;
+    white-space: nowrap;
+    animation: scroll 20s linear infinite;
+    overflow: hidden;
+    z-index: 1; /* Ensure controls are above hidden video*/
+  }
+  .song-name:hover {
+    animation-play-state: paused;
+  }
+  .time-display {
+    position: relative;
+    bottom: 1px;
+    top: 20px;
+    left: 155px;
+    color: black;
+    font-size: 10px;
+    z-index: 1;
+    padding-top: 12px;
+    margin: auto;
+  }
+
+@keyframes scroll {
+  0% {
+    left: 100%;
+  }
+100% {
+    left: -90%; 
+  }
+}
+{% endhighlight %}
+</details>
+
+
+
 
 ## 3. JavaScript for the Music Player
 
@@ -279,34 +456,35 @@ This is the core functional component of the music player.
 <summary>Click to see the full JavaScript</summary>
 
 {% highlight javascript %}
+(Last Updated in 2025-02-08)
 // Import video array data
 import { videos } from "./video_array.js";
 
-// Store player state in localStorage
+// Store player state in sessionStorage
 const PlayerState = {
     get currentVideo() {
-        return JSON.parse(localStorage.getItem('currentVideo')) || null;
+        return JSON.parse(sessionStorage.getItem('currentVideo')) || null;
     },
     set currentVideo(video) {
-        localStorage.setItem('currentVideo', JSON.stringify(video));
+        sessionStorage.setItem('currentVideo', JSON.stringify(video));
     },
     get isPlaying() {
-        return JSON.parse(localStorage.getItem('isPlaying')) || false;
+        return JSON.parse(sessionStorage.getItem('isPlaying')) || false;
     },
     set isPlaying(state) {
-        localStorage.setItem('isPlaying', state);
+        sessionStorage.setItem('isPlaying', state);
     },
     get isMuted() {
-        return JSON.parse(localStorage.getItem('isMuted')) || false;
+        return JSON.parse(sessionStorage.getItem('isMuted')) || false;
     },
     set isMuted(state) {
-        localStorage.setItem('isMuted', state);
+        sessionStorage.setItem('isMuted', state);
     },
     get currentTime() {
-        return parseFloat(localStorage.getItem('currentTime')) || 0;
+        return parseFloat(sessionStorage.getItem('currentTime')) || 0;
     },
     set currentTime(time) {
-        localStorage.setItem('currentTime', time);
+        sessionStorage.setItem('currentTime', time);
     }
 };
 
@@ -544,10 +722,15 @@ Here, the imported JavaScript is located in the same directory as the importing 
 ### 3-2. Store and Retrieve Player State in localStorage
 Each information is stored as a JSON string in `localStorage`, and retrieved from `localStorage`. It's a key in storing the information of the last played video when switching between pages. It also ensures that video resume from the same point with the same mute/play settings when the page is refreshed.
 
+-----(Update 2025-02-08)-----
+
+- All `localStorage` in previous scripts were replaced with `sessionStorage`, as reflected in the above full JavaScript. This is to ensure that music play records are stored only when the session is active.
+
 ### 3-3. Declare Key Variables
 `player`, `youtubeContainer`, `muteButton`, `playButton`, `nextSongButton` were declared by selecting the elements in the HTML file respectively.
 
 ### 3-4. Create Functions for Features
+
 1. **`formatTime()`** return times that will be used to show current time and total time.
 2. **`updateSongTitle()`** updates song title. This function is used (1) when DOM Contents are loaded, (2) whenever UI state is updated, (3) when music starts to be played.
 3. **`LoadVideoWithState()`** make sure that the video is loaded with stored starting time. It's a key function that enables video not to start over when the page is changed.
@@ -557,12 +740,14 @@ Each information is stored as a JSON string in `localStorage`, and retrieved fro
 7. **`onPlayerStateChange()`** loads random video when the played video is ended.
 
 ### 3-5. Add EventListener
+
 Each `add.EventListner('click', ...)` enables mute button, play button, and next song button respectively.
 
 ### 3-6. Initialize Player
+
 Using `(function() {...})`, the defined function is called immediately.
 
-1. Load the stored video information with `const storedVideo`. It retrieves the **last played video** from `localStorage`.
+1. Load the stored video information with `const storedVideo`. It retrieves the **last played video** from `sessionStorage`.
 2. `updateThumbnail()` is called to **update the video thumbnail** using the stored video's ID.
 3. `window.onYoutubeIframeAPIReady = function() {...}` runs **when the YouTube Iframe APi is ready**. 
     - Load the stored video (`storedVideo.id`) at the saved timestamp `PlayerState.currentTime`. 
@@ -581,6 +766,7 @@ Using `(function() {...})`, the defined function is called immediately.
 After the API is loaded, the `window.onYoutubeIframeAPIReady` function is called.
 
 ## 4. JavaScript for Video Data
+
 Creates `/assets/scripts/video_array.js`. It stores the video information to be loaded. Following is the example code.
 
 <details>
@@ -610,3 +796,4 @@ Hope you have your own music player for your blog too :)
 # Reference
 
 - [estInLOV3's homepage](https://lov3ndpeace.naru.pub/){:target='_blank'}
+
