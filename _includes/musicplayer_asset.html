@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+
+<head>
+	<link rel="stylesheet" href="/assets/css/musicplayer_asset.css"> <!--audio only-->
+	<link rel="stylesheet" href="/assets/css/lightbox.css">
+</head>
+
+<body>
+<div class="soundplayer">
+    <!-- Song Title -->
+    <div class="song-container">
+        <div class="song-name" id="songTitle">Loading...</div>
+    </div>
+
+    <!-- Controls -->
+    <button id="muteButton" class="mute"></button>
+    <button id="playButton" class="go-stop stopped"></button>
+    <button id="nextSongButton" class="next-song"></button>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress-bar-fill"></div>
+    </div>
+    <div class="time-display">
+        <span id="currentTime">0:00</span> / <span id="totalTime">0:00</span>
+    </div>
+
+    <!-- Audio Player -->
+    <div class="audio-player">
+        <audio id="audioPlayer"></audio>
+    </div>
+</div>
+
+<script type="module" src="/assets/scripts/musicplayer_asset.js"></script>
+</body>

@@ -1,0 +1,164 @@
+/*.music-player{
+  position: sticky;
+  bottom: 0;
+  right: 50%;
+  }*/
+
+.soundplayer {
+    /*width: 84%;*/
+    width: 277px; /*109px*/
+    height: 53px; /*25%;*/
+    background: #F1F8FF;
+    /*background: url('./images/v8_365.png');*/
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.8;
+    position: sticky;
+    top: 10px;
+    border-style: solid;
+    border-color: #3282F6;
+    border-radius: 10px;
+    margin: auto;
+    overflow: hidden;
+  }
+  .audio-player {
+    width: 1px;
+    height: 1px;
+    background: rgba(179, 179, 179, 1);
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: #ddd;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: #3282F6;
+  width: 0%;
+  transition: width 0.1s linear;
+  }
+  .next-song {
+    width: 20px;
+    height: 20px;
+    background: url('../images/next-song-icon.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 17px;
+    left: calc(50% + 50px);
+    overflow: hidden;
+    z-index: 10; /* Ensure controls are above hidden video*/
+  }
+  .next-song:hover {
+    cursor: pointer;
+  }
+  .go-stop {
+    width: 20px;
+    height: 20px;
+    background: url('../images/go-stop-icon.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 17px;
+    left: calc(50%);
+    overflow: hidden;
+    z-index: 10; /* Ensure controls are above hidden video*/
+  }
+  .go-stop:hover {
+    cursor: pointer;
+  }
+  .go-stop.stopped {
+    background: url('../images/go-stop-icon-true.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  .mute {
+    width: 20px;
+    height: 20px;
+    background: url('../images/mute-icon.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 17px;
+    left: calc(50% - 50px);
+    overflow: hidden;
+    z-index: 10; /* Ensure controls are above hidden video*/
+  }
+  .mute.muted {
+    background: url('../images/mute-icon-true.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  .mute:hover {
+    cursor: pointer;
+  }
+
+  /* Parent container to clip overflow */
+  /* .song-container {
+    width: calc(100% - 110px);
+    position: absolute;
+    top: 5px;
+    left: 45px;
+    overflow: hidden; 
+    white-space: nowrap;
+    }*/
+  .song-name {
+    width: fit-content;/*calc(100% - 100px);*/
+    /*width: 109px;*/
+    color: rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 0px;
+    right: 0%;
+    left: 100%; /* so that it won't overlap with thumbnail img.*/
+    font-size: 12px;
+    opacity: 1;
+    text-align: center;
+    white-space: nowrap;
+    animation: scroll 20s linear infinite;
+    overflow: hidden;
+    z-index: 1; /* Ensure controls are above hidden video*/
+  }
+  .song-name:hover {
+    animation-play-state: paused;
+  }
+  .time-display {
+    position: relative;
+    bottom: 1px;
+    top: 25px;
+    left: calc(50%+50px);
+    color: black;
+    font-size: 10px;
+    z-index: 1;
+    padding-top: 10px;
+    margin: auto;
+  }
+
+@keyframes scroll {
+  0% {
+    left: 100%;
+  }
+100% {
+    left: -100%; 
+  }
+}
+
