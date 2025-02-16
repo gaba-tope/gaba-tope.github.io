@@ -44,43 +44,43 @@ The HTML for the comment box is created and saved as `_includes/commenting.html`
 <details>
 <summary>Click to see the full HTML script</summary>
 
-{% highlight html%}
-{% raw %}
-<div id="post-data" data-post-id="{{ page.id }}"></div>
+{% highlight html %}
+    {% raw %}
+    <div id="post-data" data-post-id="{{ page.id }}"></div>
 
-<link rel="stylesheet" href="/assets/css/commenting.css">
+    <link rel="stylesheet" href="/assets/css/commenting.css">
 
-<h3>Leave a comment</h3>
+    <h3>Leave a comment</h3>
 
-<form id="comment">
-    <div class="input-row">
-        <input type="text" id="name" placeholder="Name">
-        <input type="password" id="password" placeholder="Password">
-        <label class="switch">
-            <input type="checkbox" id="toggle-password">
-            <span class="slider round"></span>
+    <form id="comment">
+        <div class="input-row">
+            <input type="text" id="name" placeholder="Name">
+            <input type="password" id="password" placeholder="Password">
+            <label class="switch">
+                <input type="checkbox" id="toggle-password">
+                <span class="slider round"></span>
+            </label>
+            <!-- <label><input type="checkbox" id="toggle-password">Show</label> -->
+        </div>
+        <label for="secret-comment">
+            <input type="checkbox" id="secret-comment"> Secret Comment
         </label>
-        <!-- <label><input type="checkbox" id="toggle-password">Show</label> -->
+
+        <textarea id="message" placeholder="Message"></textarea>
+
+    <input type="submit" value="Post Comment">
+    </form>
+
+    <div id="comments-container">
     </div>
-    <label for="secret-comment">
-        <input type="checkbox" id="secret-comment"> Secret Comment
-    </label>
 
-    <textarea id="message" placeholder="Message"></textarea>
-
-  <input type="submit" value="Post Comment">
-</form>
-
-<div id="comments-container">
-</div>
-
-<!-- <script src="/assets/scripts/argon2-browser/dist/argon2.js"></script> -->
-<script src="https://unpkg.com/dompurify@1.0.8/dist/purify.js"></script> <!--For Sanitizing HTML-->
-<script src="https://unpkg.com/blueimp-md5@2.3.0/js/md5.min.js"></script> <!--For MD5 Hash Function for password-->
-<!-- <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script> --> <!--For markdown to HTML rendering-->
-<script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore-compat.js"></script>
-<script type="module" src="/assets/scripts/commenting.js"></script>  <!--/scripts/customJS/fireBase.js-->
+    <!-- <script src="/assets/scripts/argon2-browser/dist/argon2.js"></script> -->
+    <script src="https://unpkg.com/dompurify@1.0.8/dist/purify.js"></script> <!--For Sanitizing HTML-->
+    <script src="https://unpkg.com/blueimp-md5@2.3.0/js/md5.min.js"></script> <!--For MD5 Hash Function for password-->
+    <!-- <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script> --> <!--For markdown to HTML rendering-->
+    <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore-compat.js"></script>
+    <script type="module" src="/assets/scripts/commenting.js"></script>  <!--/scripts/customJS/fireBase.js-->
 {% endraw %}
 {% endhighlight %}
 </details>
@@ -102,7 +102,7 @@ CSS for the comment box was created as `/assets/css/commenting.css`.
 <details>
 <summary>Click to see the full CSS.</summary>
 
-{% highlight css%}
+{% highlight css %}
   /* ====== Form Styles ====== */
   form {
     border: 2px solid black;
@@ -341,7 +341,7 @@ Create `/assets/scripts/commenting.js`.
 <details>
 <summary>Click to see the full JavaScript.</summary>
 
-{% highlight javascript%}
+{% highlight javascript %}
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
 
@@ -618,7 +618,7 @@ Now, incorporate `commenting.html` to your site. I added the HTML to `_includes/
 
 <details>
 <summary> Click to see the full HTML script</summary>
-{% highlight html%}
+{% highlight html %}
 {% raw %}
 <!----Commenting-->
 {%- if page.comment -%}
@@ -626,7 +626,7 @@ Now, incorporate `commenting.html` to your site. I added the HTML to `_includes/
 <div class="commenting"> {% include commenting.html %} </div>
 {%- endif -%}
 {% endraw %}
-{% endhighlight%}
+{% endhighlight %}
 </details>
 
 ## Conclusion
@@ -638,7 +638,7 @@ It was exciting making this comment feature. Hope you also make your own comment
 ## Reference
 
 - [Building a Jekyll Site – Part 3 of 3: Creating a Firebase-Backed Commenting System]( https://css-tricks.com/building-a-jekyll-site-part-3-of-3/){:target='_blank'} by Mike Neumegen.
-- [Self-host comments in Jekyll, powered by Firebase real-time database](https://frankindev.com/2017/03/25/self-host-comments-in-jekyll-using-firebase-database/) {:target='_blank'} by Frank Lin (林宏).
+- [Self-host comments in Jekyll, powered by Firebase real-time database](https://frankindev.com/2017/03/25/self-host-comments-in-jekyll-using-firebase-database/){:target='_blank'} by Frank Lin (林宏).
 - [DOMPurify README](https://github.com/cure53/DOMPurify){:target='_blank'}
 - [XSS (mdm web docs)](https://developer.mozilla.org/en-US/docs/Web/Security/Attacks/XSS){:target='_blank'}
 - [Password Hashing and Storage Basics](https://markilott.medium.com/password-storage-basics-2aa9e1586f98){:target='_blank'} by Mark Ilott.

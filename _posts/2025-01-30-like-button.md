@@ -148,6 +148,7 @@ First, the very HTML for the like button is created and saved as `_includes/like
 - CSS can be fetched within this HTML script. Since I have earlier projects that utilize custom CSS in their way, I just followed that way. The SCSS file named `_sass/custom/likeButton.scss` was imported in `_sass/custom/customOverride.scss` via `@import "./likeButton.scss";`, and then `_sass/custom/customOverride.scss` was imported to `assets/css/main.scss`via `@import "custom/customOverride.scss";`.
 
 #### 3-2. Create **SCSS for the Like Button**.
+
 I created and saved SCSS for the like button, as `_sass/custom/likeButton.scss`
 The SCSS I used is from [Matt Henley's "Like" button (codepen)](https://codepen.io/mattbhenley/pen/gQbWgd){:target='_blank'}
 
@@ -262,11 +263,13 @@ exports.getFirebaseConfig = functions.https.onRequest((req, res) => {
 });
 {% endhighlight %}
 </details>
+
 Then, deploy this function in your command-line via `firebase deploy --only functions`. If you see errors, run the function in emulator first via `firebase emulators:start --only functions` and open your function URL. 
 
 #### 3-4. Create **JavaScript for the Like Button**.
 
 Next, create `assets/scripts/fireBase.js` as follows. The button click javascript is inspired from [Matt Henley's "Like" button (codepen)](https://codepen.io/mattbhenley/pen/gQbWgd){:target='_blank'}.
+
 <details>
 <summary> Click to see the full JS script </summary>
 
@@ -417,14 +420,14 @@ Now is the time to incorporate `likeButton.html` to your site. I embedded the HT
 <details>
 <summary> Click to see the full HTML script </summary>
 
-{% highlight html%}
+{% highlight html %}
 {% raw %}
  <!---like Button-->
   {% if page.applause_button %}
     <div class="like_button"> {% include likeButton.html %} </div>
   {% endif %}
 {% endraw %}
-{% endhighlight%}
+{% endhighlight %}
 </details>
 
 ## Conclusion

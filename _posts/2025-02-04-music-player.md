@@ -35,7 +35,7 @@ This work is **largely based on the music player script of** [**estInLOV3's home
 <details>
 <summary>Click to see the full HTML</summary>
 
-{% highlight html%}
+{% highlight html %}
 <meta charset="UTF-8">
 
 <head>
@@ -729,6 +729,7 @@ Each information is stored as a JSON string in `localStorage`, and retrieved fro
 - All `localStorage` in previous scripts were replaced with `sessionStorage`, as reflected in the above full JavaScript. This is to ensure that music play records are stored only when the session is active.
 
 #### 3-3. Declare Key Variables
+
 `player`, `youtubeContainer`, `muteButton`, `playButton`, `nextSongButton` were declared by selecting the elements in the HTML file respectively.
 
 #### 3-4. Create Functions for Features
@@ -764,7 +765,7 @@ Using `(function() {...})`, the defined function is called immediately.
 1. `const tag` creates new `<script>` element.
 2. `tag.src` sets the `src` attribute to YouTube's iframe API URL.
 3. `firstScriptTag = document.getElementsByTagName('script')[0];` finds the first `<script>` tag in the document. Then the new `<script>` is inserted before the first script tag, so that it is loaded early.
- 
+
 After the API is loaded, the `window.onYoutubeIframeAPIReady` function is called.
 
 -----(Update 2025-02-15)-----
