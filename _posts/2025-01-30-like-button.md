@@ -100,7 +100,7 @@ Since the document is only created when the client-side script fails to find dat
 {% endhighlight %}
 </details>
 
- This config json will be used in [step 3-3](#3-3-create-javascript-for-the-like-button).
+ This config json will be used in [step 3-3](#3-3-create-firebase-function).
 <figure>
     <a href="/files/img/app_config.png" data-lightbox="vis">
     <img src = "/files/img/app_config.png"
@@ -220,9 +220,9 @@ body {
 - When you click the button, like count is stored in the database, and then `is-active` class added to the button, where it shows animation.
 - `is-active` class button will have its special cursor, 'prohibit' shape that prevent further clicking. It also shows tooltip saying "Thank you for your Like!! :)". You can customize these details.
 
-#### 3-3. Create **javascript for the Like Button**.
+#### 3-3. Create **Firebase Function**.
 
-We will use Firebase function for fetching Firebase configuration information. This is to ensure that Firebase config is not directly exposed to your javascript file. Key concept here is to retrieve the JSON file of your Firebase config for Firebase initiation, using Firebase function. The following prerequisites are detailed in [Firebase CLI documentation](https://firebase.google.com/docs/cli){:target='_blank'}. The button click javascript is also inspired from [Matt Henley's "Like" button (codepen)](https://codepen.io/mattbhenley/pen/gQbWgd){:target='_blank'}.
+We will use Firebase function for fetching Firebase configuration information. This is to ensure that Firebase config is not directly exposed to your javascript file. Key concept here is to retrieve the JSON file of your Firebase config for Firebase initiation, using Firebase function. The following prerequisites are detailed in [Firebase CLI documentation](https://firebase.google.com/docs/cli){:target='_blank'}. 
 
 **(Prerequisite)** <br>1. Node.js should be installed in your computer. <br> 2. Firebase CLI should be installed. You may use `npm install -g firebase-tools`. <br> 3. Subscribing Blaze plan is needed to use Firebase Functions. You won't be charged if usage amount is within no-cost quota. <br>4. In your jekyll root folder, log-in to Firebase via `firebase login`. If successful, you can use `firebase projects:list` to see your projects. 
 {:.info}
@@ -264,7 +264,9 @@ exports.getFirebaseConfig = functions.https.onRequest((req, res) => {
 </details>
 Then, deploy this function in your command-line via `firebase deploy --only functions`. If you see errors, run the function in emulator first via `firebase emulators:start --only functions` and open your function URL. 
 
-Next, create `assets/scripts/fireBase.js` as follows.
+#### 3-4. Create **JavaScript for the Like Button**.
+
+Next, create `assets/scripts/fireBase.js` as follows. The button click javascript is inspired from [Matt Henley's "Like" button (codepen)](https://codepen.io/mattbhenley/pen/gQbWgd){:target='_blank'}.
 <details>
 <summary> Click to see the full JS script </summary>
 
