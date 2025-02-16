@@ -1,0 +1,225 @@
+  /* ====== Form Styles ====== */
+  form {
+    border: 2px solid black;
+    padding: 15px;
+    width: 80%; /*500px*/
+    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Input Row: Name & Password */
+  .input-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+  }
+  
+  .input-row input {
+    width: 40%;
+    padding: 5px;
+    font-style: italic;
+    border: 1px solid black;
+  }
+  
+  /* Password Toggle Checkbox */
+  .input-row label {
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  /* Message Textarea */
+  textarea {
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    font-style: italic;
+    border: 1px solid black;
+    resize: none;
+  }
+  
+  /* Submit Button */
+  input[type="submit"] {
+    align-self: flex-start;
+    padding: 8px 12px;
+    border: 1px solid black;
+    background-color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  /* Toggle Switch Styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3; /* Or your preferred color */
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+  /* ====== Comment Section ====== */
+  #comments-container {
+    width: 500px;
+    margin-top: 20px;
+  }
+  
+  /* Individual Comment */
+  .comment {
+    border: 1px solid black;
+    background: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .comment-meta {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .comment-message {
+    margin-top: 5px;
+    margin-bottom: 2px;
+    padding: 5px;
+    border-radius: 5px;
+    background: #f4f4f4;
+  }
+  
+  /* Markdown Styling */
+.comment-message h1,
+.comment-message h2,
+.comment-message h3 {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.comment-message code {
+  background: #f4f4f4;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.comment-message pre {
+    background: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+  }
+  
+  .comment-message blockquote {
+    border-left: 4px solid #3487FF;
+    padding-left: 10px;
+    color: #555;
+    font-style: italic;
+  }
+
+  /* Edit & Delete Buttons */
+  .comment button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+    margin-right: 5px;
+  }
+  
+  .comment .reveal-comment {
+    background-color: #AA71F5;
+    color: white;
+  }
+  
+  .comment .reveal-comment:hover {
+    background-color: #7C53B3;
+  }
+
+  .comment .edit-comment {
+    background-color: #ffcc00;
+  }
+  
+  .comment .edit-comment:hover {
+    background-color: #e6b800;
+  }
+  
+  .comment .delete-comment {
+    background-color: #ff4d4d;
+    color: white;
+  }
+  
+  .comment .delete-comment:hover {
+    background-color: #cc0000;
+  }
+  
+  /* ====== Responsive Design ====== */
+  @media (max-width: 550px) {
+    form, #comments-container {
+      width: 100%;
+    }
+  
+    .input-row {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .input-row input {
+      width: 100%;
+    }
+  
+    input[type="submit"] {
+      width: 100%;
+    }
+  }
+  

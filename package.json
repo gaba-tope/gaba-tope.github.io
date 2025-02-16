@@ -59,6 +59,7 @@
     }
   },
   "dependencies": {
+    "argon2-browser": "^1.18.0",
     "firebase": "^11.2.0",
     "js-yaml": "^4.1.0"
   }
