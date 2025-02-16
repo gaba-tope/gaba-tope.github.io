@@ -45,11 +45,11 @@
     z-index: 5;
     overflow: hidden;
   }
-  iframe {
+  .musiciframe {
     width: 85.4px; /* 85.4px*/
-    height: 48px; /*48px*/
-    z-index: 2;
-  }
+   height: 48px; /*48px*/
+   z-index: 2;
+  } 
   .next-song {
     width: 20px;
     height: 20px;

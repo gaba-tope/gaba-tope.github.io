@@ -107,6 +107,7 @@ function loadVideoWithState(videoId, startTime) {
     youtubeContainer.innerHTML = `
         <iframe
             id="player"
+            class="musiciframe"
             width="560"
             height="315"
             src="https://www.youtube.com/embed/${videoId}?enablejsapi=1&start=${Math.floor(startTime)}"
