@@ -13,7 +13,7 @@ This work is **largely based on the music player script of** [**estInLOV3's home
 **[Copyright infringement is a serious offense!]**<br><br> **Unauthorized use of copyrighted music may result in legal action**. Please ensure you have the necessary rights or licenses for any music used with this player. Consider using royalty-free music or obtaining permission from the copyright holder.
 {:.error}
 
-# Modifications I made
+## Modifications I made
 
 1. **Hiding the YouTube Video**
     - The original music player displayed a small YouTube video, but I modified it to be invisible, keeping only the audio controls.
@@ -28,9 +28,9 @@ This work is **largely based on the music player script of** [**estInLOV3's home
 6. **Customizing the styles**
 
 
-# Implementation
+## Implementation
 
-## 1. HTML for the Music Player
+### 1. HTML for the Music Player
 
 <details>
 <summary>Click to see the full HTML</summary>
@@ -69,28 +69,29 @@ This work is **largely based on the music player script of** [**estInLOV3's home
 {% endhighlight %}
 </details>
 
-### Step 1: Create musicplayer.html file
+#### Step 1: Create musicplayer.html file
 
 I created a `_includes/musicplayer.html`, which will be embedded to the Jekyll blog.
 
-### Step 2: Add the Meta Tag
+#### Step 2: Add the Meta Tag
 
 `<meta charset> ="UTF-8"` for character encoding.
 
-### Step 3: Import necessary files.
+#### Step 3: Import necessary files.
+
 In the `<head>` section of your HTML, add the required CSS and JavaScript files.
 
 - CSS file: `/assets/css/musicplayer_audio.css` and `/assets/css/lightbox.css`. It is better to include lightbox CSS and JS file in your base page file if you use it frequently.
 - JavaScript file: `/assets/scripts/musicplayer.js` and `/assets/scripts/lightbox-plus-jquery.js`. Make sure that `musicplayer.js` is loaded with `type="module"` as it imports another JavaScript file.
 
-### Step 4: Make `<div>` elements in `<body>` as shown in the code.
+#### Step 4: Make `<div>` elements in `<body>` as shown in the code.
 
  Make sure each element correspond to each music player components. Correct class and id should be designated to be styled and used by JavaScript.
 
 - `<figure>` is where YouTube thumbnail of the video is shown. I used lightbox scripts so that viewers can click on the thumbnail in a bigger size.
 - `<div class="time-display">` is where total time and current time is shown.
 
-## 2. CSS for the Music Player
+### 2. CSS for the Music Player
 
 Create `/assets/css/musicplayer_audio.css` or in appropriate directory. 
 
@@ -143,7 +144,7 @@ Create `/assets/css/musicplayer_audio.css` or in appropriate directory.
     left: 0px;
     overflow: hidden;
   }
-  iframe {
+  .musiciframe {
     width: 1px;
     height: 1px;
     visibility: hidden;
@@ -265,7 +266,7 @@ Create `/assets/css/musicplayer_audio.css` or in appropriate directory.
 
 Some styles are modified from the original source to make it fit into my blog. Below is the brief explanation. Mostly basic CSS.
 
-- The original music player displayed a small YouTube video, but I modified it to be invisible, keeping only the audio components. `width`, `height`, `visibility` of `youtube` class or `iframe` element can be modified.
+- The original music player displayed a small YouTube video, but I modified it to be invisible, keeping only the audio components. `width`, `height`, `visibility` of `youtube` class or `musiciframe` class can be modified.
 - In styles of `thumbnail` class, I set `z-index: 2;`, so that `song-name` class with `z-index: 1;` doesn't overlap with the thumbnail.
 - Images for each class was retrieved using `background: url('../images/imageName.png');`, where is the directory you'll put your icon for the music player.
 - Song name was animated using `animation: scroll 20s linear infinite;` which is accompanied by `@keyframes scroll` block. Also, the `z-index: 1;` was set, so that it moves under the thumbnail.
@@ -325,7 +326,7 @@ Some styles are modified from the original source to make it fit into my blog. B
     z-index: 5;
     overflow: hidden;
   }
-  iframe {
+  .musiciframe {
     width: 85.4px; /* 85.4px*/
     height: 48px; /*48px*/
     z-index: 2;
@@ -445,10 +446,10 @@ Some styles are modified from the original source to make it fit into my blog. B
 {% endhighlight %}
 </details>
 
+-----(Update 2025-02-15)-----
+Now, YouTube iframe element has its own class `musiciframe`. This is to style iframe of the music player only, so that no other iframes are affected. Accordingly, `iframe` style was changed to `.musiciframe` style in CSS.
 
-
-
-## 3. JavaScript for the Music Player
+### 3. JavaScript for the Music Player
 
 This is the core functional component of the music player. 
 
@@ -566,6 +567,7 @@ function loadVideoWithState(videoId, startTime) {
     youtubeContainer.innerHTML = `
         <iframe
             id="player"
+            class="musiciframe"
             width="560"
             height="315"
             src="https://www.youtube.com/embed/${videoId}?enablejsapi=1&start=${Math.floor(startTime)}"
@@ -714,22 +716,22 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 Here, only key functions and blocks were covered.
 
-### 3-1. Import video data
+#### 3-1. Import video data
 
 Import video data using `import { videos } from "./video_array.js";`.
 Here, the imported JavaScript is located in the same directory as the importing JavaScript.
 
-### 3-2. Store and Retrieve Player State in localStorage
+#### 3-2. Store and Retrieve Player State in localStorage
 Each information is stored as a JSON string in `localStorage`, and retrieved from `localStorage`. It's a key in storing the information of the last played video when switching between pages. It also ensures that video resume from the same point with the same mute/play settings when the page is refreshed.
 
 -----(Update 2025-02-08)-----
 
 - All `localStorage` in previous scripts were replaced with `sessionStorage`, as reflected in the above full JavaScript. This is to ensure that music play records are stored only when the session is active.
 
-### 3-3. Declare Key Variables
+#### 3-3. Declare Key Variables
 `player`, `youtubeContainer`, `muteButton`, `playButton`, `nextSongButton` were declared by selecting the elements in the HTML file respectively.
 
-### 3-4. Create Functions for Features
+#### 3-4. Create Functions for Features
 
 1. **`formatTime()`** return times that will be used to show current time and total time.
 2. **`updateSongTitle()`** updates song title. This function is used (1) when DOM Contents are loaded, (2) whenever UI state is updated, (3) when music starts to be played.
@@ -739,11 +741,11 @@ Each information is stored as a JSON string in `localStorage`, and retrieved fro
 6. **`loadRandomVideo()`** load random video, in a way that the next random video isn't same as the previous video. This is achieved by `do {} while ()` formula. Whenever the random video is loaded, song name and thumbnail will be updated.
 7. **`onPlayerStateChange()`** loads random video when the played video is ended.
 
-### 3-5. Add EventListener
+#### 3-5. Add EventListener
 
 Each `add.EventListner('click', ...)` enables mute button, play button, and next song button respectively.
 
-### 3-6. Initialize Player
+#### 3-6. Initialize Player
 
 Using `(function() {...})`, the defined function is called immediately.
 
@@ -757,7 +759,7 @@ Using `(function() {...})`, the defined function is called immediately.
 
 - `//Initialize player` block will initiate the player. If there is a data of stored video, the player starts playing the stored video starting at the stored time. When there is no data of stored video, it loads random video.
 
-### 3-7. Load YouTube iframe API
+#### 3-7. Load YouTube iframe API
 
 1. `const tag` creates new `<script>` element.
 2. `tag.src` sets the `src` attribute to YouTube's iframe API URL.
@@ -765,7 +767,10 @@ Using `(function() {...})`, the defined function is called immediately.
  
 After the API is loaded, the `window.onYoutubeIframeAPIReady` function is called.
 
-## 4. JavaScript for Video Data
+-----(Update 2025-02-15)-----
+Now, YouTube iframe element has its own class `musiciframe`. This is to style iframe of the music player only, so that no other iframes are affected.
+
+### 4. JavaScript for Video Data
 
 Creates `/assets/scripts/video_array.js`. It stores the video information to be loaded. Following is the example code.
 
@@ -783,17 +788,17 @@ export const videos = [
 Suppose the video you would like to play has the URL of "https://www.youtube.com/watch?v=f5uLwyk2HEQ". Here, the `id` would be `f5uLwyk2HEQ`.
 You can store the video's `id` and the title in the array format in the script.
 
-## 5. Embed the HTML to Your Jekyll Blog
+### 5. Embed the HTML to Your Jekyll Blog
 
 Lastly, embed the HTML to your Jekyll Blog :)!!! For my blog, I added this snippet `{% raw %}<div class="music-player"> {% include musicplayer.html %} </div> {% endraw %}` to the `_includes/footer.html` at an appropriate position.
 
-# Conclusion
+## Conclusion
 
 It took me some time to modify the existing scripts, but I finally did it! 
 
 Hope you have your own music player for your blog too :)
 
-# Reference
+## Reference
 
 - [estInLOV3's homepage](https://lov3ndpeace.naru.pub/){:target='_blank'}
 
