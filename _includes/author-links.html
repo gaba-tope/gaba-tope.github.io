@@ -116,5 +116,13 @@
       </li>
     {%- endif -%}
 
+    {%- if _author.rss -%}
+      <li title="{{ _locale_string_follow | replace: '[NAME]', 'RSS' }}">
+        <a class="button button--circle rss-button" itemprop="sameAs" href="https://gaba-tope.github.io/{{ _author.rss }}" target="_blank">
+          <div class="icon">{%- include svg/icon/social/rss.svg -%}</div>
+        </a>
+      </li>
+    {%- endif -%}
+
   </ul>
 </div>
