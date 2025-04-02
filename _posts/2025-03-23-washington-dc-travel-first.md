@@ -3,6 +3,7 @@ title: "워싱턴 D.C. 여행 첫째 날!"
 tags: [travel]
 categories: blog
 id: 2025-03-23-washington-dc-travel-first
+cover: /files/cover/2025-03-23-washington-dc-travel-first.webp
 modify_date: 2025-04-01
 ---
 
