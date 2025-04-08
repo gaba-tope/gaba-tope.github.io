@@ -4,7 +4,7 @@ tags: [travel]
 categories: blog
 id: 2025-03-23-washington-dc-travel-first
 cover: /files/cover/2025-03-23-washington-dc-travel-first.webp
-modify_date: 2025-04-01
+modify_date: 2025-04-07
 ---
 
 봄방학을 맞아 미국의 수도 Washington D.C.에 다녀왔다! 여행 갈 생각은 별로 없었는데 이왕 미국까지 왔는데 캠퍼스에만 있으면 아까우니까! 
@@ -351,6 +351,12 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figcaption>Captiol Hill 앞에서!</figcaption>
     </figure>
     </div>
+</div>
+
+의회 건물로 인상깊었던 드라마의 한 장면을 꼽으라면 《Designated Survivor》 (지정생존자) 1화에서 Capitol Hill이 폭파되는 장면이리라...
+
+<div class="row" style="display: flex; justify-content: center;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AwADDDKDlc0?si=QQT8y8IIc7kIwWDE&amp;start=154" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 바로 근처에 **연방대법원 (Supreme Court of the United States)**이 있길래 들어가 보았다. 예약하지 않아도 입장이 가능했다. 역시 입장할 때 소지품 검사와 보안검색대를 통과해야 한다. 들어가니 볼 것은 그렇게 많지 않았다. 법정을 들어가 볼 수는 없었고 1층만 돌아다녔다. 대법관들의 사진이 복도에 걸려있더라. 기념품 스토어에는 대법관을 모에화한 인형들이 잔뜩~... 으 솔직히 전혀 관심이 없었음. 선출직 공무원 인형도 전혀 관심없는데 하물며 임명직 공무원 인형에 흥미가 있을 리가! 인간 모에화하려면 이미 돌아가신지 한참 된 분들, 최소한 근대 이전 분들이어야 좀 심리적으로 거북하지가 않아[^Moe]…
