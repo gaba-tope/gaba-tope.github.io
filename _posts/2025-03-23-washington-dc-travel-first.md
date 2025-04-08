@@ -14,6 +14,9 @@ modify_date: 2025-04-07
 
 ## 1일차
 
+**워싱턴 D.C. 여행기** (1/3)<br>[워싱턴 D.C. 여행 첫째 날!]({% post_url 2025-03-23-washington-dc-travel-first %}) **←**<br>[워싱턴 D.C. 여행 둘째 날!]({% post_url 2025-04-02-washington-dc-travel-second %})<br>[워싱턴 D.C. 여행 마지막 날!]({% post_url 2025-04-07-washington-dc-travel-third %})<br>
+{:.info}
+
 ### 공항에서 출발-도착, 브런치!
 
 RDU에서 아침 6시에 출발해서 워싱턴 D.C. (DCA)에 8시쯤 도착했다. Blue line 지하철을 타고 아침에 가기로 한 Library of Congress (의회도서관) 근처 브런치 음식점으로 향했다. 맛있는 곳을 기가 막히게 척척 찾아내는 Jeo.

@@ -12,6 +12,9 @@ modify_date: 2025-04-02
 
 ## 2일차
 
+**워싱턴 D.C. 여행기** (2/3)<br>[워싱턴 D.C. 여행 첫째 날!]({% post_url 2025-03-23-washington-dc-travel-first %})<br>[워싱턴 D.C. 여행 둘째 날!]({% post_url 2025-04-02-washington-dc-travel-second %}) **←**<br>[워싱턴 D.C. 여행 마지막 날!]({% post_url 2025-04-07-washington-dc-travel-third %})<br>
+{:.info}
+
 ### Nino's Bakery
 
 **Nino's Bakery**에서 아침을 먹었다! 이번에도 기가 막히게 맛있는 곳을 찾은 Jeo. 아침 8시부터 오후 12시 반까지 반나절만, 그것도 화요일에서 토요일만 연다기에 좀 의아해 했는데 가보니 이유를 알 것도 같았다. 오래 기다리지는 않았지만 줄을 조금 서야 했었다. 
