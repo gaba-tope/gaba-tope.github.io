@@ -4,7 +4,7 @@ tags: [travel]
 categories: blog
 id: 2025-03-23-washington-dc-travel-first
 cover: /files/cover/2025-03-23-washington-dc-travel-first.webp
-modify_date: 2025-04-07
+modify_date: 2025-04-08
 ---
 
 봄방학을 맞아 미국의 수도 Washington D.C.에 다녀왔다! 여행 갈 생각은 별로 없었는데 이왕 미국까지 왔는데 캠퍼스에만 있으면 아까우니까! 
@@ -329,7 +329,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
 
 의회도서관 ground floor에는 조지 거슈인<sup>George Gershwin</sup>과 이라 거슈인<sup>Ira Gershwin</sup>에 관한 전시가 진행되고 있었다. 아는 곡이 '랩소디 인 블루'밖에 없었는데, 전시된 다른 곡이 꽤 많았어서 들어보려고 사진찍어 뒀다.
 <div class="row" style="display: flex; justify-content: center;">
-    <div style="position:relative; float:left; padding:5px; width:40%">
+    <div style="position:relative; float:left; padding:5px; width:50%">
     <figure>
         <a href="/files/img/LOC_Gershwin_RiB.webp" data-lightbox="vis">
             <img src = "/files/img/LOC_Gershwin_RiB.webp" alt=""
@@ -338,6 +338,13 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figcaption>거슈인의 '랩소디 인 블루' 악보 원고</figcaption>
     </figure>
     </div>
+<iframe width="50%" src="https://www.youtube.com/embed/VAuTouBhN5k?si=XnB_cYSIQn4fAUsV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+조지 거슈인과 이라 거슈인의 〈I got Rhythm〉도 좋다!
+
+<div class="row" style="display: flex; justify-content: center;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oQdeTbUDCiw?si=sZIFmsOIOXbbVI75&amp;start=13" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 ### Captiol Hill (의회)와 Supreme Court (연방대법원)
