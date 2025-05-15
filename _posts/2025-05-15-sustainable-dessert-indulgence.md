@@ -7,14 +7,14 @@ cover: /files/cover/2025-05-15-sustainable-dessert-indulgence.webp
 modify_date: 2025-05-15
 ---
 
-UNC Chapel Hill의 음악 수업 Fundamentals of Tonal Musics (MUSC121) 기말 과제로 작사·작곡하였다. 초반에는 단순한 구조로 짧게 작곡하여 제출했는데, 그냥 끝내기는 아쉬워서 더욱 수정하여 완성한 곡이다!
+UNC Chapel Hill의 음악 수업 Fundamentals of Tonal Musics (MUSC121; Prof. Saviola) 기말 과제로 작사·작곡하였다. 초반에는 단순한 구조로 짧게 작곡하여 제출했는데, 그냥 끝내기는 아쉬워서 더욱 수정하여 완성한 곡이다!
 <!--more-->
 
 
 제목은 **'지속가능한 디저트 탐닉' (Sustainable Dessert Indulgence)**! 문자 그대로 지속가능한 디저트 탐닉이 어떻게 가능한지에 관한 곡이다. 낮은 화질은 양해해주시라. 노트북 성능이 안 좋아서 이 정도가 최선.
 
 <div class="row" style="display: flex; justify-content: center;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZAZ9OjSKio4?si=dxN8cKQGN7mJElaN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GOrrXEzaKnI?si=RNPEeDIkRt4q0jtW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 어떤 생각으로 곡을 만들었는지 정리해보았다.
