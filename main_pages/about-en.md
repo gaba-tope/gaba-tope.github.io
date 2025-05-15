@@ -30,10 +30,12 @@ You may call me Tope (/toʊp/) in the online community.
 In alphabetical order:
 
 - Biochemistry (3 * 2 semester)
+- Cancer Biology (3)
 - Cell Biology (3 * 2 semester)
 - Epigenetics and Human Disease (3)
 - Histology (3)
 - Molecular Biology (3)
+- Molecular Metabolism (3)
 - Molecular Structure Determination Using Spectroscopic Methods (3)
 - Nano-Bio Analytical Methods (3)
 - Neurobiology (3)
