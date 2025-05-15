@@ -11,7 +11,7 @@ UNC Chapel Hill의 음악 수업 Fundamentals of Tonal Musics (MUSC121; Prof. Sa
 <!--more-->
 
 
-제목은 **'지속가능한 디저트 탐닉' (Sustainable Dessert Indulgence)**! 문자 그대로 지속가능한 디저트 탐닉이 어떻게 가능한지에 관한 곡이다. 낮은 화질은 양해해주시라. 노트북 성능이 안 좋아서 이 정도가 최선.
+제목은 **'지속가능한 디저트 탐닉' (Sustainable Dessert Indulgence)**! 문자 그대로 지속가능한 디저트 탐닉이 어떻게 가능한지에 관한 곡이다. 
 
 <div class="row" style="display: flex; justify-content: center;">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GOrrXEzaKnI?si=RNPEeDIkRt4q0jtW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
