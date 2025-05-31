@@ -3,7 +3,7 @@ title: "LA 여행 둘째 날"
 tags: [travel]
 categories: blog
 id: 2025-05-31-la-the-second
-cover: /files/cover/2025-05-30-the-getty.png
+cover: /files/cover/2025-05-31-la-the-second.png
 modify_date: 2025-05-31
 ---
 
