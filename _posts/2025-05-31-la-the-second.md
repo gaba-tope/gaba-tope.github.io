@@ -310,7 +310,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
 
 레이크 할리우드 공원은 그 유명한 할리우드 사인을 볼 수 있는 공원이다! 상당히 높은 곳에 있었다. 
 
-의도하지 않은 차량 간 접촉과 약간의 파?손이 있었으나 모두의 의연한 대처로 (아마) 무사히 해결된 것으로 보인다. 드라이버 친구에게 무한 감사를 다시 표한다.
+의도하지 않은 차량 간 접촉과 약간의 파?손이 있었으나 모두의 의연한 대처로 (아마) 무사히 해결된 것으로 보인다. 드라이버 친구에게 다시 한번 무한한 감사를 드린다.
 
 <div class="row" style="display: flex; justify-content: center;">
     <div style="position:relative; float:left; padding:5px; width:50%">
