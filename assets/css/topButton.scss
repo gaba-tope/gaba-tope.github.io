@@ -1,0 +1,29 @@
+#toTop {
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+	width: 60px;
+	height: 47px;
+	text-align: left;
+	font-size: 13px; color: #633238;
+	transition: all 200ms ease-out;
+	display: inline-block; z-index: 10;
+} 
+#topButton {
+	position: fixed;
+	right: 5px;
+	width: fit-content;
+}
+
+// #topBtn {
+// 	position: fixed;
+// 	bottom: 45px;
+// 	left: 50%;
+// 	margin-left: 310px;
+// 	width: 60px;
+// 	height: 47px;
+// 	text-align: center;
+// 	font-size: 13px; color: #633238;
+// 	transition: all 200ms ease-out;
+// 	display: inline-block; z-index: 10;
+// } 

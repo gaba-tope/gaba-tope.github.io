@@ -47,17 +47,6 @@
     <div class="article__subscribe">{%- include article/footer/subscribe.html -%}</div>
   {%- endif -%}
 
-  <!--applause_button--
-  {% if page.applause_button %}
-    <applause-button class="mb6"
-      color={{ site.accent_color | default:'rgb(83,165,255)' }}
-      url={{ post.url | absolute_url }} >
-    </applause-button>
-
-  {% else %}
-  {% endif %}
- ------>
-
   {%- if _license != false -%}
     {%- assign _data_license = site.data.licenses-%}
     {%- if site.license -%}

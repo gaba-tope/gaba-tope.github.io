@@ -44,9 +44,9 @@ layout: base
     <div class="grid page__grid">
 
       <div class="page__sidebar d-print-none">
-        {%- include sidebar/toc.html -%}
+        {%- include sidebar/toc.html -%}  
       </div>
-
+      
 {%- else -%}
 <div class="layout--page js-page-root">
 {%- endif -%}
@@ -279,21 +279,6 @@ layout: base
 
 <!--Lightbox-->
 <script src="/assets/scripts/lightbox-plus-jquery.js"></script>
-	<link rel="stylesheet" href="/assets/css/lightbox.css">
+<link rel="stylesheet" href="/assets/css/lightbox.css">
 
-  <!---- style for image containers-->
-<style>
-  /* Three image containers (use 25% for four, and 50% for two, etc) */
-  .triple-column {
-    float: left;
-    width: 33.33%;
-    padding: 5px;
-  }
-  
-  /* Clear floats after image containers */
-  .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  </style>
+
