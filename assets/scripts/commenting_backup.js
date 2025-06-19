@@ -1,3 +1,5 @@
+// Backup Commenting Before Alignment of Comments in Ascending Order by Client
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
 
@@ -76,45 +78,40 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
     
         const querySnapshot = await db.collection("comments")
         .where("postId", "==", postId)
+        .orderBy("timestamp", "desc")
         .get();
-        
-        // Align Posts by Client
-        const comments = [];
+    
         querySnapshot.forEach((doc) => {
-            comments.push({ id: doc.id, ...doc.data()});
-        });
-
-        // Align by Ascending Order
-        comments.sort((a, b) => {
-        if (!a.timestamp) return 1;
-        if (!b.timestamp) return -1;
-        return a.timestamp.toMillis() - b.timestamp.toMillis();
-        });
-
-        // 정렬된 댓글들을 화면에 표시
-        comments.forEach((comment) => {
-        const { name, message, timestamp, isSecret } = comment;
-        const date = timestamp ? timestamp.toDate().toLocaleString() : "Just now";
-
-        let commentHTML = `
-            <div class="comment" data-id="${comment.id}">
+            const { name, message, timestamp, isSecret } = doc.data();
+            const date = timestamp ? timestamp.toDate().toLocaleString() : "Just now";
+    
+            /* let commentHTML = `
+                <div class="comment" data-id="${doc.id}">
                 <p class="comment-meta"><strong>${name}</strong> - <small>${date}</small></p>
-        `;
-
-        if (isSecret) {
-            commentHTML += `
-                <div class="comment-message">(This comment is secret. Enter password to view.)</div>
-                <button class="reveal-comment">Reveal</button> 
-            </div>
-            `;
-        } else {
-            commentHTML += `
                 <div class="comment-message">${message}</div>
                 <button class="edit-comment">Edit</button>
                 <button class="delete-comment">Delete</button>
             </div>
+            `; */
+            let commentHTML = `
+                <div class="comment" data-id="${doc.id}">
+                    <p class="comment-meta"><strong>${name}</strong> - <small>${date}</small></p>
             `;
-        }
+
+            if (isSecret) {
+                commentHTML += `
+                    <div class="comment-message">(This comment is secret. Enter password to view.)</div>
+                    <button class="reveal-comment">Reveal</button> 
+                </div>
+                `;
+            } else {
+                commentHTML += `
+                    <div class="comment-message">${message}</div>
+                    <button class="edit-comment">Edit</button>
+                    <button class="delete-comment">Delete</button>
+                </div>
+                `;
+            }
 
         commentsContainer.innerHTML += commentHTML;
     });
