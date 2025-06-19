@@ -4,7 +4,7 @@ tags: [travel]
 categories: blog
 id: 2025-05-31-la-the-second
 cover: /files/cover/2025-05-31-la-the-second.png
-modify_date: 2025-05-31
+modify_date: 2025-06-19
 ---
 
 로스앤젤레스 둘째 날에는 산타모니카 해변, 베벌리 힐스, 할리우드 명예의 거리와 레이크 할리우드 공원을 구경했다.
@@ -12,7 +12,7 @@ modify_date: 2025-05-31
 
 ## 2일차
 
-**로스앤젤레스 여행기** (2/3)<br>[LA 여행 첫째 날!]({% post_url 2025-05-30-the-getty %})<br>[LA 여행 둘째 날!]({% post_url 2025-05-31-la-the-second %}) **←**<br>[LA 여행 마지막 날!]({% post_url 2025-06-01-la-the-third %})
+**미국 서부 여행기** (2/4)<br>[LA 여행 첫째 날!]({% post_url 2025-05-30-the-getty %})<br>[LA 여행 둘째 날!]({% post_url 2025-05-31-la-the-second %}) **←**<br>[LA 여행 마지막 날!]({% post_url 2025-06-01-la-the-third %})<br>[샌프란시스코 하루 여행!]({% post_url 2025-06-19-san-fran %})
 {:.info}
 
 사진의 양이 많아 로딩이 오래 걸릴 수 있어요. PC에서 보기를 권장합니다.
