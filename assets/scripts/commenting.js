@@ -44,7 +44,7 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
             isSecret = !isSecret;
             //console.log("비밀글 토글 눌러짐");
             if (isSecret) {
-                //console.log("비밀글 설정됨.");
+                // console.log("비밀글 설정됨.");
                 // Change to locked (red) icon
                 lockIcon.innerHTML = `
                     <rect x="3" y="11" width="18" height="11" rx="2" ry="2" fill="#ff4444"></rect>
