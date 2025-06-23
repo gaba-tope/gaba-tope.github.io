@@ -156,7 +156,7 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
 
             if (isSecret) {
                 commentHTML += `
-                    <div class="comment-message">(Enter password to view the secret comment.)<br>(비밀글을 열람하려면 비밀번호를 입력하세요.)</div>
+                    <div class="comment-message">(This is a secret comment. 비밀글입니다.)</div>
                     <button class="reveal-comment">Reveal (보기)</button> 
                 </div>
                 `;
