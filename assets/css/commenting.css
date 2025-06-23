@@ -1,6 +1,7 @@
   /* ====== Form Styles ====== */
   form {
     border: 2px solid black;
+    border-radius: 12px;
     padding: 15px;
     width: 80%; /*500px*/
     background: white;
@@ -22,6 +23,7 @@
     padding: 5px;
     font-style: italic;
     border: 1px solid black;
+    border-radius: 8px;
   }
   
   /* Password Toggle Checkbox */
@@ -37,6 +39,7 @@
     padding: 8px;
     font-style: italic;
     border: 1px solid black;
+    border-radius: 8px;
     resize: none;
   }
   
@@ -45,6 +48,7 @@
     align-self: flex-start;
     padding: 8px 12px;
     border: 1px solid black;
+    border-radius: 8px;
     background-color: white;
     cursor: pointer;
     font-weight: bold;
@@ -80,7 +84,7 @@
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
-    border-radius: 34px;
+    border-radius: 24px;
 }
 
 .slider:before {
@@ -110,7 +114,40 @@ input:checked + .slider:before {
     transform: translateX(26px);
 }
 
-  /* ====== Comment Section ====== */
+/* Secret Comment Row */
+.secret-row {
+    display: flex;
+    justify-content: space-between; /* 양 끝으로 정렬 */
+    align-items: center;
+    gap: 10px;
+}
+
+.lock-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.2s;
+}
+
+.lock-button:hover {
+    transform: scale(1.1);
+}
+
+.lock-icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s;
+}
+
+.secret-message {
+    font-size: 12px;
+    color: #666;
+    font-style: italic;
+    margin-left: 5px;
+}
+
+/* ====== Comment Section ====== */
   #comments-container {
     width: 500px;
     margin-top: 20px;
@@ -119,6 +156,7 @@ input:checked + .slider:before {
   /* Individual Comment */
   .comment {
     border: 1px solid black;
+    border-radius: 12px;
     background: white;
     padding: 10px;
     margin-bottom: 10px;
@@ -132,7 +170,7 @@ input:checked + .slider:before {
   
   .comment-message {
     margin-top: 5px;
-    margin-bottom: 2px;
+    margin-bottom: 5px;
     padding: 5px;
     border-radius: 5px;
     background: #f4f4f4;
@@ -171,6 +209,7 @@ input:checked + .slider:before {
   .comment button {
     padding: 5px 10px;
     border: none;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
     transition: 0.3s;

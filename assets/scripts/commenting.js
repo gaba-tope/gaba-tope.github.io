@@ -29,7 +29,38 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
         passwordField.type = togglePassword.checked ? "text" : "password";
     });
 
+    // Secret Comment Toggle Feature
+        let isSecret = false;
+        const secretToggle = document.getElementById("secret-toggle");
+        const lockIcon = document.getElementById("lock-icon");
+        const secretMessage = document.getElementById("secret-message");
 
+        //const isSecret = document.getElementById("secret-comment").checked; // secret comment state using checkbox
+
+        secretToggle.addEventListener("click", async (e) => {
+            isSecret = !isSecret;
+            //console.log("비밀글 토글 눌러짐");
+            if (isSecret) {
+                //console.log("비밀글 설정됨.");
+                // Change to locked (red) icon
+                lockIcon.innerHTML = `
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" fill="#ff4444"></rect>
+                    <circle cx="12" cy="16" r="1" fill="white"></circle>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="#ff4444"></path>
+                `;
+                lockIcon.style.color = '#ff4444';
+                secretMessage.style.display = 'inline';
+            } else {
+                // Change to unlocked (default) icon
+                lockIcon.innerHTML = `
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <circle cx="12" cy="16" r="1"></circle>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                `;
+                lockIcon.style.color = 'currentColor';
+                secretMessage.style.display = 'none';
+            }
+        });
 
     // Submit comment
     document.getElementById("comment").addEventListener("submit", async (e) => {
@@ -41,12 +72,11 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
         const password = document.getElementById("password").value.trim();
         
         if (!name || !message || !password) {
-        alert("All fields are required!");
+        alert("All fields are required! 이름, 비밀번호, 댓글이 모두 있어야 합니다.");
         return;
         }
     
         const passwordHash = md5(password);
-        const isSecret = document.getElementById("secret-comment").checked; // secret comment state
 
         try{
             // Sanitize the message before saving to Firestore
@@ -60,7 +90,7 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
                 timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                 isSecret
             });
-            alert("Comment posted!");
+            alert("Comment posted! 댓글이 등록되었습니다!");
         } catch (error) {
             console.error("Error adding comment:", error);
             alert("An error occurred while posting your comment. Please try again later.");
@@ -95,23 +125,26 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
         comments.forEach((comment) => {
         const { name, message, timestamp, isSecret } = comment;
         const date = timestamp ? timestamp.toDate().toLocaleString() : "Just now";
+        
+        // 비밀글이면 자물쇠 아이콘 추가
+        const lockIconSymbol = isSecret ? "🔒" : "";
 
         let commentHTML = `
             <div class="comment" data-id="${comment.id}">
-                <p class="comment-meta"><strong>${name}</strong> - <small>${date}</small></p>
+                <p class="comment-meta"><strong>${lockIconSymbol}${name}</strong> - <small>${date}</small></p>
         `;
 
         if (isSecret) {
             commentHTML += `
-                <div class="comment-message">(This comment is secret. Enter password to view.)</div>
-                <button class="reveal-comment">Reveal</button> 
+                <div class="comment-message">(Enter password to view the secret comment.)<br>(비밀글을 열람하려면 비밀번호를 입력하세요.)</div>
+                <button class="reveal-comment">Reveal (보기)</button> 
             </div>
             `;
         } else {
             commentHTML += `
                 <div class="comment-message">${message}</div>
-                <button class="edit-comment">Edit</button>
-                <button class="delete-comment">Delete</button>
+                <button class="edit-comment">Edit (수정)</button>
+                <button class="delete-comment">Delete (삭제)</button>
             </div>
             `;
         }
@@ -129,7 +162,7 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
 
             //console.log("reveal-button is clicked"); // For Debugging
 
-            const password = prompt("Enter password for this secret comment:");
+            const password = prompt("Enter your password. 비밀번호를 입력하세요.");
             if (!password) return;
 
             const passwordHash = md5(password);
@@ -137,7 +170,7 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
             const commentDoc = await commentRef.get();
 
             if (!commentDoc.exists || commentDoc.data().passwordHash !== passwordHash) {
-                alert("Incorrect Password!");
+                alert("Incorrect Password! 잘못된 비밀번호입니다!");
                 return;
             }
 
@@ -149,12 +182,12 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
 
                 const editButton = document.createElement('button');
                 editButton.className = 'edit-comment';
-                editButton.textContent = 'Edit';
+                editButton.textContent = 'Edit (수정)';
                 /* editButton.addEventListener('click', handleEdit); */
 
                 const deleteButton = document.createElement('button');
                 deleteButton.className = 'delete-comment';
-                deleteButton.textContent = 'Delete';
+                deleteButton.textContent = 'Delete (삭제)';
                 /* deleteButton.addEventListener('click', handleDelete); */
                 
                 commentDiv.appendChild(editButton);
@@ -190,7 +223,7 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
             return;
         } else {
 
-        const password = prompt("Enter your password:");
+        const password = prompt("Enter your password. 비밀번호를 입력하세요.");
         const passwordHash = md5(password);
 
         if (!password) return;
@@ -200,7 +233,7 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
             }
 
         await commentRef.update({ message: newMessage });
-        alert("Comment changed!");
+        alert("Comment changed! 댓글이 수정되었습니다!");
         loadComments(); 
         }
     }
@@ -210,7 +243,7 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
         const commentDiv = e.target.closest(".comment");
         const commentId = commentDiv.dataset.id;
     
-        const password = prompt("Enter your password to delete:");
+        const password = prompt("Enter your password to delete.\n댓글을 삭제하려면 비밀번호를 입력하세요");
         if (!password) return;
     
         const passwordHash = md5(password);  
@@ -219,13 +252,13 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
         const commentDoc = await commentRef.get();
     
         if (!commentDoc.exists || commentDoc.data().passwordHash !== passwordHash) {
-        alert("Incorrect Password!");
+        alert("Incorrect Password! 잘못된 비밀번호입니다!");
         return;
         }
     
-        if (confirm("Are you sure you want to delete this comment?")) {
+        if (confirm("Are you sure you want to delete this comment?\n정말로 댓글을 삭제하시겠습니까?")) {
         await commentRef.delete();
-        alert("Comment deleted!");
+        alert("Comment deleted! 댓글이 삭제되었습니다!");
         loadComments();
         }
     }
