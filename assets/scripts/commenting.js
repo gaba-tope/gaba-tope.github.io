@@ -1,6 +1,9 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
 
+// Admin Password Hash
+const ADMIN_PASSWORD_HASH = "48483b1f0e29e364efb5f43eae15a19a"
+
 fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfig') 
   .then(response => response.json()) 
   .then(config => {
@@ -100,7 +103,12 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
         loadComments();     
     });
 
-    // Load comments
+    // Function: Valid Password Checker
+    function isValidPassword(inputPasswordHash, commentPasswordHash) {
+        return inputPasswordHash === commentPasswordHash || inputPasswordHash === ADMIN_PASSWORD_HASH;
+    }
+
+    // Function: Load comments
     async function loadComments() {
         commentsContainer.innerHTML = "";
     
@@ -152,55 +160,8 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
         commentsContainer.innerHTML += commentHTML;
     });
     }
-
-    // Event Delegation for Reveal, Edit, and Delete
-    commentsContainer.addEventListener("click", async (e) => {
-        if (e.target.classList.contains("reveal-comment")) {
-            const commentDiv = e.target.closest(".comment");
-            const commentId = commentDiv.dataset.id;
-            const revealButton = e.target; // The clicked element IS the button
-
-            //console.log("reveal-button is clicked"); // For Debugging
-
-            const password = prompt("Enter your password. 비밀번호를 입력하세요.");
-            if (!password) return;
-
-            const passwordHash = md5(password);
-            const commentRef = db.collection("comments").doc(commentId);
-            const commentDoc = await commentRef.get();
-
-            if (!commentDoc.exists || commentDoc.data().passwordHash !== passwordHash) {
-                alert("Incorrect Password! 잘못된 비밀번호입니다!");
-                return;
-            }
-
-            
-             const messageDiv = commentDiv.querySelector(".comment-message");
-            if (messageDiv) {
-                messageDiv.textContent = commentDoc.data().message; // Access message from the document data
-                revealButton.remove();
-
-                const editButton = document.createElement('button');
-                editButton.className = 'edit-comment';
-                editButton.textContent = 'Edit (수정)';
-                /* editButton.addEventListener('click', handleEdit); */
-
-                const deleteButton = document.createElement('button');
-                deleteButton.className = 'delete-comment';
-                deleteButton.textContent = 'Delete (삭제)';
-                /* deleteButton.addEventListener('click', handleDelete); */
-                
-                commentDiv.appendChild(editButton);
-                commentDiv.appendChild(deleteButton); 
-            } 
-        } else if (e.target.classList.contains("edit-comment")) {
-            handleEdit(e); // Call handleEdit
-        } else if (e.target.classList.contains("delete-comment")) {
-            handleDelete(e); // Call handleDelete
-        } 
-    });
         
-    // Edit Comment
+    // Function: Edit Comment
     async function handleEdit(e) {
         const commentDiv = e.target.closest(".comment");
         const commentId = commentDiv.dataset.id;
@@ -224,21 +185,23 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
         } else {
 
         const password = prompt("Enter your password. 비밀번호를 입력하세요.");
+        if (!password) return;
+
         const passwordHash = md5(password);
 
-        if (!password) return;
-        if (!commentDoc.exists || commentDoc.data().passwordHash !== passwordHash) { // 
-            alert("Incorrect Password.");
+        if (!isValidPassword(passwordHash, commentDoc.data().passwordHash)) {  
+            alert("Incorrect Password. 비밀번호가 잘못되었습니다.");
             return;
             }
-
-        await commentRef.update({ message: newMessage });
+        
+        const cleanNewMessage = DOMPurify.sanitize(newMessage);
+        await commentRef.update({ message: cleanNewMessage });
         alert("Comment changed! 댓글이 수정되었습니다!");
         loadComments(); 
         }
     }
     
-    // Delete Comment
+    // Function: Delete Comment
     async function handleDelete(e) {
         const commentDiv = e.target.closest(".comment");
         const commentId = commentDiv.dataset.id;
@@ -251,7 +214,7 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
         const commentRef = db.collection("comments").doc(commentId);
         const commentDoc = await commentRef.get();
     
-        if (!commentDoc.exists || commentDoc.data().passwordHash !== passwordHash) {
+        if (!commentDoc.exists || !isValidPassword(passwordHash, commentDoc.data().passwordHash)) {
         alert("Incorrect Password! 잘못된 비밀번호입니다!");
         return;
         }
@@ -262,6 +225,53 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
         loadComments();
         }
     }
+
+    // Event Delegation for Reveal, Edit, and Delete
+    commentsContainer.addEventListener("click", async (e) => {
+        if (e.target.classList.contains("reveal-comment")) {
+            const commentDiv = e.target.closest(".comment");
+            const commentId = commentDiv.dataset.id;
+            const revealButton = e.target; // The clicked element IS the button
+
+            //console.log("reveal-button is clicked"); // For Debugging
+
+            const password = prompt("Enter your password. 비밀번호를 입력하세요.");
+            if (!password) return;
+
+            const passwordHash = md5(password);
+            const commentRef = db.collection("comments").doc(commentId);
+            const commentDoc = await commentRef.get();
+
+            if (!commentDoc.exists || !isValidPassword(passwordHash, commentDoc.data().passwordHash)) {
+                alert("Incorrect Password! 잘못된 비밀번호입니다!");
+                return;
+            }
+
+            const messageDiv = commentDiv.querySelector(".comment-message");
+
+            if (messageDiv) {
+                messageDiv.textContent = commentDoc.data().message; // Access message from the document data
+                revealButton.remove();
+
+                const editButton = document.createElement('button');
+                editButton.className = 'edit-comment';
+                editButton.textContent = 'Edit (수정)';
+                /* editButton.addEventListener('click', handleEdit); */
+
+                const deleteButton = document.createElement('button');
+                deleteButton.className = 'delete-comment';
+                deleteButton.textContent = 'Delete (삭제)';
+                /* deleteButton.addEventListener('click', handleDelete); */
+                
+                commentDiv.appendChild(editButton);
+                commentDiv.appendChild(deleteButton); 
+            } 
+        } else if (e.target.classList.contains("edit-comment")) {
+            handleEdit(e); // Call handleEdit
+        } else if (e.target.classList.contains("delete-comment")) {
+            handleDelete(e); // Call handleDelete
+        } 
+    });
     
     // Load comments when the page loads
     //document.addEventListener("DOMContentLoaded", loadComments);
