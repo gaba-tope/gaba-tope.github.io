@@ -130,11 +130,10 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
             const { name, message, timestamp, isSecret, passwordHash } = comment;
             const date = timestamp ? timestamp.toDate().toLocaleString() : "Just now";
             
-            // isSecret and isAdmin determined. Displayed name with icons defined as displayName.
-            const lockIconSymbol = isSecret ? "🔒" : "";
+            // isAdmin determined. Displayed name with icons defined as displayName.
             const isAdmin = isAdminComment(passwordHash);
             const adminIconSymbol = isAdmin ? "👑 " : "";
-            const displayName = `${adminIconSymbol}${lockIconSymbol}${name}`;
+            const displayName = `${adminIconSymbol}${name}`;
 
             // Add admin-comment class if isAdmin (관리자 댓글인 경우 admin-comment 클래스 추가)
             const adminClass = isAdmin ? ' admin-comment' : '';
@@ -147,7 +146,7 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
 
             if (isSecret) {
                 commentHTML += `
-                    <div class="comment-message">(This is a secret comment. 비밀글입니다.)</div>
+                    <div class="comment-message">(🔒 This is a secret comment. 비밀글입니다.)</div>
                     <button class="reveal-comment">Reveal (보기)</button> 
                 </div>
                 `;
