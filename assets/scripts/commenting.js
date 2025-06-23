@@ -108,6 +108,11 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
         return inputPasswordHash === commentPasswordHash || inputPasswordHash === ADMIN_PASSWORD_HASH;
     }
 
+    // Function: Admin Comment Checker
+    function isAdminComment(passwordHash) {
+        return passwordHash === ADMIN_PASSWORD_HASH;
+    }
+
     // Function: Load comments
     async function loadComments() {
         commentsContainer.innerHTML = "";
@@ -131,33 +136,40 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
 
         // 정렬된 댓글들을 화면에 표시
         comments.forEach((comment) => {
-        const { name, message, timestamp, isSecret } = comment;
-        const date = timestamp ? timestamp.toDate().toLocaleString() : "Just now";
-        
-        // 비밀글이면 자물쇠 아이콘 추가
-        const lockIconSymbol = isSecret ? "🔒" : "";
+            const { name, message, timestamp, isSecret, passwordHash } = comment;
+            const date = timestamp ? timestamp.toDate().toLocaleString() : "Just now";
+            
+            // 비밀글 및 관리자글 여부 확인
+            const lockIconSymbol = isSecret ? "🔒" : "";
+            const isAdmin = isAdminComment(passwordHash);
+            const adminIconSymbol = isAdmin ? "👑 " : "";
+            const displayName = `${adminIconSymbol}${lockIconSymbol}${name}`;
 
-        let commentHTML = `
-            <div class="comment" data-id="${comment.id}">
-                <p class="comment-meta"><strong>${lockIconSymbol}${name}</strong> - <small>${date}</small></p>
-        `;
+            // 관리자 댓글인 경우 admin-comment 클래스 추가
+            const adminClass = isAdmin ? ' admin-comment' : '';
 
-        if (isSecret) {
-            commentHTML += `
-                <div class="comment-message">(Enter password to view the secret comment.)<br>(비밀글을 열람하려면 비밀번호를 입력하세요.)</div>
-                <button class="reveal-comment">Reveal (보기)</button> 
-            </div>
+            // 댓글 정보와 본문 보여주기. 비밀글은 lock icon, 관리자글은 crown icon 추가
+            let commentHTML = `
+                <div class="comment${adminClass}" data-id="${comment.id}">
+                    <p class="comment-meta"><strong>${displayName}</strong> - <small>${date}</small></p>
             `;
-        } else {
-            commentHTML += `
-                <div class="comment-message">${message}</div>
-                <button class="edit-comment">Edit (수정)</button>
-                <button class="delete-comment">Delete (삭제)</button>
-            </div>
-            `;
-        }
 
-        commentsContainer.innerHTML += commentHTML;
+            if (isSecret) {
+                commentHTML += `
+                    <div class="comment-message">(Enter password to view the secret comment.)<br>(비밀글을 열람하려면 비밀번호를 입력하세요.)</div>
+                    <button class="reveal-comment">Reveal (보기)</button> 
+                </div>
+                `;
+            } else {
+                commentHTML += `
+                    <div class="comment-message">${message}</div>
+                    <button class="edit-comment">Edit (수정)</button>
+                    <button class="delete-comment">Delete (삭제)</button>
+                </div>
+                `;
+            }
+
+            commentsContainer.innerHTML += commentHTML;
     });
     }
         
