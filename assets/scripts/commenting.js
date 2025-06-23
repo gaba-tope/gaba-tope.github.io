@@ -7,24 +7,17 @@ const ADMIN_PASSWORD_HASH = "48483b1f0e29e364efb5f43eae15a19a"
 fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfig') 
   .then(response => response.json()) 
   .then(config => {
-    // console.log("Firebase config fetched:"); // for debugging
     firebase.initializeApp(config);
     const db = firebase.firestore(firebase.app(), "commenting");
-    // console.log("Firebase initialized, Firestore instance:", db); // for debugging
+        // console.log("Firebase initialized, Firestore instance:", db); // for debugging
     
-
     // Get post ID
     const postId = document.getElementById("post-data").dataset.postId;
-    // console.log("Post ID:", postId); // For debugging
 
     // Get comments container from HTML
     const commentsContainer = document.getElementById("comments-container");
 
-    // Password Toggle
-    /* document.getElementById("toggle-password").addEventListener("change", function () {
-    const passwordField = document.getElementById("password");
-    passwordField.type = this.checked ? "text" : "password";
-    }); */
+    // Password Visibility Toggle
     const passwordField = document.getElementById("password");
     const togglePassword = document.getElementById("toggle-password");
 
@@ -33,37 +26,35 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
     });
 
     // Secret Comment Toggle Feature
-        let isSecret = false;
-        const secretToggle = document.getElementById("secret-toggle");
-        const lockIcon = document.getElementById("lock-icon");
-        const secretMessage = document.getElementById("secret-message");
+    let isSecret = false;
+    const secretToggle = document.getElementById("secret-toggle");
+    const lockIcon = document.getElementById("lock-icon");
+    const secretMessage = document.getElementById("secret-message");
 
-        //const isSecret = document.getElementById("secret-comment").checked; // secret comment state using checkbox
+        //const isSecret = document.getElementById("secret-comment").checked; // old: secret comment state using checkbox
 
-        secretToggle.addEventListener("click", async (e) => {
-            isSecret = !isSecret;
-            //console.log("비밀글 토글 눌러짐");
-            if (isSecret) {
-                // console.log("비밀글 설정됨.");
-                // Change to locked (red) icon
-                lockIcon.innerHTML = `
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" fill="#ff4444"></rect>
-                    <circle cx="12" cy="16" r="1" fill="white"></circle>
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="#ff4444"></path>
-                `;
-                lockIcon.style.color = '#ff4444';
-                secretMessage.style.display = 'inline';
-            } else {
-                // Change to unlocked (default) icon
-                lockIcon.innerHTML = `
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                    <circle cx="12" cy="16" r="1"></circle>
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                `;
-                lockIcon.style.color = 'currentColor';
-                secretMessage.style.display = 'none';
-            }
-        });
+    secretToggle.addEventListener("click", async (e) => {
+        isSecret = !isSecret;
+        if (isSecret) {
+            // Change to locked (red) icon
+            lockIcon.innerHTML = `
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" fill="#ff4444"></rect>
+                <circle cx="12" cy="16" r="1" fill="white"></circle>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="#ff4444"></path>
+            `;
+            lockIcon.style.color = '#ff4444';
+            secretMessage.style.display = 'inline';
+        } else {
+            // Change to unlocked (default) icon
+            lockIcon.innerHTML = `
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <circle cx="12" cy="16" r="1"></circle>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            `;
+            lockIcon.style.color = 'currentColor';
+            secretMessage.style.display = 'none';
+        }
+    });
 
     // Submit comment
     document.getElementById("comment").addEventListener("submit", async (e) => {
@@ -121,7 +112,7 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
         .where("postId", "==", postId)
         .get();
         
-        // Align Posts by Client
+        // Align Posts on the Client Side
         const comments = [];
         querySnapshot.forEach((doc) => {
             comments.push({ id: doc.id, ...doc.data()});
@@ -134,21 +125,21 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
         return a.timestamp.toMillis() - b.timestamp.toMillis();
         });
 
-        // 정렬된 댓글들을 화면에 표시
+        // Exhibits aligned comments (정렬된 댓글들을 화면에 표시)
         comments.forEach((comment) => {
             const { name, message, timestamp, isSecret, passwordHash } = comment;
             const date = timestamp ? timestamp.toDate().toLocaleString() : "Just now";
             
-            // 비밀글 및 관리자글 여부 확인
+            // isSecret and isAdmin determined. Displayed name with icons defined as displayName.
             const lockIconSymbol = isSecret ? "🔒" : "";
             const isAdmin = isAdminComment(passwordHash);
             const adminIconSymbol = isAdmin ? "👑 " : "";
             const displayName = `${adminIconSymbol}${lockIconSymbol}${name}`;
 
-            // 관리자 댓글인 경우 admin-comment 클래스 추가
+            // Add admin-comment class if isAdmin (관리자 댓글인 경우 admin-comment 클래스 추가)
             const adminClass = isAdmin ? ' admin-comment' : '';
 
-            // 댓글 정보와 본문 보여주기. 비밀글은 lock icon, 관리자글은 crown icon 추가
+            // Show comment meta-info and contents
             let commentHTML = `
                 <div class="comment${adminClass}" data-id="${comment.id}">
                     <p class="comment-meta"><strong>${displayName}</strong> - <small>${date}</small></p>
@@ -177,17 +168,18 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
     async function handleEdit(e) {
         const commentDiv = e.target.closest(".comment");
         const commentId = commentDiv.dataset.id;
-        const newMessage = prompt("Enter new message:");
+        const newMessage = prompt("Enter new message. 새로운 글을 입력하세요.");
     
         if (!newMessage) return;
 
         const commentRef = db.collection("comments").doc(commentId);
         const commentDoc = await commentRef.get();
     
-        if (!commentDoc.exists) { // || commentDoc.data().passwordHash !== passwordHash
-        alert("Comment doesn't exist.");
-        return;
+        if (!commentDoc.exists) { 
+            alert("Comment doesn't exist. 존재하지 않는 댓글입니다.");
+            return;
         }
+
         // Check if the comment is secret
         if (commentDoc.data().isSecret) {
             const cleanNewMessage = DOMPurify.sanitize(newMessage);
@@ -226,15 +218,20 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
         const commentRef = db.collection("comments").doc(commentId);
         const commentDoc = await commentRef.get();
     
-        if (!commentDoc.exists || !isValidPassword(passwordHash, commentDoc.data().passwordHash)) {
-        alert("Incorrect Password! 잘못된 비밀번호입니다!");
-        return;
+        if (!commentDoc.exists) { 
+            alert("Comment doesn't exist. 존재하지 않는 댓글입니다.");
+            return;
+        }
+
+        if (!isValidPassword(passwordHash, commentDoc.data().passwordHash)) {
+            alert("Incorrect Password! 잘못된 비밀번호입니다!");
+            return;
         }
     
         if (confirm("Are you sure you want to delete this comment?\n정말로 댓글을 삭제하시겠습니까?")) {
-        await commentRef.delete();
-        alert("Comment deleted! 댓글이 삭제되었습니다!");
-        loadComments();
+            await commentRef.delete();
+            alert("Comment deleted! 댓글이 삭제되었습니다!");
+            loadComments();
         }
     }
 
@@ -291,7 +288,7 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
 
 
         
-    // ... rest of your Firebase code
+    // ... etc
   })
   .catch(error => {
     console.error('Error fetching Firebase config:', error);
