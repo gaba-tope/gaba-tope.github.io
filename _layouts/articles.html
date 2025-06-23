@@ -32,6 +32,15 @@ layout: page
 {%- assign _type = page.articles.type | default: layout.articles.type -%}
 
 {%- if _articles -%}
+  <!--공지사항 섹션 추가-->
+  {% if site.notice.enabled %}
+  <div class="notice-section">
+    <a href="{{ site.notice.url }}" class="notice-title">
+      [공지] {{ site.notice.title }}
+    </a>
+  </div>
+  {% endif %}
+  <!---->
 
   <div class="layout--articles">
 
@@ -100,6 +109,23 @@ layout: page
     content: "";
     clear: both;
     display: table;
+  }
+
+  /*공지사항 스타일*/
+  .notice-section {
+    background-color: #f8f9fa;
+    border-left: 4px solid #59acff;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+  }
+  .notice-section .notice-title {
+    color: #0366D6;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .notice-section a:hover {
+    text-decoration: underline;
   }
   </style>
 

@@ -180,6 +180,11 @@ analytics:
     tracking_id : "G-DVXNM74ZBJ" # Google Analytics id for the site
     anonymize_ip: false # Anonymize IP tracking for Analytics
 
+# 공지사항 설정
+notice:
+  enabled: true
+  title: "홈페이지 포스트 알림받는 법!"
+  url: "/work/2025/06/23/rss-feeder.html"
 
 ## => Build
 ##############################
