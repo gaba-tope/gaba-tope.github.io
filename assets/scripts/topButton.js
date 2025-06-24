@@ -1,25 +1,6 @@
-// // 클릭 이벤트 핸들러
-// $("#topBtn").click(function(e){
-//     e.stopPropagation();
-//     $("html, body").animate({ scrollTop : 0 }, 'slow', 'easeOutCubic');
-// });
-
-// // 스크롤 이벤트 핸들러
-// $(window).scroll(function() {
-//     if($(window).scrollTop()==0)
-//     {
-//         $("#topBtn").css("opacity",0); // 맨위로 버튼 숨기기
-//     }
-//     else{
-//         $("#topBtn").css("opacity",1);
-//     }
-// });
-
-var topButton = document.getElementById("toTop");
+var topButton = document.getElementById("toTop"); 
 
 // 사용자가 스크롤할 때 실행되는 함수
-window.onscroll = function() {scrollFunction()};
-
 function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         topButton.style.opacity = "1"; // 스크롤 위치가 20px 이상일 때 버튼 표시
@@ -28,21 +9,43 @@ function scrollFunction() {
     }
 }
 
-// 버튼 클릭 시 페이지 맨 위로 스무스하게 이동하는 함수
-topButton.onclick = function() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+window.onscroll = function() {scrollFunction()};
+
+// 구형 브라우저용 스무스 스크롤 함수
+function smoothScrollTo(targetY, duration) {
+    var startY = window.pageYOffset;
+    var distance = targetY - startY;
+    var startTime = performance.now();
+    
+    function step(currentTime) {
+        var elapsed = currentTime - startTime;
+        var progress = Math.min(elapsed / duration, 1);
+        
+        // easeInOutCubic 이징 함수
+        var easeProgress = progress < 0.5 
+            ? 4 * progress * progress * progress 
+            : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+        
+        window.scrollTo(0, startY + distance * easeProgress);
+        
+        if (progress < 1) {
+            requestAnimationFrame(step);
+        }
+    }
+    
+    requestAnimationFrame(step);
 }
 
-// 스크롤 이벤트 핸들러
-$(window).scroll(function() {
-    if($(window).scrollTop()==0)
-    {
-        $("#toTop").css("opacity",0); // 맨위로 버튼 숨기기
+// 버튼 클릭 시 페이지 맨 위로 스무스하게 이동하는 함수
+topButton.onclick = function() {
+    if ('scrollBehavior' in document.documentElement.style) {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    } else {
+        // 구형 브라우저를 위한 애니메이션
+        smoothScrollTo(0, 500);
     }
-    else{
-        $("#toTop").css("opacity",1);
-    }
-});
+}
+
