@@ -24,7 +24,7 @@ title   : Tope's Cytoplasm
 subtitle : 
 description: > # this means to ignore newlines until "Language & timezone"
   Tope's Personal Blog
-dark_theme_toggle        : true
+dark_theme_toggle        : false
 
 ## => Language and Timezone
 ##############################

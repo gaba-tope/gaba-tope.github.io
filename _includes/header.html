@@ -1,22 +1,3 @@
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-  @font-face {
-    font-family: 'Gyeonggi_Title_Medium';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-3@1.0/Title_Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-}
-
-  .header__brand a {      /* Previously: font-family: "Lato, sans; font-size: 1.5em; font-weight: bold; */
-  font-family: "Gyeonggi_Title_Medium", "Lato", sans;
-  font-size: 1.5em;
-  font-weight: bold;
-  text-decoration: none;
-}
-</style>
-
-
-
 {%- if include.theme == 'dark' -%}
   <header class="header header--dark" {%- if include.background -%} style="background: {{ include.background }};" {%- endif -%}>
 {%- elsif include.theme == 'light' -%}
@@ -58,7 +39,7 @@
             <li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li>
             
             <!-- 다크 모드 토글 버튼 -->
-            {% if site.dark_theme_toggle == true %}
+            <!-- {% if site.dark_theme_toggle == true %}
               <input id="toggle_dark_theme" class="mh_toogle" type="checkbox">
               <label for="toggle_dark_theme" class="material-icons-sharp mh_toggle_btn"></label>
               {% endif %}
@@ -66,7 +47,7 @@
                   <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "" }}</span>
                   <div class="navicon"></div>
               </button>
-            {%- endif -%}
+            {%- endif -%} -->
             
         </ul>
       </nav>
