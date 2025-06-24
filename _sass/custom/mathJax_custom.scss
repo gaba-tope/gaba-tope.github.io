@@ -1,0 +1,32 @@
+// MathJax Custom Styling
+
+/* MathJax 모바일 최적화 */
+.MathJax_Display {
+	overflow-x: auto !important;
+	overflow-y: hidden !important;
+	max-width: 100% !important;
+	padding: 0 !important;
+}
+
+.MathJax {
+	font-size: 0.9em !important;
+}
+
+@media (max-width: 768px) {
+	.MathJax_Display {
+		font-size: 0.8em !important;
+	}
+	
+	.MathJax {
+		font-size: 0.7em !important;
+	}
+}
+
+/* 페이지 전체 오버플로우 방지 */
+body {
+	overflow-x: hidden;
+}
+
+.post-content, .content, article {
+	overflow-x: auto;
+}

@@ -6,12 +6,35 @@
 {%- assign _mathjax_autoNumber = __return -%}
 
 <script type="text/x-mathjax-config">
-	var _config = { tex2jax: {
-		inlineMath: [['$','$'], ['\\(','\\)']]
-	}};
+	var _config = { 
+		tex2jax: {
+			inlineMath: [['$','$'], ['\\(','\\)']]
+		},
+		CommonHTML:{
+			scale: 90,
+			linebreaks: { automatic: true, width: "container" }
+		},
+		"HTML-CSS": {
+			scale: 90,
+			linebreaks: { automatic: true, width: "container" },
+			styles: {
+				".MathJax_Display": {
+					"overflow-x": "auto",
+					"overflow-y": "hidden",
+					"max-width": "100%"
+				}
+			}
+		},
+		SVG:{
+			scale: 90,
+			linebreaks: { automatic: true, width: "container" }
+		}
+	};
+
 	{%- if _mathjax_autoNumber == true -%}
 		_config.TeX = { equationNumbers: { autoNumber: "all" } };
 	{%- endif -%}
+
 	MathJax.Hub.Config(_config);
 </script>
 <script type="text/javascript" src="{{ _sources.mathjax }}" async></script>
