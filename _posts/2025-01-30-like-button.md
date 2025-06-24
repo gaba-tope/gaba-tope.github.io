@@ -4,6 +4,7 @@ tags: [jekyll]
 categories: work
 cover: /files/cover/2025-01-30-like-button.jpg
 id: 2025-01-30-like-button
+modify_date: 2025-06-24
 ---
 <script src="/assets/scripts/lightbox-plus-jquery.js"></script>
 
@@ -149,7 +150,8 @@ First, the very HTML for the like button is created and saved as `_includes/like
 
 #### 3-2. Create **SCSS for the Like Button**.
 
-I created and saved SCSS for the like button, as `_sass/custom/likeButton.scss`
+I created and saved SCSS for the like button, as `_sass/custom/likeButton.scss`. The `likeButton.scss` is then imported into `_sass/custom/customOverride.scss` by `@import "./likeButton.scss";`. My blog setting is that the `customOverride.scss` file is again imported by `main.scss` file via `@import "custom/customOverride.scss";` such that the custom SCSS files are imported together into the main SCSS file.
+
 The SCSS I used is from [Matt Henley's "Like" button (codepen)](https://codepen.io/mattbhenley/pen/gQbWgd){:target='_blank'}
 
 <details>
@@ -166,11 +168,40 @@ The SCSS I used is from [Matt Henley's "Like" button (codepen)](https://codepen.
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 16H7v-2h10v2zm-4.59-4.03l-1.4-1.4L10 14.17l-1.59-1.59L7 14l3 3 7-7-1.41-1.41z' fill='#4A92E2'/></svg>") 12 12, pointer;
   transition: background-position 1s steps(28);
   transition-duration: 0s;
-  
+  position: relative;
+
   &.is-active {
     transition-duration: 1s;
     background-position: -2800px 0;
   }
+}
+
+// Not liked yet
+.btn-love:not(.is-active)::before {
+  content: "Please click me! 눌러주세요!^^";
+  position: absolute;
+  top: -35px; /* Adjust position as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #F1F8FF; /* 연한 파란색 배경 */
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  font-size: 14px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.btn-love:not(.is-active):hover::before {
+  opacity: 1;
+}
+
+.btn-love:not(.is-active):hover {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23fb4a96'/></svg>") 12 12, pointer;
 }
 
 body {
@@ -187,23 +218,24 @@ body {
 // Change cursor shape and show tooltip if you Liked already.
 .btn-love.is-active { /* Style for the liked state */
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 16H7v-2h10v2zm-4.59-4.03l-1.4-1.4L10 14.17l-1.59-1.59L7 14l3 3 7-7-1.41-1.41z' fill='#4A92E2'/></svg>") 12 12, no-drop; /* Custom cursor */
-  position: relative; /* For tooltip positioning */
 }
 
 .btn-love.is-active::before { /* Tooltip styles */
-  content: "Thank you for your Like!! :)";
+  content: "Thank you for your Like!! :) 눌러주셔서 고맙습니다!! :)";
   position: absolute;
   top: -30px; /* Adjust position as needed */
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(83, 165, 255, 0.8);
   color: white;
+  font-size: 14px;
   padding: 5px 10px;
   border-radius: 5px;
   white-space: nowrap; /* Prevent tooltip from wrapping */
   opacity: 0; /* Initially hidden */
   transition: opacity 0.3s ease; /* Smooth transition */
   pointer-events: none; /* Prevent tooltip from blocking clicks */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .btn-love.is-active:hover::before { /* Show tooltip on hover */
@@ -275,64 +307,59 @@ Next, create `assets/scripts/fireBase.js` as follows. The button click javascrip
 
 {% highlight javascript %}
 // Initialize Firebase (add your config)
-console.log("fireBase.js loaded"); // for debug
+//console.log("fireBase.js loaded"); // for debug
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js"; 
 
 fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfig') 
   .then(response => response.json()) 
   .then(config => {
-    console.log("Firebase config fetched:"); //for debugging
     firebase.initializeApp(config);
     const db = firebase.firestore();
-    console.log("Firebase initialized, Firestore instance:", db); // for debugging
+    // console.log("Firebase initialized, Firestore instance:", db); // for debugging
     
     // Get the post ID (replace with your Jekyll logic)
     const postData = document.getElementById('post-data');
 
-    if (!postData) { // For debugging
+    if (!postData) { 
       console.error("postData element not found!");
       return; // Stop execution if the element doesn't exist
     }
 
     const postId = postData.dataset.postId; // Get from data attribute
-    //const postId = '{{ page.id }}'; // Example using a Jekyll front matter variable
-    console.log("Post ID:", postId); // For debug.
         
-    // Get the like count element
     const likeCountElement = document.getElementById('like-count');
-    // Get the like button element
     const likeButton = document.getElementById('like-button');
+
     // For Debug: check if the two elements are found.
-    if (!likeCountElement) {
-      console.error("likeCountElement not found!");
-    } else {
-      console.log("likeCountElement found.")
-    }
-    if (!likeButton) {
-      console.error("likeButton not found!");
-    } else {
-      console.log("likeButton found.")
-    }
+    // if (!likeCountElement) {
+    //   console.error("likeCountElement not found!");
+    // } else {
+    //   console.log("likeCountElement found.")
+    // }
+    // if (!likeButton) {
+    //   console.error("likeButton not found!");
+    // } else {
+    //   // console.log("likeButton found.")
+    // }
   
     const postRef = db.collection('posts').doc(postId);
 
     // Get initial like count (important!)
     postRef.get().then((doc) => {
       if (doc.exists) {
-      likeCountElement.textContent = doc.data().likeCount;
+        likeCountElement.textContent = doc.data().likeCount;
       } else {
-      likeCountElement.textContent = 0; // Set to 0 if no likes yet
+        likeCountElement.textContent = 0; // Set to 0 if no likes yet
       }
-      console.log("Initial likeCount retrieved from doc.data"); // For debug
     }).catch((error) => {
         console.error("Error getting initial like count: ", error);
     });
+
     // Function to update the like count in the database
     function updateLikeCount(postId) {
       const db = firebase.firestore();
       const postRef = db.collection('posts').doc(postId);
-      console.log("postRef defined.");
 
       // Transaction to prevent race conditions (important!)
       db.runTransaction(async (transaction) => {
@@ -357,9 +384,9 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
       })
       .catch((error) => {
         console.error("Error updating like count: ", error);
-        // Handle errors (e.g., display a message to the user)
       });
     }
+
     // Function to check if the user has already liked the post
     function checkIfLiked(postId) {
       const hasLiked = localStorage.getItem(`liked-${postId}`);
@@ -367,26 +394,20 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
     }
 
     if (checkIfLiked(postId)) {
-      console.log("checkIfLiked is TRUE");
       likeButton.classList.add('is-active'); // Add 'is-active'class if already liked, s.t. button filled with red.
       likeButton.disabled = true; // Disable if already liked
-      console.log("is-active class added to likeButton.");
     }
 
     // Add the like button click listener
     likeButton.addEventListener('click', () => {
-      console.log("Button clicked"); // For Debug
-
       if (!likeButton.classList.contains('is-active')) {
         likeButton.classList.add('is-active'); // Add 'is-active' class immediately
         updateLikeCount(postId);
-        console.log("Post ID being Used", postId); // For Debug: verify postID is correct.
       } 
     // If you want to implement the unlike function, you must uncomment it and handle the unlike logic in your Firebase database
     // else {
     // likeButton.classList.remove('is-active'); // Remove 'is-active' class
-    // }
-          
+    // }       
     });
         
     // ... rest of your Firebase code

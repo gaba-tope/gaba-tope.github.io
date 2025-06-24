@@ -46,41 +46,52 @@ The HTML for the comment box is created and saved as `_includes/commenting.html`
 
 {% highlight html %}
     {% raw %}
-    <div id="post-data" data-post-id="{{ page.id }}"></div>
+<div id="post-data" data-post-id="{{ page.id }}"></div>
 
-    <link rel="stylesheet" href="/assets/css/commenting.css">
+<link rel="stylesheet" href="/assets/css/commenting.css">
 
-    <h3>Leave a comment</h3>
-
-    <form id="comment">
-        <div class="input-row">
-            <input type="text" id="name" placeholder="Name">
-            <input type="password" id="password" placeholder="Password">
-            <label class="switch">
-                <input type="checkbox" id="toggle-password">
-                <span class="slider round"></span>
-            </label>
-            <!-- <label><input type="checkbox" id="toggle-password">Show</label> -->
-        </div>
-        <label for="secret-comment">
-            <input type="checkbox" id="secret-comment"> Secret Comment
+<form id="comment">
+    <div class="input-row">
+        <input type="text" id="name" placeholder="Name (필명)">
+        <input type="password" id="password" placeholder="Password (비밀번호)">
+        <label class="switch">
+            <input type="checkbox" id="toggle-password">
+            <span class="slider round"></span>
         </label>
-
-        <textarea id="message" placeholder="Message"></textarea>
-
-    <input type="submit" value="Post Comment">
-    </form>
-
-    <div id="comments-container">
+        <!-- <label><input type="checkbox" id="toggle-password">Show</label> -->
     </div>
+    <textarea id="message" placeholder="Please enter your message. 독자 여러분의 댓글은 큰 힘이 됩니다!&#10;댓글달기 귀찮다면 하트라도 눌러주세요 ^0^ "></textarea>
+    <!-- <label for="secret-comment"> (체크박스를 이용한 비밀글 기능; 자물쇠 버튼으로 대체.)
+        <input type="checkbox" id="secret-comment"> Secret Comment
+    </label> -->
+    
 
-    <!-- <script src="/assets/scripts/argon2-browser/dist/argon2.js"></script> -->
-    <script src="https://unpkg.com/dompurify@1.0.8/dist/purify.js"></script> <!--For Sanitizing HTML-->
-    <script src="https://unpkg.com/blueimp-md5@2.3.0/js/md5.min.js"></script> <!--For MD5 Hash Function for password-->
-    <!-- <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script> --> <!--For markdown to HTML rendering-->
-    <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore-compat.js"></script>
-    <script type="module" src="/assets/scripts/commenting.js"></script>  <!--/scripts/customJS/fireBase.js-->
+    <div class="secret-row">
+        <div style="display: flex; align-items: center; gap: 10px;">
+        <button type="button" class="lock-button" id="secret-toggle">
+            <svg class="lock-icon" id="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <circle cx="12" cy="16" r="1"></circle>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+        </button>
+        <span class="secret-message" id="secret-message" style="display: none;">
+            Secret message (비밀댓글). 작성자와 관리자만 볼 수 있어요.
+        </span>
+        </div>
+        <input type="submit" value="Post Comment">
+    </div>
+</form>
+
+<div id="comments-container">
+</div>
+
+<script src="https://unpkg.com/dompurify@1.0.8/dist/purify.js"></script> <!--For Sanitizing HTML-->
+<script src="https://unpkg.com/blueimp-md5@2.3.0/js/md5.min.js"></script> <!--For MD5 Hash Function for password-->
+<script src="https://unpkg.com/showdown/dist/showdown.min.js"></script> <!--For markdown to HTML rendering-->
+<script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore-compat.js"></script>
+<script type="module" src="/assets/scripts/commenting.js"></script>  <!--/scripts/customJS/fireBase.js-->
 {% endraw %}
 {% endhighlight %}
 </details>
@@ -103,65 +114,69 @@ CSS for the comment box was created as `/assets/css/commenting.css`.
 <summary>Click to see the full CSS.</summary>
 
 {% highlight css %}
-  /* ====== Form Styles ====== */
-  form {
-    border: 2px solid black;
-    padding: 15px;
-    width: 80%; /*500px*/
-    background: white;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-  }
+/* ====== Form Styles ====== */
+form {
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 15px;
+  width: 80%; /*500px*/
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Row: Name & Password */
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+}
+
+.input-row input {
+  width: 40%;
+  padding: 5px;
+  font-style: italic;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+/* Password Toggle Checkbox */
+.input-row label {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Message Textarea */
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 8px;
+  font-style: italic;
+  border: 1px solid black;
+  border-radius: 8px;
+  resize: none;
+}
+
+/* Submit Button */
+input[type="submit"] {
+  align-self: flex-start;
+  padding: 8px 12px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: black;
+  color: white;
+}
   
-  /* Input Row: Name & Password */
-  .input-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: left;
-  }
-  
-  .input-row input {
-    width: 40%;
-    padding: 5px;
-    font-style: italic;
-    border: 1px solid black;
-  }
-  
-  /* Password Toggle Checkbox */
-  .input-row label {
-    font-size: 14px;
-    cursor: pointer;
-  }
-  
-  /* Message Textarea */
-  textarea {
-    width: 100%;
-    height: 100px;
-    padding: 8px;
-    font-style: italic;
-    border: 1px solid black;
-    resize: none;
-  }
-  
-  /* Submit Button */
-  input[type="submit"] {
-    align-self: flex-start;
-    padding: 8px 12px;
-    border: 1px solid black;
-    background-color: white;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-  
-  input[type="submit"]:hover {
-    background-color: black;
-    color: white;
-  }
-  
-  /* Toggle Switch Styles */
+/* Toggle Switch Styles */
 .switch {
     position: relative;
     display: inline-block;
@@ -185,7 +200,7 @@ CSS for the comment box was created as `/assets/css/commenting.css`.
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
-    border-radius: 34px;
+    border-radius: 24px;
 }
 
 .slider:before {
@@ -202,7 +217,7 @@ CSS for the comment box was created as `/assets/css/commenting.css`.
 }
 
 input:checked + .slider {
-    background-color: #2196F3; /* Or your preferred color */
+    background-color: #2196F3;
 }
 
 input:focus + .slider {
@@ -215,118 +230,193 @@ input:checked + .slider:before {
     transform: translateX(26px);
 }
 
-  /* ====== Comment Section ====== */
-  #comments-container {
-    width: 500px;
-    margin-top: 20px;
-  }
-  
-  /* Individual Comment */
-  .comment {
-    border: 1px solid black;
-    background: white;
-    padding: 10px;
-    margin-bottom: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .comment-meta {
-    font-size: 14px;
-    color: #666;
-  }
-  
-  .comment-message {
-    margin-top: 5px;
-    margin-bottom: 2px;
+/* Secret Comment Row */
+.secret-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.lock-button {
+    background: none;
+    border: none;
+    cursor: pointer;
     padding: 5px;
-    border-radius: 5px;
-    background: #f4f4f4;
-  }
-  
-  /* Markdown Styling */
+    transition: transform 0.2s;
+}
+
+.lock-button:hover {
+    transform: scale(1.1);
+}
+
+.lock-icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s;
+}
+
+.secret-message {
+    font-size: 12px;
+    color: #666;
+    font-style: italic;
+    margin-left: 5px;
+}
+
+/* ====== Comment Section ====== */
+#comments-container {
+  width: 80%;
+  margin-top: 20px;
+}
+
+/* Individual Comment */
+.comment {
+  border: 1px solid black;
+  border-radius: 12px;
+  background: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  width: fit-content;
+  min-width: 200px; /*버튼 들어갈 공간 Space for Button*/
+  max-width: 80%; 
+}
+
+.comment-meta {
+  font-size: 14px;
+  color: #666;
+}
+
+.comment-message {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  background: #f4f4f4;
+  word-wrap: break-word; /* 긴 단어 줄바꿈 */
+  overflow-wrap: break-word;
+}
+
+/* Markdown Styling */
 .comment-message h1,
 .comment-message h2,
 .comment-message h3 {
-  margin-top: 10px;
-  font-weight: bold;
+margin-top: 10px;
+font-weight: bold;
 }
 
 .comment-message code {
-  background: #f4f4f4;
-  padding: 2px 5px;
-  border-radius: 3px;
-  font-family: monospace;
+background: #f4f4f4;
+padding: 2px 5px;
+border-radius: 3px;
+font-family: monospace;
 }
 
 .comment-message pre {
-    background: #eee;
-    padding: 10px;
-    border-radius: 5px;
-    overflow-x: auto;
-  }
-  
-  .comment-message blockquote {
-    border-left: 4px solid #3487FF;
-    padding-left: 10px;
-    color: #555;
-    font-style: italic;
+  background: #eee;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+.comment-message blockquote {
+  border-left: 4px solid #3487FF;
+  padding-left: 10px;
+  color: #555;
+  font-style: italic;
+}
+
+/* Edit & Delete Buttons */
+.comment button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+  margin-right: 5px;
+  white-space: nowrap;
+}
+
+.comment .reveal-comment {
+  background-color: #AA71F5;
+  color: white;
+}
+
+.comment .reveal-comment:hover {
+  background-color: #7C53B3;
+}
+
+.comment .edit-comment {
+  background-color: #ffcc00;
+}
+
+.comment .edit-comment:hover {
+  background-color: #e6b800;
+}
+
+.comment .delete-comment {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.comment .delete-comment:hover {
+  background-color: #cc0000;
+}
+
+/* ====== Responsive Design ====== */
+@media (max-width: 550px) {
+  form, #comments-container {
+    width: 100%;
   }
 
-  /* Edit & Delete Buttons */
-  .comment button {
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    transition: 0.3s;
-    margin-right: 5px;
-  }
-  
-  .comment .reveal-comment {
-    background-color: #AA71F5;
-    color: white;
-  }
-  
-  .comment .reveal-comment:hover {
-    background-color: #7C53B3;
+  .input-row {
+    flex-direction: column;
+    gap: 5px;
   }
 
-  .comment .edit-comment {
-    background-color: #ffcc00;
+  .input-row input {
+    width: 100%;
   }
-  
-  .comment .edit-comment:hover {
-    background-color: #e6b800;
+
+  input[type="submit"] {
+    width: 100%;
   }
+}
   
-  .comment .delete-comment {
-    background-color: #ff4d4d;
-    color: white;
-  }
-  
-  .comment .delete-comment:hover {
-    background-color: #cc0000;
-  }
-  
-  /* ====== Responsive Design ====== */
-  @media (max-width: 550px) {
-    form, #comments-container {
-      width: 100%;
+/*===Admin Comment Styling===*/
+.comment.admin-comment {
+  background: #F1F8FF !important;
+  margin-left: auto; /* 오른쪽 정렬 */
+  margin-right: 0; 
+  border: 2px solid #4169E1; 
+  box-shadow: 3px 3px 10px rgba(65, 105, 225, 0.2); 
+  width: fit-content;
+  min-width: 200px;
+  max-width: 80%;
+}
+
+
+/* Meta info style of Admin Comment (관리자 댓글의 메타 정보 스타일) */
+.comment.admin-comment .comment-meta {
+  color: #4169E1; /* 파란색 텍스트 */
+  font-weight: bold;
+}
+
+/* Messeage box of Admin Comment (관리자 댓글의 메시지 박스) */
+.comment.admin-comment .comment-message {
+  background: #BCD7FF; 
+  border: 1px solid #B0C4DE; /* 연한 파란 테두리 */
+}
+
+
+/* Responsive Design (반응형 디자인에서도 관리자 댓글 오른쪽 정렬 유지) */
+@media (max-width: 550px) {
+    .comment.admin-comment {
+        max-width: 95%;
+        margin-left: 5%;
     }
-  
-    .input-row {
-      flex-direction: column;
-      gap: 5px;
-    }
-  
-    .input-row input {
-      width: 100%;
-    }
-  
-    input[type="submit"] {
-      width: 100%;
-    }
-  }
+}
 {% endhighlight %}
 </details>
 
@@ -345,27 +435,23 @@ Create `/assets/scripts/commenting.js`.
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
 
+// Admin Password Hash
+const ADMIN_PASSWORD_HASH = "MD5 hashed admin password" //put md5 hash of admin password here
+
 fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfig') 
   .then(response => response.json()) 
   .then(config => {
-    // console.log("Firebase config fetched:"); // for debugging
     firebase.initializeApp(config);
     const db = firebase.firestore(firebase.app(), "commenting");
-    // console.log("Firebase initialized, Firestore instance:", db); // for debugging
+        // console.log("Firebase initialized, Firestore instance:", db); // for debugging
     
-
     // Get post ID
     const postId = document.getElementById("post-data").dataset.postId;
-    // console.log("Post ID:", postId); // For debugging
 
     // Get comments container from HTML
     const commentsContainer = document.getElementById("comments-container");
 
-    // Password Toggle
-    /* document.getElementById("toggle-password").addEventListener("change", function () {
-    const passwordField = document.getElementById("password");
-    passwordField.type = this.checked ? "text" : "password";
-    }); */
+    // Password Visibility Toggle
     const passwordField = document.getElementById("password");
     const togglePassword = document.getElementById("toggle-password");
 
@@ -373,7 +459,36 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
         passwordField.type = togglePassword.checked ? "text" : "password";
     });
 
+    // Secret Comment Toggle Feature
+    let isSecret = false;
+    const secretToggle = document.getElementById("secret-toggle");
+    const lockIcon = document.getElementById("lock-icon");
+    const secretMessage = document.getElementById("secret-message");
 
+        //const isSecret = document.getElementById("secret-comment").checked; // old: secret comment state using checkbox
+
+    secretToggle.addEventListener("click", async (e) => {
+        isSecret = !isSecret;
+        if (isSecret) {
+            // Change to locked (red) icon
+            lockIcon.innerHTML = `
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" fill="#ff4444"></rect>
+                <circle cx="12" cy="16" r="1" fill="white"></circle>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="#ff4444"></path>
+            `;
+            lockIcon.style.color = '#ff4444';
+            secretMessage.style.display = 'inline';
+        } else {
+            // Change to unlocked (default) icon
+            lockIcon.innerHTML = `
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <circle cx="12" cy="16" r="1"></circle>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            `;
+            lockIcon.style.color = 'currentColor';
+            secretMessage.style.display = 'none';
+        }
+    });
 
     // Submit comment
     document.getElementById("comment").addEventListener("submit", async (e) => {
@@ -385,12 +500,11 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
         const password = document.getElementById("password").value.trim();
         
         if (!name || !message || !password) {
-        alert("All fields are required!");
+        alert("All fields are required! 이름, 비밀번호, 댓글이 모두 있어야 합니다.");
         return;
         }
     
         const passwordHash = md5(password);
-        const isSecret = document.getElementById("secret-comment").checked; // secret comment state
 
         try{
             // Sanitize the message before saving to Firestore
@@ -404,7 +518,7 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
                 timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                 isSecret
             });
-            alert("Comment posted!");
+            alert("Comment posted! 댓글이 등록되었습니다!");
         } catch (error) {
             console.error("Error adding comment:", error);
             alert("An error occurred while posting your comment. Please try again later.");
@@ -414,49 +528,144 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
         loadComments();     
     });
 
-    // Load comments
+    // Function: Valid Password Checker
+    function isValidPassword(inputPasswordHash, commentPasswordHash) {
+        return inputPasswordHash === commentPasswordHash || inputPasswordHash === ADMIN_PASSWORD_HASH;
+    }
+
+    // Function: Admin Comment Checker
+    function isAdminComment(passwordHash) {
+        return passwordHash === ADMIN_PASSWORD_HASH;
+    }
+
+    // Function: Load comments
     async function loadComments() {
         commentsContainer.innerHTML = "";
     
         const querySnapshot = await db.collection("comments")
         .where("postId", "==", postId)
-        .orderBy("timestamp", "desc")
         .get();
-    
+        
+        // Align Posts on the Client Side
+        const comments = [];
         querySnapshot.forEach((doc) => {
-            const { name, message, timestamp, isSecret } = doc.data();
+            comments.push({ id: doc.id, ...doc.data()});
+        });
+
+        // Align by Ascending Order
+        comments.sort((a, b) => {
+        if (!a.timestamp) return 1;
+        if (!b.timestamp) return -1;
+        return a.timestamp.toMillis() - b.timestamp.toMillis();
+        });
+
+        // Exhibits aligned comments (정렬된 댓글들을 화면에 표시)
+        comments.forEach((comment) => {
+            const { name, message, timestamp, isSecret, passwordHash } = comment;
             const date = timestamp ? timestamp.toDate().toLocaleString() : "Just now";
-    
-            /* let commentHTML = `
-                <div class="comment" data-id="${doc.id}">
-                <p class="comment-meta"><strong>${name}</strong> - <small>${date}</small></p>
-                <div class="comment-message">${message}</div>
-                <button class="edit-comment">Edit</button>
-                <button class="delete-comment">Delete</button>
-            </div>
-            `; */
+            
+            // isAdmin determined. Displayed name with icons defined as displayName.
+            const isAdmin = isAdminComment(passwordHash);
+            const adminIconSymbol = isAdmin ? "👑 " : "";
+            const displayName = `${adminIconSymbol}${name}`;
+
+            // Add admin-comment class if isAdmin (관리자 댓글인 경우 admin-comment 클래스 추가)
+            const adminClass = isAdmin ? ' admin-comment' : '';
+
+            // Show comment meta-info and contents
             let commentHTML = `
-                <div class="comment" data-id="${doc.id}">
-                    <p class="comment-meta"><strong>${name}</strong> - <small>${date}</small></p>
+                <div class="comment${adminClass}" data-id="${comment.id}">
+                    <p class="comment-meta"><strong>${displayName}</strong> - <small>${date}</small></p>
             `;
 
             if (isSecret) {
                 commentHTML += `
-                    <div class="comment-message">(This comment is secret. Enter password to view.)</div>
-                    <button class="reveal-comment">Reveal</button> 
+                    <div class="comment-message">(🔒 This is a secret comment. 비밀글입니다.)</div>
+                    <button class="reveal-comment">Reveal (보기)</button> 
                 </div>
                 `;
             } else {
                 commentHTML += `
                     <div class="comment-message">${message}</div>
-                    <button class="edit-comment">Edit</button>
-                    <button class="delete-comment">Delete</button>
+                    <button class="edit-comment">Edit (수정)</button>
+                    <button class="delete-comment">Delete (삭제)</button>
                 </div>
                 `;
             }
 
-        commentsContainer.innerHTML += commentHTML;
+            commentsContainer.innerHTML += commentHTML;
     });
+    }
+        
+    // Function: Edit Comment
+    async function handleEdit(e) {
+        const commentDiv = e.target.closest(".comment");
+        const commentId = commentDiv.dataset.id;
+        const newMessage = prompt("Enter new message. 새로운 글을 입력하세요.");
+    
+        if (!newMessage) return;
+
+        const commentRef = db.collection("comments").doc(commentId);
+        const commentDoc = await commentRef.get();
+    
+        if (!commentDoc.exists) { 
+            alert("Comment doesn't exist. 존재하지 않는 댓글입니다.");
+            return;
+        }
+
+        // Check if the comment is secret
+        if (commentDoc.data().isSecret) {
+            const cleanNewMessage = DOMPurify.sanitize(newMessage);
+            await commentRef.update({ message: cleanNewMessage });
+            loadComments();
+            return;
+        } else {
+
+        const password = prompt("Enter your password. 비밀번호를 입력하세요.");
+        if (!password) return;
+
+        const passwordHash = md5(password);
+
+        if (!isValidPassword(passwordHash, commentDoc.data().passwordHash)) {  
+            alert("Incorrect Password. 비밀번호가 잘못되었습니다.");
+            return;
+            }
+        
+        const cleanNewMessage = DOMPurify.sanitize(newMessage);
+        await commentRef.update({ message: cleanNewMessage });
+        alert("Comment changed! 댓글이 수정되었습니다!");
+        loadComments(); 
+        }
+    }
+    
+    // Function: Delete Comment
+    async function handleDelete(e) {
+        const commentDiv = e.target.closest(".comment");
+        const commentId = commentDiv.dataset.id;
+    
+        const password = prompt("Enter your password to delete.\n댓글을 삭제하려면 비밀번호를 입력하세요");
+        if (!password) return;
+    
+        const passwordHash = md5(password);  
+    
+        const commentRef = db.collection("comments").doc(commentId);
+        const commentDoc = await commentRef.get();
+    
+        if (!commentDoc.exists) { 
+            alert("Comment doesn't exist. 존재하지 않는 댓글입니다.");
+            return;
+        }
+
+        if (!isValidPassword(passwordHash, commentDoc.data().passwordHash)) {
+            alert("Incorrect Password! 잘못된 비밀번호입니다!");
+            return;
+        }
+    
+        if (confirm("Are you sure you want to delete this comment?\n정말로 댓글을 삭제하시겠습니까?")) {
+            await commentRef.delete();
+            alert("Comment deleted! 댓글이 삭제되었습니다!");
+            loadComments();
+        }
     }
 
     // Event Delegation for Reveal, Edit, and Delete
@@ -468,32 +677,32 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
 
             //console.log("reveal-button is clicked"); // For Debugging
 
-            const password = prompt("Enter password for this secret comment:");
+            const password = prompt("Enter your password. 비밀번호를 입력하세요.");
             if (!password) return;
 
             const passwordHash = md5(password);
             const commentRef = db.collection("comments").doc(commentId);
             const commentDoc = await commentRef.get();
 
-            if (!commentDoc.exists || commentDoc.data().passwordHash !== passwordHash) {
-                alert("Incorrect Password!");
+            if (!commentDoc.exists || !isValidPassword(passwordHash, commentDoc.data().passwordHash)) {
+                alert("Incorrect Password! 잘못된 비밀번호입니다!");
                 return;
             }
 
-            
-             const messageDiv = commentDiv.querySelector(".comment-message");
+            const messageDiv = commentDiv.querySelector(".comment-message");
+
             if (messageDiv) {
                 messageDiv.textContent = commentDoc.data().message; // Access message from the document data
                 revealButton.remove();
 
                 const editButton = document.createElement('button');
                 editButton.className = 'edit-comment';
-                editButton.textContent = 'Edit';
+                editButton.textContent = 'Edit (수정)';
                 /* editButton.addEventListener('click', handleEdit); */
 
                 const deleteButton = document.createElement('button');
                 deleteButton.className = 'delete-comment';
-                deleteButton.textContent = 'Delete';
+                deleteButton.textContent = 'Delete (삭제)';
                 /* deleteButton.addEventListener('click', handleDelete); */
                 
                 commentDiv.appendChild(editButton);
@@ -505,69 +714,6 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
             handleDelete(e); // Call handleDelete
         } 
     });
-        
-    // Edit Comment
-    async function handleEdit(e) {
-        const commentDiv = e.target.closest(".comment");
-        const commentId = commentDiv.dataset.id;
-        const newMessage = prompt("Enter new message:");
-    
-        if (!newMessage) return;
-
-        const commentRef = db.collection("comments").doc(commentId);
-        const commentDoc = await commentRef.get();
-    
-        if (!commentDoc.exists) { // || commentDoc.data().passwordHash !== passwordHash
-        alert("Comment doesn't exist.");
-        return;
-        }
-        // Check if the comment is secret
-        if (commentDoc.data().isSecret) {
-            const cleanNewMessage = DOMPurify.sanitize(newMessage);
-            await commentRef.update({ message: cleanNewMessage });
-            loadComments();
-            return;
-        } else {
-
-        const password = prompt("Enter your password:");
-        const passwordHash = md5(password);
-
-        if (!password) return;
-        if (!commentDoc.exists || commentDoc.data().passwordHash !== passwordHash) { // 
-            alert("Incorrect Password.");
-            return;
-            }
-
-        await commentRef.update({ message: newMessage });
-        alert("Comment changed!");
-        loadComments(); 
-        }
-    }
-    
-    // Delete Comment
-    async function handleDelete(e) {
-        const commentDiv = e.target.closest(".comment");
-        const commentId = commentDiv.dataset.id;
-    
-        const password = prompt("Enter your password to delete:");
-        if (!password) return;
-    
-        const passwordHash = md5(password);  
-    
-        const commentRef = db.collection("comments").doc(commentId);
-        const commentDoc = await commentRef.get();
-    
-        if (!commentDoc.exists || commentDoc.data().passwordHash !== passwordHash) {
-        alert("Incorrect Password!");
-        return;
-        }
-    
-        if (confirm("Are you sure you want to delete this comment?")) {
-        await commentRef.delete();
-        alert("Comment deleted!");
-        loadComments();
-        }
-    }
     
     // Load comments when the page loads
     //document.addEventListener("DOMContentLoaded", loadComments);
@@ -575,12 +721,11 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
 
 
         
-    // ... rest of your Firebase code
+    // ... etc
   })
   .catch(error => {
     console.error('Error fetching Firebase config:', error);
   });
-
 {% endhighlight %}
 </details>
 
@@ -631,7 +776,7 @@ Now, incorporate `commenting.html` to your site. I added the HTML to `_includes/
 
 ## Conclusion
 
-Currently I'm thinking of replacting MD5 with other hashing algorithms that is more secure, such as Bcrypt. Still working on it.
+~~Currently I'm thinking of replacting MD5 with other hashing algorithms that is more secure, such as Bcrypt. Still working on it.~~ Not sure if client-side hashing is useful when using HTTPS. Thinking of studying the topic.
 
 It was exciting making this comment feature. Hope you also make your own comment box!
 
