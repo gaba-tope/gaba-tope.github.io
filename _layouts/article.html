@@ -20,12 +20,12 @@ type: article
   <div class="d-print-none">
     <!--Top Button-->
       <div id="toTop">
-        <a href="#site-nav" id="topButton">
-          <i class="fas fa-angle-double-up fa-2x"></i><br>
-          TOP</a>
+        <a href="#site-nav" id="topButton" aria-label="페이지 상단으로 이동. Go to the top of the page.">
+          <i class="fas fa-angle-double-up fa-2x" aria-hidden="true"></i><br>
+          TOP
+        </a>
       </div>
-      <script src="/assets/scripts/topButton.js"></script>
-      <link rel="stylesheet" href="/assets/css/topButton.scss">
+      <!-- scss is imported via customOverride.scss > main.scss -->
       
     {%- include article-footer.html -%}
     {%- include article-section-navigator.html -%}
@@ -33,11 +33,16 @@ type: article
 
 </div>
 
+<!-- ===Scripts=== -->
 <script>
   {%- include scripts/article.js -%}
 </script>
+
 <script src="/assets/scripts/copyCode.js"></script>
 
 <!---Lightbox-->
 <script type="text/javascript" src="/assets/scripts/lightbox-plus-jquery.js"></script>
 <link rel="stylesheet" href="/assets/css/lightbox.css">
+
+<!-- Top Button -->
+<script src="/assets/scripts/topButton.js"></script>
