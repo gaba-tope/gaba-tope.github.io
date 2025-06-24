@@ -77,6 +77,10 @@
   & > a {
     display: inline-block;
     font-size: map-get($base, font-size-h4);
+    font-family: "Gyeonggi_Title_Medium", "Lato", sans;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
     @include media-breakpoint-down(md) {
       font-size: map-get($base, font-size-h4-small);
     }
