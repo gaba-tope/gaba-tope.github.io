@@ -8,11 +8,40 @@
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 16H7v-2h10v2zm-4.59-4.03l-1.4-1.4L10 14.17l-1.59-1.59L7 14l3 3 7-7-1.41-1.41z' fill='#4A92E2'/></svg>") 12 12, pointer;
   transition: background-position 1s steps(28);
   transition-duration: 0s;
-  
+  position: relative;
+
   &.is-active {
     transition-duration: 1s;
     background-position: -2800px 0;
   }
+}
+
+// Not liked yet
+.btn-love:not(.is-active)::before {
+  content: "Please click me! 눌러주세요!^^";
+  position: absolute;
+  top: -35px; /* Adjust position as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #F1F8FF; /* 연한 파란색 배경 */
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  font-size: 14px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.btn-love:not(.is-active):hover::before {
+  opacity: 1;
+}
+
+.btn-love:not(.is-active):hover {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23fb4a96'/></svg>") 12 12, pointer;
 }
 
 body {
@@ -29,23 +58,24 @@ body {
 // Change cursor shape and show tooltip if you Liked already.
 .btn-love.is-active { /* Style for the liked state */
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 16H7v-2h10v2zm-4.59-4.03l-1.4-1.4L10 14.17l-1.59-1.59L7 14l3 3 7-7-1.41-1.41z' fill='#4A92E2'/></svg>") 12 12, no-drop; /* Custom cursor */
-  position: relative; /* For tooltip positioning */
 }
 
 .btn-love.is-active::before { /* Tooltip styles */
-  content: "Thank you for your Like!! :)";
+  content: "Thank you for your Like!! :) 눌러주셔서 고맙습니다!! :)";
   position: absolute;
   top: -30px; /* Adjust position as needed */
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(83, 165, 255, 0.8);
   color: white;
+  font-size: 14px;
   padding: 5px 10px;
   border-radius: 5px;
   white-space: nowrap; /* Prevent tooltip from wrapping */
   opacity: 0; /* Initially hidden */
   transition: opacity 0.3s ease; /* Smooth transition */
   pointer-events: none; /* Prevent tooltip from blocking clicks */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .btn-love.is-active:hover::before { /* Show tooltip on hover */
