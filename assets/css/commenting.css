@@ -149,7 +149,7 @@ input:checked + .slider:before {
 
 /* ====== Comment Section ====== */
   #comments-container {
-    width: 500px;
+    width: 80%;
     margin-top: 20px;
   }
   
@@ -161,6 +161,9 @@ input:checked + .slider:before {
     padding: 10px;
     margin-bottom: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    min-width: 200px; /*버튼 들어갈 공간*/
+    max-width: 80%; 
   }
   
   .comment-meta {
@@ -174,6 +177,8 @@ input:checked + .slider:before {
     padding: 5px;
     border-radius: 5px;
     background: #f4f4f4;
+    word-wrap: break-word; /* 긴 단어 줄바꿈 */
+    overflow-wrap: break-word;
   }
   
   /* Markdown Styling */
@@ -214,6 +219,7 @@ input:checked + .slider:before {
     font-size: 14px;
     transition: 0.3s;
     margin-right: 5px;
+    white-space: nowrap;
   }
   
   .comment .reveal-comment {
@@ -266,10 +272,12 @@ input:checked + .slider:before {
 .comment.admin-comment {
   background: #F1F8FF !important; /* 연한 파란 배경 */
   margin-left: auto; /* 오른쪽 정렬 */
-  margin-right: 0;
-  max-width: 90%; /* 전체 너비를 차지하지 않도록 */
+  margin-right: 0; 
   border: 2px solid #4169E1; /* 파란색 테두리로 강조 */
   box-shadow: 3px 3px 10px rgba(65, 105, 225, 0.2); /* 파란색 그림자 */
+  width: fit-content;
+  min-width: 200px;
+  max-width: 80%;
 }
 
 
