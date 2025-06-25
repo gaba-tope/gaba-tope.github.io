@@ -11,17 +11,26 @@ modify_date: 2025-06-20
 하지만 사실 **알림을 받을 수 있습니다**. 네이버 블로그나 티스토리보다 훨씬 가볍고 근본있고 확장성있는 **RSS 피드**라는 것을 이용하면 됩니다.
 
 <!--more-->
-## 알림받는 방법
+## RSS 피드를 구독하여 알림받기
 
-### 앱
+새로운 게시글을 올렸을 때 이를 다른 사람들이 확인하기 쉽도록 만든 파일을 RSS 피드(RSS Feed)라 하고, RSS 피드를 구독할 수 있는 RSS 피드 리더(RSS Feed Reader) 앱을 통해 게시글을 모아보고 알림받을 수 있습니다.
 
-RSS 리더(RSS Reader) 앱을 이용하면 됩니다. 여러 모바일/웹 앱이 있는데, 저는 'Feeder.co' (https://feeder.co/)라는 RSS 리더 앱을 이용합니다. [모바일 앱](https://play.google.com/store/apps/details?id=feeder.co){:target='_blank'}, [데스크탑 웹](https://feeder.co/){:target='_blank'}, [크롬 확장프로그램](https://chromewebstore.google.com/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp?hl=en&pli=1){:target='_blank'} 모두 있어서 계정 하나만 만들면 편리하게 이용할 수 있어요. 
+### 제 블로그 한정 빠르게 구독하는 법
+
+1. [Feeder.co 모바일 앱](https://play.google.com/store/apps/details?id=feeder.co){:target='_blank'}을 다운받아 계정 생성, 로그인을 합니다.  
+2. 이어 [제 블로그 Feeder 구독 링크](https://feeder.co/discover/4c9b898d11/gaba-tope-github-io){:target='_blank'}를 누르면 끝. 
+
+제 블로그만 볼 거면 굳이 이렇게까지 해야 하나 싶은 사람은 ['왜 굳이 이걸 써야 하나' 절](#왜-굳이-이걸-써야-하나-아주-널리-사용되기-때문)을 읽어주세요. 
+
+### 일반적인 RSS 피드 리더 이용법
+
+일반적으로 RSS 피드 리더(RSS Reader) 앱을 이용하여 구독하게 됩니다. 여러 모바일/웹 앱이 있는데, 저는 'Feeder.co' (https://feeder.co/)라는 RSS 리더 앱을 이용합니다. [모바일 앱](https://play.google.com/store/apps/details?id=feeder.co){:target='_blank'}, [데스크탑 웹](https://feeder.co/){:target='_blank'}, [크롬 확장프로그램](https://chromewebstore.google.com/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp?hl=en&pli=1){:target='_blank'} 모두 있어서 계정 하나만 만들면 편리하게 이용할 수 있어요. 
 
 Feeder 이외에도 Feedly 등 RSS 피드 리더가 다양하니 마음에 드시는 것으로 사용하시면 됩니다.
 
-사용방식은 매우 간단합니다. **RSS 주소를 RSS 리더에 등록하기만 하면 끝!!**
+#### 일반적인 예시: RSS 주소를 RSS 리더에 등록하는 방법
 
-### 예시
+위의 링크를 누르면 바로 구독할 수 있지만, 보통 다른 블로그나 자료를 구독하기 위해서는 **RSS 주소를 RSS 리더에 등록해야 하는데,** 매우 간단합니다.
 
 Feeder 웹과 저의 홈페이지를 예로 들어보겠습니다.
 
@@ -107,7 +116,7 @@ Feeder 홈페이지 혹은 모바일 앱에서 계정을 생성합니다.
     </div>
 </div>
 
-### 그룹별로 받아보기
+#### 그룹별로 받아보기
 
 저는 다음과 같이 카테고리를 나누어 놓고 여러 홈페이지/블로그 등의 글들을 하나의 창에서 받아봅니다.
 
@@ -160,7 +169,6 @@ Feeder 홈페이지 혹은 모바일 앱에서 계정을 생성합니다.
         </figure>
     </div>
 </div>
-
 
 <details>
 <summary>서비스별 RSS 피드 주소 확인법 (클릭하여 더보기)</summary>
