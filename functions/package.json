@@ -13,8 +13,12 @@
   },
   "main": "index.js",
   "dependencies": {
-    "firebase-admin": "^12.6.0",
-    "firebase-functions": "^6.0.1"
+    "@google-cloud/storage": "^7.16.0",
+    "cors": "^2.8.5",
+    "feed": "^5.1.0",
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^6.3.2",
+    "rss": "^1.2.2"
   },
   "devDependencies": {
     "firebase-functions-test": "^3.1.0"
