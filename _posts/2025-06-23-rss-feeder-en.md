@@ -1,13 +1,14 @@
 ---
-title: "RSS Reader를 이용하여 블로그 포스트 알림받는 법!"
+title: "How to get notified when article is posted using RSS"
 tags: [jekyll]
 categories: work
 id: 2025-06-23-rss-feeder
-ref: "2025-06-23-rss-feeder"
+ref: 2025/06/23/rss-feeder
 cover: /files/cover/2025-06-23-rss-feeder.png
 modify_date: 2025-06-20
-lang: ko
+lang: en
 ---
+English Version
 네이버나 티스토리 등 자체 앱이 있는 블로그와 달리 제 홈페이지는 앱이 없습니다. 새로운 포스트가 올라와도 알림을 받기 어렵다는 단점이 있지요.
 
 하지만 사실 **알림을 받을 수 있습니다**. 네이버 블로그나 티스토리보다 훨씬 가볍고 근본있고 확장성있는 **RSS 피드**라는 것을 이용하면 됩니다.

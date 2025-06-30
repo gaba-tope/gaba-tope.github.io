@@ -36,7 +36,8 @@ layout: page
   {% if site.notice.enabled %}
   <div class="notice-section">
     <a href="{{ site.notice.url }}" class="notice-title">
-      [공지] {{ site.notice.title }}
+     <p class="lang-ko">[공지] {{ site.notice.title }}</p> 
+     <p class="lang-en" style="display: none;">[Notice] {{ site.notice.title-en }}</p> 
     </a>
   </div>
   {% endif %}

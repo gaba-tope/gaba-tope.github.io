@@ -1,39 +1,16 @@
 ---
 layout: page
-titles:
-  # @start locale config
-  en      : &EN       Archive
-  en-GB   : *EN
-  en-US   : *EN
-  en-CA   : *EN
-  en-AU   : *EN
-  zh-Hans : &ZH_HANS  归档
-  zh      : *ZH_HANS
-  zh-CN   : *ZH_HANS
-  zh-SG   : *ZH_HANS
-  zh-Hant : &ZH_HANT  歸檔
-  zh-TW   : *ZH_HANT
-  zh-HK   : *ZH_HANT
-  ko      : &KO       아카이브
-  ko-KR   : *KO
-  fr      : &FR       Archives
-  fr-BE   : *FR
-  fr-CA   : *FR
-  fr-CH   : *FR
-  fr-FR   : *FR
-  fr-LU   : *FR
-  tr      : &TR       Arşivdekiler
-  # @end locale config
+title: 스터디 & 프로젝트
+title-en: Study & Project
 ---
 
 <div class="layout--archive js-all">
   {%- include tags.html -%}
   <div class="js-result layout--archive__result d-none">
-   <!-- {%- include article-list.html articles=site.posts type='brief' show_info=true reverse=true group_by='year' -%} -->
-  {% assign archive_posts = site.posts | where:"categories","work" %} 
-
-
-  {%- include article-list.html articles=archive_posts type='brief' show_info=true reverse=true group_by='year' -%}
+    {% assign work_posts = site.posts | where:"categories","work" %}
+    {% assign work_posts_en = site.posts_en | where:"categories","work" %}
+    {% assign all_work_posts = work_posts | concat: work_posts_en %}
+    {%- include article-list.html articles=all_work_posts type='brief' show_info=true reverse=true group_by='year' -%}
   </div>
 </div>
 

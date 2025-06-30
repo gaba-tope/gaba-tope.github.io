@@ -21,9 +21,10 @@ highlight_theme: tomorrow-night-eighties # "default" (default), "tomorrow", "tom
 url     : https://gaba-tope.github.io # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl :  # does not include hostname
 title   : Tope's Cytoplasm
+title-en: Tope's Cytoplasm
 subtitle : 
-description: > # this means to ignore newlines until "Language & timezone"
-  Tope's Personal Blog
+description: Tope's Personal Blog_한국어설명
+description-en: Tope's Personal Blog
 dark_theme_toggle        : false
 
 ## => Language and Timezone
@@ -74,6 +75,10 @@ paths:
 
 ## => Post
 ##############################
+collections:
+  posts_en:
+    output: true
+    permalink: /:categories/:year/:month/:day/:name.html # /_posts_en/2024/06/26/title-blah-blah.html
 ## excerpt
 excerpt_separator: <!--more-->
 
@@ -184,6 +189,7 @@ analytics:
 notice:
   enabled: true
   title: "홈페이지 포스트 알림받는 법!"
+  title-en: "How to get notified when new article is posted!"
   url: "/work/2025/06/23/rss-feeder.html"
 
 ## => Build

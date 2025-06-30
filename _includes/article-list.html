@@ -1,5 +1,4 @@
 {%- assign _excerpt_truncate = include.excerpt_truncate | default: 350 -%}
-
 {%- assign _excerpt_type = include.excerpt_type -%}
 
 {%- include snippets/get-locale-string.html key='READMORE' -%}
@@ -37,9 +36,15 @@
 
     {%- if include.type == 'item' -%}
       {%- if include.article_type == 'BlogPosting' -%}
-        <article class="item" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="item post-item lang-hidden" itemscope itemtype="http://schema.org/BlogPosting"
+                 data-lang="{{ _article.lang | default: 'ko' }}"
+                 {%- if _article.ref -%}data-ref="{{ _article.ref }}"{%- endif -%}
+                 style="display: none;">
       {%- else -%}
-        <article class="item">
+        <article class="item post-item lang-hidden"
+                 data-lang="{{ _article.lang | default: 'ko' }}"
+                 {%- if _article.ref -%}data-ref="{{ _article.ref }}"{%- endif -%}
+                 style="display: none;">
       {%- endif -%}
         {%- if _article.cover and include.show_cover-%}
           {%- include snippets/get-nav-url.html path=_article.cover -%}
@@ -83,17 +88,33 @@
         </div>
       </article>
 
-
-    {%- elsif include.type == 'brief' -%}
-      {%- assign _tags = '' -%}
-      {%- for _tag in _article.tags -%}
-        {%- assign _tag_encode = _tag | strip | url_encode -%}
-        {%- if forloop.last -%}
-          {%- assign _tags = _tags | append: _tag_encode -%}
+      {%- elsif include.type == 'brief' -%}
+        {%- assign _tags = '' -%}
+        {%- for _tag in _article.tags -%}
+          {%- assign _tag_encode = _tag | strip | url_encode -%}
+          {%- if forloop.last -%}
+            {%- assign _tags = _tags | append: _tag_encode -%}
+          {%- else -%}
+            {%- assign _tags = _tags | append: _tag_encode | append: ',' -%}
+          {%- endif -%}
+        {%- endfor -%}
+    
+          {%- comment -%}
+          포스트의 ref 값 결정: 
+          1. _article.ref가 있으면 사용
+          2. 없으면 URL에서 기본 슬러그 추출하여 사용
+          {%- endcomment -%}
+      {%- assign _post_ref = _article.ref -%}
+      {%- unless _post_ref -%}
+        {%- assign _url_parts = _article.url | split: '/' -%}
+        {%- assign _filename = _url_parts | last | split: '.' | first -%}
+        {%- if _filename contains '-en' -%}
+          {%- assign _post_ref = _filename | replace: '-en', '' -%}
         {%- else -%}
-          {%- assign _tags = _tags | append: _tag_encode | append: ',' -%}
+          {%- assign _post_ref = _filename -%}
         {%- endif -%}
-      {%- endfor -%}
+      {%- endunless -%}
+    
       {%- if include.group_by == 'year' -%}
         {%- assign _currentdate = _article.date | date: '%Y' -%}
         {%- if _currentdate != _date -%}
@@ -102,8 +123,10 @@
           {%- assign _date = _currentdate -%}
         {%- endif -%}
       {%- endif -%}
-      {%- include snippets/get-locale-string.html key='ARTICLE_LIST_DATE_FORMAT' -%}
-      <li class="item" itemscope itemtype="http://schema.org/BlogPosting" data-tags="{{ _tags }}">
+      <li class="item post-item lang-hidden" itemscope itemtype="http://schema.org/BlogPosting" data-tags="{{ _tags }}"
+          data-lang="{{ _article.lang | default: 'ko' }}"
+          data-ref="{{ _post_ref }}"
+          style="display: none;">
         <div class="item__content">
           {%- if include.show_info -%}
             <span class="item__meta">{{ _article.date | date: __return }}</span>
@@ -113,7 +136,10 @@
 
     {%- elsif include.type == 'grid' -%}
       {%- if include.size == 'sm' -%}
-        <div class="cell cell--12 cell--md-4 cell--lg-3">
+        <div class="cell cell--12 cell--md-4 cell--lg-3 post-item lang-hidden"
+             data-lang="{{ _article.lang | default: 'ko' }}"
+             {%- if _article.ref -%}data-ref="{{ _article.ref }}"{%- endif -%}
+             style="display: none;">
           <div class="card card--flat">
             {%- if _article.cover -%}
               <div class="card__image">
@@ -128,8 +154,10 @@
             </div>
         </div>
       {%- else -%}
-
-        <div class="cell cell--12 cell--md-6 cell--lg-4">
+        <div class="cell cell--12 cell--md-6 cell--lg-4 post-item lang-hidden"
+             data-lang="{{ _article.lang | default: 'ko' }}"
+             {%- if _article.ref -%}data-ref="{{ _article.ref }}"{%- endif -%}
+             style="display: none;">
           <div class="card card--flat">
             {%- if _article.cover -%}
               <div class="card__image"><img src="{{ _article_cover }}" /></div>

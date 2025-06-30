@@ -1,17 +1,19 @@
 header:
-  - titles: 
-      en      : &EN       About
+  - title: 소개
     url: /about/
-  - titles:
-      # @start locale config
-      en      : &EN       Archive
-      # @end locale config
+  - title-en: About
+    url: /about/
+  - title: 스터디 & 프로젝트
     url: /archive/
-  - titles:
-      en      : &EN       Blog
+  - title-en: Study & Project
+    url: /archive/
+  - title: 블로그
     url: /blog/
-  - titles:
-      en      : Gallery
+  - title-en: Blog
+    url: /blog/
+  - title: 갤러리
+    url: /gallery/
+  - title-en: Gallery
     url: /gallery/
 
 

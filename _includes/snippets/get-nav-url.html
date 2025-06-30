@@ -4,5 +4,7 @@
   {%- assign __return = include.path -%}
 {%- else -%}
   {%- include snippets/prepend-baseurl.html path=include.path -%}
-  {%- assign __return = __return -%}
+  {% comment %}
+    {%- assign __return = __return -%}
+  {% endcomment %}
 {%- endif -%}

@@ -1,31 +1,16 @@
 ---
 layout: page
-titles:
-  # @start locale config
-  en      : &EN       Blog
-  en-GB   : *EN
-  en-US   : *EN
-  en-CA   : *EN
-  en-AU   : *EN
-  zh-Hans : &ZH_HANS  
-  zh      : *ZH_HANS
-  zh-CN   : *ZH_HANS
-  zh-SG   : *ZH_HANS
-  zh-Hant : &ZH_HANT  
-  zh-TW   : *ZH_HANT
-  zh-HK   : *ZH_HANT
-  ko      : &KO       블로그
-  ko-KR   : *KO  
-  # @end locale config
-excerpt: Chronicles of a Curious Mind
+title: 블로그
+title-en: Blog
 ---
 
 <div class="layout--archive js-all">
   {%- include tags_blog.html -%}
   <div class="js-result layout--archive__result d-none">
-   <!-- {%- include article-list.html articles=site.posts type='brief' show_info=true reverse=true group_by='year' -%} -->
-   {% assign blog_posts = site.posts | where:"categories","blog" %}
-  {%- include article-list.html articles=blog_posts type='brief' show_info=true reverse=true group_by='year' -%}
+    {% assign blog_posts = site.posts | where:"categories","blog" %}
+    {% assign blog_posts_en = site.posts_en | where:"categories","blog" %}
+    {% assign all_blog_posts = blog_posts | concat: blog_posts_en %}
+    {%- include article-list.html articles=all_blog_posts type='brief' show_info=true reverse=true group_by='year' -%}
   </div>
 </div>
 
