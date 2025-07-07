@@ -2,7 +2,7 @@
 title: "RSS Reader를 이용하여 블로그 포스트 알림받는 법!"
 tags: [jekyll]
 categories: work
-id: 2025-06-20-GA4-internal-traffic
+id: 2025-06-23-rss-feeder
 cover: /files/cover/2025-06-23-rss-feeder.png
 modify_date: 2025-06-20
 ---
