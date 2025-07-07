@@ -211,7 +211,7 @@ modify_date: 2025-06-19
     </div>
 </div>
 
-당연히 먹을 것들도 판다! 점심시간에는 어디든 줄이 길어서 아쉬운대로 핫도그와 파이를 먹었다. 
+당연히 먹을 것들도 판다! 점심시간에는 어디든 줄이 길어서 아쉬운대로 핫도그와 파이를 먹었다. Figure 8 Tea에서 밀크티도 사먹음!
 
 <div class="row" style="display: flex; justify-content: center;">
     <div style="position:relative; float:left; padding:5px; width:33%">
