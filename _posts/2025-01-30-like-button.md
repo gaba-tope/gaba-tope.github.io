@@ -1,6 +1,6 @@
 ---
-title: How to Make Like Button in Jekyll Blog
-tags: [jekyll]
+title: Like Button in Jekyll Blog Using Firebase
+tags: [jekyll, Firebase]
 categories: work
 cover: /files/cover/2025-01-30-like-button.jpg
 id: 2025-01-30-like-button
@@ -253,7 +253,7 @@ body {
 - When you click the button, like count is stored in the database, and then `is-active` class added to the button, where it shows animation.
 - `is-active` class button will have its special cursor, 'prohibit' shape that prevent further clicking. It also shows tooltip saying "Thank you for your Like!! :)". You can customize these details.
 
-#### 3-3. Create **Firebase Function**.
+#### 3-3. Create Firebase Function.
 
 We will use Firebase function for fetching Firebase configuration information. This is to ensure that Firebase config is not directly exposed to your javascript file. Key concept here is to retrieve the JSON file of your Firebase config for Firebase initiation, using Firebase function. The following prerequisites are detailed in [Firebase CLI documentation](https://firebase.google.com/docs/cli){:target='_blank'}. 
 

@@ -1,5 +1,5 @@
 ---
-title: Make Youtube-Based Music Player in Jekyll Blog
+title: Youtube-Based Music Player in Jekyll Blog
 tags: [jekyll]
 categories: work
 cover: /files/cover/2025-02-04-music-player.png

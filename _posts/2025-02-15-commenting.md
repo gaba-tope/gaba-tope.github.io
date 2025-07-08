@@ -1,6 +1,6 @@
 ---
-title: Making Comment Box in Jekyll Blog
-tags: [jekyll]
+title: Custom Comment Box in Jekyll Blog
+tags: [jekyll, Firebase]
 categories: work
 cover: /files/cover/2025-02-15-commenting.png
 id: 2025-02-15-commenting
