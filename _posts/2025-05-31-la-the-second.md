@@ -26,7 +26,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/Cafe_de_mama1.png" data-lightbox="vis">
             <img src = "/files/img/Cafe_de_mama1.png" alt=""
-            title = "Cafe_de_mama1" width="100%">
+            title = "Cafe_de_mama1" width="100%" loading="lazy">
         </a>
         <figcaption>Cafe de Mama</figcaption>
         </figure>
@@ -35,7 +35,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/Cafe_de_mama2.png" data-lightbox="vis">
             <img src = "/files/img/Cafe_de_mama2.png" alt=""
-            title = "Cafe_de_mama2" width="100%">
+            title = "Cafe_de_mama2" width="100%" loading="lazy">
         </a>
         <figcaption>Honey Ginger Latte와 Strawberry Injeolmi Cream Croffle</figcaption>
         </figure>
@@ -44,7 +44,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/Cafe_de_mama3.gif" data-lightbox="vis">
             <img src = "/files/img/Cafe_de_mama3.gif" alt=""
-            title = "Cafe_de_mama3" width="100%">
+            title = "Cafe_de_mama3" width="100%" loading="lazy">
         </a>
         <figcaption>카페 안에서 본 강아지</figcaption>
         </figure>
@@ -60,7 +60,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Santa monica_Trader Joe.png" data-lightbox="vis">
             <img src = "/files/img/Santa monica_Trader Joe.png" alt=""
-            title = "Santa monica_Trader Joe" width="100%">
+            title = "Santa monica_Trader Joe" width="100%" loading="lazy">
         </a>
         <figcaption>산타모니카 해변 가는 길에 들린 Trader Joe's.</figcaption>
         </figure>
@@ -69,7 +69,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Santa monica_going_to1.png" data-lightbox="vis">
             <img src = "/files/img/Santa monica_going_to1.png" alt=""
-            title = "Santa monica_going_to1" width="100%">
+            title = "Santa monica_going_to1" width="100%" loading="lazy">
         </a>
         <figcaption>해변 가는 길</figcaption>
         </figure>
@@ -78,7 +78,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Santa monica_going_to2.png" data-lightbox="vis">
             <img src = "/files/img/Santa monica_going_to2.png" alt=""
-            title = "Santa monica_going_to2" width="100%">
+            title = "Santa monica_going_to2" width="100%" loading="lazy">
         </a>
         <figcaption>가는 길 2</figcaption>
         </figure>
@@ -92,7 +92,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Santa monica_beach2.png" data-lightbox="vis">
             <img src = "/files/img/Santa monica_beach2.png" alt=""
-            title = "Santa monica_beach2" width="100%">
+            title = "Santa monica_beach2" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -101,7 +101,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Santa monica_beach1.png" data-lightbox="vis">
             <img src = "/files/img/Santa monica_beach1.png" alt=""
-            title = "Santa monica_beach1" width="100%">
+            title = "Santa monica_beach1" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -110,7 +110,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Santa monica_beach3.png" data-lightbox="vis">
             <img src = "/files/img/Santa monica_beach3.png" alt=""
-            title = "Santa monica_beach3" width="100%">
+            title = "Santa monica_beach3" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -124,7 +124,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Santa monica_dino.png" data-lightbox="vis">
             <img src = "/files/img/Santa monica_dino.png" alt=""
-            title = "Santa monica_dino" width="100%">
+            title = "Santa monica_dino" width="100%" loading="lazy">
         </a>
         <figcaption>물 뿜는 공룡</figcaption>
         </figure>
@@ -133,7 +133,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Santa monica_tesla.png" data-lightbox="vis">
             <img src = "/files/img/Santa monica_tesla.png" alt=""
-            title = "Santa monica_tesla" width="100%">
+            title = "Santa monica_tesla" width="100%" loading="lazy">
         </a>
         <figcaption>테슬라 앞에서 시위하는 사람들. 앞을 지나가는 차량들도 이 앞에서 경적을 울리더라.</figcaption>
         </figure>
@@ -149,7 +149,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Beverly_hills1.png" data-lightbox="vis">
             <img src = "/files/img/Beverly_hills1.png" alt=""
-            title = "Beverly_hills1" width="100%">
+            title = "Beverly_hills1" width="100%" loading="lazy">
         </a>
         <figcaption>Beverly Hills Sign</figcaption>
         </figure>
@@ -158,7 +158,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Beverly_hills2.png" data-lightbox="vis">
             <img src = "/files/img/Beverly_hills2.png" alt=""
-            title = "Beverly_hills2" width="100%">
+            title = "Beverly_hills2" width="100%" loading="lazy">
         </a>
         <figcaption>베벌리 힐스 사인 앞에서!</figcaption>
         </figure>
@@ -172,7 +172,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Rodeo_dr1.png" data-lightbox="vis">
             <img src = "/files/img/Rodeo_dr1.png" alt=""
-            title = "Rodeo_dr1" width="100%">
+            title = "Rodeo_dr1" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -181,7 +181,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Rodeo_dr2.png" data-lightbox="vis">
             <img src = "/files/img/Rodeo_dr2.png" alt=""
-            title = "Rodeo_dr2" width="100%">
+            title = "Rodeo_dr2" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -190,7 +190,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Rodeo_dr3.png" data-lightbox="vis">
             <img src = "/files/img/Rodeo_dr3.png" alt=""
-            title = "Rodeo_dr3" width="100%">
+            title = "Rodeo_dr3" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -199,7 +199,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Rodeo_dr4.png" data-lightbox="vis">
             <img src = "/files/img/Rodeo_dr4.png" alt=""
-            title = "Rodeo_dr4" width="100%">
+            title = "Rodeo_dr4" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -208,7 +208,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Rodeo_dr5.png" data-lightbox="vis">
             <img src = "/files/img/Rodeo_dr5.png" alt=""
-            title = "Rodeo_dr5" width="100%">
+            title = "Rodeo_dr5" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -224,7 +224,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Hollywood_wof1.png" data-lightbox="vis">
             <img src = "/files/img/Hollywood_wof1.png" alt=""
-            title = "Hollywood_wof1" width="100%">
+            title = "Hollywood_wof1" width="100%" loading="lazy">
         </a>
         <figcaption>GODZILLA가 눈에 띈다.</figcaption>
         </figure>
@@ -233,7 +233,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Hollywood_wof2.png" data-lightbox="vis">
             <img src = "/files/img/Hollywood_wof2.png" alt=""
-            title = "Hollywood_wof2" width="100%">
+            title = "Hollywood_wof2" width="100%" loading="lazy"> 
         </a>
         <figcaption>미키마우스!</figcaption>
         </figure>
@@ -242,7 +242,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Hollywood_wof3.png" data-lightbox="vis">
             <img src = "/files/img/Hollywood_wof3.png" alt=""
-            title = "Hollywood_wof3" width="100%">
+            title = "Hollywood_wof3" width="100%" loading="lazy">
         </a>
         <figcaption>마이클 잭슨씨</figcaption>
         </figure>
@@ -257,7 +257,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Dolby_Theater1.png" data-lightbox="vis">
             <img src = "/files/img/Dolby_Theater1.png" alt=""
-            title = "Dolby_Theater1" width="100%">
+            title = "Dolby_Theater1" width="100%" loading="lazy">
         </a>
         <figcaption>Dolby Theater!</figcaption>
         </figure>
@@ -266,7 +266,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Dolby_Theater2.png" data-lightbox="vis">
             <img src = "/files/img/Dolby_Theater2.png" alt=""
-            title = "Dolby_Theater2" width="100%">
+            title = "Dolby_Theater2" width="100%" loading="lazy">
         </a>
         <figcaption>들어가보진 못한다…</figcaption>
         </figure>
@@ -275,7 +275,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Dolby_Theater3.png" data-lightbox="vis">
             <img src = "/files/img/Dolby_Theater3.png" alt=""
-            title = "Dolby_Theater3" width="100%">
+            title = "Dolby_Theater3" width="100%" loading="lazy">
         </a>
         <figcaption>매년 수상작들을 여기 써넣는다고 한다.</figcaption>
         </figure>
@@ -284,7 +284,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Dolby_Theater4.png" data-lightbox="vis">
             <img src = "/files/img/Dolby_Theater4.png" alt=""
-            title = "Dolby_Theater4" width="100%">
+            title = "Dolby_Theater4" width="100%" loading="lazy">
         </a>
         <figcaption>2019년 수상작 〈기생충〉</figcaption>
         </figure>
@@ -298,7 +298,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Hollywood_wof_sign.png" data-lightbox="vis">
             <img src = "/files/img/Hollywood_wof_sign.png" alt=""
-            title = "Hollywood_wof_sign" width="100%">
+            title = "Hollywood_wof_sign" width="100%" loading="lazy">
         </a>
         <figcaption>뭔가 되게 할리우드 느낌? 나지 않나요</figcaption>
         </figure>
@@ -317,7 +317,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Lake Hollywood Park1.png" data-lightbox="vis">
             <img src = "/files/img/Lake Hollywood Park1.png" alt=""
-            title = "Lake Hollywood Park1" width="100%">
+            title = "Lake Hollywood Park1" width="100%" loading="lazy">
         </a>
         <figcaption>그 유명한 할리우드 사인</figcaption>
         </figure>
@@ -326,7 +326,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Lake Hollywood Park2.png" data-lightbox="vis">
             <img src = "/files/img/Lake Hollywood Park2.png" alt=""
-            title = "Lake Hollywood Park2" width="100%">
+            title = "Lake Hollywood Park2" width="100%" loading="lazy">
         </a>
         <figcaption>^0^</figcaption>
         </figure>
@@ -340,7 +340,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Returning Car_lax4.gif" data-lightbox="vis">
             <img src = "/files/img/Returning Car_lax4.gif" alt=""
-            title = "Returning Car_lax4" width="100%">
+            title = "Returning Car_lax4" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -349,7 +349,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Returning Car_lax1.png" data-lightbox="vis">
             <img src = "/files/img/Returning Car_lax1.png" alt=""
-            title = "Returning Car_lax1" width="100%">
+            title = "Returning Car_lax1" width="100%" loading="lazy">
         </a>
         <figcaption>공항으로 향하는 도로</figcaption>
         </figure>
@@ -358,7 +358,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Returning Car_lax2.png" data-lightbox="vis">
             <img src = "/files/img/Returning Car_lax2.png" alt=""
-            title = "Returning Car_lax2" width="100%">
+            title = "Returning Car_lax2" width="100%" loading="lazy">
         </a>
         <figcaption>예쁜 하늘과 달</figcaption>
         </figure>
@@ -367,7 +367,7 @@ Jun.의 차를 타고 Santa Monica 해변으로 향했다.
         <figure>
         <a href="/files/img/Returning Car_lax3.png" data-lightbox="vis">
             <img src = "/files/img/Returning Car_lax3.png" alt=""
-            title = "Returning Car_lax3" width="100%">
+            title = "Returning Car_lax3" width="100%" loading="lazy">
         </a>
         <figcaption>해질녘 주차장</figcaption>
         </figure>

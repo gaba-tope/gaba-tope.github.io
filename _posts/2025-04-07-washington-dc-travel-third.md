@@ -24,7 +24,7 @@ modify_date: 2025-04-07
         <figure>
         <a href="/files/img/Founding_Farmers_Food.webp" data-lightbox="vis">
             <img src = "/files/img/Founding_Farmers_Food.webp" alt=""
-            title = "Founding_Farmers_Food" width="100%">
+            title = "Founding_Farmers_Food" width="100%" loading="lazy">
         </a>
         <figcaption>팬케이크 네 개...</figcaption>
         </figure>
@@ -33,7 +33,7 @@ modify_date: 2025-04-07
         <figure>
         <a href="/files/img/Founding_Farmers_Bird.webp" data-lightbox="vis">
             <img src = "/files/img/Founding_Farmers_Bird.webp" alt=""
-            title = "Founding_Farmers_Bird" width="100%">
+            title = "Founding_Farmers_Bird" width="100%" loading="lazy">
         </a>
         <figcaption>귀여운 참새</figcaption>
         </figure>
@@ -42,7 +42,7 @@ modify_date: 2025-04-07
         <figure>
         <a href="/files/img/Founding_Farmers_Bird.gif" data-lightbox="vis">
             <img src = "/files/img/Founding_Farmers_Bird.gif" alt=""
-            title = "Founding_Farmers_Bird_animated" width="100%">
+            title = "Founding_Farmers_Bird_animated" width="100%" loading="lazy">
         </a>
         <figcaption>앞에서 볼일보는 참새 녀석…ㅋ</figcaption>
         </figure>
@@ -59,7 +59,7 @@ modify_date: 2025-04-07
         <figure>
         <a href="/files/img/NH_building.webp" data-lightbox="vis">
             <img src = "/files/img/NH_building.webp" alt=""
-            title = "NH_building" width="100%">
+            title = "NH_building" width="100%" loading="lazy">
         </a>
         <figcaption>Smithsoninan National Museum of Natural Hisotry</figcaption>
         </figure>
@@ -75,7 +75,7 @@ modify_date: 2025-04-07
         <figure>
         <a href="/files/img/NH_Logan_Saphhire.webp" data-lightbox="vis">
             <img src = "/files/img/NH_Logan_Saphhire.webp" alt=""
-            title = "NH_Logan_Saphhire" width="100%">
+            title = "NH_Logan_Saphhire" width="100%" loading="lazy">
         </a>
         <figcaption>Logan Sapphire</figcaption>
         </figure>
@@ -84,7 +84,7 @@ modify_date: 2025-04-07
         <figure>
         <a href="/files/img/NH_Cat's_Eye.webp" data-lightbox="vis">
             <img src = "/files/img/NH_Cat's_Eye.webp" alt=""
-            title = "NH_Cat's_Eye" width="100%">
+            title = "NH_Cat's_Eye" width="100%" loading="lazy">
         </a>
         <figcaption>왼쪽부터 Star of Asia Sapphire와 Maharani Cat's Eye</figcaption>
         </figure>
@@ -93,7 +93,7 @@ modify_date: 2025-04-07
         <figure>
         <a href="/files/img/NH_Cat's_Eye2.webp" data-lightbox="vis">
             <img src = "/files/img/NH_Cat's_Eye2.webp" alt=""
-            title = "NH_Cat's_Eye" width="100%">
+            title = "NH_Cat's_Eye" width="100%" loading="lazy">
         </a>
         <figcaption>Rosser Reeves Ruby</figcaption>
         </figure>
@@ -105,7 +105,7 @@ modify_date: 2025-04-07
         <figure>
         <a href="/files/img/NH_Quartz.webp" data-lightbox="vis">
             <img src = "/files/img/NH_Quartz.webp" alt=""
-            title = "NH_Quartz" width="100%">
+            title = "NH_Quartz" width="100%" loading="lazy">
         </a>
         <figcaption>석영 구슬. 마법사들이 사용할 것만 같다.</figcaption>
         </figure>
@@ -118,7 +118,7 @@ modify_date: 2025-04-07
         <figure>
         <a href="/files/img/NH_Alexandrite.gif" data-lightbox="vis">
             <img src = "/files/img/NH_Alexandrite.gif" alt=""
-            title = "NH_Alexandrite" width="100%">
+            title = "NH_Alexandrite" width="100%" loading="lazy">
         </a>
         <figcaption>Alexandrite</figcaption>
         </figure>
@@ -131,7 +131,7 @@ modify_date: 2025-04-07
         <figure>
         <a href="/files/img/NH_Hope_Diamond.webp" data-lightbox="vis">
             <img src = "/files/img/NH_Hope_Diamond.webp" alt=""
-            title = "NH_Hope_Diamond" width="100%">
+            title = "NH_Hope_Diamond" width="100%" loading="lazy">
         </a>
         <figcaption>Hope Diamond</figcaption>
         </figure>
@@ -140,7 +140,7 @@ modify_date: 2025-04-07
         <figure>
         <a href="/files/img/NH_Hope_Diamond.gif" data-lightbox="vis">
             <img src = "/files/img/NH_Hope_Diamond.gif" alt=""
-            title = "NH_Hope_Diamond_animated" width="100%">
+            title = "NH_Hope_Diamond_animated" width="100%" loading="lazy">
         </a>
         <figcaption>반짝반짝</figcaption>
         </figure>
@@ -156,7 +156,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NH_Phil_light.webp" data-lightbox="vis">
             <img src = "/files/img/NH_Phil_light.webp" alt=""
-            title = "NH_Phil_light" width="100%">
+            title = "NH_Phil_light" width="100%" loading="lazy">
         </a>
         <figcaption>불 꺼진 필라델피아</figcaption>
         </figure>
@@ -174,7 +174,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_building.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_building.webp" alt=""
-            title = "NGA_building" width="100%">
+            title = "NGA_building" width="100%" loading="lazy">
         </a>
         <figcaption>National Gallery of Art 서관</figcaption>
         </figure>
@@ -183,7 +183,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_building2.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_building2.webp" alt=""
-            title = "NGA_building2" width="100%">
+            title = "NGA_building2" width="100%" loading="lazy">
         </a>
         <figcaption>공사 중인 서관 건물</figcaption>
         </figure>
@@ -196,7 +196,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_map.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_map.webp" alt=""
-            title = "NGA_map" width="100%">
+            title = "NGA_map" width="100%" loading="lazy">
         </a>
         <figcaption>서관 2층 지도 (출처: National Gallery of Art 홈페이지).</figcaption>
         </figure>
@@ -211,7 +211,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_angel_with_tambourine.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_angel_with_tambourine.webp" alt=""
-            title = "NGA_angel_with_tambourine" width="100%">
+            title = "NGA_angel_with_tambourine" width="100%" loading="lazy">
         </a>
         <figcaption>〈Angel with Tambourine〉, unidentified artist, 1360.</figcaption>
         </figure>
@@ -225,7 +225,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_Ginervra_de_Benci.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_Ginervra_de_Benci.webp" alt=""
-            title = "NGA_Ginervra_de_Benci" width="100%">
+            title = "NGA_Ginervra_de_Benci" width="100%" loading="lazy">
         </a>
         <figcaption>〈Ginevra de' Benci〉, Leonardo da Vinci, 1474/1478.</figcaption>
         </figure>
@@ -239,7 +239,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_Eyck_Annunciation.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_Eyck_Annunciation.webp" alt=""
-            title = "NGA_Eyck_Annunciation" width="100%">
+            title = "NGA_Eyck_Annunciation" width="100%" loading="lazy">
         </a>
         <figcaption>〈The Annunciation〉, Jan Van Eyck, 1390-1441.</figcaption>
         </figure>
@@ -248,7 +248,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/Van_Eyck_Arnolfini_Portrait.jpg" data-lightbox="vis">
             <img src = "/files/img/Van_Eyck_Arnolfini_Portrait.jpg" alt=""
-            title = "Van_Eyck_Arnolfini_Portrait" width="100%">
+            title = "Van_Eyck_Arnolfini_Portrait" width="100%" loading="lazy">
         </a>
         <figcaption>얀 판 에이크하면 가장 잘 알려진 〈아르놀피니 부부의 초상〉, 1434. 런던 내셔널 갤러리 소장.</figcaption>
         </figure>
@@ -263,7 +263,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_Jesus_Revival.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_Jesus_Revival.webp" alt=""
-            title = "NGA_Jesus_Revival" width="100%">
+            title = "NGA_Jesus_Revival" width="100%" loading="lazy">
         </a>
         <figcaption>〈The Resurrection〉, Benvenuto di Giovanni, 1491.</figcaption>
         </figure>
@@ -276,7 +276,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_Christ_Risen.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_Christ_Risen.webp" alt=""
-            title = "NGA_Christ_Risen" width="100%">
+            title = "NGA_Christ_Risen" width="100%" loading="lazy">
         </a>
         <figcaption>〈Christ Risen from the Tomb〉, Bergognone, 1490.</figcaption>
         </figure>
@@ -290,7 +290,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_Jesus_Maria_Angels.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_Jesus_Maria_Angels.webp" alt=""
-            title = "NGA_Jesus_Maria_Angels" width="100%">
+            title = "NGA_Jesus_Maria_Angels" width="100%" loading="lazy">
         </a>
         <figcaption>〈Madonna and Blessing Child〉, Vittore Carpaccio, 1510.</figcaption>
         </figure>
@@ -304,7 +304,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_Saint_Lucy.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_Saint_Lucy.webp" alt=""
-            title = "NGA_Saint_Lucy" width="100%">
+            title = "NGA_Saint_Lucy" width="100%" loading="lazy">
         </a>
         <figcaption>〈Saint Lucy〉, Francesco del Cossa, 1473/1474.</figcaption>
         </figure>
@@ -313,7 +313,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_Saint_Lucy2.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_Saint_Lucy2.webp" alt=""
-            title = "NGA_Saint_Lucy2" width="100%">
+            title = "NGA_Saint_Lucy2" width="100%" loading="lazy">
         </a>
         <figcaption>〈Saint Lucy〉, Francisco de Zurbaran, 1625/1630.</figcaption>
         </figure>
@@ -331,7 +331,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_Paris_Determination.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_Paris_Determination.webp" alt=""
-            title = "NGA_Paris_Determination" width="100%">
+            title = "NGA_Paris_Determination" width="100%" loading="lazy">
         </a>
         <figcaption>〈The Judgment of Paris〉, Giovanni Sons, 16세기 후반. 황금사과의 주인은……아프로디테 당첨!</figcaption>
         </figure>
@@ -344,7 +344,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_Paris_Lorrain.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_Paris_Lorrain.webp" alt=""
-            title = "NGA_Paris_Lorrain.webp" width="100%">
+            title = "NGA_Paris_Lorrain.webp" width="100%" loading="lazy">
         </a>
         <figcaption>〈The Judgment of Paris〉, Claude Lorrain, 1645/1646.</figcaption>
         </figure>
@@ -362,7 +362,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_Panini_Pantheon.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_Panini_Pantheon.webp" alt=""
-            title = "NGA_Panini_Pantheon" width="100%">
+            title = "NGA_Panini_Pantheon" width="100%" loading="lazy">
         </a>
         <figcaption>〈Interior of the Pantheon, Rome〉, Giovanni Paolo Panini, 1734.</figcaption>
         </figure>
@@ -371,7 +371,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_Panini_Peter.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_Panini_Peter.webp" alt=""
-            title = "NGA_Panini_Peter" width="100%">
+            title = "NGA_Panini_Peter" width="100%" loading="lazy">
         </a>
         <figcaption>〈Interior of Saint Peter's, Rome〉, Giovanni Paolo Panini, 1754.</figcaption>
         </figure>
@@ -385,7 +385,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_Tiepolo.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_Tiepolo.webp" alt=""
-            title = "NGA_Tiepolo" width="100%">
+            title = "NGA_Tiepolo" width="100%" loading="lazy">
         </a>
         <figcaption>〈Wealth and Benefits of the Spanish Monarchy under Charles III〉, Giovanni Battista Tiepolo, 1762.</figcaption>
         </figure>
@@ -399,7 +399,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_Rubens_Phaeton.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_Rubens_Phaeton.webp" alt=""
-            title = "NGA_Rubens_Phaeton" width="100%">
+            title = "NGA_Rubens_Phaeton" width="100%" loading="lazy">
         </a>
         <figcaption>〈The Fall of Phaeton〉, Peter Paul Rubens, 1604/1605.</figcaption>
         </figure>
@@ -408,7 +408,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/Hong_Greek_Myth_Phaeton.webp" data-lightbox="vis">
             <img src = "/files/img/Hong_Greek_Myth_Phaeton.webp" alt=""
-            title = "Hong_Greek_Myth_Phaeton" width="100%">
+            title = "Hong_Greek_Myth_Phaeton" width="100%" loading="lazy">
         </a>
         <figcaption>홍은영 작가님 그로신 구판에 나온 파에톤의 추락</figcaption>
         </figure>
@@ -421,7 +421,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_Neer_Moonlit.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_Neer_Moonlit.webp" alt=""
-            title = "NGA_Neer_Moonlit" width="100%">
+            title = "NGA_Neer_Moonlit" width="100%" loading="lazy">
         </a>
         <figcaption>〈Moonlit Landscape with Bridge〉, Aert Van Der Neer, 1650.</figcaption>
         </figure>
@@ -437,7 +437,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_Prodigal.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_Prodigal.webp" alt=""
-            title = "NGA_Prodigal" width="100%">
+            title = "NGA_Prodigal" width="100%" loading="lazy">
         </a>
         <figcaption>〈The Return of the Prodigal Son〉, Bartolomé Esteban Murillo, 1667/1670. 강아지가 귀엽다.</figcaption>
         </figure>
@@ -446,7 +446,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/Rembrandt_Prodigal.jpg" data-lightbox="vis">
             <img src = "/files/img/Rembrandt_Prodigal.jpg" alt=""
-            title = "Rembrandt_Prodigal" width="100%">
+            title = "Rembrandt_Prodigal" width="100%" loading="lazy">
         </a>
         <figcaption>보다 잘 알려진 렘브란트의 작품. 러시아 상트페테르부르크의 에르미타주(Эрмитаж) 미술관 소장.</figcaption>
         </figure>
@@ -461,7 +461,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_Europa.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_Europa.webp" alt=""
-            title = "NGA_Europa" width="100%">
+            title = "NGA_Europa" width="100%" loading="lazy">
         </a>
         <figcaption>〈The Abduction of Europa〉, Jean François de Troy, 1716.</figcaption>
         </figure>
@@ -470,7 +470,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/Hong_Europe.webp" data-lightbox="vis">
             <img src = "/files/img/Hong_Europe.webp" alt=""
-            title = "Hong_Europe" width="100%">
+            title = "Hong_Europe" width="100%" loading="lazy"> 
         </a>
         <figcaption>홍은영 작가님 그로신 구판에 나온 에우로페의 납치사건.</figcaption>
         </figure>
@@ -485,7 +485,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_Shipwreck.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_Shipwreck.webp" alt=""
-            title = "NGA_Shipwreck" width="100%">
+            title = "NGA_Shipwreck" width="100%" loading="lazy">
         </a>
         <figcaption>〈The Shipwreck〉, Claude-Joseph Vernet, 1772.</figcaption>
         </figure>
@@ -499,7 +499,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_Joshua.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_Joshua.webp" alt=""
-            title = "NGA_Joshua" width="100%">
+            title = "NGA_Joshua" width="100%" loading="lazy">
         </a>
         <figcaption>〈Joshua Commanding the Sun to Stand Still upon Gibeon〉, John Martin, 1816.</figcaption>
         </figure>
@@ -514,7 +514,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_Morisot.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_Morisot.webp" alt=""
-            title = "NGA_Morisot" width="100%">
+            title = "NGA_Morisot" width="100%" loading="lazy">
         </a>
         <figcaption>〈In the Dining Room〉, Berthe Morisot, 1886.</figcaption>
         </figure>
@@ -527,7 +527,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/NGA_Renoir_Cat.webp" data-lightbox="vis">
             <img src = "/files/img/NGA_Renoir_Cat.webp" alt=""
-            title = "NGA_Renoir_Cat" width="100%">
+            title = "NGA_Renoir_Cat" width="100%" loading="lazy">
         </a>
         <figcaption>〈Woman with a Cat〉, Auguste Renoir, 1875.</figcaption>
         </figure>
@@ -545,7 +545,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/Second_Washington_Monu (1).webp" data-lightbox="vis">
             <img src = "/files/img/Second_Washington_Monu (1).webp" alt=""
-            title = "Second_Washington_Monu (1)" width="100%">
+            title = "Second_Washington_Monu (1)" width="100%" loading="lazy">
         </a>
         <figcaption>기념탑 앞 잔디에 앉아 바라본 하늘</figcaption>
         </figure>
@@ -554,7 +554,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/Second_Washington_Monu (2).webp" data-lightbox="vis">
             <img src = "/files/img/Second_Washington_Monu (2).webp" alt=""
-            title = "Second_Washington_Monu (2)" width="100%">
+            title = "Second_Washington_Monu (2)" width="100%" loading="lazy">
         </a>
         <figcaption>맑은 하늘의 워싱턴 기념탑</figcaption>
         </figure>
@@ -563,7 +563,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/Second_Washington_Monu (3).webp" data-lightbox="vis">
             <img src = "/files/img/Second_Washington_Monu (3).webp" alt=""
-            title = "Second_Washington_Monu (3)" width="100%">
+            title = "Second_Washington_Monu (3)" width="100%" loading="lazy">
         </a>
         <figcaption>맑은 하늘의 워싱턴 기념탑2</figcaption>
         </figure>
@@ -580,7 +580,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/Edgar_building.webp" data-lightbox="vis">
             <img src = "/files/img/Edgar_building.webp" alt=""
-            title = "Edgar_building" width="100%">
+            title = "Edgar_building" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -589,7 +589,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/Edgar_building2.webp" data-lightbox="vis">
             <img src = "/files/img/Edgar_building2.webp" alt=""
-            title = "Edgar_building2" width="100%">
+            title = "Edgar_building2" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -598,7 +598,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/Edgar_building3.webp" data-lightbox="vis">
             <img src = "/files/img/Edgar_building3.webp" alt=""
-            title = "Edgar_building3" width="100%">
+            title = "Edgar_building3" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -611,7 +611,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/Capitol_view.webp" data-lightbox="vis">
             <img src = "/files/img/Capitol_view.webp" alt=""
-            title = "Capitol_view" width="100%">
+            title = "Capitol_view" width="100%" loading="lazy">
         </a>
         <figcaption>멀리서 바라본 의회 건물.</figcaption>
         </figure>
@@ -620,7 +620,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/Capitol_view2.webp" data-lightbox="vis">
             <img src = "/files/img/Capitol_view2.webp" alt=""
-            title = "Capitol_view2" width="100%">
+            title = "Capitol_view2" width="100%" loading="lazy">
         </a>
         <figcaption>약간 클로즈업</figcaption>
         </figure>
@@ -629,7 +629,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/Govt_buildings.webp" data-lightbox="vis">
             <img src = "/files/img/Govt_buildings.webp" alt=""
-            title = "Govt_buildings" width="100%">
+            title = "Govt_buildings" width="100%" loading="lazy">
         </a>
         <figcaption>그리스 신전 스타일로 대로를 따라 줄느런한 정부 건물들</figcaption>
         </figure>
@@ -642,7 +642,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/Abs_noodle.webp" data-lightbox="vis">
             <img src = "/files/img/Abs_noodle.webp" alt=""
-            title = "Abs_noodle" width="100%">
+            title = "Abs_noodle" width="100%" loading="lazy">
         </a>
         <figcaption>냠냠!!</figcaption>
         </figure>
@@ -658,7 +658,7 @@ Lights Out이라는 기간 전시도 진행 중이었다. 광공해로 인해 �
         <figure>
         <a href="/files/img/returning_flight.gif" data-lightbox="vis">
             <img src = "/files/img/returning_flight.gif" alt=""
-            title = "Abs_noodle" width="100%">
+            title = "Abs_noodle" width="100%" loading="lazy">
         </a>
         <figcaption>돌아가는 비행기에서! 잘보면 Washington Monument도 보인다.</figcaption>
         </figure>

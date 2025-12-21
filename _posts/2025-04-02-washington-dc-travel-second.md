@@ -26,7 +26,7 @@ modify_date: 2025-04-02
         <figure>
         <a href="/files/img/Nino_stand.webp" data-lightbox="vis">
             <img src = "/files/img/Nino_stand.webp" alt=""
-            title = "Nino_stand" width="100%">
+            title = "Nino_stand" width="100%" loading="lazy">
         </a>
         <figcaption>Nino's Bakery 입간판</figcaption>
         </figure>
@@ -35,7 +35,7 @@ modify_date: 2025-04-02
         <figure>
         <a href="/files/img/Nino_display.webp" data-lightbox="vis">
         <img src = "/files/img/Nino_display.webp" alt=""
-         title = "Nino_display" width="100%">
+         title = "Nino_display" width="100%" loading="lazy">
         </a>
         <figcaption>흐흐흐 다 맛있어 보였다…</figcaption>
         </figure>
@@ -44,7 +44,7 @@ modify_date: 2025-04-02
         <figure>
         <a href="/files/img/Nino_blueberryScone.webp" data-lightbox="vis">
         <img src = "/files/img/Nino_blueberryScone.webp" alt=""
-         title = "Nino_blueberryScone" width="100%">
+         title = "Nino_blueberryScone" width="100%" loading="lazy">
         </a>
         <figcaption>완전 맛난 블루베리 스콘</figcaption>
         </figure>
@@ -53,12 +53,13 @@ modify_date: 2025-04-02
         <figure>
         <a href="/files/img/Nino_Financier.webp" data-lightbox="vis">
         <img src = "/files/img/Nino_Financier.webp" alt=""
-         title = "Nino_Financier.webp" width="100%">
+         title = "Nino_Financier.webp" width="100%" loading="lazy">
         </a>
         <figcaption>완전 완전 맛있는 휘낭시에!!!</figcaption>
         </figure>
     </div>
 </div>
+
 
 ### National Mall (내셔널 몰)
 
@@ -71,7 +72,7 @@ Nino's Bakery 바깥 테이블에 앉아서 다 먹은 후 내셔널 몰로 슬�
         <figure>
         <a href="/files/img/white_house.webp" data-lightbox="vis">
             <img src = "/files/img/white_house.webp" alt=""
-            title = "white_house" width="100%">
+            title = "white_house" width="100%" loading="lazy">
         </a>
         <figcaption>백악관 앞에서!</figcaption>
         </figure>
@@ -85,7 +86,7 @@ Nino's Bakery 바깥 테이블에 앉아서 다 먹은 후 내셔널 몰로 슬�
         <figure>
         <a href="/files/img/NM_washington_onway.webp" data-lightbox="vis">
             <img src = "/files/img/NM_washington_onway.webp" alt=""
-            title = "NM_washington_onway" width="100%">
+            title = "NM_washington_onway" width="100%" loading="lazy">
         </a>
         <figcaption>Washington Monument 가는 길</figcaption>
         </figure>
@@ -94,7 +95,7 @@ Nino's Bakery 바깥 테이블에 앉아서 다 먹은 후 내셔널 몰로 슬�
         <figure>
         <a href="/files/img/NM_Washington_Monument1.webp" data-lightbox="vis">
             <img src = "/files/img/NM_Washington_Monument1.webp" alt=""
-            title = "NM_Washington_Monument1" width="100%">
+            title = "NM_Washington_Monument1" width="100%" loading="lazy">
         </a>
         <figcaption>앞에서 찍은 것!</figcaption>
         </figure>
@@ -103,7 +104,7 @@ Nino's Bakery 바깥 테이블에 앉아서 다 먹은 후 내셔널 몰로 슬�
         <figure>
         <a href="/files/img/NM_Washington_monument2.webp" data-lightbox="vis">
             <img src = "/files/img/NM_Washington_monument2.webp" alt=""
-            title = "NM_Washington_monument2" width="100%">
+            title = "NM_Washington_monument2" width="100%" loading="lazy">
         </a>
         <figcaption>Pool 따라서 걸은 후 멀리서 본 기념탑</figcaption>
         </figure>
@@ -117,7 +118,7 @@ Nino's Bakery 바깥 테이블에 앉아서 다 먹은 후 내셔널 몰로 슬�
         <figure>
         <a href="/files/img/NM_pool2.gif" data-lightbox="vis">
             <img src = "/files/img/NM_pool2.gif" alt=""
-            title = "NM_pool2" width="100%">
+            title = "NM_pool2" width="100%" loading="lazy">
         </a>
         <figcaption>연못에 오리도 살아요</figcaption>
         </figure>
@@ -126,7 +127,7 @@ Nino's Bakery 바깥 테이블에 앉아서 다 먹은 후 내셔널 몰로 슬�
         <figure>
         <a href="/files/img/NM_pool1.gif" data-lightbox="vis">
             <img src = "/files/img/NM_pool1.gif" alt=""
-            title = "NM_pool1" width="100%">
+            title = "NM_pool1" width="100%" loading="lazy">
         </a>
         <figcaption>뒤뚱뒤뚱 올라온다!</figcaption>
         </figure>
@@ -140,7 +141,7 @@ Nino's Bakery 바깥 테이블에 앉아서 다 먹은 후 내셔널 몰로 슬�
         <figure>
         <a href="/files/img/NM_Korean_War.webp" data-lightbox="vis">
             <img src = "/files/img/NM_Korean_War.webp" alt=""
-            title = "NM_Korean_War" width="100%">
+            title = "NM_Korean_War" width="100%" loading="lazy">
         </a>
         <figcaption>FREEDOM IS NOT FREE</figcaption>
         </figure>
@@ -149,7 +150,7 @@ Nino's Bakery 바깥 테이블에 앉아서 다 먹은 후 내셔널 몰로 슬�
         <figure>
         <a href="/files/img/NM_Korean_War2.webp" data-lightbox="vis">
             <img src = "/files/img/NM_Korean_War2.webp" alt=""
-            title = "NM_Korean_War2" width="100%">
+            title = "NM_Korean_War2" width="100%" loading="lazy">
         </a>
         <figcaption>참전용사상</figcaption>
         </figure>
@@ -167,7 +168,7 @@ Nino's Bakery 바깥 테이블에 앉아서 다 먹은 후 내셔널 몰로 슬�
         <figure>
         <a href="/files/img/NM_Lincoln_Statue.webp" data-lightbox="vis">
             <img src = "/files/img/NM_Lincoln_Statue.webp" alt=""
-            title = "NM_Lincoln_Statue" width="100%">
+            title = "NM_Lincoln_Statue" width="100%" loading="lazy">
         </a>
         <figcaption>링컨 조각상</figcaption>
         </figure>
@@ -176,7 +177,7 @@ Nino's Bakery 바깥 테이블에 앉아서 다 먹은 후 내셔널 몰로 슬�
         <figure>
         <a href="/files/img/NM_Lincoln_wall.webp" data-lightbox="vis">
             <img src = "/files/img/NM_Lincoln_wall.webp" alt=""
-            title = "NM_Lincoln_wall" width="100%">
+            title = "NM_Lincoln_wall" width="100%" loading="lazy">
         </a>
         <figcaption>링컨의 게티스버그 연설문.</figcaption>
         </figure>
@@ -197,7 +198,7 @@ Nino's Bakery 바깥 테이블에 앉아서 다 먹은 후 내셔널 몰로 슬�
         <figure>
         <a href="/files/img/NAS_Einstein.webp" data-lightbox="vis">
             <img src = "/files/img/NAS_Einstein.webp" alt=""
-            title = "NAS_Einstein" width="100%">
+            title = "NAS_Einstein" width="100%" loading="lazy">
         </a>
         <figcaption>아인슈타인 동상에 앉아서!</figcaption>
         </figure>
@@ -206,7 +207,7 @@ Nino's Bakery 바깥 테이블에 앉아서 다 먹은 후 내셔널 몰로 슬�
         <figure>
         <a href="/files/img/NAS_Women.webp" data-lightbox="vis">
             <img src = "/files/img/NAS_Women.webp" alt=""
-            title = "NAS_Women" width="100%">
+            title = "NAS_Women" width="100%" loading="lazy">
         </a>
         <figcaption>Dedicated to the Contributions of Women to Science by Diane Griffin, Marcia McNutt, and Susan Wessler.</figcaption>
         </figure>
@@ -226,7 +227,7 @@ Diane Griffin은 measles virus (홍역 바이러스) 등의 viral pathogenesis�
         <figure>
         <a href="/files/img/Teashi.webp" data-lightbox="vis">
             <img src = "/files/img/Teashi.webp" alt=""
-            title = "Teashi" width="100%">
+            title = "Teashi" width="100%" loading="lazy">
         </a>
         <figcaption>냠!</figcaption>
         </figure>
@@ -244,7 +245,7 @@ Diane Griffin은 measles virus (홍역 바이러스) 등의 viral pathogenesis�
         <figure>
         <a href="/files/img/LeVain_2.webp" data-lightbox="vis">
             <img src = "/files/img/LeVain_2.webp" alt=""
-            title = "LeVain_2" width="100%">
+            title = "LeVain_2" width="100%" loading="lazy">
         </a>
         <figcaption>여기!</figcaption>
         </figure>
@@ -253,7 +254,7 @@ Diane Griffin은 measles virus (홍역 바이러스) 등의 viral pathogenesis�
         <figure>
         <a href="/files/img/LeVain_1.webp" data-lightbox="vis">
             <img src = "/files/img/LeVain_1.webp" alt=""
-            title = "LeVain_1" width="100%">
+            title = "LeVain_1" width="100%" loading="lazy">
         </a>
         <figcaption>초콜릿 칩 월넛 쿠키. 레몬 쿠키는 찍기 전에 다 먹어 버렸다 ^^ 냠냠냠!!</figcaption>
         </figure>
@@ -267,7 +268,7 @@ Diane Griffin은 measles virus (홍역 바이러스) 등의 viral pathogenesis�
         <figure>
         <a href="/files/img/GTU_stair.webp" data-lightbox="vis">
             <img src = "/files/img/GTU_stair.webp" alt=""
-            title = "GTU_stair" width="100%">
+            title = "GTU_stair" width="100%" loading="lazy">
         </a>
         <figcaption>꽤나 높은 계단을 열심히 올라가야 나온다.</figcaption>
         </figure>
@@ -276,7 +277,7 @@ Diane Griffin은 measles virus (홍역 바이러스) 등의 viral pathogenesis�
         <figure>
         <a href="/files/img/GTU_building.webp" data-lightbox="vis">
             <img src = "/files/img/GTU_building.webp" alt=""
-            title = "GTU_building" width="100%">
+            title = "GTU_building" width="100%" loading="lazy">
         </a>
         <figcaption>계단을 올라 조금 더 걸으면 보이는 예쁜 건물</figcaption>
         </figure>
@@ -285,7 +286,7 @@ Diane Griffin은 measles virus (홍역 바이러스) 등의 viral pathogenesis�
         <figure>
         <a href="/files/img/GTU_building2.webp" data-lightbox="vis">
             <img src = "/files/img/GTU_building2.webp" alt=""
-            title = "GTU_building2" width="100%">
+            title = "GTU_building2" width="100%" loading="lazy">
         </a>
         <figcaption>예쁜 건물 2</figcaption>
         </figure>
@@ -294,7 +295,7 @@ Diane Griffin은 measles virus (홍역 바이러스) 등의 viral pathogenesis�
         <figure>
         <a href="/files/img/GTU_building3.webp" data-lightbox="vis">
             <img src = "/files/img/GTU_building3.webp" alt=""
-            title = "GTU_building3" width="100%">
+            title = "GTU_building3" width="100%" loading="lazy">
         </a>
         <figcaption>예쁜 건물 3</figcaption>
         </figure>
@@ -312,7 +313,7 @@ Diane Griffin은 measles virus (홍역 바이러스) 등의 viral pathogenesis�
         <figure>
         <a href="/files/img/AstoriaDC.webp" data-lightbox="vis">
             <img src = "/files/img/AstoriaDC.webp" alt=""
-            title = "AstoriaDC" width="100%">
+            title = "AstoriaDC" width="100%" loading="lazy">
         </a>
         <figcaption>냠냠!</figcaption>
         </figure>
@@ -330,7 +331,7 @@ Diane Griffin은 measles virus (홍역 바이러스) 등의 viral pathogenesis�
         <figure>
         <a href="/files/img/DC_Police_Twit.webp" data-lightbox="vis">
             <img src = "/files/img/DC_Police_Twit.webp" alt=""
-            title = "DC_Police_Twit" width="100%">
+            title = "DC_Police_Twit" width="100%" loading="lazy">
         </a>
         <figcaption>무섭구만....</figcaption>
         </figure>
@@ -344,7 +345,7 @@ Jojo는 재즈 바/레스토랑이었다. 좌석은 주로 예약 위주로 받�
         <figure>
         <a href="/files/img/Jojo_play.gif" data-lightbox="vis">
         <img src = "/files/img/Jojo_play.gif" alt=""
-         title = "Jojo_play" width="100%">
+         title = "Jojo_play" width="100%" loading="lazy">
         </a>
         <figcaption>무대에서 재즈 밴드가 연주한다!</figcaption>
         </figure>
@@ -353,7 +354,7 @@ Jojo는 재즈 바/레스토랑이었다. 좌석은 주로 예약 위주로 받�
         <figure>
         <a href="/files/img/Jojo1.webp" data-lightbox="vis">
             <img src = "/files/img/Jojo1.webp" alt=""
-            title = "Jojo1" width="100%">
+            title = "Jojo1" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -362,7 +363,7 @@ Jojo는 재즈 바/레스토랑이었다. 좌석은 주로 예약 위주로 받�
         <figure>
         <a href="/files/img/Jojo2.webp" data-lightbox="vis">
         <img src = "/files/img/Jojo2.webp" alt=""
-         title = "Jojo2" width="100%">
+         title = "Jojo2" width="100%" loading="lazy">
         </a>
         <figcaption>Mango Mayhem Margarita 냠냠냠</figcaption>
         </figure>

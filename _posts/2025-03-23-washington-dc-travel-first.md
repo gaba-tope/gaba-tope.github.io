@@ -20,30 +20,30 @@ modify_date: 2025-04-08
 ### 공항에서 출발-도착, 브런치!
 
 RDU에서 아침 6시에 출발해서 워싱턴 D.C. (DCA)에 8시쯤 도착했다. Blue line 지하철을 타고 아침에 가기로 한 Library of Congress (의회도서관) 근처 브런치 음식점으로 향했다. 맛있는 곳을 기가 막히게 척척 찾아내는 Jeo.
-<div class = "row">
-    <div class="triple-column">
+<div class = "row" style="display: flex; justify-content: center;">
+    <div style="position:relative; float:left; padding:5px; width:33%">
         <figure>
         <a href="/files/img/Bird_RDU.webp" data-lightbox="vis">
             <img src = "/files/img/Bird_RDU.webp" alt="롤리-더럼 국제공항(RDU) 터미널 내부에 앉아있는 작은 새가 보입니다."
-            title = "Bird_RDU" width="100%">
+            title = "Bird_RDU" width="100%" loading="lazy">
         </a>
         <figcaption>공항에서 돌아다니는 작고 귀여운 새</figcaption>
         </figure>
     </div>
-    <div class="triple-column">
+    <div style="position:relative; float:left; padding:5px; width:33%">
         <figure>
         <a href="/files/img/Departing_airplane.webp" data-lightbox="vis">
         <img src = "/files/img/Departing_airplane.webp" alt="창문을 통해 들어오는 밝은 아침 햇살이 비행기 객실 내부를 따뜻한 빛으로 가득 채우고 있는 모습입니다."
-         title = "Departing_airplane" width="100%">
+         title = "Departing_airplane" width="100%" loading="lazy">
         </a>
         <figcaption>눈부신 아침 비행기</figcaption>
         </figure>
     </div>
-    <div class="triple-column">
+    <div style="position:relative; float:left; padding:5px; width:33%">
         <figure>
         <a href="/files/img/DCA_arrival.webp" data-lightbox="vis">
         <img src = "/files/img/DCA_arrival.webp" alt="워싱턴 DC의 레이건 내셔널 공항(DCA)에 도착 후 촬영한 미국 국기, 주변에 공항 터미널 시설이 보입니다."
-         title = "DCA_arrival" width="100%">
+         title = "DCA_arrival" width="100%" loading="lazy">
         </a>
         <figcaption>DCA공항에 도착!</figcaption>
         </figure>
@@ -53,29 +53,29 @@ RDU에서 아침 6시에 출발해서 워싱턴 D.C. (DCA)에 8시쯤 도착했�
 **Bull Frog Bagels**에서는 블루베리 베이글로 만든 뭐시기를 먹었다. 크지 않은 가게였고 2층에 앉아서 먹을 곳이 있었다. 메뉴 이름은 기억 나지 않는데, 맛도 무난하고 아침 식사로 제격이었다.
 
 <div class = "row">
-    <div class="triple-column">
+    <div style="position:relative; float:left; padding:5px; width:33%">
         <figure>
         <a href="/files/img/Bull_Frog_Bagels_Interior.webp" data-lightbox="vis">
             <img src = "/files/img/Bull_Frog_Bagels_Interior.webp" alt="불 프로그 베이글 매장 내부 전경으로, 카운터 뒤에서 음식을 준비하는 직원들과 머리 위에 보이는 메뉴판이 보입니다."
-            title = "Bull_Frog_Bagels_Interior" width="100%">
+            title = "Bull_Frog_Bagels_Interior" width="100%" loading="lazy">
         </a>
         <figcaption>Bull Frog Bagels 내부</figcaption>
         </figure>
     </div>
-    <div class="triple-column">
+    <div style="position:relative; float:left; padding:5px; width:33%">
         <figure>
         <a href="/files/img/Bull_Frog_Bagel_Bagel1.webp" data-lightbox="vis">
         <img src = "/files/img/Bull_Frog_Bagel_Bagel1.webp" alt="황금빛 갈색 표면에 블루베리 조각이 박혀 있는 온전한 형태의 블루베리 베이글이 접시에 놓여 있습니다."
-         title = "Bull_Frog_Bagel_Bagel1" width="100%">
+         title = "Bull_Frog_Bagel_Bagel1" width="100%" loading="lazy">
         </a>
         <figcaption>블루베리 베이글 뭐시기</figcaption>
         </figure>
     </div>
-    <div class="triple-column">
+    <div style="position:relative; float:left; padding:5px; width:33%">
         <figure>
         <a href="/files/img/Bull_Frog_Bagel_Bagel2.webp" data-lightbox="vis">
         <img src = "/files/img/Bull_Frog_Bagel_Bagel2.webp" alt="잘린 블루베리 베이글의 단면으로, 내부 질감과 블루베리, 바삭한 겉면과 부드러운 속 반죽 사이의 대비가 보이며, 베이글에 포함된 계란의 노른자가 살짝 보입니다."
-         title = "Bull_Frog_Bagel_Bagel1" width="100%">
+         title = "Bull_Frog_Bagel_Bagel1" width="100%" loading="lazy">
         </a>
         <figcaption>블루베리 베이글 뭐시기 2</figcaption>
         </figure>
@@ -90,29 +90,29 @@ RDU에서 아침 6시에 출발해서 워싱턴 D.C. (DCA)에 8시쯤 도착했�
 보통 의회도서관 다녀왔다고 하면 토마스 제퍼슨 빌딩에 갔다온 것이라 보면 된다.
 
 <div class = "row">
-    <div class="triple-column">
+    <div style="position:relative; float:left; padding:5px; width:33%">
         <figure>
         <a href="/files/img/LOC_front.webp" data-lightbox="vis">
             <img src = "/files/img/LOC_front.webp" alt="흐린 하늘 아래 미국 의회도서관의 외부 전경으로, 흰색 석조 외관, 기둥 및 돔이 있는 신고전주의 건축양식을 보여줍니다. 전경에는 주차된 차량, 보안 장벽 및 경비실이 있는 곡선형 진입로가 있습니다."
-            title = "LOC_front1" width="100%">
+            title = "LOC_front1" width="100%" loading="lazy">
         </a>
         <figcaption>Thomas Jefferson Building 앞에서 대충 찍은 건물 사진</figcaption>
         </figure>
     </div>
-    <div class="triple-column">
+    <div style="position:relative; float:left; padding:5px; width:33%">
         <figure>
         <a href="/files/img/LOC_front2.webp" data-lightbox="vis">
         <img src = "/files/img/LOC_front2.webp" alt="미국 의회도서관의 인상적인 청동 조각 분수로, 말과 함께 있는 근육질의 인물 조각상들이 아치형 벽감이 있는 흰색 석조 건축물을 배경으로 설치되어 있습니다. 조각상들은 바위 형태에서 튀어나오는 모습이며, 배경에는 고전적 스타일의 기둥과 세부 장식이 보입니다."
-         title = "LOC_front2" width="100%">
+         title = "LOC_front2" width="100%" loading="lazy">
         </a>
         <figcaption>도서관 건물 정면에 있던 조각. 그렇게 자세히 들여다보지는 않았다…</figcaption>
         </figure>
     </div>
-    <div class="triple-column">
+    <div style="position:relative; float:left; padding:5px; width:33%">
         <figure>
         <a href="/files/img/LOC_ticket.webp" data-lightbox="vis">
         <img src = "/files/img/LOC_ticket.webp" alt="손이 미국 의회도서관 토마스 제퍼슨 빌딩(10 First Street, SE 위치)의 시간제 입장권을 들고 있습니다. 티켓은 오렌지색 테두리가 있고 가격은 $0.00이며 티켓 번호가 보입니다. 배경에는 대리석 계단이 보입니다."
-         title = "LOC_ticket" width="100%">
+         title = "LOC_ticket" width="100%" loading="lazy">
         </a>
         <figcaption>예매표 바코드로 얻은 실물 티켓!</figcaption>
         </figure>
@@ -126,7 +126,7 @@ RDU에서 아침 6시에 출발해서 워싱턴 D.C. (DCA)에 8시쯤 도착했�
     <figure>
         <a href="/files/img/LOC_Great_Hall1.webp" data-lightbox="vis">
             <img src = "/files/img/LOC_Great_Hall1.webp" alt="미국 의회도서관의 화려한 천장 내부 모습으로, 푸른색 스테인드글라스 천창이 있는 정교한 카세톤 천장이 보입니다. 벽면과 천장은 황금빛과 크림색 장식이 있는 르네상스 양식으로 꾸며져 있으며, 대리석 기둥과 아치형 구조가 내부 공간을 둘러싸고 있습니다."
-                title = "LOC_Great_Hall 1" width = "100%">
+                title = "LOC_Great_Hall 1" width = "100%" loading="lazy">
         </a>
         <figcaption>1층 Great Hall에서 올려다 본 천장</figcaption>
     </figure>
@@ -135,7 +135,7 @@ RDU에서 아침 6시에 출발해서 워싱턴 D.C. (DCA)에 8시쯤 도착했�
     <figure>
         <a href="/files/img/LOC_Great_Hall2.webp" data-lightbox="vis">
             <img src = "/files/img/LOC_Great_Hall2.webp" alt="미국 의회도서관 내부의 정면 입구 부분으로, 'LIBRARY OF CONGRESS'라고 새겨진 대리석 아치가 보입니다. 높은 대리석 기둥들이 입구를 지지하고 있으며, 천장과 벽면은 금색과 밝은 색상의 정교한 무라와 조각으로 장식되어 있습니다. 삼각형 모양의 천장 프레스코화에는 'HOMER', 'DANTE', 'PLATO' 등의 이름이 보이며, 상부에는 그리스식 키 패턴 장식이 있습니다."
-                title = "LOC_Great_Hall 2" width = "100%">
+                title = "LOC_Great_Hall 2" width = "100%" loading="lazy">
         </a>
         <figcaption>Library of Congress라 적힌 아치. 천장의 그림을 유심히 보면 Homer (호메로스), Dante (단테), Plato (플라톤) 등 유우명한 작가들 이름이 써져있다.</figcaption>
     </figure>
@@ -153,7 +153,7 @@ RDU에서 아침 6시에 출발해서 워싱턴 D.C. (DCA)에 8시쯤 도착했�
     <figure>
         <a href="/files/img/LOC_Gutenberg_Bible.webp" data-lightbox="vis">
             <img src = "/files/img/LOC_Gutenberg_Bible.webp" alt="이 이미지는 구텐베르크 성경의 펼쳐진 페이지를 보여주고 있습니다. 페이지에는 라틴어 불가타 성경 텍스트가 고딕체로 빽빽하게 인쇄되어 있습니다. 오른쪽 페이지에는 파란색과 빨간색으로 장식된 화려한 장식 대문자(장식 이니셜)가 있으며, 페이지 상단에는 붉은색으로 표시된 장 번호가 보입니다. 책은 양피지 페이지를 사용했으며, 시간이 지남에 따라 자연스럽게 누렇게 변색되었습니다"
-                title = "LOC_Gutenberg_Bible" width = "100%">
+                title = "LOC_Gutenberg_Bible" width = "100%" loading="lazy">
         </a>
         <figcaption>1층에 전시된 구텐베르크 성경.</figcaption>
     </figure>
@@ -171,7 +171,7 @@ RDU에서 아침 6시에 출발해서 워싱턴 D.C. (DCA)에 8시쯤 도착했�
         <figure>
         <a href="/files/img/LOC_Reading_Room_left.webp" data-lightbox="vis">
             <img src = "/files/img/LOC_Reading_Room_left.webp" alt="흐린 하늘 아래 미국 의회도서관의 외부 전경으로, 흰색 석조 외관, 기둥 및 돔이 있는 신고전주의 건축양식을 보여줍니다. 전경에는 주차된 차량, 보안 장벽 및 경비실이 있는 곡선형 진입로가 있습니다."
-            title = "LOC_Reading_Room_left" width="100%">
+            title = "LOC_Reading_Room_left" width="100%" loading="lazy">
         </a>
         <figcaption>입구에서 찍은 리딩 룸</figcaption>
         </figure>
@@ -180,7 +180,7 @@ RDU에서 아침 6시에 출발해서 워싱턴 D.C. (DCA)에 8시쯤 도착했�
         <figure>
         <a href="/files/img/LOC_Reading_Room_center.webp" data-lightbox="vis">
         <img src = "/files/img/LOC_Reading_Room_center.webp" alt="미국 의회도서관의 인상적인 청동 조각 분수로, 말과 함께 있는 근육질의 인물 조각상들이 아치형 벽감이 있는 흰색 석조 건축물을 배경으로 설치되어 있습니다. 조각상들은 바위 형태에서 튀어나오는 모습이며, 배경에는 고전적 스타일의 기둥과 세부 장식이 보입니다."
-         title = "LOC_Reading_Room_center" width="100%">
+         title = "LOC_Reading_Room_center" width="100%" loading="lazy">
         </a>
         <figcaption>약간 더 들어가서 찍은 리딩 룸</figcaption>
         </figure>
@@ -189,7 +189,7 @@ RDU에서 아침 6시에 출발해서 워싱턴 D.C. (DCA)에 8시쯤 도착했�
         <figure>
         <a href="/files/img/LOC_Reading_Room_Top.webp" data-lightbox="vis">
         <img src = "/files/img/LOC_Reading_Room_Top.webp" alt="화려한 돔 천장이 보이는 사진으로, 정교한 기하학적 패턴과 황금 장식이 돋보입니다. 중앙에는 원형의 프레스코화가 있으며, 그 주변을 둘러싼 네모난 장식들은 대칭적으로 배열되어 있습니다. 돔의 가장자리에는 섬세한 조각과 장식적인 요소들이 포함되어 있어 웅장한 분위기를 자아냅니다."
-         title = "LOC_Reading_Room_Top" width="100%">
+         title = "LOC_Reading_Room_Top" width="100%" loading="lazy">
         </a>
         <figcaption>천장의 그림이 되게 예뻤다.</figcaption>
         </figure>
@@ -198,7 +198,7 @@ RDU에서 아침 6시에 출발해서 워싱턴 D.C. (DCA)에 8시쯤 도착했�
         <figure>
         <a href="/files/img/LOC_Reading_Room_Top_sizeup.webp" data-lightbox="vis">
         <img src = "/files/img/LOC_Reading_Room_Top_sizeup.webp" alt="돔 천장의 중앙 부분을 확대하여 찍은 사진입니다. 중심에는 하늘색을 배경으로 한 천사와 인물들이 그려진 프레스코화가 있으며, 그 주위를 따라 다양한 문명이 적힌 판이 장식되어 있습니다. 'GREECE(그리스)', 'ROME(로마)', 'JUDEA(유대)', 'EGYPT(이집트)', 'ISLAM(이슬람)', 'MIDDLE AGES(중세)', 'GERMANY(독일)' 등의 문구가 보입니다."
-         title = "LOC_Reading_Room_Top_sizeup" width="100%">
+         title = "LOC_Reading_Room_Top_sizeup" width="100%" loading="lazy">
         </a>
         <figcaption>이제 더 잘 보이죠??</figcaption>
         </figure>
@@ -214,7 +214,7 @@ RDU에서 아침 6시에 출발해서 워싱턴 D.C. (DCA)에 8시쯤 도착했�
         <figure>
         <a href="/files/img/LOC_Exhibit_Flu1.webp" data-lightbox="vis">
             <img src = "/files/img/LOC_Exhibit_Flu1.webp" alt="이 이미지는 액자에 담긴 역사적인 인플루엔자 예방 포스터를 보여줍니다. 미국 재무부 공중보건국에서 발행한 이 포스터에는 '인플루엔자: 코와 목에서 분사되는 비말로 전파됨'이라고 대문자로 쓰여 있습니다. 포스터는 기침과 재채기 시 손수건으로 가리기, 접촉으로 전파됨, 사람 많은 곳 피하기, 가능하면 걸어서 출근하기, 바닥이나 인도에 침 뱉지 않기, 공용 컵과 수건 사용하지 않기, 과도한 피로 피하기, 아프면 침대에 누워 의사를 부르기 등의 예방 수칙을 안내합니다. 이러한 지침이 감기, 기관지염, 폐렴 및 결핵에도 적용된다고 명시되어 있습니다"
-            title = "LOC_Exhibit_Flu1" width="100%">
+            title = "LOC_Exhibit_Flu1" width="100%" loading="lazy">
         </a>
         <figcaption>대유행시 사회적 거리두기는 중요하죠...</figcaption>
         </figure>
@@ -223,7 +223,7 @@ RDU에서 아침 6시에 출발해서 워싱턴 D.C. (DCA)에 8시쯤 도착했�
         <figure>
         <a href="/files/img/LOC_Exhibit_Flu2.webp" data-lightbox="vis">
         <img src = "/files/img/LOC_Exhibit_Flu2.webp" alt="이 이미지는 박물관이나 전시관에 전시된 스페인 독감 관련 유물들을 보여줍니다. 왼쪽에는 오래된 필기 편지가 있는데, 이는 독감 시대의 개인적인 기록으로 보입니다. 오른쪽에는 'CASCARA QUININE'이라고 표시된 빨간색 약 상자와 응급 의료 종사자 배지, 그리고 적십자 배지가 전시되어 있습니다. 이 유물들은 1918년 독감 대유행 시기의 의료 대응과 개인적 경험을 보여주는 역사적인 물품들입니다."
-         title = "LOC_Exhibit_Flu1" width="100%">
+         title = "LOC_Exhibit_Flu1" width="100%" loading="lazy">
         </a>
         <figcaption>기록에 어떤 내용이 쓰여있었는지 기억이 잘 안난다… 의료 종사자들이 패용하던 뱃지들과 퀴닌 포장 곽.</figcaption>
         </figure>
@@ -236,7 +236,7 @@ RDU에서 아침 6시에 출발해서 워싱턴 D.C. (DCA)에 8시쯤 도착했�
         <figure>
         <a href="/files/img/LOC_map_1784_raw.webp" data-lightbox="vis">
             <img src = "/files/img/LOC_map_1784_raw.webp" alt="이 이미지는 액자에 넣어져 전시된 미국의 역사적인 고지도를 보여줍니다. 이 지도는 북아메리카 초기 미국의 영토를 보여주는 것으로, 대서양 연안 13개 식민지와 그 주변 지역을 포함하고 있습니다. 지도는 오래된 양피지 같은 종이에 갈색 잉크로 그려져 있으며, 오른쪽 하단에는 장식적인 카투슈(지도 제목 장식)와 작은 미국 국기가 있습니다. 지도에는 대서양, 멕시코 만, 오대호, 로렌스 만 등의 수역과 펜실베이니아, 버지니아, 노스캐롤라이나, 사우스캐롤라이나, 조지아 등의 초기 주들이 표시되어 있습니다."
-            title = "LOC_map_1784_raw" width="100%">
+            title = "LOC_map_1784_raw" width="100%" loading="lazy">
         </a>
         <figcaption>1784년 Abel Buell이 완성한 'A New and Correct Map of the U.S.'</figcaption>
         </figure>
@@ -245,7 +245,7 @@ RDU에서 아침 6시에 출발해서 워싱턴 D.C. (DCA)에 8시쯤 도착했�
         <figure>
         <a href="/files/img/LOC_map_1784_sizeup.webp" data-lightbox="vis">
         <img src = "/files/img/LOC_map_1784_sizeup.webp" alt=""
-         title = "LOC_map_1784_sizeup" width="100%">
+         title = "LOC_map_1784_sizeup" width="100%" loading="lazy">
         </a>
         <figcaption>"Gulf of Mexico"</figcaption>
         </figure>
@@ -254,7 +254,7 @@ RDU에서 아침 6시에 출발해서 워싱턴 D.C. (DCA)에 8시쯤 도착했�
         <figure>
         <a href="/files/img/Choi_Why_You.webp" data-lightbox="vis">
         <img src = "/files/img/Choi_Why_You.webp" alt=""
-         title = "Choi_Why_You_Decide" width="100%">
+         title = "Choi_Why_You_Decide" width="100%" loading="lazy">
         </a>
         <figcaption>머릿속에 떠오르는 그 짤</figcaption>
         </figure>
@@ -272,7 +272,7 @@ RDU에서 아침 6시에 출발해서 워싱턴 D.C. (DCA)에 8시쯤 도착했�
         <figure>
         <a href="/files/img/LOC_Exhibit_Golden_Record.webp" data-lightbox="vis">
             <img src = "/files/img/LOC_Exhibit_Golden_Record.webp" alt=""
-            title = "LOC_Exhibit_Golden_Record" width="100%">
+            title = "LOC_Exhibit_Golden_Record" width="100%" loading="lazy">
         </a>
         <figcaption>반짝반짝 'The Sounds of Earth'. </figcaption>
         </figure>
@@ -281,7 +281,7 @@ RDU에서 아침 6시에 출발해서 워싱턴 D.C. (DCA)에 8시쯤 도착했�
         <figure>
         <a href="/files/img/LOC_Exhibit_Freud_Traumdeutung.webp" data-lightbox="vis">
         <img src = "/files/img/LOC_Exhibit_Freud_Traumdeutung.webp" alt=""
-         title = "LOC_Exhibit_Freud_Traumdeutung" width="100%">
+         title = "LOC_Exhibit_Freud_Traumdeutung" width="100%" loading="lazy">
         </a>
         <figcaption>그 유명한 『Traumdeutung (꿈의 해석)』, 1900년 발행본</figcaption>
         </figure>
@@ -290,7 +290,7 @@ RDU에서 아침 6시에 출발해서 워싱턴 D.C. (DCA)에 8시쯤 도착했�
         <figure>
         <a href="/files/img/LOC_Exhibit_Arendt_Passport1.webp" data-lightbox="vis">
         <img src = "/files/img/LOC_Exhibit_Arendt_Passport1.webp" alt=""
-         title = "LOC_Exhibit_Arendt_Passport1" width="100%">
+         title = "LOC_Exhibit_Arendt_Passport1" width="100%" loading="lazy">
         </a>
         <figcaption>아렌트의 'Affidavit of Identity in Lieu of Passport' 1면.</figcaption>
         </figure>
@@ -299,7 +299,7 @@ RDU에서 아침 6시에 출발해서 워싱턴 D.C. (DCA)에 8시쯤 도착했�
         <figure>
         <a href="/files/img/LOC_Exhibit_Arendt_Passport2.webp" data-lightbox="vis">
         <img src = "/files/img/LOC_Exhibit_Arendt_Passport2.webp" alt=""
-         title = "LOC_Exhibit_Arendt_Passport2" width="100%">
+         title = "LOC_Exhibit_Arendt_Passport2" width="100%" loading="lazy">
         </a>
         <figcaption>아렌트의 Affidavit 2면.</figcaption>
         </figure>
@@ -312,7 +312,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figure>
         <a href="/files/img/LOC_Mezzanine_view.webp" data-lightbox="vis">
             <img src = "/files/img/LOC_Mezzanine_view.webp" alt=""
-            title = "LOC_Mezzanine_view" width="100%">
+            title = "LOC_Mezzanine_view" width="100%" loading="lazy">
         </a>
         <figcaption>메자닌에서 바라본 리딩 룸</figcaption>
         </figure>
@@ -321,7 +321,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figure>
         <a href="/files/img/LOC_Mezzanine_ceiling.webp" data-lightbox="vis">
         <img src = "/files/img/LOC_Mezzanine_ceiling.webp" alt=""
-         title = "LOC_Mezzanine_ceiling" width="100%">
+         title = "LOC_Mezzanine_ceiling" width="100%" loading="lazy">
         </a>
         <figcaption>메자닌에서 바라본 천장</figcaption>
         </figure>
@@ -334,7 +334,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
     <figure>
         <a href="/files/img/LOC_Gershwin_RiB.webp" data-lightbox="vis">
             <img src = "/files/img/LOC_Gershwin_RiB.webp" alt=""
-                title = "LOC_Gershwin_RiB" width = "100%">
+                title = "LOC_Gershwin_RiB" width = "100%" loading="lazy">
         </a>
         <figcaption>거슈인의 '랩소디 인 블루' 악보 원고</figcaption>
     </figure>
@@ -357,7 +357,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
     <figure>
         <a href="/files/img/Congress.webp" data-lightbox="vis">
             <img src = "/files/img/Congress.webp" alt=""
-                title = "Congress" width = "100%">
+                title = "Congress" width = "100%" loading="lazy">
         </a>
         <figcaption>Captiol Hill 앞에서!</figcaption>
     </figure>
@@ -377,7 +377,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figure>
         <a href="/files/img/SC_Ginsburg.webp" data-lightbox="vis">
             <img src = "/files/img/SC_Ginsburg.webp" alt=""
-            title = "SC_Ginsburg" width="100%">
+            title = "SC_Ginsburg" width="100%" loading="lazy">
         </a>
         <figcaption>유일하게 들어본 적 있는 긴즈버그 대법관. </figcaption>
         </figure>
@@ -386,7 +386,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figure>
         <a href="/files/img/SC_doll1.webp" data-lightbox="vis">
         <img src = "/files/img/SC_doll1.webp" alt=""
-         title = "SC_doll1" width="100%">
+         title = "SC_doll1" width="100%" loading="lazy">
         </a>
         <figcaption>대법관 인형들. 이걸 사는 사람이 있을까? </figcaption>
         </figure>
@@ -395,7 +395,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figure>
         <a href="/files/img/SC_doll2.webp" data-lightbox="vis">
         <img src = "/files/img/SC_doll2.webp" alt=""
-         title = "SC_doll2" width="100%">
+         title = "SC_doll2" width="100%" loading="lazy">
         </a>
         <figcaption>대법관 인형들 2. 레고 느낌 난다.</figcaption>
         </figure>
@@ -404,7 +404,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figure>
         <a href="/files/img/SC_bronze.webp" data-lightbox="vis">
         <img src = "/files/img/SC_bronze.webp" alt=""
-         title = "SC_bronze" width="100%">
+         title = "SC_bronze" width="100%" loading="lazy">
         </a>
         <figcaption>진열된 기념품 중 그나마 괜찮았던 것</figcaption>
         </figure>
@@ -423,7 +423,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figure>
         <a href="/files/img/We_the_pizza.webp" data-lightbox="vis">
             <img src = "/files/img/We_the_pizza.webp" alt=""
-            title = "We_the_pizza" width="100%">
+            title = "We_the_pizza" width="100%" loading="lazy">
         </a>
         <figcaption>피자 한 조각 다 먹고 나서야 사진 찍어야겠다는 생각이 났다 ㅎ 이게 Capitol Supreme. </figcaption>
         </figure>
@@ -432,7 +432,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figure>
         <a href="/files/img/Constitution_of_the_US_p1.webp" data-lightbox="vis">
         <img src = "/files/img/Constitution_of_the_US_p1.webp" alt=""
-         title = "Constitution_of_the_US_p1" width="100%">
+         title = "Constitution_of_the_US_p1" width="100%" loading="lazy">
         </a>
         <figcaption>We The People이 적힌 1787년 미합중국 헌법 official handwritten copy (Constitutional Convention, 1787).</figcaption>
         </figure>
@@ -450,7 +450,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figure>
         <a href="/files/img/OKL_onway.webp" data-lightbox="vis">
             <img src = "/files/img/OKL_onway.webp" alt=""
-            title = "OKL_onway" width="100%">
+            title = "OKL_onway" width="100%" loading="lazy">
         </a>
         <figcaption>멀리서 보이는 태극기!</figcaption>
         </figure>
@@ -459,7 +459,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figure>
         <a href="/files/img/OKL_Front.webp" data-lightbox="vis">
         <img src = "/files/img/OKL_Front.webp" alt=""
-         title = "OKL_Front" width="100%">
+         title = "OKL_Front" width="100%" loading="lazy">
         </a>
         <figcaption>주미 대한제국 공사관 건물 앞에서.</figcaption>
         </figure>
@@ -468,7 +468,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figure>
         <a href="/files/img/OKL_Frontdoor.webp" data-lightbox="vis">
         <img src = "/files/img/OKL_Frontdoor.webp" alt=""
-         title = "OKL_Frontdoor" width="100%">
+         title = "OKL_Frontdoor" width="100%" loading="lazy">
         </a>
         <figcaption>들어가는 문! 문패에 '주미 대한제국 공사관 OLD KOREAN LEGATION'과 대한제국 국기가 보인다.</figcaption>
         </figure>
@@ -477,7 +477,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figure>
         <a href="/files/img/logan_circle_map.webp" data-lightbox="vis">
         <img src = "/files/img/logan_circle_map.webp" alt=""
-         title = "logan_circle_map" width="100%">
+         title = "logan_circle_map" width="100%" loading="lazy">
         </a>
         <figcaption>Logan History District 지도 (출처: 주미대한제국공사관 홈페이지). 빨갛게 표시된 곳이 공사관 건물이다.</figcaption>
         </figure>
@@ -493,7 +493,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figure>
         <a href="/files/img/OKL_1F_flag.webp" data-lightbox="vis">
             <img src = "/files/img/OKL_1F_flag.webp" alt=""
-            title = "OKL_1F_flag" width="100%">
+            title = "OKL_1F_flag" width="100%" loading="lazy">
         </a>
         <figcaption>1층 태극기 앞에서!</figcaption>
         </figure>
@@ -502,7 +502,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figure>
         <a href="/files/img/OKL_1F_text.webp" data-lightbox="vis">
         <img src = "/files/img/OKL_1F_text.webp" alt=""
-         title = "OKL_1F_text" width="100%">
+         title = "OKL_1F_text" width="100%" loading="lazy">
         </a>
         <figcaption>오른쪽에서 왼쪽으로 '한미친선평등호조'라 적힌 족자.</figcaption>
         </figure>
@@ -511,7 +511,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figure>
         <a href="/files/img/OKL_1F_guest.webp" data-lightbox="vis">
         <img src = "/files/img/OKL_1F_guest.webp" alt=""
-         title = "OKL_1F_guest" width="100%">
+         title = "OKL_1F_guest" width="100%" loading="lazy">
         </a>
         <figcaption>객당에서! 사진 별로 안 찍어봐서 어색하게 놓아 둔 손…</figcaption>
         </figure>
@@ -520,7 +520,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figure>
         <a href="/files/img/OKL_1F_Dining.webp" data-lightbox="vis">
         <img src = "/files/img/OKL_1F_Dining.webp" alt=""
-         title = "OKL_1F_Dining" width="100%">
+         title = "OKL_1F_Dining" width="100%" loading="lazy">
         </a>
         <figcaption>식당에서. 역시 어색한 손...ㅋㅋㅋ</figcaption>
         </figure>
@@ -534,7 +534,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figure>
         <a href="/files/img/OKL_2F_Office.webp" data-lightbox="vis">
             <img src = "/files/img/OKL_2F_Office.webp" alt=""
-            title = "OKL_2F_Office" width="100%">
+            title = "OKL_2F_Office" width="100%" loading="lazy">
         </a>
         <figcaption>공사 집무실</figcaption>
         </figure>
@@ -543,7 +543,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figure>
         <a href="/files/img/OKL_2F_Bed.webp" data-lightbox="vis">
         <img src = "/files/img/OKL_2F_Bed.webp" alt=""
-         title = "OKL_2F_Bed" width="100%">
+         title = "OKL_2F_Bed" width="100%" loading="lazy">
         </a>
         <figcaption>공사 침실</figcaption>
         </figure>
@@ -560,7 +560,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figure>
         <a href="/files/img/OKL_3F_Bobingsa.webp" data-lightbox="vis">
             <img src = "/files/img/OKL_3F_Bobingsa.webp" alt=""
-            title = "OKL_3F_Bobingsa" width="100%">
+            title = "OKL_3F_Bobingsa" width="100%" loading="lazy">
         </a>
         <figcaption>정말로…멀리멀리 돌아서 온다…ㅠ</figcaption>
         </figure>
@@ -569,7 +569,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figure>
         <a href="/files/img/OKL_3F_Oldest_extant_passport.webp" data-lightbox="vis">
         <img src = "/files/img/OKL_3F_Oldest_extant_passport.webp" alt=""
-         title = "OKL_3F_Oldest_extant_passport" width="100%">
+         title = "OKL_3F_Oldest_extant_passport" width="100%" loading="lazy">
         </a>
         <figcaption>현존하는 최고(最古)의 조선 여권, 장봉환의 집조 (1893).</figcaption>
         </figure>
@@ -584,7 +584,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figure>
         <a href="/files/img/DC_54NoodleBar.webp" data-lightbox="vis">
             <img src = "/files/img/DC_54NoodleBar.webp" alt=""
-            title = "DC_54NoodleBar" width="100%">
+            title = "DC_54NoodleBar" width="100%" loading="lazy">
         </a>
         <figcaption>냠!</figcaption>
         </figure>
@@ -593,7 +593,7 @@ Mezzanine에서는 리딩 룸을 조망할 수 있다.
         <figure>
         <a href="/files/img/DC_JackFrost.webp" data-lightbox="vis">
         <img src = "/files/img/DC_JackFrost.webp" alt=""
-         title = "DC_JackFrost" width="100%">
+         title = "DC_JackFrost" width="100%" loading="lazy">
         </a>
         <figcaption>바에서 마신 잭 프로스트 (Jack Frost). 나름 맛있다.</figcaption>
         </figure>

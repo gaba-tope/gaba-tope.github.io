@@ -27,7 +27,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/BCD_dubu1.png" data-lightbox="vis">
             <img src = "/files/img/BCD_dubu1.png" alt=""
-            title = "BCD_dubu1" width="100%">
+            title = "BCD_dubu1" width="100%" loading="lazy">
         </a>
         <figcaption>반찬과 따끈따끈한 돌솥밥</figcaption>
         </figure>
@@ -36,7 +36,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/BCD_dubu2.png" data-lightbox="vis">
             <img src = "/files/img/BCD_dubu2.png" alt=""
-            title = "BCD_dubu2" width="100%">
+            title = "BCD_dubu2" width="100%" loading="lazy">
         </a>
         <figcaption>순두부찌개!</figcaption>
         </figure>
@@ -45,7 +45,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/BCD_dubu_boiling.gif" data-lightbox="vis">
             <img src = "/files/img/BCD_dubu_boiling.gif" alt=""
-            title = "CBCD_dubu_boiling" width="100%">
+            title = "CBCD_dubu_boiling" width="100%" loading="lazy">
         </a>
         <figcaption>보글보글보글</figcaption>
         </figure>
@@ -54,7 +54,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/BCD_dubu3.png" data-lightbox="vis">
             <img src = "/files/img/BCD_dubu3.png" alt=""
-            title = "BCD_dubu3" width="100%">
+            title = "BCD_dubu3" width="100%" loading="lazy">
         </a>
         <figcaption>여기서 먹었당</figcaption>
         </figure>
@@ -70,7 +70,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/Waymo_1.png" data-lightbox="vis">
             <img src = "/files/img/Waymo_1.png" alt=""
-            title = "Waymo_1" width="100%">
+            title = "Waymo_1" width="100%" loading="lazy">
         </a>
         <figcaption>차에 이런저런 센서가 달려 있다.</figcaption>
         </figure>
@@ -79,7 +79,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/Waymo_2.png" data-lightbox="vis">
             <img src = "/files/img/Waymo_2.png" alt=""
-            title = "Waymo_1" width="100%">
+            title = "Waymo_1" width="100%" loading="lazy">
         </a>
         <figcaption>정말 운전석에 아무도 없다...</figcaption>
         </figure>
@@ -92,7 +92,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/Waymo_depart.gif" data-lightbox="vis">
             <img src = "/files/img/Waymo_depart.gif" alt=""
-            title = "Waymo_depart" width="100%">
+            title = "Waymo_depart" width="100%" loading="lazy">
         </a>
         <figcaption>출발!</figcaption>
         </figure>
@@ -101,7 +101,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/Waymo_turning.gif" data-lightbox="vis">
             <img src = "/files/img/Waymo_turning.gif" alt=""
-            title = "Waymo_turning" width="100%">
+            title = "Waymo_turning" width="100%" loading="lazy">
         </a>
         <figcaption>회전도 잘하는 웨 선생</figcaption>
         </figure>
@@ -115,7 +115,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/Waymo_light_recognition.gif" data-lightbox="vis">
             <img src = "/files/img/Waymo_light_recognition.gif" alt=""
-            title = "Waymo_light_recognition" width="100%">
+            title = "Waymo_light_recognition" width="100%" loading="lazy">
         </a>
         <figcaption>브레이크등과 방향지시등 등을 인식한다.</figcaption>
         </figure>
@@ -124,7 +124,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/Waymo_human_recognition.gif" data-lightbox="vis">
             <img src = "/files/img/Waymo_human_recognition.gif" alt=""
-            title = "Waymo_human_recognition" width="100%">
+            title = "Waymo_human_recognition" width="100%" loading="lazy">
         </a>
         <figcaption>사람을 인식한다.</figcaption>
         </figure>
@@ -138,7 +138,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/Waymo_Parking.gif" data-lightbox="vis">
             <img src = "/files/img/Waymo_Parking.gif" alt=""
-            title = "Waymo_Parking" width="100%">
+            title = "Waymo_Parking" width="100%" loading="lazy">
         </a>
         <figcaption>근데 왜 이런 곳에 내려주니 웨 선생아?</figcaption>
         </figure>
@@ -147,7 +147,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/Waymo_after_arrival.gif" data-lightbox="vis">
             <img src = "/files/img/Waymo_after_arrival.gif" alt=""
-            title = "Waymo_after_arrival" width="100%">
+            title = "Waymo_after_arrival" width="100%" loading="lazy">
         </a>
         <figcaption>도착하고 찍은 사진. 센서들이 저렇게 뱅글뱅글 돌아간다. </figcaption>
         </figure>
@@ -163,7 +163,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/Farmers Market1.png" data-lightbox="vis">
             <img src = "/files/img/Farmers Market1.png" alt=""
-            title = "Farmers Market1" width="100%">
+            title = "Farmers Market1" width="100%" loading="lazy">
         </a>
         <figcaption>LA Farmer's Market</figcaption>
         </figure>
@@ -172,7 +172,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/Farmers Market2.png" data-lightbox="vis">
             <img src = "/files/img/Farmers Market2.png" alt=""
-            title = "Farmers Market2" width="100%">
+            title = "Farmers Market2" width="100%" loading="lazy">
         </a>
         <figcaption>Farmer's market 시계탑 </figcaption>
         </figure>
@@ -181,7 +181,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/Farmers Market3.png" data-lightbox="vis">
             <img src = "/files/img/Farmers Market3.png" alt=""
-            title = "Farmers Market3" width="100%">
+            title = "Farmers Market3" width="100%" loading="lazy">
         </a>
         <figcaption>100년 넘게 영업 중이라는 견과류 & 견과류 페이스트 가게</figcaption>
         </figure>
@@ -195,7 +195,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/Farmers Market_bottle.png" data-lightbox="vis">
             <img src = "/files/img/Farmers Market_bottle.png" alt=""
-            title = "Farmers Market_bottle" width="100%">
+            title = "Farmers Market_bottle" width="100%" loading="lazy">
         </a>
         <figcaption>무슨 뜻일까?</figcaption>
         </figure>
@@ -204,7 +204,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/Farmers Market_bottle_kor.png" data-lightbox="vis">
             <img src = "/files/img/Farmers Market_bottle_kor.png" alt=""
-            title = "Farmers Market_bottle_kor" width="100%">
+            title = "Farmers Market_bottle_kor" width="100%" loading="lazy">
         </a>
         <figcaption>ㅋㅋㅋㅋㅋㅋ</figcaption>
         </figure>
@@ -218,7 +218,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/Farmers Market Food1.png" data-lightbox="vis">
             <img src = "/files/img/Farmers Market Food1.png" alt=""
-            title = "Farmers Market Food1" width="100%">
+            title = "Farmers Market Food1" width="100%" loading="lazy">
         </a>
         <figcaption>맛있어 보이는 것…</figcaption>
         </figure>
@@ -227,7 +227,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/Farmers Market Food2.png" data-lightbox="vis">
             <img src = "/files/img/Farmers Market Food2.png" alt=""
-            title = "Farmers Market Food2" width="100%">
+            title = "Farmers Market Food2" width="100%" loading="lazy">
         </a>
         <figcaption>파이들!</figcaption>
         </figure>
@@ -236,7 +236,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/Farmers Market Lunch.png" data-lightbox="vis">
             <img src = "/files/img/Farmers Market Lunch.png" alt=""
-            title = "Farmers Market Lunch" width="100%">
+            title = "Farmers Market Lunch" width="100%" loading="lazy">
         </a>
         <figcaption>점심으로 먹은 파이와 핫도그. 보이즌베리 (boysen berry) 맛, 루밥 (Rhubarb) 맛, 그리고 블루베리 맛을 먹었던 것 같다.</figcaption>
         </figure>
@@ -250,7 +250,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/Farmers Market_Donuts.png" data-lightbox="vis">
             <img src = "/files/img/Farmers Market_Donuts.png" alt=""
-            title = "Farmers Market_Donuts" width="100%">
+            title = "Farmers Market_Donuts" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -266,7 +266,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/The Grove_Bus1.png" data-lightbox="vis">
             <img src = "/files/img/The Grove_Bus1.png" alt=""
-            title = "The Grove_Bus1" width="100%">
+            title = "The Grove_Bus1" width="100%" loading="lazy">
         </a>
         <figcaption>더 그로브를 쭉 훑어주는 2층 버스</figcaption>
         </figure>
@@ -275,7 +275,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/The Grove_Bus2.png" data-lightbox="vis">
             <img src = "/files/img/The Grove_Bus2.png" alt=""
-            title = "The Grove_Bus2" width="100%">
+            title = "The Grove_Bus2" width="100%" loading="lazy">
         </a>
         <figcaption>2층 버스 안에서</figcaption>
         </figure>
@@ -284,7 +284,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/The Grove_Statue.png" data-lightbox="vis">
             <img src = "/files/img/The Grove_Statue.png" alt=""
-            title = "The Grove_Statue" width="100%">
+            title = "The Grove_Statue" width="100%" loading="lazy">
         </a>
         <figcaption>더 그로브 가운데 있는 동상</figcaption>
         </figure>
@@ -298,7 +298,7 @@ modify_date: 2025-06-19
         <figure>
         <a href="/files/img/The Grove_Cosmetics1.png" data-lightbox="vis">
             <img src = "/files/img/The Grove_Cosmetics1.png" alt=""
-            title = "The Grove_Cosmetics1" width="100%">
+            title = "The Grove_Cosmetics1" width="100%" loading="lazy">
         </a>
         <figcaption>얘 향 괜찮았던 기억이 있다.</figcaption>
         </figure>
@@ -312,7 +312,7 @@ Le Labo라는 향수점에도 가 봄. Le Labo는 프랑스어로 '실험실'을
         <figure>
         <a href="/files/img/Le Labo1.png" data-lightbox="vis">
             <img src = "/files/img/Le Labo1.png" alt=""
-            title = "Le Labo1" width="100%">
+            title = "Le Labo1" width="100%" loading="lazy">
         </a>
         <figcaption>Le Labo</figcaption>
         </figure>
@@ -321,7 +321,7 @@ Le Labo라는 향수점에도 가 봄. Le Labo는 프랑스어로 '실험실'을
         <figure>
         <a href="/files/img/Le Labo2.png" data-lightbox="vis">
             <img src = "/files/img/Le Labo2.png" alt=""
-            title = "Le Labo2" width="100%">
+            title = "Le Labo2" width="100%" loading="lazy">
         </a>
         <figcaption>Matcha 이거 향 되게 좋다!</figcaption>
         </figure>
@@ -330,7 +330,7 @@ Le Labo라는 향수점에도 가 봄. Le Labo는 프랑스어로 '실험실'을
         <figure>
         <a href="/files/img/Le Labo3.png" data-lightbox="vis">
             <img src = "/files/img/Le Labo3.png" alt=""
-            title = "Le Labo3" width="100%">
+            title = "Le Labo3" width="100%" loading="lazy">
         </a>
         <figcaption>인테리어가 상당히 맘에 든다1</figcaption>
         </figure>
@@ -339,7 +339,7 @@ Le Labo라는 향수점에도 가 봄. Le Labo는 프랑스어로 '실험실'을
         <figure>
         <a href="/files/img/Le Labo4.png" data-lightbox="vis">
             <img src = "/files/img/Le Labo4.png" alt=""
-            title = "Le Labo4" width="100%">
+            title = "Le Labo4" width="100%" loading="lazy">
         </a>
         <figcaption>인테리어가 상당히 맘에 든다2</figcaption>
         </figure>
@@ -355,7 +355,7 @@ Le Labo라는 향수점에도 가 봄. Le Labo는 프랑스어로 '실험실'을
         <figure>
         <a href="/files/img/Glossie_You_Doux.png" data-lightbox="vis">
             <img src = "/files/img/Glossie_You_Doux.png" alt=""
-            title = "Glossie_You_Doux" width="100%">
+            title = "Glossie_You_Doux" width="100%" loading="lazy">
         </a>
         <figcaption>상당히! 마음에 드는 향이었음. Glossier의 You Doux.</figcaption>
         </figure>
@@ -371,7 +371,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Pine and Crane1.png" data-lightbox="vis">
             <img src = "/files/img/Pine and Crane1.png" alt=""
-            title = "Pine and Crane1" width="100%">
+            title = "Pine and Crane1" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -380,7 +380,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Pine and Crane2.png" data-lightbox="vis">
             <img src = "/files/img/Pine and Crane2.png" alt=""
-            title = "Pine and Crane2" width="100%">
+            title = "Pine and Crane2" width="100%" loading="lazy">
         </a>
         <figcaption>딱 봐도 맛있어 보이는 음식</figcaption>
         </figure>
@@ -389,7 +389,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Pine and Crane3.png" data-lightbox="vis">
             <img src = "/files/img/Pine and Crane3.png" alt=""
-            title = "Pine and Crane3" width="100%">
+            title = "Pine and Crane3" width="100%" loading="lazy">
         </a>
         <figcaption>사실 다 맛있어 보인다. 사진 보니까 배가 고파진다…</figcaption>
         </figure>
@@ -403,7 +403,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/LA_Road.gif" data-lightbox="vis">
             <img src = "/files/img/LA_Road.gif" alt=""
-            title = "LA_Road" width="100%">
+            title = "LA_Road" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -419,7 +419,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_going_up1.png" data-lightbox="vis">
             <img src = "/files/img/Griffith_going_up1.png" alt=""
-            title = "Griffith_going_up1" width="100%">
+            title = "Griffith_going_up1" width="100%" loading="lazy">
         </a>
         <figcaption>걸어가며 내려다 보았다.</figcaption>
         </figure>
@@ -428,7 +428,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_going_up2.png" data-lightbox="vis">
             <img src = "/files/img/Griffith_going_up2.png" alt=""
-            title = "Griffith_going_up2" width="100%">
+            title = "Griffith_going_up2" width="100%" loading="lazy">
         </a>
         <figcaption>시내도 보인다.</figcaption>
         </figure>
@@ -442,7 +442,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_Building1.png" data-lightbox="vis">
             <img src = "/files/img/Griffith_Building1.png" alt=""
-            title = "Griffith_Building1" width="100%">
+            title = "Griffith_Building1" width="100%" loading="lazy">
         </a>
         <figcaption>보이기 시작!</figcaption>
         </figure>
@@ -451,7 +451,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_Building2.png" data-lightbox="vis">
             <img src = "/files/img/Griffith_Building2.png" alt=""
-            title = "Griffith_Building2" width="100%">
+            title = "Griffith_Building2" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -460,7 +460,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_Building3.png" data-lightbox="vis">
             <img src = "/files/img/Griffith_Building3.png" alt=""
-            title = "Griffith_Building3" width="100%">
+            title = "Griffith_Building3" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -474,7 +474,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_View.png" data-lightbox="vis">
             <img src = "/files/img/Griffith_View.png" alt=""
-            title = "Griffith_View" width="100%">
+            title = "Griffith_View" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -483,7 +483,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_View2.png" data-lightbox="vis">
             <img src = "/files/img/Griffith_View2.png" alt=""
-            title = "Griffith_View2" width="100%">
+            title = "Griffith_View2" width="100%" loading="lazy">
         </a>
         <figcaption>할리우드 사인도 보인다.</figcaption>
         </figure>
@@ -497,7 +497,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_scope1.png" data-lightbox="vis">
             <img src = "/files/img/Griffith_scope1.png" alt=""
-            title = "Griffith_scope1" width="100%">
+            title = "Griffith_scope1" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -506,7 +506,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_scope2.png" data-lightbox="vis">
             <img src = "/files/img/Griffith_scope2.png" alt=""
-            title = "Griffith_scope2" width="100%">
+            title = "Griffith_scope2" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -515,7 +515,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_scope3.png" data-lightbox="vis">
             <img src = "/files/img/Griffith_scope3.png" alt=""
-            title = "Griffith_scope3" width="100%">
+            title = "Griffith_scope3" width="100%" loading="lazy">
         </a>
         <figcaption>저것이 렌즈통일까…?</figcaption>
         </figure>
@@ -524,7 +524,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_scope4.png" data-lightbox="vis">
             <img src = "/files/img/Griffith_scope4.png" alt=""
-            title = "4" width="100%">
+            title = "4" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -538,7 +538,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_sunset1.png" data-lightbox="vis">
             <img src = "/files/img/Griffith_sunset1.png" alt=""
-            title = "Griffith_sunset1" width="100%">
+            title = "Griffith_sunset1" width="100%" loading="lazy">
         </a>
         <figcaption>하늘이 정말로</figcaption>
         </figure>
@@ -547,7 +547,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_sunset2.png" data-lightbox="vis">
             <img src = "/files/img/Griffith_sunset2.png" alt=""
-            title = "Griffith_sunset2" width="100%">
+            title = "Griffith_sunset2" width="100%" loading="lazy">
         </a>
         <figcaption>예뻤다!</figcaption>
         </figure>
@@ -556,7 +556,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_sunset3.png" data-lightbox="vis">
             <img src = "/files/img/Griffith_sunset3.png" alt=""
-            title = "Griffith_sunset3" width="100%">
+            title = "Griffith_sunset3" width="100%" loading="lazy">
         </a>
         <figcaption>><</figcaption>
         </figure>
@@ -570,7 +570,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_Moon1.png" data-lightbox="vis">
             <img src = "/files/img/Griffith_Moon1.png" alt=""
-            title = "Griffith_Moon1" width="100%">
+            title = "Griffith_Moon1" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -579,7 +579,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_Moon4.png" data-lightbox="vis">
             <img src = "/files/img/Griffith_Moon4.png" alt=""
-            title = "Griffith_Moon4" width="100%">
+            title = "Griffith_Moon4" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -588,7 +588,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_Moon2.png" data-lightbox="vis">
             <img src = "/files/img/Griffith_Moon2.png" alt=""
-            title = "Griffith_Moon2" width="100%">
+            title = "Griffith_Moon2" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -597,7 +597,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_Moon3.png" data-lightbox="vis">
             <img src = "/files/img/Griffith_Moon3.png" alt=""
-            title = "Griffith_Moon3" width="100%">
+            title = "Griffith_Moon3" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -613,7 +613,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_Foucalt1.png" data-lightbox="vis">
             <img src = "/files/img/Griffith_Foucalt1.png" alt=""
-            title = "Griffith_Foucalt1" width="100%">
+            title = "Griffith_Foucalt1" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -622,7 +622,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_Foucalt2.png" data-lightbox="vis">
             <img src = "/files/img/Griffith_Foucalt2.png" alt=""
-            title = "Griffith_Foucalt2" width="100%">
+            title = "Griffith_Foucalt2" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -631,7 +631,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_Foucalt_moving.gif" data-lightbox="vis">
             <img src = "/files/img/Griffith_Foucalt_moving.gif" alt=""
-            title = "Griffith_Foucalt_moving" width="100%">
+            title = "Griffith_Foucalt_moving" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -645,7 +645,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_Tesla_Coil.gif" data-lightbox="vis">
             <img src = "/files/img/Griffith_Tesla_Coil.gif" alt=""
-            title = "Griffith_Tesla_Coil" width="100%">
+            title = "Griffith_Tesla_Coil" width="100%" loading="lazy">
         </a>
         <figcaption>찌릿찌릿찌릿</figcaption>
         </figure>
@@ -659,7 +659,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_Moon_Edu.png" data-lightbox="vis">
             <img src = "/files/img/Griffith_Moon_Edu.png" alt=""
-            title = "Griffith_Moon_Edu" width="100%">
+            title = "Griffith_Moon_Edu" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -668,7 +668,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_Star_Edu.png" data-lightbox="vis">
             <img src = "/files/img/Griffith_Star_Edu.png" alt=""
-            title = "Griffith_Star_Edu" width="100%">
+            title = "Griffith_Star_Edu" width="100%" loading="lazy"> 
         </a>
         <figcaption></figcaption>
         </figure>
@@ -682,7 +682,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Griffith_after_sunset.gif" data-lightbox="vis">
             <img src = "/files/img/Griffith_after_sunset.gif" alt=""
-            title = "Griffith_after_sunset" width="100%">
+            title = "Griffith_after_sunset" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -696,7 +696,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Going to Inn.gif" data-lightbox="vis">
             <img src = "/files/img/Going to Inn.gif" alt=""
-            title = "Going to Inn" width="100%">
+            title = "Going to Inn" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -705,7 +705,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/Going to Inn2.gif" data-lightbox="vis">
             <img src = "/files/img/Going to Inn2.gif" alt=""
-            title = "Going to Inn2" width="100%">
+            title = "Going to Inn2" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -721,7 +721,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/To_Union_station1.gif" data-lightbox="vis">
             <img src = "/files/img/To_Union_station1.gif" alt=""
-            title = "To_Union_station1" width="100%">
+            title = "To_Union_station1" width="100%" loading="lazy">
         </a>
         <figcaption>웨 선생 플레이리스트에 있는 aespa의 Whiplash가 재생되는 중이다</figcaption>
         </figure>
@@ -730,7 +730,7 @@ Pine and Crane에서 저녁을 먹었다. 음식은 맛있었는데 배가 고�
         <figure>
         <a href="/files/img/To_Union_station2.gif" data-lightbox="vis">
             <img src = "/files/img/To_Union_station2.gif" alt=""
-            title = "To_Union_station2" width="100%">
+            title = "To_Union_station2" width="100%" loading="lazy">
         </a>
         <figcaption>Union Station으로 가는 길</figcaption>
         </figure>
@@ -744,7 +744,7 @@ LA Union Station은 고속버스와 기차를 탈 수 있는 터미널이라 보
         <figure>
         <a href="/files/img/LA_Union_Station.png" data-lightbox="vis">
             <img src = "/files/img/LA_Union_Station.png" alt=""
-            title = "LA_Union_Station" width="100%">
+            title = "LA_Union_Station" width="100%" loading="lazy">
         </a>
         <figcaption></figcaption>
         </figure>
@@ -762,7 +762,7 @@ LA Union Station은 고속버스와 기차를 탈 수 있는 터미널이라 보
         <figure>
         <a href="/files/img/SF_Morning.png" data-lightbox="vis">
             <img src = "/files/img/SF_Morning.png" alt=""
-            title = "SF_Morning" width="100%">
+            title = "SF_Morning" width="100%" loading="lazy">
         </a>
         <figcaption>아침 도착할 무렵의 샌프란시스코</figcaption>
         </figure>
