@@ -20,10 +20,31 @@ fetch('https://us-central1-like-button-88f77.cloudfunctions.net/getFirebaseConfi
     // Password Visibility Toggle
     const passwordField = document.getElementById("password");
     const togglePassword = document.getElementById("toggle-password");
+    const eyeIcon = document.getElementById("eye-icon");
 
-    togglePassword.addEventListener("change", () => {
-        passwordField.type = togglePassword.checked ? "text" : "password";
+    togglePassword.addEventListener("click", (e) => {
+        e.preventDefault(); // 폼 제출 방지
+    
+        if (passwordField.type === "password") {
+            // 비밀번호 보이기 (눈 감긴 아이콘으로 변경)
+            passwordField.type = "text";
+            eyeIcon.innerHTML = `
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+                <line x1="1" y1="1" x2="23" y2="23"></line>
+            `;
+        } else {
+            // 비밀번호 숨기기 (눈 뜬 아이콘으로 변경)
+            passwordField.type = "password";
+            eyeIcon.innerHTML = `
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+            `;
+        }
     });
+    // togglePassword.addEventListener("change", () => {
+    //     passwordField.type = togglePassword.checked ? "text" : "password";
+    // });
 
     // Secret Comment Toggle Feature
     let isSecret = false;
