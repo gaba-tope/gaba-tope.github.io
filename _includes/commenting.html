@@ -4,22 +4,16 @@
 
 <form id="comment">
     <div class="input-row">
-        <input type="text" id="name" placeholder="Name (필명)">
-        <input type="password" id="password" placeholder="Password (비밀번호)">
-        <div style="position: relative; display: inline-block; flex: 1;">
-        <button type="button" class="eye-toggle" id="toggle-password">
-            <svg class="eye-icon" id="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <!-- Eye open icon (default) -->
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-            </svg>
-        </button>
+    <input type="text" id="name" placeholder="Name (필명)">
+        <div class="password-wrapper">
+            <input type="password" id="password" placeholder="Password (비밀번호)">
+            <button type="button" class="eye-toggle" id="toggle-password">
+                <svg class="eye-icon" id="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+            </button>
         </div>
-        <!-- <label class="switch">
-            <input type="checkbox" id="toggle-password">
-            <span class="slider round"></span>
-        </label> -->
-        <!-- <label><input type="checkbox" id="toggle-password">Show</label> -->
     </div>
     <textarea id="message" placeholder="Please enter your message. 독자 여러분의 댓글은 큰 힘이 됩니다!&#10;댓글달기 귀찮다면 하트라도 눌러주세요 ^0^ "></textarea>
     <!-- <label for="secret-comment"> (체크박스를 이용한 비밀글 기능; 자물쇠 버튼으로 대체.)
