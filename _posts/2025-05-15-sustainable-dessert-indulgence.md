@@ -7,7 +7,7 @@ cover: /files/cover/2025-05-15-sustainable-dessert-indulgence.webp
 modify_date: 2025-05-15
 ---
 
-UNC Chapel Hill의 음악 수업 Fundamentals of Tonal Musics (MUSC121; Prof. Saviola) 기말 과제로 작사·작곡하였다. 초반에는 단순한 구조로 짧게 작곡하여 제출했는데, 그냥 끝내기는 아쉬워서 더욱 수정하여 완성한 곡이다!
+음악 수업 Fundamentals of Tonal Musics 기말 과제로 작사·작곡하였다. 초반에는 단순한 구조로 짧게 작곡하여 제출했는데, 그냥 끝내기는 아쉬워서 더욱 수정하여 완성한 곡이다!
 <!--more-->
 
 
