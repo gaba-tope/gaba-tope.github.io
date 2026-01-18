@@ -11,6 +11,10 @@ modify_date: 2025-06-20
 하지만 사실 **알림을 받을 수 있습니다**. 네이버 블로그나 티스토리보다 훨씬 가볍고 근본있고 확장성있는 **RSS 피드**라는 것을 이용하면 됩니다.
 
 <!--more-->
+
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 ## RSS 피드를 구독하여 알림받기
 
 새로운 게시글을 올렸을 때 이를 다른 사람들이 확인하기 쉽도록 만든 파일을 RSS 피드(RSS Feed)라 하고, RSS 피드를 구독할 수 있는 RSS 피드 리더(RSS Feed Reader) 앱을 통해 게시글을 모아보고 알림받을 수 있습니다.

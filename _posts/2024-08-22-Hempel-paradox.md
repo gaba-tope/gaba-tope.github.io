@@ -6,6 +6,9 @@ categories: blog
 id: 2024-08-22-Hempel-paradox
 ---
 
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 ## 머리말
 이글에서는 헴펠의 역설을 정리해보고자 합니다. 헴펠의 역설에 따르면 '모든 까마귀는 까맣다'라는 명제를 '초록색 사과'가 입증합니다!!<!--more--> 진짜로요. 제대로 들으신 게 맞아요. ㅋㅋㅋㅋ
 

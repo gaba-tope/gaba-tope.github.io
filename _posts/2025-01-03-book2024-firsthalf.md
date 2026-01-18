@@ -19,6 +19,9 @@ img{
 **무더기 도서 리뷰 시리즈** (1/4)<br>[2024년 읽은 책 결산 (상반기)]({% post_url 2025-01-03-book2024-firsthalf %}) **←**<br>[2024년 읽은 책 결산 (하반기)]({% post_url 2025-01-02-book2024 %})<br>[“취업 안 하는 편이 좋겠습니다, 돈 안 버는 편이 좋겠습니다“ (25년 1월~2월)]({% post_url 2025-03-08-Jan-Feb-Book %})<br>[“그 말을 들으니 나는 눈발 속에서 길을 잃은 발자국이 된 기분이야.” (25년 3월~6월)]({% post_url 2025-06-30-book-Mar-Jun %})
 {:.info}
 
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 ## 읽은 것들 
 
 <p align="left">

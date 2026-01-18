@@ -8,7 +8,11 @@ modify_date: 2025-06-19
 ---
 
 로스앤젤레스 둘째 날에는 산타모니카 해변, 베벌리 힐스, 할리우드 명예의 거리와 레이크 할리우드 공원을 구경했다.
+
 <!--more-->
+
+* Do not remove this line (it will not be displayed)
+{:toc}
 
 ## 2일차
 

@@ -13,6 +13,9 @@ This work is **largely based on the music player script of** [**estInLOV3's home
 **[Copyright infringement is a serious offense!]**<br><br> **Unauthorized use of copyrighted music may result in legal action**. Please ensure you have the necessary rights or licenses for any music used with this player. Consider using royalty-free music or obtaining permission from the copyright holder.
 {:.error}
 
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 ## Modifications I made
 
 1. **Hiding the YouTube Video**

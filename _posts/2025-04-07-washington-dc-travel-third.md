@@ -9,6 +9,8 @@ modify_date: 2025-04-07
 
 워싱턴 D.C. 마지막 날에는 스미소니언 자연사 박물관과 내셔널 갤러리 오브 아트를 갔다!
 <!--more-->
+* Do not remove this line (it will not be displayed)
+{:toc}
 
 ## 3일차
 

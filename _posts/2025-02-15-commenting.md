@@ -13,6 +13,9 @@ There are several options for Jekyll Blog Comment box, such as [giscus](https://
 
 Since some viewers may not have a GitHub account to use the Giscus comment service for interaction, I decided to make my own comment box using [Firebase](https://firebase.google.com/){:target='_blank'}.
 
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 ## Plan
 
 1. Use the existing Firebase project that I made in [Like Button Project]({% post_url 2025-01-30-like-button %}){:target='_blank'}. I will use the same Firebase function to retrieve Firebase configuration information along with the unique post ID.

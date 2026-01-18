@@ -12,6 +12,9 @@ modify_date: 2025-06-24
 Using Firebase, I made 'Like Button' in my static jekyll blog!
 <!--more-->
 
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 ## Need
 
 Since my Jekyll blog is not only a record of my studies but also of my daily life, some viewers may not have a GitHub account to use the Giscus comment service for interaction. Other social media platforms, such as Instagram, Twitter (I refuse to call it X, lol), and Facebook have a 'like' button. Viewers can click on the like button to positively interact with authors and creators. I want this feature in my blog so that passing by readers can simply click on the heart-shape like button without logging into Github. 

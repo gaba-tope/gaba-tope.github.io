@@ -30,6 +30,9 @@ img{
 
 예전에 읽었던 것부터 순서대로 살펴보았다. 인용문의 강조 표시는 내가 한 것. 상당히 좋아서 추천하고픈 작품은 제목을 <span style="background-color:#FFFD55; color:#000000;">형광펜</span>으로 칠해두었다 :)
 
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 ## 읽은 것들
 
 <p align="left">

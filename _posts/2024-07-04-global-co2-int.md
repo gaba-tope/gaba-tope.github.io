@@ -27,6 +27,9 @@ id: 2024-07-04-global-co2-int
 As part of the [tidytuesday challenge a few months ago (2024-05-21)](https://github.com/rfordatascience/tidytuesday/blob/master/data/2024/2024-05-21/readme.md){:target="_blank"}, I made an interactive line plot showing the amount of emitted carbon by major oil, gas, coal, and cement producers. One can get their cursor on a line to see how much carbon was emitted in the year, by type of commodities. Although some time has passed since this challenge was posted, I found the dataset highly intriguing. The data includes CO2 emissions per type of commodity produced by major fossil fuel-related corporations, revealing the variety of resources responsible for carbon emissions. 
  <!--more-->
 
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 The interactive plot below is optimized for desktop viewing or horizontal view mode.
 <div class = "container">
 <iframe class="responsive-iframe" src="/files/interactive_page/total_e_ly_post.html" style="border:none"></iframe>

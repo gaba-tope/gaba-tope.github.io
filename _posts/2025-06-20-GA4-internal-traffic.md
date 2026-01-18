@@ -10,8 +10,13 @@ modify_date: 2025-06-20
 Jekyll Blog 방문자 통계를 Google Analytics로 추적할 때 내 컴퓨터로 접속한 것까지 포함되면 내가 원하는 데이터를 얻을 수 없겠죠?
 
 Google Analytics 4에서 내 컴퓨터로 접속한 트래픽을 데이터에서 걸러내는 필터를 설정할 수 있습니다.
+
 <!--more-->
+
 이 포스트는 구글 기술지원 문서[^ref]를 바탕으로 내부 트래픽을 filter out한 이후 정리해본 글입니다. 아래에서 Google Analytics는 'GA'로 줄이겠습니다.
+
+* Do not remove this line (it will not be displayed)
+{:toc}
 
 ## 1. 내부 트래픽 정의
 
